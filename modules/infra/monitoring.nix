@@ -98,7 +98,9 @@ in
     extraFlags = [
       "--web.external-url=https://prometheus.vitune.app/"
     ];
+
     globalConfig.scrape_interval = "15s";
+    retentionTime = "180d";
 
     exporters.nginx.enable = true;
     exporters.systemd.enable = true;
