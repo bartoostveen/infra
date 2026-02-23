@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
   ...
 }:
@@ -21,28 +20,6 @@ in
   services.nginx = {
     enable = true;
 
-    commonHttpConfig =
-      let
-        realIps =
-          file:
-          lib.strings.concatMapStringsSep "\n" (x: "set_real_ip_from  ${x};") (
-            lib.strings.splitString "\n" (builtins.readFile file)
-          );
-        v4 = pkgs.fetchurl {
-          url = "https://www.cloudflare.com/ips-v4";
-          hash = "sha256-8Cxtg7wBqwroV3Fg4DbXAMdFU1m84FTfiE5dfZ5Onns=";
-        };
-        v6 = pkgs.fetchurl {
-          url = "https://www.cloudflare.com/ips-v6";
-          hash = "sha256-np054+g7rQDE3sr9U8Y/piAp89ldto3pN9K+KCNMoKk=";
-        };
-      in
-      ''
-        ${realIps v4}
-        ${realIps v6}
-        real_ip_header CF-Connecting-IP;
-      '';
-
     recommendedBrotliSettings = true;
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
@@ -57,7 +34,6 @@ in
     defaultListenAddresses = [
       "0.0.0.0"
       "[::0]"
-      "100.64.0.2"
     ];
   };
 
