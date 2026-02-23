@@ -62,7 +62,9 @@ in
   services.nginx.virtualHosts.${domain} = {
     enableACME = true;
     forceSSL = true;
-    locations."/".proxyPass =
-      "http://${config.services.maubot.settings.server.hostname}:${toString config.services.maubot.settings.server.port}";
+    locations."/" = {
+      proxyPass = "http://${config.services.maubot.settings.server.hostname}:${toString config.services.maubot.settings.server.port}";
+      proxyWebsockets = true;
+    };
   };
 }
