@@ -45,6 +45,31 @@
           wep-key-flags = "1";
         };
       };
+      H369A8D363E = {
+        connection = {
+          id = "H369A8D363E";
+          interface-name = "wlp0s20f3";
+          type = "wifi";
+          uuid = "617d2645-9f1b-4955-9144-7502db7bc203";
+        };
+        ipv4 = {
+          method = "auto";
+        };
+        ipv6 = {
+          addr-gen-mode = "default";
+          method = "auto";
+        };
+        proxy = { };
+        wifi = {
+          mode = "infrastructure";
+          ssid = "H369A8D363E";
+        };
+        wifi-security = {
+          auth-alg = "open";
+          key-mgmt = "wpa-psk";
+          psk = "$H369A8D363E";
+        };
+      };
       "Bart's Nothing Phone (2a)" = {
         connection = {
           id = "Bart's Nothing Phone (2a)";
