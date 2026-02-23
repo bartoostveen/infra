@@ -85,13 +85,14 @@ in
         {
           pkgs,
           stablePkgs,
+          personalPkgs,
           ...
         }:
 
         inputs.nixpkgs.lib.nixosSystem {
           inherit pkgs;
 
-          specialArgs = { inherit inputs stablePkgs; };
+          specialArgs = { inherit inputs stablePkgs personalPkgs; };
 
           modules = [
             inputs.sops-nix.nixosModules.sops
