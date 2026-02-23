@@ -19,6 +19,7 @@
     ../modules/infra/common.nix
     ../modules/infra/continuwuity.nix
     ../modules/infra/copyparty.nix
+    ../modules/infra/fail2ban.nix
     ../modules/infra/git.nix
     ../modules/infra/ical-proxy.nix
     ../modules/infra/ircbounce.nix
