@@ -17,6 +17,15 @@ let
       src = inputs.maubot-spotify;
       preInstall = "mv de.sosnowkadub.idonthavespotify-v${version}.mbp $pluginName";
     };
+
+  sed = config.services.maubot.package.plugins.sed.overrideAttrs {
+    src = pkgs.fetchFromGitHub {
+      owner = "maubot";
+      repo = "sed";
+      rev = "44865efc916c41ddfdfccadf72a2d8372381d064";
+      hash = "";
+    };
+  };
 in
 {
   services.maubot = {
