@@ -9,6 +9,8 @@
 let
   kumaVHost = "uptime.bartoostveen.nl";
   grafanaVHost = "grafana.vitune.app";
+
+  email = "alerts@${config.mailserver.fqdn}";
 in
 {
   imports = [
@@ -48,38 +50,51 @@ in
     alertmanager = {
       enable = true;
       listenAddress = "127.0.0.1";
-      configuration =
-        let
-          receiver = "admin";
-        in
-        {
-          global =
-            let
-              email = "alerts@${config.mailserver.fqdn}";
-            in
-            {
-              smtp_from = "Alerting <${email}>";
-              smtp_smarthost = "${config.mailserver.fqdn}:465";
-              smtp_auth_username = email;
-              smtp_auth_password_file = config.sops.secrets.alertmanager-email-password.path;
-            };
-          receivers = [
-            {
-              name = receiver;
-              email_configs = [
-                {
-                  to = "root@bartoostveen.nl";
-                }
-              ];
-              discord_configs = [
-                {
-                  webhook_url_file = config.sops.secrets.alertmanager-discord-webhook.path;
-                }
-              ];
-            }
-          ];
-          route = { inherit receiver; };
+
+      configuration = {
+        global = {
+          smtp_from = "Alerting <${email}>";
+          smtp_smarthost = "${config.mailserver.fqdn}:465";
+          smtp_auth_username = email;
+          smtp_auth_password_file = config.sops.secrets.alertmanager-email-password.path;
         };
+
+        receivers = [
+          {
+            name = "matrix";
+            webhook_configs = [
+              {
+                url = "http://localhost:4051/!XEut2ilhrx5AFftWSym-qSzEW370UbEYfuxVfOWfY-A";
+              }
+            ];
+          }
+          {
+            name = "email";
+            email_configs = [
+              {
+                to = "root@bartoostveen.nl";
+              }
+            ];
+          }
+          {
+            name = "discord";
+            discord_configs = [
+              {
+                webhook_url_file = config.sops.secrets.alertmanager-discord-webhook.path;
+              }
+            ];
+          }
+        ];
+
+        # give me all destinations pls
+        route = {
+          receiver = (builtins.elemAt config.services.prometheus.alertmanager.configuration.receivers 0).name;
+          routes = map (el: {
+            receiver = el.name;
+            continue = true;
+          }) config.services.prometheus.alertmanager.configuration.receivers;
+        };
+      };
     };
 
     alertmanagers = [

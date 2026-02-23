@@ -11,7 +11,7 @@ let
   domain = "matrix.${fqdn}";
   rtcDomain = "matrix-rtc.${fqdn}";
 
-  inherit (lib) genAttrs;
+  inherit (lib) genAttrs getExe;
 
   keyFile = config.sops.secrets.livekit-keys.path;
 
@@ -202,23 +202,88 @@ in
   systemd.services.continuwuity.serviceConfig.SupplementaryGroups = [ "matrix-livekit" ];
   systemd.services.livekit.serviceConfig.SupplementaryGroups = [ "nginx" ];
 
-  users.users = genAttrs [ "livekit" "lk-jwt-service" ] (_name: {
-    isSystemUser = true;
-    group = "matrix-livekit";
-  });
+  systemd.services.alertmanager-matrix = {
+    description = "Alertmanager Matrix bot";
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = getExe pkgs.local.alertmanager-matrix;
+      EnvironmentFile = config.sops.secrets.alertmanager-matrix-env.path;
+      Restart = "on-failure";
+      DynamicUser = true;
+      AmbientCapabilities = "";
+      CapabilityBoundingSet = "";
+      LockPersonality = true;
+      MountAPIVFS = true;
+      NoNewPrivileges = true;
+      PrivateDevices = true;
+      PrivateMounts = true;
+      PrivateUsers = true;
+      PrivateTmp = true;
+      ProtectClock = true;
+      ProtectControlGroups = "strict";
+      ProtectHome = true;
+      ProtectHostname = true;
+      ProtectKernelLogs = true;
+      ProtectKernelModules = true;
+      ProtectKernelTunables = true;
+      ProtectProc = "invisible";
+      ProtectSystem = "strict";
+      RemoveIPC = true;
+      RestrictAddressFamilies = "AF_INET AF_INET6 AF_UNIX";
+      RestrictNamespaces = true;
+      RestrictRealtime = true;
+      RestrictSUIDSGID = true;
+      SystemCallArchitectures = "native";
+      UMask = 27;
+    };
+  };
+
+  users.users =
+    genAttrs [ "livekit" "lk-jwt-service" ] (_name: {
+      isSystemUser = true;
+      group = "matrix-livekit";
+    })
+    // {
+      alertmanager-matrix = {
+        isSystemUser = true;
+        group = "alertmanager-matrix";
+      };
+    };
   users.groups.matrix-livekit = { };
+  users.groups.alertmanager-matrix = { };
+
   sops.secrets.livekit-keys = {
     sopsFile = ../../secrets/livekit-keys.secret;
     owner = "livekit";
     group = "matrix-livekit";
     format = "binary";
     mode = "440";
+    restartUnits = [
+      "livekit.service"
+      "lk-jwt-service.service"
+    ];
   };
+
   sops.secrets.turn = {
     sopsFile = ../../secrets/turn.secret;
     owner = "livekit";
     group = "matrix-livekit";
     format = "binary";
     mode = "440";
+    restartUnits = [
+      "livekit.service"
+      "lk-jwt-service.service"
+    ];
+  };
+
+  sops.secrets.alertmanager-matrix-env = {
+    sopsFile = ../../secrets/alertmanager-matrix.env.secret;
+    owner = "alertmanager-matrix";
+    group = "alertmanager-matrix";
+    format = "binary";
+    mode = "440";
+    restartUnits = [ "alertmanager-matrix.service" ];
   };
 }
