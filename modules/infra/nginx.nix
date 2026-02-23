@@ -34,6 +34,7 @@ in
     defaultListenAddresses = [
       "0.0.0.0"
       "[::0]"
+      "100.64.0.2"
     ];
   };
 
