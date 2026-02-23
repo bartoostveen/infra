@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   domain = "maubot.bartoostveen.nl";
@@ -19,20 +24,16 @@ in
       factorial
       github
       gitlab
-      (idonthavespotify.overrideAttrs (finalAttrs: {
-        version = "1.1.2";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "HarHarLinks";
-          repo = "maubot-idonthavespotify";
-          tag = "v${finalAttrs.version}";
-          hash = "sha256-gaucaS6v9lm9wTYy8fPDogT0KWKEgHhWR+rVsypp51k=";
-        };
-
-        preInstall = ''
-          mv de.sosnowkadub.idonthavespotify-v1.1.2.mbp $pluginName
-        '';
-      }))
+      (
+        let
+          version = "1.1.2";
+        in
+        idonthavespotify.overrideAttrs {
+          inherit version;
+          src = inputs.maubot-spotify;
+          preInstall = "mv de.sosnowkadub.idonthavespotify-v${version}.mbp $pluginName";
+        }
+      )
       join
       karma
       media

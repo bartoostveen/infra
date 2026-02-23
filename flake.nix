@@ -106,6 +106,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    maubot-spotify = {
+      url = "github:HarHarLinks/maubot-idonthavespotify/v1.1.2";
+      flake = false;
+    };
+
     nix-auth = {
       url = "github:numtide/nix-auth";
       inputs = {

@@ -547,6 +547,23 @@
         "type": "github"
       }
     },
+    "maubot-spotify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771820313,
+        "narHash": "sha256-gaucaS6v9lm9wTYy8fPDogT0KWKEgHhWR+rVsypp51k=",
+        "owner": "HarHarLinks",
+        "repo": "maubot-idonthavespotify",
+        "rev": "59db9d33436393f878d6ccc63d978989e13b59b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HarHarLinks",
+        "ref": "v1.1.2",
+        "repo": "maubot-idonthavespotify",
+        "type": "github"
+      }
+    },
     "napalm": {
       "inputs": {
         "flake-utils": [
@@ -956,6 +973,7 @@
         "import-tree": "import-tree",
         "invoice": "invoice",
         "licenseit": "licenseit",
+        "maubot-spotify": "maubot-spotify",
         "nix-auth": "nix-auth",
         "nix-index-database": "nix-index-database",
         "nix-podman-stacks": "nix-podman-stacks",
