@@ -38,7 +38,8 @@ in
       ExecStart = ''
         ${getExe pkgs.local.fail2ban-prometheus-exporter} \
           --collector.f2b.socket=${fail2ban-socket} \
-          --web.listen-address="127.0.0.1:${toString metrics-port}"
+          --web.listen-address="127.0.0.1:${toString metrics-port}" \
+          --collector.f2b.exit-on-socket-connection-error
       '';
       Restart = "on-failure";
       AmbientCapabilities = "";
