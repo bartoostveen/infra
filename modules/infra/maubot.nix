@@ -23,7 +23,7 @@ let
       owner = "maubot";
       repo = "sed";
       rev = "44865efc916c41ddfdfccadf72a2d8372381d064";
-      hash = "";
+      hash = "sha256-j1/vqJPnOWRDqiRVW947HgZW/HvsHli20+q0cP4mj7E=";
     };
   };
 in
