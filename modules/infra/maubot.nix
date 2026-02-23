@@ -19,17 +19,17 @@ in
       github
       gitlab
       (idonthavespotify.overrideAttrs (finalAttrs: {
-        version = "1.1.1";
+        version = "1.1.2";
 
         src = pkgs.fetchFromGitHub {
           owner = "HarHarLinks";
           repo = "maubot-idonthavespotify";
           tag = "v${finalAttrs.version}";
-          hash = "sha256-GW+DmPq8KfUPv0S6RW8B7eJhWQ5IQeWnS7BKH+VhkuU=";
+          hash = "sha256-gaucaS6v9lm9wTYy8fPDogT0KWKEgHhWR+rVsypp51k=";
         };
 
         preInstall = ''
-          mv de.sosnowkadub.idonthavespotify-v1.1.1.mbp $pluginName
+          mv de.sosnowkadub.idonthavespotify-v1.1.2.mbp $pluginName
         '';
       }))
       join
