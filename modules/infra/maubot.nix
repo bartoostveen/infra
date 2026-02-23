@@ -7,6 +7,7 @@ in
   services.maubot = {
     enable = true;
     configMutable = false;
+    pythonPackages = with pkgs.python3Packages; [ semver ];
     plugins = with config.services.maubot.package.plugins; [
       alertbot
       autoreply
