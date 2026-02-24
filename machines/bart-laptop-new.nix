@@ -85,8 +85,7 @@
   sops.secrets.wg-secret = {
     format = "binary";
     sopsFile = ../secrets/wg-private.secret;
-    # TODO
-    reloadUnits = [ ];
+    reloadUnits = [ "systemd-networkd.service" ];
   };
 
   programs.steam.enable = true;
