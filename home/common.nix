@@ -140,10 +140,10 @@ in
       enable = true;
       gh.enable = true;
 
-      user.email = "bart.oos.2006@gmail.com";
+      user.email = "bart@bartoostveen.nl";
       user.name = "Bart Oostveen";
 
-      key = "31805D4650DE1EC8";
+      key = "5963223E57296C53";
     };
     programs.git.includes = [
       {
@@ -160,22 +160,6 @@ in
           email = "oostveen@snt.utwente.nl";
           name = "Bart Oostveen";
           signingKey = "2D4FB795E873C2C3";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:git@forgejo.ellis.link:*/**";
-        contents.user = {
-          email = "bart@bartoostveen.nl";
-          name = "Bart Oostveen";
-          signingKey = "5963223E57296C53";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:git@git.tijn.rs:*/**";
-        contents.user = {
-          email = "bart@bartoostveen.nl";
-          name = "Bart Oostveen";
-          signingKey = "5963223E57296C53";
         };
       }
     ];
