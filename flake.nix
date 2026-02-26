@@ -16,7 +16,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-personal.url = "github:25huizengek1/nixpkgs/huizengek/cinny-4.10.5";
+    nixpkgs-personal.url = "github:bartoostveen/nixpkgs/huizengek/cinny-4.10.5";
     nixpkgs-stable.url = "github:nixos/nixpkgs/1cd347bf3355fce6c64ab37d3967b4a2cb4b878c"; # /nixos-25.11";
     prismlauncher-nixpkgs.url = "github:nixos/nixpkgs/077cb3aa7d111ff4d36e8bd18d906bb4a3d621f9";
 
@@ -58,7 +58,7 @@
     };
 
     dns-zones = {
-      url = "github:25huizengek1/dns-zones";
+      url = "github:bartoostveen/dns-zones";
       flake = false;
     };
 
@@ -83,7 +83,7 @@
     };
 
     ical-proxy = {
-      url = "github:25huizengek1/ical-proxy";
+      url = "github:bartoostveen/ical-proxy";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -94,7 +94,7 @@
     import-tree.url = "github:vic/import-tree";
 
     invoice = {
-      url = "github:25huizengek1/invoice";
+      url = "github:bartoostveen/invoice";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -166,7 +166,7 @@
     };
 
     omeduostuurcentenneef-web = {
-      url = "github:25huizengek1/omeduostuurcentenneef-web";
+      url = "github:bartoostveen/omeduostuurcentenneef-web";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         bun2nix.url = "github:nix-community/bun2nix";
@@ -203,7 +203,7 @@
     };
 
     tcs-bot = {
-      url = "github:25huizengek1/tcs-bot";
+      url = "github:bartoostveen/tcs-bot";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

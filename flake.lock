@@ -166,11 +166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772008782,
-        "narHash": "sha256-cjfHydg0gwFatbISETt2HbCsBBQ7FmRFxlmEH+V/NGE=",
+        "lastModified": 1772039265,
+        "narHash": "sha256-3TR+B2DmkkkIi/b0CE8PuKkmb2jgzdKrOPsIwdWhsM0=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "00ab7888d765e124ccd7c61792d264d598077d20",
+        "rev": "7c60adc69c977fb4b75e31c576131b1379498c3f",
         "type": "github"
       },
       "original": {
@@ -247,13 +247,13 @@
       "locked": {
         "lastModified": 1768068849,
         "narHash": "sha256-bCDgzo/xLPFhizqaArj7M32RKUl8v+ucsUu90TyZ4Lc=",
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "dns-zones",
         "rev": "9fb1112373d45770e889f55456593a94f3c08583",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "dns-zones",
         "type": "github"
       }
@@ -434,13 +434,13 @@
       "locked": {
         "lastModified": 1767892411,
         "narHash": "sha256-WaifTKJ82NIq5ZW43hNgmkj3afJ99DZPw32/L/ekSsU=",
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "ical-proxy",
         "rev": "3e89dcf6b865308a0e562d319a397cde7e87d68b",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "ical-proxy",
         "type": "github"
       }
@@ -490,13 +490,13 @@
       "locked": {
         "lastModified": 1752843107,
         "narHash": "sha256-TqWlNpQXXSMP4mX7duP+3TfMz0ATp94RY1wHe3xeWDw=",
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "invoice",
         "rev": "021a68e22f5917db301b8c8f09fc349aa02e0aa1",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "invoice",
         "type": "github"
       }
@@ -774,13 +774,13 @@
       "locked": {
         "lastModified": 1771852775,
         "narHash": "sha256-C6rbW4w0Mr1FnYqN0ldQ244BNeMaCJbYgvO968t/fEg=",
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "nixpkgs",
         "rev": "1ab639cffac44e0c78bde87d01382bc57446fec8",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "ref": "huizengek/cinny-4.10.5",
         "repo": "nixpkgs",
         "type": "github"
@@ -856,15 +856,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1771054589,
-        "narHash": "sha256-fiRuntY+4K3tJ0LnDgkHSq0rtL03Z8pAEVgYxyJd6EM=",
-        "owner": "25huizengek1",
+        "lastModified": 1772017240,
+        "narHash": "sha256-8JHiwxKntdEqlq5Y+0xVz21DnLy6B8vV8G4iw/VOzkc=",
+        "owner": "bartoostveen",
         "repo": "omeduostuurcentenneef-web",
-        "rev": "168b05c15d0f52175c28861643a420067eb39f82",
+        "rev": "cef4abf813e806a2a5a91701bac0f5c345213e71",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "omeduostuurcentenneef-web",
         "type": "github"
       }
@@ -1162,15 +1162,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1771883081,
-        "narHash": "sha256-LxN2plwYdjQHSrrRVdSQ7QRYIFsv1jarYubVNqUwch0=",
-        "owner": "25huizengek1",
+        "lastModified": 1772139054,
+        "narHash": "sha256-HoGWO8oE9kOQxnH1Qupt2TFNCbt9Ero7QM7WCWOBl1w=",
+        "owner": "bartoostveen",
         "repo": "tcs-bot",
-        "rev": "9cb09f762b9ffd1e4041d7938e43f13de3bab389",
+        "rev": "d49d6ce3038deb769848220f7e925244adca7485",
         "type": "github"
       },
       "original": {
-        "owner": "25huizengek1",
+        "owner": "bartoostveen",
         "repo": "tcs-bot",
         "type": "github"
       }
