@@ -161,8 +161,39 @@ in
     '';
   };
 
-  services.postfix.settings.main = {
-    inet_protocols = "ipv4";
-    bounce_template_file = "${./bounce-template.cf}";
+  services.postfix = {
+    submissionOptions = {
+      smtpd_client_restrictions = lib.mkForce "permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination";
+      smtpd_recipient_restrictions = lib.mkForce "permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination";
+    };
+
+    submissionsOptions = {
+      smtpd_client_restrictions = lib.mkForce "permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination";
+      smtpd_recipient_restrictions = lib.mkForce "permit_mynetworks,permit_sasl_authenticated,reject_unauth_destination";
+    };
+
+    settings.main = {
+      inet_protocols = "ipv4";
+      bounce_template_file = "${./bounce-template.cf}";
+
+      mynetworks = [
+        "127.0.0.0/8"
+        "46.224.181.108/32"
+      ];
+
+      smtpd_relay_restrictions = lib.mkForce [
+        "permit_mynetworks"
+        "permit_sasl_authenticated"
+        "reject_unauth_destination"
+      ];
+
+      smtpd_recipient_restrictions = lib.mkForce [
+        "permit_mynetworks"
+        "permit_sasl_authenticated"
+        "reject_unauth_destination"
+      ];
+
+      smtpd_client_restrictions = lib.mkForce [ "permit_mynetworks" ];
+    };
   };
 }
