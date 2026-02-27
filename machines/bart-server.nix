@@ -12,6 +12,8 @@
     ../containers/tcs-bot.nix
     ../containers/web.nix
 
+    ../modules/wireguard.nix
+
     ../modules/infra/anubis.nix
     ../modules/infra/attic.nix
     ../modules/infra/authentik.nix
@@ -50,6 +52,8 @@
     enable = true;
     acme = true;
   };
+
+  infra.wireguard.enable = true;
 
   services.nginx.virtualHosts."laptop.omeduostuurcentenneef.nl" = {
     forceSSL = true;
