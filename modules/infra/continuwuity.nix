@@ -132,6 +132,7 @@ in
             "elisaado.com"
             "utwente.io"
             "matrix.org"
+            "github.com"
           ];
           defaultHomeserver = 0;
           allowCustomHomeservers = true;
