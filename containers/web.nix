@@ -49,7 +49,7 @@ in
     imageStream = dockerImage;
     environment = {
       PORT = toString port;
-      GH_README_STATS_ENDPOINT = "http://${readmeStatsName}:9000/api?username=25huizengek1&show_icons=true&theme=gruvbox";
+      GH_README_STATS_ENDPOINT = "http://${readmeStatsName}:9000/api?username=bartoostveen&show_icons=true&theme=gruvbox";
     };
     environmentFiles = [ config.sops.secrets.web-env.path ];
     ports = [ "127.0.0.1:${toString port}:${toString port}" ];
