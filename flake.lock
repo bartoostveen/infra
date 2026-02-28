@@ -856,11 +856,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772017240,
-        "narHash": "sha256-8JHiwxKntdEqlq5Y+0xVz21DnLy6B8vV8G4iw/VOzkc=",
+        "lastModified": 1772285945,
+        "narHash": "sha256-h6PEL6JiUWg9AGIPo5xU96yuH+CFyHJsj5+tjUE/uM4=",
         "owner": "bartoostveen",
         "repo": "omeduostuurcentenneef-web",
-        "rev": "cef4abf813e806a2a5a91701bac0f5c345213e71",
+        "rev": "a2e82f2867d017195458d77ddae7c3776ebbe9e0",
         "type": "github"
       },
       "original": {
