@@ -8,6 +8,8 @@
   imports = [
     ./bart-laptop-new.hardware.nix
 
+    ../modules/wireguard.nix
+
     ../modules/desktop/users/bart.nix
 
     ../modules/desktop/android.nix
@@ -87,6 +89,8 @@
     sopsFile = ../secrets/wg-private.secret;
     reloadUnits = [ "systemd-networkd.service" ];
   };
+
+  infra.wireguard.enable = true;
 
   programs.steam.enable = true;
 
