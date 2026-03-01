@@ -208,7 +208,10 @@ in
 
   systemd.services.alertmanager-matrix = {
     description = "Alertmanager Matrix bot";
-    after = [ "network.target" ];
+    after = [
+      "network.target"
+      "continuwuity.service"
+    ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "simple";
