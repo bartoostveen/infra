@@ -119,7 +119,12 @@ in
       }
     ];
     allowedUDPPorts = [ config.services.livekit.settings.turn.udp_port ];
-    allowedTCPPorts = [ config.services.livekit.settings.rtc.tcp_port ];
+    allowedTCPPorts = [
+      config.services.livekit.settings.rtc.tcp_port
+      # Allow federation through http socket to make servers that don't query
+      # .well-known work
+      8448
+    ];
   };
 
   services.nginx.virtualHosts =
@@ -202,7 +207,7 @@ in
         forceSSL = true;
 
         locations."/".root = "${pkgs.element-web}";
-      }; 
+      };
     }
     // cinnies;
 
