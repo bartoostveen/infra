@@ -129,10 +129,13 @@ in
         conf = {
           homeserverList = [
             fqdn
-            "elisaado.com"
+            "ooye.elisaado.com"
             "utwente.io"
             "matrix.org"
             "github.com"
+            "fs.omeduostuurcentenneef.nl"
+            "files.bartoostveen.nl"
+            "party.vitune.app"
           ];
           defaultHomeserver = 0;
           allowCustomHomeservers = true;
