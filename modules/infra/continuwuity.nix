@@ -197,6 +197,12 @@ in
           proxyWebsockets = true;
         };
       };
+      "element.${fqdn}" = {
+        enableACME = true;
+        forceSSL = true;
+
+        locations."/".root = "${pkgs.element-web}";
+      }; 
     }
     // cinnies;
 
