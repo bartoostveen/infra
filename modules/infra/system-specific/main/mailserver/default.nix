@@ -57,20 +57,12 @@ in
     fullTextSearch = {
       enable = true;
       autoIndex = true;
-      enforced = "body";
-      memoryLimit = 2000; # MiB
-      autoIndexExclude = [
-        "Trash"
-        "\\Junk"
-      ];
     };
 
     useUTF8FolderNames = true;
 
     stateVersion = 4; # Do not change this line, unless a new version needs to be migrated to
   };
-
-  services.nginx.virtualHosts.${domain}.serverAliases = [ config.mailserver.fqdn ];
 
   services.rspamd.workers.controller.bindSockets = [ "*:${toString rspamdMetricsPort}" ];
   services.prometheus.exporters = {

@@ -11,7 +11,7 @@ let
     appendLdapBindPwd
     ;
 
-  inherit (lib) concatStringsSep;
+  inherit (lib) concatStringsSep mkForce;
 
   domain = "popkoorklankkleur.nl";
 
@@ -89,8 +89,8 @@ in
           uuid = "uidNumber";
         };
         dovecot = {
-          userFilter = "(&(objectClass=user)(${uidAttribute}=%n))";
-          passFilter = "(&(objectClass=user)(${uidAttribute}=%n))";
+          userFilter = "(&(objectClass=user)(${uidAttribute}=%{user | username}))";
+          passFilter = "(&(objectClass=user)(${uidAttribute}=%{user | username}))";
         };
         postfix.filter = "(&(objectClass=user)(${uidAttribute}=%u))";
         bind = {
@@ -140,15 +140,16 @@ in
 
   services.dovecot2.settings = {
     auth_master_user_separator = dovecotSeparator;
-    passdb = [
-      {
-        driver = "passwd-file";
-        args = "${dovecotMasterPasswdFile}";
-        result_success = "continue";
-        master = "yes";
-      }
-    ];
-    plugin.master_user = dovecotMasterUser;
+    "passdb AAAAAAAAAAAAAAAAAAAAAAAmaster" = {
+      driver = "passwd-file";
+      passwd_file_path = "${dovecotMasterPasswdFile}";
+      result_success = "continue";
+      master = "yes";
+    };
+    "passdb ldap" = {
+      passdb_ldap_bind = "yes";
+      fields.password = mkForce null;
+    };
   };
 
   systemd.services.postfix.preStart = ''
