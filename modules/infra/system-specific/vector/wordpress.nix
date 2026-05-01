@@ -55,6 +55,9 @@ in
     enableRateLimit = false;
     serverAliases = [ "www.${domain}" ];
     locations."/".proxyWebsockets = true;
+    extraConfig = ''
+      add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    '';
   };
 
   infra.backup.jobs.state.paths = [ "/var/lib/wordpress/${domain}" ];
