@@ -86,6 +86,9 @@ in
       enableACME = mkForce true;
     };
 
+    # In order to support consistent DANE TLSA
+    security.acme.certs."${cfg.systemDomain}".extraLegoRenewFlags = [ "--reuse-key" ];
+
     services.rspamd.workers.controller.bindSockets = [ "*:${toString rspamdMetricsPort}" ];
     services.prometheus.exporters = {
       dovecot.enable = true;
