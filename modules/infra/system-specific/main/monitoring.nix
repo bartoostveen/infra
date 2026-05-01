@@ -180,7 +180,7 @@ in
                   };
                   expr = "mtce_tlsa_status == 0";
                   for = "1m";
-                  labels.everity = "critical";
+                  labels.severity = "critical";
                 }
                 {
                   alert = "SMTPServerDown";
@@ -190,7 +190,7 @@ in
                   };
                   expr = "mtce_smtp_status == 0";
                   for = "1m";
-                  labels.everity = "critical";
+                  labels.severity = "critical";
                 }
                 {
                   alert = "SMTPCertificateInvalid";
@@ -205,7 +205,7 @@ in
                   };
                   expr = "mtce_smtp_cert_status == 0";
                   for = "1m";
-                  labels.everity = "critical";
+                  labels.severity = "critical";
                 }
               ];
             }
