@@ -29,8 +29,6 @@ in
 
     clientMaxBodySize = "128m";
 
-    sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
-
     defaultListenAddresses = [
       "0.0.0.0"
       "[::0]"

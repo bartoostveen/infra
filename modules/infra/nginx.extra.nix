@@ -6,6 +6,7 @@ let
     types
     mkIf
     mkAfter
+    mkEnableOption
     concatStringsSep
     ;
 
@@ -31,6 +32,7 @@ in
               default = true;
               description = "Enable global rate limiting for this vhost";
             };
+            enableHSTS = mkEnableOption "HSTS";
             locations = mkOption {
               type = attrsOf (
                 submodule (
@@ -61,6 +63,11 @@ in
                 )
               );
             };
+          };
+          config = mkIf config.enableHSTS {
+            extraConfig = mkAfter ''
+              add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+            '';
           };
         }
       )

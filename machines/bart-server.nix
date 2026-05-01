@@ -49,9 +49,9 @@ in
     ../modules/infra/matrix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.nix
+    ../modules/infra/nginx.extra.nix
     ../modules/infra/nix.nix
     ../modules/infra/podman.nix
-    ../modules/infra/ratelimiting.nix
     # keep-sorted end
   ];
 

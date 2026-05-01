@@ -64,6 +64,7 @@ in
   services.nginx.virtualHosts."bartoostveen.nl" = {
     forceSSL = true;
     enableACME = true;
+    enableHSTS = true;
     locations."/".proxyPass = "http://localhost:${toString port}";
   };
 

@@ -21,10 +21,10 @@
     ../modules/infra/git.nix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.nix
+    ../modules/infra/nginx.extra.nix
     ../modules/infra/nix.nix
     ../modules/infra/php.nix
     ../modules/infra/podman.nix
-    ../modules/infra/ratelimiting.nix
     # keep-sorted end
 
     # keep-sorted start
