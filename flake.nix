@@ -182,6 +182,11 @@
       };
     };
 
+    tlsa-exporter = {
+      url = "github:ietf-tools/mail-tlsa-check-exporter";
+      flake = false;
+    };
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";

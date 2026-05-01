@@ -170,47 +170,37 @@ in
               ];
             }
             {
-              name = "synapse";
+              name = "tlsa";
               rules = [
                 {
-                  expr = "synapse_federation_client_sent_edus_total + 0";
-                  labels.type = "EDU";
-                  record = "synapse_federation_client_sent";
+                  alert = "TLSARecordFetchFailed";
+                  annotations = {
+                    description = "TLSA record {{ $labels.record }} could not be retrieved or is invalid.";
+                    summary = "TLSA record fetch failed for {{ $labels.record }}";
+                  };
+                  expr = "mtce_tlsa_status == 0";
+                  for = "1m";
+                  labels.everity = "critical";
                 }
                 {
-                  expr = "synapse_federation_client_sent_pdu_destinations_count_total + 0";
-                  labels.type = "PDU";
-                  record = "synapse_federation_client_sent";
+                  alert = "SMTPServerDown";
+                  annotations = {
+                    description = "SMTP server {{ $labels.hostname }} is unreachable over {{ $labels.ip }}.";
+                    summary = "SMTP server down ({{ $labels.hostname }} over {{ $labels.ip }})";
+                  };
+                  expr = "mtce_smtp_status == 0";
+                  for = "1m";
+                  labels.everity = "critical";
                 }
                 {
-                  expr = "sum(synapse_federation_client_sent_queries) by (job)";
-                  labels.type = "Query";
-                  record = "synapse_federation_client_sent";
-                }
-                {
-                  expr = "synapse_federation_server_received_edus_total + 0";
-                  labels.type = "EDU";
-                  record = "synapse_federation_server_received";
-                }
-                {
-                  expr = "synapse_federation_server_received_pdus_total + 0";
-                  labels.type = "PDU";
-                  record = "synapse_federation_server_received";
-                }
-                {
-                  expr = "sum(synapse_federation_server_received_queries) by (job)";
-                  labels.type = "Query";
-                  record = "synapse_federation_server_received";
-                }
-                {
-                  expr = "synapse_federation_transaction_queue_pending_edus + 0";
-                  labels.type = "EDU";
-                  record = "synapse_federation_transaction_queue_pending";
-                }
-                {
-                  expr = "synapse_federation_transaction_queue_pending_pdus + 0";
-                  labels.type = "PDU";
-                  record = "synapse_federation_transaction_queue_pending";
+                  alert = "SMTPCertificateInvalid";
+                  annotations = {
+                    description = "The SMTP certificate presented by {{ $labels.hostname }} over {{ $labels.ip }} does not match the expected TLSA record (digest mismatch).";
+                    summary = "Invalid SMTP certificate for {{ $labels.hostname }} ({{ $labels.ip }})";
+                  };
+                  expr = "mtce_smtp_cert_status == 0";
+                  for = "1m";
+                  labels.everity = "critical";
                 }
               ];
             }

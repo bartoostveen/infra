@@ -7,7 +7,7 @@
 
 let
   inherit (lib) mkOption types;
-  inherit (types) attrs;
+  inherit (types) attrsOf attrs;
 in
 {
   imports = [
@@ -18,7 +18,7 @@ in
   options.infra = {
     extraScrapeConfigs = mkOption {
       description = "List of targets that can be monitored by Prometheus on this host";
-      type = attrs;
+      type = attrsOf attrs;
       default = { };
     };
   };
