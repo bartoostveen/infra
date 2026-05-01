@@ -16,6 +16,7 @@
 
         "bart@boostveen.nl"
 
+        "me@omeduostuurcentenneef.nl"
         "bart@omeduostuurcentenneef.nl"
         "postmaster@omeduostuurcentenneef.nl"
         "security@omeduostuurcentenneef.nl"
@@ -35,5 +36,35 @@
       hashedPasswordFile = config.sops.secrets.authentik-email-password-encrypted.path;
       sendOnly = true;
     };
+  };
+
+  sops.secrets.alertmanager-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/email-passwords/alertmanager.enc.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot.service"
+    ];
+  };
+
+  sops.secrets.authentik-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/email-passwords/auth.enc.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot.service"
+    ];
+  };
+
+  sops.secrets.bart-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/email-passwords/bart.enc.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot2.service"
+    ];
   };
 }
