@@ -195,7 +195,12 @@ in
                 {
                   alert = "SMTPCertificateInvalid";
                   annotations = {
-                    description = "The SMTP certificate presented by {{ $labels.hostname }} over {{ $labels.ip }} does not match the expected TLSA record (digest mismatch).";
+                    description = ''
+                      The SMTP certificate presented by {{ $labels.hostname }} over {{ $labels.ip }} does not match the expected TLSA record (digest mismatch).
+
+                      TLSA digest:               {{ $labels.tlsa_digest }}
+                      Actual certificate digest: {{ $labels.cert_digest }}
+                    '';
                     summary = "Invalid SMTP certificate for {{ $labels.hostname }} ({{ $labels.ip }})";
                   };
                   expr = "mtce_smtp_cert_status == 0";
