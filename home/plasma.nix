@@ -45,7 +45,7 @@
       "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwinrc"."Desktops"."Id_1" = "32f7aab7-d3d2-463f-897b-3795a776364c";
       "kwinrc"."Desktops"."Number" = 4;
-      "kwinrc"."Desktops"."Rows" = 2;
+      "kwinrc"."Desktops"."Rows" = 1;
       "kwinrc"."EdgeBarrier"."EdgeBarrier" = 10;
       "kwinrc"."Effect-slide"."HorizontalGap" = 0;
       "kwinrc"."Effect-slide"."VerticalGap" = 0;
