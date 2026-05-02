@@ -21,8 +21,8 @@ php.buildComposerProject2 (_finalAttrs: {
   src = fetchFromGitHub {
     owner = "bartoostveen";
     repo = "roundcube-oidc";
-    rev = "e8e4e4cd5421c1f01e1e05f9804b04cbf781e1fa";
-    hash = "sha256-VYVWHoYFaNfAg0alIjNS187KoWdAr93744VtKlwqBDU=";
+    rev = "ed64ff998624b2e482a59c12b2870a74b2890cdd";
+    hash = "sha256-ySgYNuiO+9X5+DcD9ZiG/GEe2UssrQoxTzlDZBqeox8=";
   };
 
   vendorHash = "sha256-n6xV5LIAyquQr1HsPJa5j/Mb9OVUW+101+hvpFbffO8=";

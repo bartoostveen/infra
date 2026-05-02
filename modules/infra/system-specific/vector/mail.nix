@@ -129,10 +129,12 @@ in
           $config['oidc_master_user_separator'] = '${dovecotSeparator}';
           $config['oidc_config_master_user'] = '${dovecotMasterUser}';
           $config['oidc_url'] = 'https://auth.popkoorklankkleur.nl/application/o/webmail/';
+          $config['oidc_logout_url'] = 'https://auth.popkoorklankkleur.nl/application/o/webmail/end-session/';
           $config['oidc_client'] = 'VZITfwq9s64f2JJp6Rdb7EGPWnYrQqRU0S1ZrUw5';
           $config['oidc_secret'] = trim(file_get_contents("${roundcubeClientSecretFile}"));
           $config['oidc_scope'] = 'openid profile roundcube';
           $config['oidc_field_uid'] = 'webmail_email';
+          $config['oidc_force'] = true;
         '';
       };
     in
@@ -143,6 +145,10 @@ in
       plugins = [
         "roundcube_oidc"
         "managesieve"
+        "markasjunk"
+        "newmail_notifier"
+        "vcard_attachments"
+        "zipdownloads"
       ];
       maxAttachmentSize = 256;
       extraConfig = ''
@@ -159,6 +165,8 @@ in
 
         // always, except when replying to plain text message
         $config['htmleditor'] = 4;
+
+        $config['username_domain'] = '${config.mailserver.systemDomain}';
 
         $config['imap_host'] = "ssl://${config.mailserver.fqdn}:993";
         $config['imap_auth_type'] = 'LOGIN';
@@ -178,6 +186,10 @@ in
                 'verify_peer_name' => false,
             ),
         );
+
+        $config['managesieve_host'] = "tls://${config.mailserver.fqdn}";
+        $config['managesieve_port'] = 4190;
+        $config['managesieve_usetls'] = true;
       '';
     };
 
