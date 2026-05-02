@@ -148,7 +148,7 @@ in
         "markasjunk"
         "newmail_notifier"
         "vcard_attachments"
-        "zipdownloads"
+        "zipdownload"
       ];
       maxAttachmentSize = 256;
       extraConfig = ''
