@@ -7,7 +7,9 @@ let
     mkIf
     mkAfter
     mkEnableOption
+    mkDefault
     concatStringsSep
+    optionalString
     ;
 
   inherit (types)
@@ -64,10 +66,11 @@ in
               );
             };
           };
-          config = mkIf config.enableHSTS {
-            extraConfig = mkAfter ''
+          config = {
+            extraConfig = mkAfter (optionalString config.enableHSTS ''
               add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-            '';
+            '');
+            kTLS = mkDefault true;
           };
         }
       )
