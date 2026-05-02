@@ -48,8 +48,8 @@ in
     ../modules/infra/git.nix
     ../modules/infra/matrix
     ../modules/infra/networking.nix
-    ../modules/infra/nginx.nix
     ../modules/infra/nginx.extra.nix
+    ../modules/infra/nginx.nix
     ../modules/infra/nix.nix
     ../modules/infra/podman.nix
     # keep-sorted end

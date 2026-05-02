@@ -25,7 +25,6 @@
     ../modules/desktop/podman.nix
     ../modules/desktop/printing.nix
     ../modules/desktop/sudo.nix
-    ../modules/desktop/wireshark.nix
   ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
