@@ -49,6 +49,7 @@
       packages.autokuma = pkgs.callPackage ../pkgs/autokuma/package.nix { };
       packages.github-readme-stats = pkgs.callPackage ../pkgs/github-readme-stats/package.nix { };
       packages.ketesa = pkgs.callPackage ../pkgs/ketesa/package.nix { };
+      packages.ketesa-unwrapped = pkgs.callPackage ../pkgs/ketesa/unwrapped.nix { };
       packages.librepods = pkgs.callPackage ../pkgs/librepods/package.nix { };
       packages.matrix-stickerbook = pkgs.callPackage ../pkgs/matrix-stickerbook/package.nix { };
       packages.mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
