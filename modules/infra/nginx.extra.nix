@@ -67,9 +67,11 @@ in
             };
           };
           config = {
-            extraConfig = mkAfter (optionalString config.enableHSTS ''
-              add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-            '');
+            extraConfig = mkAfter (
+              optionalString config.enableHSTS ''
+                add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+              ''
+            );
             kTLS = mkDefault true;
           };
         }
