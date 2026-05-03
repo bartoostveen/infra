@@ -96,7 +96,7 @@ in
       stateVersion = mkDefault 4; # Only change this line after performing state migrations!
     };
 
-    services.nginx.virtualHosts."${cfg.systemDomain}" = {
+    services.nginx.virtualHosts.${cfg.systemDomain} = {
       serverAliases = (lib.lists.remove cfg.systemDomain cfg.domains) ++ [ cfg.fqdn ];
       forceSSL = mkDefault true;
       enableACME = mkForce true;
@@ -203,6 +203,10 @@ in
     services.nginx.virtualHosts."autoconfig.${cfg.systemDomain}" = mkIf metaCfg.autoconfig {
       enableACME = true;
       forceSSL = true;
+      serverAliases =
+        config.services.nginx.virtualHosts.${cfg.systemDomain}.serverAliases
+        |> lib.lists.remove cfg.fqdn
+        |> map (s: "autoconfig.${s}");
       locations."= /mail/config-v1.1.xml".root = pkgs.writeTextDir "mail/config-v1.1.xml" ''
         <?xml version="1.0" encoding="UTF-8"?>
 
