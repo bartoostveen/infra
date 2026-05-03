@@ -204,8 +204,8 @@ in
       enableACME = true;
       forceSSL = true;
       serverAliases =
-        config.services.nginx.virtualHosts.${cfg.systemDomain}.serverAliases
-        |> lib.lists.remove cfg.fqdn
+        cfg.domains
+        |> lib.lists.remove cfg.systemDomain
         |> map (s: "autoconfig.${s}");
       locations."= /mail/config-v1.1.xml".root = pkgs.writeTextDir "mail/config-v1.1.xml" ''
         <?xml version="1.0" encoding="UTF-8"?>
