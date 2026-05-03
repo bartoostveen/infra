@@ -51,11 +51,10 @@ let
   dovecotMasterPasswordFile = config.sops.secrets.dovecot-master-password.path;
   dovecotMasterPasswdFile = config.sops.secrets.dovecot-master-passwd.path;
   roundcubeClientSecretFile = config.sops.secrets.roundcube-client-secret.path;
-
 in
 {
   imports = [
-    ../../mail.nix
+    ../../mail
   ];
 
   mailserver = {

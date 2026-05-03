@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../mail.nix
+    ../../../mail
     ./accounts.nix
   ];
 
