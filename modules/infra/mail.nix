@@ -24,6 +24,7 @@ let
   inherit (types) bool listOf str;
 
   cfg = config.mailserver;
+  metaCfg = config.infra.mail;
 
   rspamdMetricsPort = 32475;
   tlsaExporterPort = 19309;
@@ -36,6 +37,12 @@ in
   options.infra.mail = {
     enableDefaults = mkOption {
       description = "Whether to enable global email defaults";
+      type = bool;
+      default = true;
+      example = false;
+    };
+    autoconfig = mkOption {
+      description = "Whether to enable autoconfig";
       type = bool;
       default = true;
       example = false;
@@ -59,7 +66,7 @@ in
     };
   };
 
-  config = mkIf (config.infra.mail.enableDefaults) {
+  config = mkIf (metaCfg.enableDefaults) {
     mailserver = {
       enable = mkDefault true;
       fqdn = mkDefault "mx.${cfg.systemDomain}";
@@ -96,7 +103,7 @@ in
     };
 
     # In order to support consistent DANE TLSA
-    security.acme.certs."${cfg.systemDomain}".extraLegoRenewFlags = mkIf config.infra.mail.tlsa [
+    security.acme.certs."${cfg.systemDomain}".extraLegoRenewFlags = mkIf metaCfg.tlsa [
       "--reuse-key"
     ];
 
@@ -107,7 +114,7 @@ in
     };
     infra.extraScrapeConfigs.rspamd.port = rspamdMetricsPort;
 
-    sops.secrets = mkIf (config.infra.mail.sops) (
+    sops.secrets = mkIf (metaCfg.sops) (
       genAttrs' (attrNames cfg.dkim.domains) (
         name:
         nameValuePair "${name}.mail.key" {
@@ -127,7 +134,7 @@ in
       in
       {
         mapFiles.${deniedRecipientsFileName} = builtins.toFile deniedRecipientsFileName (
-          config.infra.mail.additionalDeniedRecipients
+          metaCfg.additionalDeniedRecipients
           |> map (n: "${n} REJECT This account cannot receive emails.")
           |> concatStringsSep "\n"
         );
@@ -144,8 +151,8 @@ in
     infra.backup.jobs.state.paths = [ config.mailserver.storage.path ];
 
     # ----------- DANE/TLSA EXPORTER ----------- #
-    infra.extraScrapeConfigs.tlsa = mkIf config.infra.mail.tlsa { port = tlsaExporterPort; };
-    systemd.services.prometheus-tlsa-exporter = mkIf config.infra.mail.tlsa {
+    infra.extraScrapeConfigs.tlsa = mkIf metaCfg.tlsa { port = tlsaExporterPort; };
+    systemd.services.prometheus-tlsa-exporter = mkIf metaCfg.tlsa {
       description = "Prometheus TLSA exporter";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
@@ -192,5 +199,35 @@ in
       };
     };
     # ----------- DANE/TLSA EXPORTER ----------- #
+
+    services.nginx.virtualHosts."autoconfig.${cfg.systemDomain}" = mkIf metaCfg.autoconfig {
+      enableACME = true;
+      forceSSL = true;
+      locations."= /mail/config-v1.1.xml".root = pkgs.writeTextDir "mail/config-v1.1.xml" ''
+        <?xml version="1.0" encoding="UTF-8"?>
+
+        <clientConfig version="1.1">
+         <emailProvider id="${cfg.systemDomain}">
+           <domain>${cfg.systemDomain}</domain>
+           <displayName>${cfg.systemName}</displayName>
+           <displayShortName>${cfg.systemDomain}</displayShortName>
+           <incomingServer type="imap">
+             <hostname>${cfg.fqdn}</hostname>
+             <port>993</port>
+             <socketType>SSL</socketType>
+             <authentication>password-cleartext</authentication>
+             <username>%EMAILADDRESS%</username>
+           </incomingServer>
+           <outgoingServer type="smtp">
+             <hostname>${cfg.fqdn}</hostname>
+             <port>465</port>
+             <socketType>SSL</socketType>
+             <authentication>password-cleartext</authentication>
+             <username>%EMAILADDRESS%</username>
+           </outgoingServer>
+         </emailProvider>
+        </clientConfig>
+      '';
+    };
   };
 }
