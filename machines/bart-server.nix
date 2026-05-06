@@ -33,6 +33,7 @@ in
     ../modules/infra/system-specific/main/maubot.nix
     ../modules/infra/system-specific/main/meowbot.nix
     ../modules/infra/system-specific/main/monitoring.nix
+    ../modules/infra/system-specific/main/venator.nix
     ../modules/infra/system-specific/main/wireguard.monitoring.nix
     # keep-sorted end
 
