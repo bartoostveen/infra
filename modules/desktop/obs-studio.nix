@@ -8,7 +8,7 @@
 {
   programs.obs-studio = {
     enable = true;
-    enableVirtualCamera = lib.mkDefault;
+    enableVirtualCamera = lib.mkDefault true;
 
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs

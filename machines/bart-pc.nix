@@ -1,8 +1,4 @@
 {
-  ...
-}:
-
-{
   imports = [
     ./bart-pc.hardware.nix
 
@@ -23,7 +19,6 @@
     ../modules/desktop/podman.nix
     ../modules/desktop/printing.nix
     ../modules/desktop/sudo.nix
-    ../modules/desktop/wireshark.nix
   ];
 
   boot.loader.grub =
@@ -31,7 +26,7 @@
       gfxmode = "1920x1080-75";
     in
     {
-      device = "/dev/nvme0n1"; # TODO: replace with disk UUID
+      device = "/dev/nvme0n1";
       gfxmodeEfi = gfxmode;
       gfxmodeBios = gfxmode;
     };
@@ -42,12 +37,12 @@
 
   programs.steam.enable = true;
 
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "no";
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
+  };
 
   system.stateVersion = "26.05";
 }

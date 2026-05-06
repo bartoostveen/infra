@@ -6,6 +6,7 @@
         ip = "bartoostveen.nl";
       };
       bart-laptop-new.sshUser = "bart";
+      bart-pc.sshUser = "bart";
       atlas = {
         sshUser = "root";
         system = "aarch64-linux";
@@ -26,6 +27,10 @@
       {
         username = "bart";
         hostname = "bart-laptop-new";
+      }
+      {
+        username = "bart";
+        hostname = "bart-pc";
       }
     ];
   };
