@@ -14,6 +14,7 @@ in
     inputs.nixos-mailserver.nixosModule
     # keep-sorted start
     ./autoconfig.nix
+    ./bounce.nix
     ./dkim.nix
     ./monitoring.nix
     ./server.nix

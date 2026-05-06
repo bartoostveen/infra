@@ -65,7 +65,6 @@ in
 
       settings.main = {
         inet_protocols = mkForce "ipv4, ipv6";
-        bounce_template_file = mkDefault "${./bounce-template.cf}";
         smtpd_recipient_restrictions = [
           "check_recipient_access hash:/var/lib/postfix/conf/${deniedRecipientsFileName}"
         ];

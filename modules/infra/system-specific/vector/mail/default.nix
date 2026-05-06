@@ -54,7 +54,8 @@ let
 in
 {
   imports = [
-    ../../mail
+    ../../../mail
+    ./bounce.nix
   ];
 
   mailserver = {
@@ -95,10 +96,7 @@ in
     "ldapservice@popkoorklankkleur.nl"
   ];
 
-  services.postfix.settings.main = {
-    bounce_template_file = "${./bounce-template.cf}";
-    virtual_alias_maps = [ "ldap:${ldapGroupsFile}" ];
-  };
+  services.postfix.settings.main.virtual_alias_maps = [ "ldap:${ldapGroupsFile}" ];
 
   services.dovecot2.settings = {
     auth_master_user_separator = dovecotSeparator;
@@ -214,7 +212,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../secrets/dovecot-master-password.secret;
+    sopsFile = ../../../../../secrets/dovecot-master-password.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -228,7 +226,7 @@ in
     owner = "dovecot2";
     group = "dovecot2";
 
-    sopsFile = ../../../../secrets/dovecot-master-passwd.secret;
+    sopsFile = ../../../../../secrets/dovecot-master-passwd.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -241,7 +239,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../secrets/roundcube-client.secret;
+    sopsFile = ../../../../../secrets/roundcube-client.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -254,7 +252,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../secrets/roundcube-des.secret;
+    sopsFile = ../../../../../secrets/roundcube-des.secret;
 
     restartUnits = [ "phpfpm-roundcube.service" ];
   };
