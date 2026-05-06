@@ -58,8 +58,8 @@
       packages.meshcoredecoder = pkgs.callPackage ../pkgs/meshcoredecoder/package.nix { };
       packages.roundcube-oidc = pkgs.callPackage ../pkgs/roundcube-oidc/package.nix { };
       packages.tilp = pkgs.callPackage ../pkgs/tilp/package.nix { };
-      packages.wp-oidc-roles = pkgs.callPackage ../pkgs/wp-oidc-roles/package.nix { };
       packages.venator = pkgs.callPackage ../pkgs/venator/package.nix { };
+      packages.wp-oidc-roles = pkgs.callPackage ../pkgs/wp-oidc-roles/package.nix { };
       # keep-sorted end
 
       packages.sops-rotate =

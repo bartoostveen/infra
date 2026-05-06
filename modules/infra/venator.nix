@@ -10,7 +10,6 @@ let
     mkIf
     mkOption
     mkEnableOption
-    mkPackageOption
     types
     getExe
     optional
