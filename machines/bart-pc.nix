@@ -2,6 +2,8 @@
   imports = [
     ./bart-pc.hardware.nix
 
+    ../modules/wireguard.nix
+
     ../modules/desktop/users/bart.nix
 
     ../modules/desktop/android.nix
@@ -36,6 +38,8 @@
   '';
 
   programs.steam.enable = true;
+
+  infra.wireguard.enable = true;
 
   systemd.sleep.settings.Sleep = {
     AllowSuspend = "no";
