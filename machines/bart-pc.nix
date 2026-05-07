@@ -41,6 +41,8 @@
 
   infra.wireguard.enable = true;
 
+  hardware.ckb-next.enable = true;
+
   systemd.sleep.settings.Sleep = {
     AllowSuspend = "no";
     AllowHibernation = "no";
