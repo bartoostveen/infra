@@ -19,7 +19,7 @@ in
   infra.autokuma.instances.local = mkIf config.infra.wireguard.enable {
     tags.wireguard = {
       name = "Wireguard";
-      color = "#ffea00";
+      color = "#88171a";
     };
     monitors =
       map (

@@ -36,7 +36,10 @@ in
         };
         autokuma = {
           name = "Managed by AutoKuma @ ${config.networking.fqdn}";
-          color = "#ea2121";
+          color =
+            pkgs.runCommand "name" { }
+              "printf '#%06X' $(( 0x$(printf '%s' '${config.networking.fqdn}' | sha256sum | cut -c1-6) % 0x1000000 )) > $out"
+            |> builtins.readFile;
         };
       };
       monitors =
