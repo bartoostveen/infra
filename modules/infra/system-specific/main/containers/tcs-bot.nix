@@ -3,6 +3,7 @@
   lib,
   inputs,
   config,
+  wireguard,
   ...
 }:
 
@@ -40,16 +41,16 @@ let
 in
 {
   virtualisation.oci-containers.containers = {
-    ${name} = {
-      image = "localhost/${name}:${pkg.version}";
-      imageStream = dockerImage;
-      environment = env;
-      environmentFiles = [ config.sops.secrets.tcs-bot-env.path ];
-      ports = [
-        "127.0.0.1:${toString port}:${toString port}"
-        "10.0.0.1:${toString port}:${toString port}"
-      ];
-    };
+    # ${name} = {
+    #   image = "localhost/${name}:${pkg.version}";
+    #   imageStream = dockerImage;
+    #   environment = env;
+    #   environmentFiles = [ config.sops.secrets.tcs-bot-env.path ];
+    #   ports = [
+    #     "127.0.0.1:${toString port}:${toString port}"
+    #     "${wireguard.primaryIpOf config.networking.hostName}:${toString port}:${toString port}"
+    #   ];
+    # };
     "${name}-db" = {
       image = "postgres:latest";
       environment = {
@@ -68,46 +69,47 @@ in
     forceSSL = true;
     enableACME = true;
     locations = {
-      "/".proxyPass = "http://localhost:${toString port}";
-      "/metrics".extraConfig = "return 404;";
+      "/".root = pkgs.writeTextDir "/index.html" (builtins.readFile ./tcs-bot-temporarily-unavailable.html);
+      # "/".proxyPass = "http://localhost:${toString port}";
+      # "/metrics".extraConfig = "return 404;";
     };
   };
 
-  infra.extraScrapeConfigs.tcs-bot = {
-    inherit port;
-  };
+  # infra.extraScrapeConfigs.tcs-bot = {
+  #   inherit port;
+  # };
 
-  sops.secrets.tcs-bot-env = {
-    format = "binary";
-    sopsFile = ../../../../../secrets/tcs-bot.env.secret;
-    restartUnits = [ "podman-tcs-bot.service" ];
-  };
+  # sops.secrets.tcs-bot-env = {
+  #   format = "binary";
+  #   sopsFile = ../../../../../secrets/tcs-bot.env.secret;
+  #   restartUnits = [ "podman-tcs-bot.service" ];
+  # };
 
-  systemd.timers."${name}-db-backup" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "daily";
-      Persistent = true;
-      Unit = "${name}-db-backup.service";
-    };
-  };
+  # systemd.timers."${name}-db-backup" = {
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnCalendar = "daily";
+  #     Persistent = true;
+  #     Unit = "${name}-db-backup.service";
+  #   };
+  # };
 
-  systemd.services."${name}-db-backup" = {
-    script = ''
-      set -eu
-      mkdir -p ${backupDir}
-      chown -R root:users ${backupDir}
-      ${lib.getExe' pkgs.postgresql_18 "pg_dump"} \
-        -h $(${lib.getExe pkgs.podman} container inspect -f '{{.NetworkSettings.IPAddress}}' ${name}-db) \
-        -d ${name} \
-        -U "${dbUser}" > ${backupDir}/dump-$(date +%Y-%m-%d--%H-%M-%S).bak
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
-    };
-    environment.PGPASSWORD = dbPassword;
-  };
+  # systemd.services."${name}-db-backup" = {
+  #   script = ''
+  #     set -eu
+  #     mkdir -p ${backupDir}
+  #     chown -R root:users ${backupDir}
+  #     ${lib.getExe' pkgs.postgresql_18 "pg_dump"} \
+  #       -h $(${lib.getExe pkgs.podman} container inspect -f '{{.NetworkSettings.IPAddress}}' ${name}-db) \
+  #       -d ${name} \
+  #       -U "${dbUser}" > ${backupDir}/dump-$(date +%Y-%m-%d--%H-%M-%S).bak
+  #   '';
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     User = "root";
+  #   };
+  #   environment.PGPASSWORD = dbPassword;
+  # };
 
   services.copyparty.volumes."/${name}-backups" = {
     access.A = "adm";
