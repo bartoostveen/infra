@@ -50,6 +50,7 @@
         ];
       };
 
+      _module.args.smallPkgs = mkSimplePkgs inputs.nixos-small;
       _module.args.stablePkgs = mkSimplePkgs inputs.nixpkgs-stable;
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 

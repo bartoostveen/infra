@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  smallPkgs,
   ...
 }:
 
@@ -43,6 +44,8 @@ in
       efiSupport = true;
       efiInstallAsRemovable = true;
     };
+
+    boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_0;
 
     networking.useNetworkd = lib.mkForce true;
     networking.firewall.enable = lib.mkForce true;

@@ -84,6 +84,7 @@ in
         withSystem system (
           {
             pkgs,
+            smallPkgs,
             stablePkgs,
             continuwuityPkgs,
             ...
@@ -95,6 +96,7 @@ in
             specialArgs = {
               inherit
                 inputs
+                smallPkgs
                 stablePkgs
                 continuwuityPkgs
                 wireguard
