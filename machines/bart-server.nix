@@ -30,6 +30,7 @@ in
     ../modules/infra/system-specific/main/ical-proxy.nix
     ../modules/infra/system-specific/main/ircbounce.nix
     ../modules/infra/system-specific/main/mailserver
+    ../modules/infra/system-specific/main/matrix.nix
     ../modules/infra/system-specific/main/maubot.nix
     ../modules/infra/system-specific/main/meowbot.nix
     ../modules/infra/system-specific/main/monitoring.nix
@@ -47,7 +48,6 @@ in
     ../modules/infra/copyparty.nix
     ../modules/infra/fail2ban.nix
     ../modules/infra/git.nix
-    ../modules/infra/matrix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.extra.nix
     ../modules/infra/nginx.nix

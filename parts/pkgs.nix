@@ -57,6 +57,8 @@
       packages.meshcore-scan = pkgs.callPackage ../pkgs/meshcore-scan/package.nix { };
       packages.meshcoredecoder = pkgs.callPackage ../pkgs/meshcoredecoder/package.nix { };
       packages.roundcube-oidc = pkgs.callPackage ../pkgs/roundcube-oidc/package.nix { };
+      packages.sable = pkgs.callPackage ../pkgs/sable/package.nix { };
+      packages.sable-unwrapped = pkgs.callPackage ../pkgs/sable/unwrapped.nix { };
       packages.tilp = pkgs.callPackage ../pkgs/tilp/package.nix { };
       packages.venator = pkgs.callPackage ../pkgs/venator/package.nix { };
       packages.wp-oidc-roles = pkgs.callPackage ../pkgs/wp-oidc-roles/package.nix { };
