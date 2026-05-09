@@ -51,6 +51,55 @@ in
           allowCustomHomeservers = true;
           featuredCommunities = { };
           hashRouter.enabled = true;
+          settingsDefaults = {
+            alwaysShowCallButton = true;
+            badgeCountDMsOnly = true;
+            bundledPreview = false;
+            clearNotificationsOnRead = true;
+            clientPreviewYoutube = true;
+            clientUrlPreview = false;
+            closeFoldersByDefault = true;
+            composerToolbarOpen = false;
+            customDMCards = true;
+            developerTools = true;
+            emojiSuggestThreshold = 2;
+            encClientUrlPreview = false;
+            encUrlPreview = false;
+            faviconForMentionsOnly = false;
+            hideActivity = false;
+            hideMembershipEvents = false;
+            hideMembershipInReadOnly = false;
+            hideNickAvatarEvents = false;
+            hideReads = false;
+            highlightMentions = true;
+            hour24Clock = true;
+            incomingInlineImagesDefaultHeight = 32;
+            incomingInlineImagesMaxHeight = 64;
+            isNotificationSounds = false;
+            legacyUsernameColor = false;
+            linkPreviewImageMaxHeight = 640;
+            showHiddenEvents = true;
+            showMessageContentInEncryptedNotifications = false;
+            showMessageContentInNotifications = true;
+            showPingCounts = true;
+            showPronouns = true;
+            showTombstoneEvents = true;
+            showUnreadCounts = true;
+            themeRemoteCatalogEnabled = true;
+            themeRemoteDarkFullUrl = "https://raw.githubusercontent.com/SableClient/themes/main/themes/cinny-dark.sable.css";
+            themeRemoteDarkKind = "dark";
+            themeRemoteFavorites = [
+              {
+                basename = "cinny-dark";
+                displayName = "Cinny Dark";
+                fullUrl = "https://raw.githubusercontent.com/SableClient/themes/main/themes/cinny-dark.sable.css";
+                kind = "dark";
+                pinned = false;
+              }
+            ];
+            urlPreview = true;
+            useInAppNotifications = true;
+          };
         };
       };
       domains = map (n: "cinny${toString n}.${fqdn}") cinnies;
