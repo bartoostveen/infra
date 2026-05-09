@@ -1,42 +1,42 @@
 {
   pkgs,
-  lib,
-  inputs,
-  config,
-  wireguard,
+  # lib,
+  # inputs,
+  # config,
+  # wireguard,
   ...
 }:
 
 let
   domain = "tcsdiscord.bartoostveen.nl";
   name = "tcs-bot";
-  port = 6769;
+  # port = 6769;
   dbUser = name;
   dbPassword = "Waarom moet dit, dit is echt super nutteloos aangezien de database niet exposed is, maar hee aan de ene aardling die dit leest, goeie dagschotel!";
-  env = {
-    CANVAS_CA_BUNDLE = "/etc/ssl/certs/ca-bundle.crt";
-    REDIS_CONNECTION_STRING = "${name}-redis:6379";
-    DATABASE_CONNECTION_STRING = "jdbc:postgresql://${name}-db:5432/${name}";
-    DATABASE_USERNAME = dbUser;
-    DATABASE_PASSWORD = dbPassword;
-    PORT = toString port;
-    HOSTNAME = "https://${domain}";
-    ENVIRONMENT = "PRODUCTION";
-  };
-  pkg = inputs.tcs-bot.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  dockerImage = pkgs.dockerTools.streamLayeredImage {
-    inherit name;
-    tag = pkg.version;
-    contents = with pkgs; [
-      pkg
-      busybox
-      cacert
-      curl
-      coreutils-full
-      bashInteractive
-    ];
-    config.Cmd = [ "/bin/${pkg.pname}" ];
-  };
+  # env = {
+  #   CANVAS_CA_BUNDLE = "/etc/ssl/certs/ca-bundle.crt";
+  #   REDIS_CONNECTION_STRING = "${name}-redis:6379";
+  #   DATABASE_CONNECTION_STRING = "jdbc:postgresql://${name}-db:5432/${name}";
+  #   DATABASE_USERNAME = dbUser;
+  #   DATABASE_PASSWORD = dbPassword;
+  #   PORT = toString port;
+  #   HOSTNAME = "https://${domain}";
+  #   ENVIRONMENT = "PRODUCTION";
+  # };
+  # pkg = inputs.tcs-bot.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  # dockerImage = pkgs.dockerTools.streamLayeredImage {
+  #   inherit name;
+  #   tag = pkg.version;
+  #   contents = with pkgs; [
+  #     pkg
+  #     busybox
+  #     cacert
+  #     curl
+  #     coreutils-full
+  #     bashInteractive
+  #   ];
+  #   config.Cmd = [ "/bin/${pkg.pname}" ];
+  # };
   backupDir = "/srv/${name}-backups";
 in
 {
@@ -69,7 +69,9 @@ in
     forceSSL = true;
     enableACME = true;
     locations = {
-      "/".root = pkgs.writeTextDir "/index.html" (builtins.readFile ./tcs-bot-temporarily-unavailable.html);
+      "/".root = pkgs.writeTextDir "/index.html" (
+        builtins.readFile ./tcs-bot-temporarily-unavailable.html
+      );
       # "/".proxyPass = "http://localhost:${toString port}";
       # "/metrics".extraConfig = "return 404;";
     };
