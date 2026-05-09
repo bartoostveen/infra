@@ -50,6 +50,9 @@ in
         default = "lk.example.com";
       };
     };
+    discord.enable = mkEnableOption "Discord bridge";
+    signal.enable = mkEnableOption "Signal bridge";
+    telegram.enable = mkEnableOption "Telegram bridge";
     element = {
       enable = mkEnableOption "Element web client";
       package = mkPackageOption pkgs "element-web" { };

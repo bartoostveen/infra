@@ -2,12 +2,26 @@
 
 {
   mkElementCall =
-    elementCallConfig:
-    pkgs.element-call.overrideAttrs {
-      postInstall = ''
-        install ${pkgs.writers.writeJSON "element-call.json" elementCallConfig} $out/config.json
-      '';
-    };
+    let
+      inherit (pkgs) stdenv element-call;
+    in
+    conf:
+    if (conf == { }) then
+      element-call
+    else
+      stdenv.mkDerivation {
+        pname = "${element-call.pname}-wrapped";
+        inherit (element-call) version meta;
+
+        dontUnpack = true;
+        installPhase = ''
+          runHook preInstall
+          mkdir -p $out
+          ln -s ${element-call}/* $out
+          rm $out/config.json
+          cp ${builtins.toFile "element-call-config.json" (builtins.toJSON conf)} $out/config.json
+        '';
+      };
 
   mkAutokumaMonitor = homeserver: {
     tags.matrix = {

@@ -33,6 +33,9 @@ in
       enable = true;
       domain = "element.${fqdn}";
     };
+    discord.enable = false;
+    signal.enable = true;
+    telegram.enable = true;
     cinny = {
       enable = true;
       package = pkgs.local.sable.override {
