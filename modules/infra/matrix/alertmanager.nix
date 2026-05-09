@@ -17,7 +17,9 @@ in
       after = [
         "network.target"
         "continuwuity.service"
+        "sops-install-secrets.service"
       ];
+      requires = [ "sops-install-secrets.service" ];
       wantedBy = [ "multi-user.target" ];
       environment = {
         ARGS = "";

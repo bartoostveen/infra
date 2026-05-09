@@ -160,7 +160,13 @@ in
       };
     };
 
-    systemd.services.copyparty.requires = [ "copyparty.socket" ];
+    systemd.services.copyparty = {
+      requires = [
+        "sops-install-secrets.service"
+        "copyparty.socket"
+      ];
+      after = [ "sops-install-secrets.service" ];
+    };
 
     services.anubis.instances.copyparty.settings = {
       BIND = "/run/anubis/anubis-copyparty/anubis-copyparty.sock";

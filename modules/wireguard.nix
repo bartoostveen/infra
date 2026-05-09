@@ -14,6 +14,7 @@ let
     types
     mkIf
     mkDefault
+    mkForce
     attrsToList
     ;
 
@@ -72,12 +73,17 @@ in
     };
 
     sops = {
-      useSystemdActivation = true;
+      useSystemdActivation = mkForce true;
       secrets.${sopsSecret} = {
         format = "binary";
         sopsFile = ../secrets/wireguard/${cfg.host}.private.secret;
         restartUnits = mkIf config.networking.wireguard.useNetworkd [ "systemd-networkd.service" ];
       };
+    };
+
+    systemd.services.systemd-networkd = mkIf config.networking.wireguard.useNetworkd {
+      requires = [ "sops-install-secrets.service" ];
+      after = [ "sops-install-secrets.service" ];
     };
   };
 }

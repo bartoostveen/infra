@@ -47,6 +47,11 @@ in
     };
   };
 
+  systemd.services.alertmanager = {
+    requires = [ "sops-install-secrets.service" ];
+    after = [ "sops-install-secrets.service" ];
+  };
+
   sops.secrets.alertmanager-email-password = {
     format = "binary";
     mode = "0600";
