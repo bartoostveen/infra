@@ -18,7 +18,6 @@
           runHook preInstall
           mkdir -p $out
           ln -s ${element-call}/* $out
-          rm $out/config.json
           cp ${builtins.toFile "element-call-config.json" (builtins.toJSON conf)} $out/config.json
         '';
       };
