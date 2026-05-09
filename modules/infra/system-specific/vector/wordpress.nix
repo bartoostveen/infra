@@ -2,9 +2,8 @@
 
 let
   domain = "popkoorklankkleur.nl";
-  wordpressPackages = pkgs.callPackage ./wordpressPackages.nix { };
 
-  nl = wordpressPackages.lang.nl config.services.wordpress.sites.${domain}.package.version;
+  nl = pkgs.local.wordpressPackages.lang.nl config.services.wordpress.sites.${domain}.package.version;
 in
 {
   services.wordpress = {
@@ -22,7 +21,7 @@ in
         AUTOMATIC_UPDATER_DISABLED = true;
       };
       plugins = {
-        inherit (wordpressPackages.plugins)
+        inherit (pkgs.local.wordpressPackages.plugins)
           # keep-sorted start
           contact-form-7
           generic-oidc
