@@ -15,6 +15,10 @@ buildGoModule (finalAttrs: {
     hash = "sha256-/rnsuFaiMEHv19Wd0rHngpmmQk1Ka07gxu7luJa0emQ=";
   };
 
+  patches = [
+    ./0001-fix-proper-color-handing-according-to-spec.patch
+  ];
+
   vendorHash = "sha256-10CKNQ0mCa+k3aFQH/5XvG5LYGyU/gm+kr2eYmqU6AU=";
 
   ldflags = [ "-s" ];
