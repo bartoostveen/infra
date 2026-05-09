@@ -33,15 +33,15 @@ in
     };
     gutenberg = mkWpPlugin {
       pname = "gutenberg";
-      version = "23.0.0";
+      version = "23.1.1";
       id = "gutenberg";
-      hash = "sha256-htO2xO1gDvf1OYibOjzdjlMErZCULaEZXKWKdTnoUto=";
+      hash = "sha256-9XYmHUAmm/19axFdg6fk0Rg92VbMXgx91NFp8yQv5as=";
     };
     gutenberg-carousel = mkWpPlugin {
       pname = "wp-gutenberg-carousel";
-      version = "2.1.1";
+      version = "2.1.3";
       id = "carousel-block";
-      hash = "sha256-WKQ3aGqzcyWnI9XqNVKvd0RUOvg12sduNbJ6rKdCbQE=";
+      hash = "sha256-BOoTzNm0P4ykvBGmmAvDO46Buyqv5+Xlv+hCrPn0gXg=";
     };
     modify-profile-fields = mkWpPlugin {
       pname = "wp-modify-profile-fields";

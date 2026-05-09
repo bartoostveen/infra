@@ -29,7 +29,12 @@
 
         overlays = [
           self.overlays.default
-          (_final: prev: { local = { inherit wordpressPackages; } // prev.local; })
+          (_final: prev: {
+            local = {
+              inherit wordpressPackages;
+            }
+            // prev.local;
+          })
 
           self.overlays.nix-auth
           self.overlays.invoice
@@ -82,6 +87,7 @@
               findutils
             ];
           };
-      };
+      }
+      // wordpressPackages.plugins;
     };
 }
