@@ -23,6 +23,10 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-KxTpV1XKjeEhTJEWKdcOkEwATs1RzfoGP1vro6xHP5U=";
   };
 
+  patches = [
+    ./0001-warming-up.patch
+  ];
+
   nativeBuildInputs = [
     pnpm
     pnpmConfigHook
