@@ -23,6 +23,8 @@
     ../modules/desktop/sudo.nix
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   boot.loader.grub =
     let
       gfxmode = "1920x1080-75";
