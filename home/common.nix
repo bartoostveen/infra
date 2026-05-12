@@ -86,7 +86,6 @@ in
           signal-desktop
           teams-for-linux
           telegram-desktop
-          thunderbird
           vlc
           wl-clipboard
           # keep-sorted end
@@ -126,6 +125,11 @@ in
     services.nextcloud-client = {
       enable = lib.mkDefault cfg.gui;
       startInBackground = lib.mkDefault true;
+    };
+
+    programs.thunderbird = {
+      enable = lib.mkDefault cfg.gui;
+      settings."mail.openpgp.allow_external_gnupg" = true;
     };
 
     programs.google-chrome.enable = lib.mkDefault cfg.gui;
