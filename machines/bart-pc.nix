@@ -2,6 +2,8 @@
   imports = [
     ./bart-pc.hardware.nix
 
+    ../modules/infra/backup
+
     ../modules/wireguard.nix
 
     ../modules/desktop/users/bart.nix

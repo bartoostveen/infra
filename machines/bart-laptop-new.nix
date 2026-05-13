@@ -8,6 +8,8 @@
   imports = [
     ./bart-laptop-new.hardware.nix
 
+    ../modules/infra/backup
+
     ../modules/wireguard.nix
 
     ../modules/desktop/users/bart.nix
@@ -15,7 +17,6 @@
     # keep-sorted start
     ../modules/desktop/android.nix
     ../modules/desktop/audio.nix
-    ../modules/infra/backup
     ../modules/desktop/bluetooth.nix
     ../modules/desktop/common.nix
     ../modules/desktop/fonts.nix
