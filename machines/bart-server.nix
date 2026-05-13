@@ -36,6 +36,7 @@ in
     ../modules/infra/system-specific/main/monitoring.nix
     ../modules/infra/system-specific/main/venator.nix
     ../modules/infra/system-specific/main/wireguard.monitoring.nix
+    ../modules/infra/system-specific/main/zabbix.nix
     # keep-sorted end
 
     # keep-sorted start
@@ -53,6 +54,7 @@ in
     ../modules/infra/nginx.nix
     ../modules/infra/nix.nix
     ../modules/infra/podman.nix
+    ../modules/infra/zabbix.nix
     # keep-sorted end
   ];
 
