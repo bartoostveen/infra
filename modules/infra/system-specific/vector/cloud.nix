@@ -34,6 +34,7 @@ in
       mail_from_address = "cloud";
       mail_domain = domain;
       defaultapp = "files";
+      "overwrite.cli.url" = "https://${fqdn}";
     };
     phpOptions = {
       "opcache.memory_consumption" = "128";
