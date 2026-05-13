@@ -12,8 +12,10 @@
 
     ../modules/desktop/users/bart.nix
 
+    # keep-sorted start
     ../modules/desktop/android.nix
     ../modules/desktop/audio.nix
+    ../modules/infra/backup
     ../modules/desktop/bluetooth.nix
     ../modules/desktop/common.nix
     ../modules/desktop/fonts.nix
@@ -25,6 +27,7 @@
     ../modules/desktop/podman.nix
     ../modules/desktop/printing.nix
     ../modules/desktop/sudo.nix
+    # keep-sorted end
   ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
@@ -88,6 +91,7 @@
   };
 
   infra.wireguard.enable = true;
+  infra.backup.enableDefaults = true;
 
   programs.steam.enable = true;
 

@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  networking.domain = "device.bartoostveen.nl";
+
   networking.networkmanager.enable = true;
 
   programs.openvpn3.enable = true;
