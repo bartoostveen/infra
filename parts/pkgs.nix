@@ -6,7 +6,12 @@
 
 {
   perSystem =
-    { system, pkgs, smallPkgs, ... }:
+    {
+      system,
+      pkgs,
+      smallPkgs,
+      ...
+    }:
 
     let
       mkSimplePkgs =
@@ -43,17 +48,9 @@
           (_final: _prev: {
             inherit (smallPkgs)
               apacheHttpd
-              cmake
-              cryptsetup
-              emacs
-              git
-              imagemagick
-              jdk
               mariadb
               nginx
-              nodejs
               openssh
-              opensshTest
               php
               postgresql
               postgresql_14
@@ -61,11 +58,6 @@
               postgresql_16
               postgresql_17
               postgresql_18
-              python3
-              rsyslog
-              subversion
-              tarball
-              vim
               ;
           })
 
