@@ -6,7 +6,7 @@
 
 {
   perSystem =
-    { system, pkgs, ... }:
+    { system, pkgs, smallPkgs, ... }:
 
     let
       mkSimplePkgs =
@@ -39,6 +39,36 @@
           self.overlays.nix-auth
           self.overlays.invoice
           self.overlays.fix-jabref
+
+          (_final: _prev: {
+            inherit (smallPkgs)
+              apacheHttpd
+              cmake
+              cryptsetup
+              emacs
+              gettext
+              git
+              imagemagick
+              jdk
+              mariadb
+              nginx
+              nodejs
+              openssh
+              opensshTest
+              php
+              postgresql
+              postgresql_14
+              postgresql_15
+              postgresql_16
+              postgresql_17
+              postgresql_18
+              python3
+              rsyslog
+              subversion
+              tarball
+              vim
+              ;
+          })
 
           inputs.copyparty.overlays.default
           # The design of deploy-rs' flake is truly wonderful, see also deploy.module.nix
