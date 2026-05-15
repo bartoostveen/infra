@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   lib,
   inputs,
   smallPkgs,
@@ -90,11 +91,14 @@ in
     };
 
     environment = {
-      systemPackages = with pkgs; [
-        curl
-        wget
-        # https://nixos.org/manual/nixos/unstable/#module-services-postgres-upgrading
-        (
+      systemPackages =
+        with pkgs;
+        [
+          curl
+          wget
+          # https://nixos.org/manual/nixos/unstable/#module-services-postgres-upgrading
+        ]
+        ++ lib.optional config.services.postgresql.enable (
           let
             newPostgres = pkgs.postgresql_18;
             cfg = config.services.postgresql;
@@ -118,8 +122,7 @@ in
               --old-bindir "$OLDBIN" --new-bindir "$NEWBIN" \
               "$@"
           ''
-        )
-      ];
+        );
       variables.NH_SHOW_ACTIVATION_LOGS = 1;
     };
   };

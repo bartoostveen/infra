@@ -46,7 +46,6 @@
               cmake
               cryptsetup
               emacs
-              gettext
               git
               imagemagick
               jdk
