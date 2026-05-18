@@ -33,6 +33,10 @@ in
         HTTP_PORT = 11022;
         SSH_PORT = head config.services.openssh.ports;
       };
+      overall = {
+        APP_NAME = "Bart's Forgejo";
+        APP_SLOGAN = "er gebeuren dingen hier";
+      };
       actions.ENABLED = true;
       service.DISABLE_REGISTRATION = true;
       mailer = rec {
@@ -124,7 +128,6 @@ in
   };
 
   services.openssh.enable = mkDefault true;
-  virtualisation.podman.enable = mkDefault true;
 
   infra = {
     backup.jobs.state.paths = [ config.services.forgejo.stateDir ];
