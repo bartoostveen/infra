@@ -137,7 +137,7 @@
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
 
     omeduostuurcentenneef-web = {
-      url = "github:bartoostveen/omeduostuurcentenneef-web";
+      url = "git+https://git.bartoostveen.nl/bart/omeduoweb";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         bun2nix.url = "github:nix-community/bun2nix";

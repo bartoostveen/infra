@@ -674,17 +674,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1779020738,
-        "narHash": "sha256-ca7RMEeCL27z+J/YY7ddS/qq9+pxm2JNjSPlbC4uMog=",
-        "owner": "bartoostveen",
-        "repo": "omeduostuurcentenneef-web",
-        "rev": "c0c4acf9655bba32e96b3fe0e2d785519f210ba1",
-        "type": "github"
+        "lastModified": 1779123857,
+        "narHash": "sha256-OpnQaiI2wD9U0HzB3zbklRTI1gOMXxuuNulWuSMHRws=",
+        "ref": "refs/heads/master",
+        "rev": "6f8013a23392eefe35c3901528b32953faee4207",
+        "revCount": 34,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "omeduostuurcentenneef-web",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       }
     },
     "onboarding": {

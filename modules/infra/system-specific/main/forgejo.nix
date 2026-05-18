@@ -33,7 +33,7 @@ in
         HTTP_PORT = 11022;
         SSH_PORT = head config.services.openssh.ports;
       };
-      overall = {
+      DEFAULT = {
         APP_NAME = "Bart's Forgejo";
         APP_SLOGAN = "er gebeuren dingen hier";
       };
