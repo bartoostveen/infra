@@ -29,6 +29,7 @@ in
     ../modules/infra/system-specific/main/containers/web.nix
     ../modules/infra/system-specific/main/ical-proxy.nix
     ../modules/infra/system-specific/main/ircbounce.nix
+    ../modules/infra/system-specific/main/forgejo.nix
     ../modules/infra/system-specific/main/mailserver
     ../modules/infra/system-specific/main/matrix.nix
     ../modules/infra/system-specific/main/maubot.nix
@@ -48,6 +49,7 @@ in
     ../modules/infra/common.nix
     ../modules/infra/copyparty.nix
     ../modules/infra/fail2ban.nix
+    ../modules/infra/forgejo-actions.nix
     ../modules/infra/git.nix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.extra.nix
@@ -87,6 +89,8 @@ in
     jobs.state.paths = config.infra.copyparty.volumes |> mapAttrsToList (_: v: v.path);
     jobs.state.exclude = [ "/root/private/fs/muziek/" ];
   };
+
+  infra.forgejo-actions.enable = true;
 
   sops.secrets.authentik-env = {
     format = "binary";

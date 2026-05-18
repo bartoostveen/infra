@@ -1,0 +1,84 @@
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+
+let
+  inherit (lib)
+    mkEnableOption
+    mkPackageOption
+    mkOption
+    mkDefault
+    types
+    genAttrs'
+    nameValuePair
+    mkIf
+    range
+    ;
+  inherit (types) ints str;
+
+  cfg = config.infra.forgejo-actions;
+  runners = range 0 (cfg.amount - 1);
+in
+{
+  options.infra.forgejo-actions = {
+    enable = mkEnableOption "fj actions";
+    package = mkPackageOption pkgs "forgejo-runner" { };
+    amount = mkOption {
+      description = "The amount of forgejo actions workers";
+      type = ints.positive;
+      default = 4;
+      example = 2;
+    };
+    url = mkOption {
+      description = "The URL of the Forgejo host";
+      type = str;
+      default =
+        inputs.self.nixosConfigurations.bart-server.config.services.forgejo.settings.server.ROOT_URL;
+      example = "https://git.bartoostveen.nl";
+    };
+  };
+  # TODO: add prestart provision script?
+  config = mkIf cfg.enable {
+    services.gitea-actions-runner = {
+      inherit (cfg) package;
+      instances = genAttrs' (map toString runners) (
+        n:
+        nameValuePair "runner${n}" {
+          enable = true;
+          name = "${config.networking.fqdn}-runner${n}";
+          inherit (cfg) url;
+          tokenFile =
+            config.sops.secrets."forgejo-runner-token-${config.networking.hostName}-runner${n}".path;
+        }
+      );
+    };
+
+    virtualisation.podman.enable = mkDefault true;
+
+    users.users.gitea-runner = {
+      isSystemUser = true;
+      group = "gitea-runner";
+    };
+    users.groups.gitea-runner = { };
+
+    # TODO: these secrets are currently identical, move to connections instead
+    sops.secrets = genAttrs' (map toString runners) (
+      n:
+      let
+        name = "forgejo-runner-token-${config.networking.hostName}-runner${n}";
+      in
+      nameValuePair name {
+        sopsFile = ../../secrets/${name}.secret;
+        owner = "gitea-runner";
+        group = "gitea-runner";
+        mode = "0400";
+        format = "binary";
+        restartUnits = [ "gitea-runner-runner${n}.service" ];
+      }
+    );
+  };
+}

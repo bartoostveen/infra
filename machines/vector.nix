@@ -13,11 +13,13 @@
     ../modules/wireguard.nix
 
     # keep-sorted start
+    ../modules/infra/alertmanager.nix
     ../modules/infra/alloy.nix
     ../modules/infra/autokuma-config.nix
     ../modules/infra/backup
     ../modules/infra/common.nix
     ../modules/infra/fail2ban.nix
+    ../modules/infra/forgejo-actions.nix
     ../modules/infra/git.nix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.extra.nix
@@ -29,7 +31,6 @@
     # keep-sorted end
 
     # keep-sorted start
-    ../modules/infra/alertmanager.nix
     ../modules/infra/system-specific/vector/auth.nix
     ../modules/infra/system-specific/vector/cloud.nix
     ../modules/infra/system-specific/vector/mail
@@ -43,6 +44,11 @@
   systemd.network.networks."10-uplink".networkConfig.Address = "2a01:4f8:1c19:1cd2::1/128";
 
   infra.wireguard.enable = true;
+
+  infra.forgejo-actions = {
+    enable = true;
+    amount = 2;
+  };
 
   infra.backup = {
     enableDefaults = true;

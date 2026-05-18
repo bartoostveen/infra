@@ -18,9 +18,12 @@
     # keep-sorted start
     ../modules/infra/alertmanager.nix
     ../modules/infra/alloy.nix
+    ../modules/infra/backup
     ../modules/infra/common.nix
+    ../modules/infra/forgejo-actions.nix
     ../modules/infra/git.nix
     ../modules/infra/networking.nix
+    ../modules/infra/podman.nix
     ../modules/wireguard.nix
     # keep-sorted end
   ];
@@ -32,6 +35,11 @@
     "nix-command"
     "flakes"
   ];
+
+  infra.forgejo-actions = {
+    enable = true;
+    amount = 1;
+  };
 
   # normally we wouldn't do this on servers, but oh well
   networking.networkmanager.enable = true;

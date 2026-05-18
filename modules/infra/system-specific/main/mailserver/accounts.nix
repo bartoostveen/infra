@@ -36,6 +36,10 @@
       hashedPasswordFile = config.sops.secrets.authentik-email-password-encrypted.path;
       sendOnly = true;
     };
+    "git@bartoostveen.nl" = {
+      hashedPasswordFile = config.sops.secrets.git-email-password-encrypted.path;
+      sendOnly = true;
+    };
   };
 
   sops.secrets.alertmanager-email-password-encrypted = {
@@ -64,7 +68,17 @@
 
     restartUnits = [
       "postfix-setup.service"
-      "dovecot2.service"
+      "dovecot.service"
+    ];
+  };
+
+  sops.secrets.git-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/email-passwords/git.enc.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot.service"
     ];
   };
 }
