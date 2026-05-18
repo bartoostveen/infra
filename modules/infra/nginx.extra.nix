@@ -72,7 +72,7 @@ in
                 add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
               ''
             );
-            kTLS = mkDefault true;
+            kTLS = mkDefault false;
           };
         }
       )
