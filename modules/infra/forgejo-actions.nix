@@ -18,7 +18,7 @@ let
     mkIf
     range
     ;
-  inherit (types) ints str;
+  inherit (types) listOf ints str;
 
   cfg = config.infra.forgejo-actions;
   runners = range 0 (cfg.amount - 1);
@@ -40,6 +40,12 @@ in
         inputs.self.nixosConfigurations.bart-server.config.services.forgejo.settings.server.ROOT_URL;
       example = "https://git.bartoostveen.nl";
     };
+    labels = mkOption {
+      description = "Labels for all actions runners";
+      type = listOf str;
+      default = [ "nix" "system:${pkgs.stdenv.system}" ];
+      example = [ "big" ];
+    };
   };
   # TODO: add prestart provision script?
   config = mkIf cfg.enable {
@@ -50,7 +56,7 @@ in
         nameValuePair "runner${n}" {
           enable = true;
           name = "${config.networking.fqdn}-runner${n}";
-          inherit (cfg) url;
+          inherit (cfg) url labels;
           tokenFile =
             config.sops.secrets."forgejo-runner-token-${config.networking.hostName}-runner${n}".path;
         }
