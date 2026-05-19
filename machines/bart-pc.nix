@@ -3,11 +3,13 @@
     ./bart-pc.hardware.nix
 
     ../modules/infra/backup
+    ../modules/infra/forgejo-actions.nix
 
     ../modules/wireguard.nix
 
     ../modules/desktop/users/bart.nix
 
+    # keep-sorted start
     ../modules/desktop/android.nix
     ../modules/desktop/audio.nix
     ../modules/desktop/bluetooth.nix
@@ -23,6 +25,7 @@
     ../modules/desktop/podman.nix
     ../modules/desktop/printing.nix
     ../modules/desktop/sudo.nix
+    # keep-sorted end
   ];
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
@@ -46,6 +49,12 @@
   infra.wireguard.enable = true;
 
   hardware.ckb-next.enable = true;
+
+  infra.forgejo-actions = {
+    enable = true;
+    amount = 4;
+    labels = [ "big" ];
+  };
 
   systemd.sleep.settings.Sleep = {
     AllowSuspend = "no";
