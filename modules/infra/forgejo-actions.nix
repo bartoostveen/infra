@@ -72,7 +72,8 @@ in
         name = "forgejo-runner-token-${config.networking.hostName}-runner${n}";
       in
       nameValuePair name {
-        sopsFile = ../../secrets/${name}.secret;
+        # sopsFile = ../../secrets/${name}.secret;
+        sopsFile = ../../secrets/forgejo-runner-token.secret;
         owner = "gitea-runner";
         group = "gitea-runner";
         mode = "0400";
