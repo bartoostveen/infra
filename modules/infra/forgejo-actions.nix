@@ -44,12 +44,7 @@ in
     labels = mkOption {
       description = "Labels for all actions runners";
       type = listOf str;
-      default = [
-        "docker:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
-        "nix:docker://git.toostveen.nl/tom/lix-with-node:latest"
-        "native-${pkgs.stdenv.system}:host"
-        "${config.networking.hostName}:host"
-      ] ++ (map (feat: "${feat}:host") config.nix.settings.system-features);
+      default = [ ];
       example = [ ];
     };
     # TODO: all systemd service options through submodule type
@@ -62,6 +57,14 @@ in
   };
   # TODO: add prestart provision script?
   config = mkIf cfg.enable {
+    infra.forgejo-actions.labels = [
+      "docker:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
+      "nix:docker://git.toostveen.nl/tom/lix-with-node:latest"
+      "native-${pkgs.stdenv.system}:host"
+      "${config.networking.hostName}:host"
+    ]
+    ++ (map (feat: "${feat}:host") config.nix.settings.system-features);
+
     services.gitea-actions-runner = {
       inherit (cfg) package;
       instances = genAttrs' (map toString runners) (
@@ -72,6 +75,18 @@ in
           inherit (cfg) url labels;
           tokenFile =
             config.sops.secrets."forgejo-runner-token-${config.networking.hostName}-runner${n}".path;
+          hostPackages = with pkgs; [
+            bash
+            coreutils
+            curl
+            gawk
+            gnused
+            gnupg
+            nodejs
+            wget
+            gitFull
+            config.nix.package
+          ];
         }
       );
     };
