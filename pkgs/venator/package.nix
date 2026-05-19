@@ -10,15 +10,15 @@
 
 buildGoModule (finalAttrs: {
   pname = "venator";
-  version = "0.2605.09";
+  version = "0.2605.13";
   __structuredAttrs = true;
 
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "timedout";
     repo = "venator";
-    rev = "dcf06e86c5224b25b045573f054ba9d2d4bbb92e";
-    hash = "sha256-2CLrzk9Z6i1wa3nkMF6jVq24GRggzQTfo42NmrskpgE=";
+    rev = "1203bc7e6d333f5dee7cecf8e6cf5824a7e26a39";
+    hash = "sha256-wcKzQBshWBIEPo1MydfYs4pjEN298G1a9JSus/bd17Y=";
     fetchSubmodules = true; # because Codeberg or smth
   };
 
@@ -64,7 +64,7 @@ buildGoModule (finalAttrs: {
     description = "Matrix Venator - versatile capital Matrix homeserver written from scratch in mautrix-go";
     homepage = "https://codeberg.org/timedout/venator";
     license = lib.licenses.mpl20;
-    maintainers = with lib.maintainers; [ ];
+    maintainers = with lib.maintainers; [ bartoostveen ];
     mainProgram = "venatorctl";
   };
 })
