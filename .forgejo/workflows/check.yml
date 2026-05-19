@@ -8,7 +8,7 @@ on:
 
 jobs:
   check:
-    runs-on: [docker, bigger-parallel]
+    runs-on: [native-x86_64-linux, bigger-parallel]
     steps:
       - uses: actions/checkout@v4
       - run: nix fmt -L --accept-flake-config --log-format raw -- --ci
