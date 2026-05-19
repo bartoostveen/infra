@@ -10,6 +10,12 @@ jobs:
   update-kernels:
     runs-on: [gpg, native-x86_64-linux]
     steps:
+      - name: import GPG key
+        run: |
+          gpg --import <(cat <<< "${GPG_PRIVKEY:?}")
+        env:
+          GPG_PRIVKEY: ${{ secrets.GPG_PRIVKEY }}
+
       - name: configure git
         run: |
           git config --global user.name "forgejo-actions[bot]"

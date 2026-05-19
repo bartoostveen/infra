@@ -19,7 +19,12 @@ let
     mkIf
     range
     ;
-  inherit (types) listOf ints str;
+  inherit (types)
+    listOf
+    ints
+    str
+    attrs
+    ;
 
   cfg = config.infra.forgejo-actions;
   runners = range 0 (cfg.amount - 1);
@@ -47,7 +52,12 @@ in
       default = [ ];
       example = [ ];
     };
-    # TODO: all systemd service options through submodule type
+    environment = mkOption {
+      description = "Systemd options for ALL runners";
+      type = attrs;
+      default = { };
+      example = { };
+    };
     systemdDependencies = mkOption {
       description = "List of systemd requires/wants/after units for all services";
       type = listOf str;
@@ -59,11 +69,13 @@ in
   config = mkIf cfg.enable {
     infra.forgejo-actions.labels = [
       "docker:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
-      "nix:docker://git.toostveen.nl/tom/lix-with-node:latest"
+      "nix:docker://docker.io/nixos/nix:2.32.8"
+      "lix:docker://git.toostveen.nl/tom/lix-with-node:latest"
       "native-${pkgs.stdenv.system}:host"
       "${config.networking.hostName}:host"
     ]
-    ++ (map (feat: "${feat}:host") config.nix.settings.system-features);
+    ++ (map (feat: "${feat}:host") config.nix.settings.system-features)
+    ++ (map (sys: "emulated-${sys}:host") config.boot.binfmt.emulatedSystems);
 
     services.gitea-actions-runner = {
       inherit (cfg) package;
@@ -87,11 +99,13 @@ in
             gitFull
             config.nix.package
           ];
+          settings.runner.envs = cfg.environment;
         }
       );
     };
 
     systemd.services = genAttrs (map (n: "gitea-runner-runner${toString n}.service") runners) (_: {
+      inherit (cfg) environment;
       serviceConfig = {
         requires = cfg.systemdDependencies;
         wants = cfg.systemdDependencies;
