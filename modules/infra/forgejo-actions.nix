@@ -45,10 +45,12 @@ in
       description = "Labels for all actions runners";
       type = listOf str;
       default = [
-        "nix"
-        "system:${pkgs.stdenv.system}"
-      ];
-      example = [ "big" ];
+        "docker:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
+        "nix:docker://git.toostveen.nl/tom/lix-with-node:latest"
+        "native-${pkgs.stdenv.system}:host"
+        "${config.networking.hostName}:host"
+      ] ++ (map (feat: "${feat}:host") config.nix.settings.system-features);
+      example = [ ];
     };
     # TODO: all systemd service options through submodule type
     systemdDependencies = mkOption {

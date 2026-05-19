@@ -90,6 +90,7 @@ in
 
   infra.forgejo-actions = {
     enable = true;
+    labels = [ "gpg:host" ];
     systemdDependencies = [ "forgejo.service" ];
   };
 

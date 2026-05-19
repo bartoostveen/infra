@@ -53,7 +53,7 @@
   infra.forgejo-actions = {
     enable = true;
     amount = 4;
-    labels = [ "big" ];
+    labels = [ "bigger-parallel:host" ];
   };
 
   systemd.sleep.settings.Sleep = {
