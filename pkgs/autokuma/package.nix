@@ -11,17 +11,16 @@ rustPlatform.buildRustPackage (_finalAttrs: {
   version = "2.0.0";
 
   src = fetchFromGitHub {
-    owner = "BigBoot";
+    owner = "bartoostveen";
     repo = "AutoKuma";
-    rev = "0f65a5d5c3a46db1b4bfecc5fc635c49aa2e15a9";
-    hash = "sha256-IxizYf6fwZ1VhEXZLGHlWkN3+p45mDXSd2nIu40sEM4=";
+    rev = "7d616e1b4a47059610f25c10cff3fb4e3b5d3110";
+    hash = "sha256-eMyG4LXyhdzXy4tvlnxfVukB7CdQrSHRyMjTuVlqyVE=";
   };
 
-  cargoLock.lockFile = ./Cargo.lock;
+  cargoHash = "sha256-+pMxHwFjX00O81EwQtGzh0M6YktP1wXNavhGoFUfjno=";
 
   patches = [
     ./no-doctest.patch
-    ./fix-dynamic-dispatch.patch
   ];
 
   nativeBuildInputs = [ pkg-config ];
@@ -37,6 +36,6 @@ rustPlatform.buildRustPackage (_finalAttrs: {
     mainProgram = "autokuma";
     license = lib.licenses.mit;
     platforms = lib.platforms.linux;
-    maintainers = with lib.maintainers; [ hougo ];
+    maintainers = with lib.maintainers; [ bartoostveen ];
   };
 })
