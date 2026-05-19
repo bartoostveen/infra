@@ -27,7 +27,6 @@
     ../modules/infra/nix.nix
     ../modules/infra/php.nix
     ../modules/infra/podman.nix
-    ../modules/infra/zabbix.nix
     # keep-sorted end
 
     # keep-sorted start
