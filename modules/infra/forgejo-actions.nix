@@ -43,7 +43,10 @@ in
     labels = mkOption {
       description = "Labels for all actions runners";
       type = listOf str;
-      default = [ "nix" "system:${pkgs.stdenv.system}" ];
+      default = [
+        "nix"
+        "system:${pkgs.stdenv.system}"
+      ];
       example = [ "big" ];
     };
   };
