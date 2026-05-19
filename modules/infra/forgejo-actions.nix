@@ -13,6 +13,7 @@ let
     mkOption
     mkDefault
     types
+    genAttrs
     genAttrs'
     nameValuePair
     mkIf
@@ -49,6 +50,13 @@ in
       ];
       example = [ "big" ];
     };
+    # TODO: all systemd service options through submodule type
+    systemdDependencies = mkOption {
+      description = "List of systemd requires/wants/after units for all services";
+      type = listOf str;
+      default = [ "sops-install-secrets.service" ];
+      example = [ "forgejo.service" ];
+    };
   };
   # TODO: add prestart provision script?
   config = mkIf cfg.enable {
@@ -65,6 +73,14 @@ in
         }
       );
     };
+
+    systemd.services = genAttrs (map (n: "gitea-runner-runner${toString n}.service") runners) (_: {
+      serviceConfig = {
+        requires = cfg.systemdDependencies;
+        wants = cfg.systemdDependencies;
+        after = cfg.systemdDependencies;
+      };
+    });
 
     virtualisation.podman.enable = mkDefault true;
 

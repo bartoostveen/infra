@@ -88,7 +88,10 @@ in
     jobs.state.exclude = [ "/root/private/fs/muziek/" ];
   };
 
-  infra.forgejo-actions.enable = true;
+  infra.forgejo-actions = {
+    enable = true;
+    systemdDependencies = [ "forgejo.service" ];
+  };
 
   sops.secrets.authentik-env = {
     format = "binary";
