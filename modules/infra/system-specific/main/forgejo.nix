@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }:
 
@@ -57,6 +58,11 @@ in
         REPLY_TO_ADDRESS = "git+%{token}@${HOST}";
         USE_TLS = true;
       };
+      "repository.signing" = {
+        SIGNING_NAME = "Bart's Forgejo";
+        SIGNING_EMAIL = "git@bartoostveen.nl";
+        SIGNING_KEY = "840EFE9D5059EB60F3B5C544FF2C1D26E87D87C9";
+      };
       cache = {
         ADAPTER = "redis";
         HOST = redisHost;
@@ -81,6 +87,7 @@ in
       requires = dependencies;
       wants = dependencies;
       after = dependencies;
+      environment.GNUPGHOME = "${config.users.users.forgejo.home}/.gnupg";
       preStart = ''
         ${getExe config.services.forgejo.package} admin user create ${
           toCommandLineShellGNU { } {
@@ -91,6 +98,23 @@ in
         } --password "$(tr -d '\n' < ${config.sops.secrets.forgejo-admin-password.path})" || true
       '';
     };
+
+  systemd.services.forgejo-import-signing-key = {
+    before = [ "forgejo.service" ];
+    wantedBy = [ "forgejo.service" ];
+
+    after = [ "sops-install-secrets.service" ];
+    requires = [ "sops-install-secrets.service" ];
+
+    environment.GNUPGHOME = config.systemd.services.forgejo.environment.GNUPGHOME;
+    path = with pkgs; [ gnupg ];
+
+    script = "gpg --import ${config.sops.secrets.forgejo-signing-key.path}";
+
+    serviceConfig = {
+      inherit (config.systemd.services.forgejo.serviceConfig) User Group;
+    };
+  };
 
   services.redis.servers.forgejo = {
     enable = true;
@@ -139,6 +163,15 @@ in
 
   sops.secrets.forgejo-admin-password = {
     sopsFile = ../../../../secrets/forgejo-admin-password.secret;
+    owner = "forgejo";
+    group = "forgejo";
+    mode = "0400";
+    format = "binary";
+    restartUnits = [ "forgejo.service" ];
+  };
+
+  sops.secrets.forgejo-signing-key = {
+    sopsFile = ../../../../secrets/forgejo-signing-key.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
