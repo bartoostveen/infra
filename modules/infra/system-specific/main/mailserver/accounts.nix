@@ -36,10 +36,7 @@
       hashedPasswordFile = config.sops.secrets.authentik-email-password-encrypted.path;
       sendOnly = true;
     };
-    "git@bartoostveen.nl" = {
-      hashedPasswordFile = config.sops.secrets.git-email-password-encrypted.path;
-      sendOnly = true;
-    };
+    "git@bartoostveen.nl".hashedPasswordFile = config.sops.secrets.git-email-password-encrypted.path;
   };
 
   sops.secrets.alertmanager-email-password-encrypted = {
