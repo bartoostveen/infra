@@ -99,6 +99,7 @@ in
             jq
             gitFull
             config.nix.package
+            openssh
           ];
           settings.runner.envs = cfg.environment;
         }
