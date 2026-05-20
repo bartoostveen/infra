@@ -50,14 +50,37 @@ jobs:
         run: |
           base="$(git branch --show-current)"
           if [[ "$(git rev-list origin/"$base"..HEAD --count)" -ne 0 ]]; then
-            head="push-$(git rev-parse --short HEAD)"
+            head="ci-update-kernel"
+
+            existing_prs="$(
+              curl --silent --fail-with-body \
+                -H "Authorization: token $FORGEJO_TOKEN" \
+                "$FORGEJO_SERVER_URL/api/v1/repos/$FORGEJO_REPOSITORY/pulls?state=open"
+            )"
+
+            if jq -e --arg head "$head" 'any(.[]; .head.ref == $head)' <<< "$existing_prs" > /dev/null; then
+              echo "PR for branch '$head' already exists, exiting."
+              exit 0
+            fi
+
+            commit_subject="$(git log -1 --pretty=%s)"
+
             git switch -c "$head"
             git push --force-with-lease origin "$head"
-            curl "$FORGEJO_SERVER_URL/api/v1/repos/$FORGEJO_REPOSITORY/pulls" \
+            
+            jq -n \
+              --arg base "$base" \
+              --arg head "$head" \
+              --arg title "chore: bump kernel" \
+              --arg body "$commit_subject" \
+              '{
+                base: $base,
+                head: $head,
+                title: $title,
+                body: $body
+              }' |
+            curl --fail-with-body "$FORGEJO_SERVER_URL/api/v1/repos/$FORGEJO_REPOSITORY/pulls" \
               -H "Authorization: token $FORGEJO_TOKEN" \
-              --json "{
-                \"base\": \"$base\",
-                \"head\": \"$head\",
-                \"title\": \"chore: update kernel\"
-              }"
+              -H "Content-Type: application/json" \
+              --data @-
           fi
