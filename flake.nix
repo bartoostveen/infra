@@ -90,7 +90,7 @@
     };
 
     meowbot = {
-      url = "github:bartoostveen/meowbot";
+      url = "git+https://git.bartoostveen.nl/bart/meowbot";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
