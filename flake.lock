@@ -680,11 +680,11 @@
         "rev": "6f8013a23392eefe35c3901528b32953faee4207",
         "revCount": 34,
         "type": "git",
-        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
       },
       "original": {
         "type": "git",
-        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
       }
     },
     "onboarding": {
@@ -700,17 +700,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1779207221,
-        "narHash": "sha256-UCPiTBKR5gx7chlROdJEqFohLoLPSVDIFFawtr1P6pM=",
-        "owner": "bartoostveen",
-        "repo": "simple-authentik-user-onboarding",
-        "rev": "58cfde94089f50e631fbd60992aadc0300b9012d",
-        "type": "github"
+        "lastModified": 1779242364,
+        "narHash": "sha256-bhi7pvcUF80BCy0ZGQ0XceTAzmpfk7Lq8/LaLXJjzDo=",
+        "ref": "refs/heads/master",
+        "rev": "1784ad5c3fb115539a1f956f3cba193d8660e560",
+        "revCount": 25,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "simple-authentik-user-onboarding",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       }
     },
     "plasma-manager": {

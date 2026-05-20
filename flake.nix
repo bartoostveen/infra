@@ -137,7 +137,7 @@
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
 
     omeduostuurcentenneef-web = {
-      url = "git+https://git.bartoostveen.nl/bart/omeduoweb";
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         bun2nix.url = "github:nix-community/bun2nix";
@@ -147,7 +147,7 @@
     };
 
     onboarding = {
-      url = "github:bartoostveen/simple-authentik-user-onboarding";
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
