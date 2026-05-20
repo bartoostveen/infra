@@ -96,6 +96,7 @@ in
             gnupg
             nodejs
             wget
+            jq
             gitFull
             config.nix.package
           ];

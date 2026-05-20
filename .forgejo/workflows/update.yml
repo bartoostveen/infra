@@ -27,21 +27,39 @@ jobs:
 
       - name: nix flake update
         run: nix flake update --commit-lock-file --option access-tokens "github.com=${{ secrets.GH_TOKEN }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: send PR
         run: |
           base="$(git branch --show-current)"
           if [[ "$(git rev-list origin/"$base"..HEAD --count)" -ne 0 ]]; then
             head="push-$(git rev-parse --short HEAD)"
+            commit_subject="$(git log -1 --pretty=%s)"
+            commit_body="$(git log -1 --pretty=%b)"
+
+            pr_body="$commit_subject"
+
+            if [[ -n "$commit_body" ]]; then
+              pr_body="$pr_body
+
+              $commit_body"
+            fi
+
             git switch -c "$head"
             git push --force-with-lease origin "$head"
+
+            jq -n \
+              --arg base "$base" \
+              --arg head "$head" \
+              --arg title "$commit_subject" \
+              --arg body "$pr_body" \
+              '{
+                base: $base,
+                head: $head,
+                title: $title,
+                body: $body
+              }' |
             curl "$FORGEJO_SERVER_URL/api/v1/repos/$FORGEJO_REPOSITORY/pulls" \
               -H "Authorization: token $FORGEJO_TOKEN" \
-              --json "{
-                \"base\": \"$base\",
-                \"head\": \"$head\",
-                \"title\": \"chore: nix flake update\"
-              }"
+              -H "Content-Type: application/json" \
+              --data @-
           fi
