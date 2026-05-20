@@ -427,17 +427,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1777067218,
-        "narHash": "sha256-dxsOAp5uACXnArr3/B7QfMvtuqELrcmRWXwxo0AV+0c=",
-        "owner": "bartoostveen",
-        "repo": "meowbot",
-        "rev": "4aa97f604daee5fb678d57e82834522ab70bbb6b",
-        "type": "github"
+        "lastModified": 1779286096,
+        "narHash": "sha256-sLsBwjk6AeH/LNqIV2dI/jSDTi33HttMbTvLyxBtPtU=",
+        "ref": "refs/heads/master",
+        "rev": "4fc50e3bde4d99f8d9495f36852661894380bd63",
+        "revCount": 13,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "meowbot",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       }
     },
     "meshcoretomqtt": {
