@@ -5,7 +5,12 @@ on:
   pull_request:
 
 jobs:
+  setup:
+    uses: ./.forgejo/workflows/setup-git.yml
+    secrets:
+      ssh-private-key: "${{ secrets.SSH_PRIVATE_KEY }}"
   check:
+    needs: setup
     runs-on: [native-x86_64-linux, bigger-parallel]
     steps:
       - uses: actions/checkout@v4

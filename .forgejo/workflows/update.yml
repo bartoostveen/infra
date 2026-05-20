@@ -4,25 +4,17 @@
   workflow_dispatch: {}
 
 jobs:
+  setup:
+    uses: ./.forgejo/workflows/setup-git.yml
+    secrets:
+      ssh-private-key: "${{ secrets.SSH_PRIVATE_KEY }}"
+      gpg-key: "${{ secrets.GPG_PRIVKEY }}"
   nix-flake-update:
+    needs: setup
+    env:
+      GIT_SSH_COMMAND: ${{ needs.setup.outputs.git-ssh-command }}
     runs-on: [gpg, native-x86_64-linux]
     steps:
-      - name: import GPG key
-        run: |
-          gpg --import <(cat <<< "${GPG_PRIVKEY:?}")
-        env:
-          GPG_PRIVKEY: ${{ secrets.GPG_PRIVKEY }}
-
-      - name: configure git
-        run: |
-          git config --global user.name "forgejo-actions[bot]"
-          git config --global user.email "git@bartoostveen.nl"
-          git config --global push.default simple
-          git config --global commit.gpgSign true
-          git config --global user.signingKey "${GPG_KEY_ID:?}"
-        env:
-          GPG_KEY_ID: ${{ vars.GPG_KEY_ID }}
-
       - uses: actions/checkout@v4
 
       - name: nix flake update
