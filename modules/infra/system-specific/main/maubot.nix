@@ -7,12 +7,26 @@
 let
   domain = "maubot.bartoostveen.nl";
 
-  sed = config.services.maubot.package.plugins.sed.overrideAttrs {
+  inherit (config.services.maubot.package) plugins;
+
+  sed = plugins.sed.overrideAttrs {
     src = pkgs.fetchFromGitHub {
       owner = "maubot";
       repo = "sed";
       rev = "44865efc916c41ddfdfccadf72a2d8372381d064";
       hash = "sha256-j1/vqJPnOWRDqiRVW947HgZW/HvsHli20+q0cP4mj7E=";
+    };
+  };
+
+  forgejo = plugins.buildMaubotPlugin rec {
+    pname = "vibb.me.forgebot";
+    version = "0.1.7";
+
+    src = pkgs.fetchFromCodeberg {
+      owner = "palchrb";
+      repo = "maubot_forgejo";
+      tag = "v${version}";
+      hash = "sha256-IP985g6cPR3YRyrIaDikj3VAodIZjuYCYrJPiZGEDVw=";
     };
   };
 in
@@ -21,7 +35,7 @@ in
     enable = true;
     configMutable = false;
     pythonPackages = with pkgs.python3Packages; [ semver ];
-    plugins = with config.services.maubot.package.plugins; [
+    plugins = with plugins; [
       # keep-sorted start
       alertbot
       autoreply
@@ -31,6 +45,7 @@ in
       disruptor
       echo
       factorial
+      forgejo
       github
       gitlab
       join
