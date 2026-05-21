@@ -4,18 +4,16 @@
   workflow_dispatch: {}
 
 jobs:
-  setup:
-    uses: ./.forgejo/workflows/setup-git.yml
-    secrets:
-      ssh-private-key: "${{ secrets.SSH_PRIVATE_KEY }}"
-      gpg-key: "${{ secrets.GPG_PRIVKEY }}"
   nix-flake-update:
-    needs: setup
-    env:
-      GIT_SSH_COMMAND: ${{ needs.setup.outputs.git-ssh-command }}
     runs-on: [gpg, native-x86_64-linux]
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-home
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
+          gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
+          gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
       - name: nix flake update
         run: nix flake update --commit-lock-file --option access-tokens "github.com=${{ secrets.GH_TOKEN }}"

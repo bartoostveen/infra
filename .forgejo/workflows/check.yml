@@ -5,14 +5,15 @@ on:
   pull_request:
 
 jobs:
-  setup:
-    uses: ./.forgejo/workflows/setup-git.yml
-    secrets:
-      ssh-private-key: "${{ secrets.SSH_PRIVATE_KEY }}"
   check:
-    needs: setup
     runs-on: [native-x86_64-linux, bigger-parallel]
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-home
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
+          gpg-key-id: ${{ vars.GPG_KEY_ID }}
+
       - run: nix fmt -L --accept-flake-config --log-format raw -- --ci
       - run: nix flake check --accept-flake-config --log-format raw

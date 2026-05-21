@@ -1,0 +1,83 @@
+name: setup-home
+description: Setup home directory
+
+
+inputs:
+  ssh-private-key:
+    description: SSH private key
+    required: true
+
+  ssh-known-hosts:
+    description: SSH known hosts
+    required: true
+
+  gpg-privkey:
+    description: GPG private key
+    required: false
+
+  gpg-key-id:
+    description: GPG key ID
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Create home directory
+      shell: bash
+      run: |
+        export HOME="$RUNNER_TEMP"
+        echo "Setting up home directory in $HOME"
+        mkdir -p "$HOME/.ssh"
+        chmod -R 700 "$HOME/.ssh"
+        echo "HOME=$HOME" >> "$FORGEJO_ENV"
+
+    - name: Setup SSH
+      shell: bash
+      run: |
+        printf '%s\n' "$SSH_PRIVATE_KEY" > "$HOME/.ssh/id_ed25519"
+        chmod 600 "$HOME/.ssh/id_ed25519"
+        printf '%s\n' "$SSH_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+        chmod 644 "$HOME/.ssh/known_hosts"
+        cat > "$HOME/.ssh/config" <<EOF
+        Host git.bartoostveen.nl
+          IdentityFile "$HOME/.ssh/id_ed25519"
+          User forgejo
+          StrictHostKeyChecking yes
+          UserKnownHostsFile "$HOME/.ssh/known_hosts"
+        EOF
+        chmod 600 "$HOME/.ssh/config"
+        echo "--- START SSH CONFIG ---"
+        cat "$HOME/.ssh/config"
+        echo "--- END SSH CONFIG ---"
+        echo "Trying to connect..."
+        ssh -vv -T -F "$HOME/.ssh/config" forgejo@git.bartoostveen.nl
+
+        export GIT_SSH_COMMAND="ssh -F "$HOME/.ssh/config""
+        echo "GIT_SSH_COMMAND=$GIT_SSH_COMMAND" >> "$FORGEJO_ENV"
+      env:
+        SSH_PRIVATE_KEY: "${{ inputs.ssh-private-key }}"
+        SSH_KNOWN_HOSTS: "${{ inputs.ssh-known-hosts }}"
+
+    - name: import GPG key
+      shell: bash
+      if: inputs.gpg-privkey
+      run: |
+        gpg --import <(cat <<< "${GPG_PRIVKEY:?}")
+      env:
+        GPG_PRIVKEY: "${{ inputs.gpg-privkey }}"
+
+    - name: configure git
+      shell: bash
+      run: |
+        git config --global user.name "forgejo-actions[bot]"
+        git config --global user.email "git@bartoostveen.nl"
+        git config --global push.default simple
+        git config --global commit.gpgSign true
+        git config --global user.signingKey "${GPG_KEY_ID:?}"
+      env:
+        GPG_KEY_ID: "${{ inputs.gpg-key-id }}"
+
+    - name: check
+      shell: bash
+      run: |
+        git ls-remote ssh://forgejo@git.bartoostveen.nl/$FORGEJO_REPOSITORY.git
