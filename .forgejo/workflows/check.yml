@@ -16,4 +16,4 @@ jobs:
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
       - run: nix fmt -L --accept-flake-config --log-format raw -- --ci
-      - run: nix flake check --accept-flake-config --log-format raw
+      - run: nix flake check -L --accept-flake-config --log-format raw
