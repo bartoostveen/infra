@@ -52,12 +52,6 @@
               nginx
               openssh
               php
-              postgresql
-              postgresql_14
-              postgresql_15
-              postgresql_16
-              postgresql_17
-              postgresql_18
               ;
           })
 
