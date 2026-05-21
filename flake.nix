@@ -70,7 +70,7 @@
     };
 
     ical-proxy = {
-      url = "github:bartoostveen/ical-proxy";
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

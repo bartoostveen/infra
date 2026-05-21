@@ -360,17 +360,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1767892411,
-        "narHash": "sha256-WaifTKJ82NIq5ZW43hNgmkj3afJ99DZPw32/L/ekSsU=",
-        "owner": "bartoostveen",
-        "repo": "ical-proxy",
-        "rev": "3e89dcf6b865308a0e562d319a397cde7e87d68b",
-        "type": "github"
+        "lastModified": 1779387401,
+        "narHash": "sha256-q0pko3LroDE++5qDxyKA5KI6uEjQ0p3JOAIG8P+NGAE=",
+        "ref": "refs/heads/master",
+        "rev": "14b0d4d5eb374a68f1f87a23d58ef00d8024b490",
+        "revCount": 11,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "ical-proxy",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
       }
     },
     "import-tree": {
