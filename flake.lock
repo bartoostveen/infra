@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778874672,
-        "narHash": "sha256-lL5SXrufwxu9sthDnTCieH8gskhOv5KOGj2wXx2xCsw=",
+        "lastModified": 1779323261,
+        "narHash": "sha256-M0Kuq4sxSRZ6AiXkPZ8sA3vL2I6UDnqEyXBEmR1n/Ow=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "3b53a228b0e07912766d8dbf88b1dd01da57e2c5",
+        "rev": "1f4246c6bb514d558f87a731d2eba99a5d0adff1",
         "type": "github"
       },
       "original": {
@@ -333,11 +333,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779213149,
-        "narHash": "sha256-Cf+p/T4Z3n9Sw0TiR3kQaIwQI+/hfvLJcoTzeq6yS3E=",
+        "lastModified": 1779336838,
+        "narHash": "sha256-n1+l78hJRABp4cQHKeD0BVByT0vZLPqd09Tvoq8Q+d8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bd868f769a69d3b6091a1da68a75cb83a181033c",
+        "rev": "928d72376949e222ea4f07b44828a55b0136422e",
         "type": "github"
       },
       "original": {
@@ -427,11 +427,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779286096,
-        "narHash": "sha256-sLsBwjk6AeH/LNqIV2dI/jSDTi33HttMbTvLyxBtPtU=",
+        "lastModified": 1779382134,
+        "narHash": "sha256-uUVvJCAv89UrRWROVJ92GyQU0BiXW+V93Mq+I803lCU=",
         "ref": "refs/heads/master",
-        "rev": "4fc50e3bde4d99f8d9495f36852661894380bd63",
-        "revCount": 13,
+        "rev": "96ed3dc945a28281f378ca581bb71e9eeb69c556",
+        "revCount": 14,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -583,11 +583,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1779184881,
-        "narHash": "sha256-zDX+nxYeyxM+ZCjseN5Dz0IvpcLZSzCr5A2UMk8K9UM=",
+        "lastModified": 1779350018,
+        "narHash": "sha256-fHMrI2uuDNdQy0X6vgDdLoAHEMV4phk8OLtNMra7Vyk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b10a7ad822aa7f760e7f312c8e08f2d3c47cbe4d",
+        "rev": "657e2fa0760e27167cdacb1ec5d84782be312013",
         "type": "github"
       },
       "original": {
@@ -674,11 +674,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779123857,
-        "narHash": "sha256-OpnQaiI2wD9U0HzB3zbklRTI1gOMXxuuNulWuSMHRws=",
+        "lastModified": 1779382265,
+        "narHash": "sha256-+/qsAxc6fKQoQOu0ZB6RXi7ny+xFCGWv1+6uskZYXXo=",
         "ref": "refs/heads/master",
-        "rev": "6f8013a23392eefe35c3901528b32953faee4207",
-        "revCount": 34,
+        "rev": "afcb370ed19b959d82044f328b58457234e74794",
+        "revCount": 35,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -700,11 +700,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779242364,
-        "narHash": "sha256-bhi7pvcUF80BCy0ZGQ0XceTAzmpfk7Lq8/LaLXJjzDo=",
+        "lastModified": 1779382203,
+        "narHash": "sha256-9SNkpK+xC1gzD3NNLG/JmtRkAFVe7VNPklU5FW/hBhg=",
         "ref": "refs/heads/master",
-        "rev": "1784ad5c3fb115539a1f956f3cba193d8660e560",
-        "revCount": 25,
+        "rev": "e795018104b60c6965e013a9506451f4ed0bd749",
+        "revCount": 26,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -864,11 +864,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779075282,
-        "narHash": "sha256-tyhEC63yAHYKHIAwPvUd+XkXyUuMgHhbxXROWFAmJgo=",
+        "lastModified": 1779334510,
+        "narHash": "sha256-TMHl/kIdkutf3t5/+IhZGRUbyUtWATnIWDVbRsWRIpE=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "5d97e4376e9b1accf25013af8ca772d36444b8de",
+        "rev": "f385edc79c0a0218a1e1f332bce1c58fd9e57949",
         "type": "github"
       },
       "original": {
@@ -966,11 +966,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776928392,
-        "narHash": "sha256-D+qDoXm6E3xBpz1WKJ5rUDpWQbSwNnagoviHjSB8Rc8=",
+        "lastModified": 1779382187,
+        "narHash": "sha256-VePD3DlEYGh2jXI6WWQbHtEY8uPMgJEoxE/2PuOOAiY=",
         "owner": "bartoostveen",
         "repo": "tcs-bot",
-        "rev": "cb4fbfce408acc16f117519dea3dc7b2517db096",
+        "rev": "76933ab6668d2e4c2be5e21024ffa394837d2d14",
         "type": "github"
       },
       "original": {

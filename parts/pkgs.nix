@@ -9,7 +9,6 @@
     {
       system,
       pkgs,
-      smallPkgs,
       ...
     }:
 
@@ -44,16 +43,6 @@
           self.overlays.nix-auth
           self.overlays.invoice
           self.overlays.fix-jabref
-
-          (_final: _prev: {
-            inherit (smallPkgs)
-              apacheHttpd
-              mariadb
-              nginx
-              openssh
-              php
-              ;
-          })
 
           inputs.copyparty.overlays.default
           # The design of deploy-rs' flake is truly wonderful, see also deploy.module.nix
