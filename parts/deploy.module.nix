@@ -38,7 +38,7 @@ in
             user = username;
             sshUser = if sshUser != null then sshUser else username;
 
-            interactiveSudo = username == "root" && sshUser != "root";
+            interactiveSudo = sshUser != username;
 
             path =
               (deployLibForSystem system).activate.home-manager
@@ -74,7 +74,7 @@ in
               user = username;
               sshUser = if sshUser != null then sshUser else username;
 
-              interactiveSudo = username == "root" && sshUser != "root";
+              interactiveSudo = sshUser != username;
 
               path = (deployLibForSystem system).activate.nixos self.nixosConfigurations.${name};
             };

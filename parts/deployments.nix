@@ -33,10 +33,12 @@
     home = [
       {
         username = "bart";
+        sshUser = "bart";
         hostname = "bart-laptop-new";
       }
       {
         username = "bart";
+        sshUser = "bart";
         hostname = "bart-pc";
       }
     ];
