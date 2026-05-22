@@ -7,7 +7,6 @@
     ./atlas.hardware.nix
 
     inputs.srvos.nixosModules.server
-    inputs.srvos.nixosModules.mixins-terminfo
 
     # keep-sorted start
     ../modules/infra/system-specific/atlas/backshots.nix

@@ -14,7 +14,6 @@ in
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
-    inputs.srvos.nixosModules.mixins-terminfo
   ];
 
   options.infra = {
