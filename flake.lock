@@ -613,22 +613,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1778192304,
-        "narHash": "sha256-bjYwoHqTvaD6rNiCsMi7OkbTv/OVdtsxiOXQN70C+Ek=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "0794c7edb1d08696fe62d606dfaafa7568ead4cf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "continuwuity-0.5.9",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1778984393,
@@ -657,6 +641,22 @@
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "1cd347bf3355fce6c64ab37d3967b4a2cb4b878c",
+        "type": "github"
+      }
+    },
+    "nixpkgs-wordpress": {
+      "locked": {
+        "lastModified": 1779478698,
+        "narHash": "sha256-UntjKxnRhVqb3gzBpCHbVht3xbjXYF81dZNrNSSr0z0=",
+        "owner": "bartoostveen",
+        "repo": "nixpkgs",
+        "rev": "b55a3e7bf51be94e4c3e62422acc7eb0c6a6a170",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bartoostveen",
+        "ref": "wordpress-7.0",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -822,9 +822,12 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixpkgs"
+        ],
         "nixpkgs-lib": "nixpkgs-lib",
         "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-wordpress": "nixpkgs-wordpress",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",

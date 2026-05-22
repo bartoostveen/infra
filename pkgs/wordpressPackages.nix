@@ -56,15 +56,23 @@ in
       hash = "sha256-mHdek0LI51mfurpyXpM8QOK2E38PwoL8Ad3OQl9yW28=";
     };
   };
-  lang.nl =
-    version:
+  lang =
+    {
+      lang,
+      version,
+      hash,
+      ...
+    }:
     stdenv.mkDerivation {
       name = "wp-language-nl";
+      inherit version;
+
       src = fetchzip {
-        url = "https://nl.wordpress.org/wordpress-${version}-nl_NL.zip";
+        url = "https://nl.wordpress.org/wordpress-${version}-${lang}.zip";
         name = "wp-${version}-language-nl";
-        hash = "sha256-beU5XYpNX6ISD2y46q8r1Jy813V8zxWBzRK4V9d8L9M=";
+        inherit hash;
       };
+
       installPhase = "mkdir -p $out; cp -r ./wp-content/languages/* $out/";
     };
 }

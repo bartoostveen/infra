@@ -1,9 +1,19 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  wordpressPkgs,
+  ...
+}:
 
+# TODO: remove wordpressPkgs
 let
   domain = "popkoorklankkleur.nl";
 
-  nl = pkgs.local.wordpressPackages.lang.nl config.services.wordpress.sites.${domain}.package.version;
+  nl = pkgs.local.wordpressPackages.lang {
+    lang = "nl_NL";
+    inherit (config.services.wordpress.sites.${domain}.package) version;
+    hash = "sha256-03/zOJUtsFjJFqcpqXsrPlbt7ddOAWAnL+rNZo0BBnc=";
+  };
 in
 {
   services.wordpress = {
@@ -31,7 +41,7 @@ in
           view-transitions
           # keep-sorted end
           ;
-        inherit (pkgs.wordpressPackages.plugins)
+        inherit (wordpressPkgs.wordpressPackages.plugins)
           # keep-sorted start
           antispam-bee
           opengraph
@@ -41,10 +51,10 @@ in
         inherit (pkgs.local) wp-oidc-roles;
       };
       themes = {
-        inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
+        inherit (wordpressPkgs.wordpressPackages.themes) twentytwentyfive;
       };
       languages = [ nl ];
-      package = pkgs.wordpress_6_9;
+      package = wordpressPkgs.wordpress_7_0;
     };
   };
 
