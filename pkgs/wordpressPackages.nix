@@ -21,9 +21,9 @@ in
   plugins = {
     contact-form-7 = mkWpPlugin {
       pname = "wp-contact-form-7";
-      version = "6.1.5";
+      version = "6.1.6";
       id = "contact-form-7";
-      hash = "sha256-xdr6IswCSbHeVLWHAtZ1c/pfnzorfBCQ+lvMfMHTzfs=";
+      hash = "sha256-5s5y2+NveHIrLVhZmS9sPvYnCxFd+/ggbqq2nyusg3E=";
     };
     generic-oidc = mkWpPlugin {
       pname = "wp-generic-oidc";
@@ -33,9 +33,9 @@ in
     };
     gutenberg = mkWpPlugin {
       pname = "gutenberg";
-      version = "23.1.1";
+      version = "23.2.2";
       id = "gutenberg";
-      hash = "sha256-9XYmHUAmm/19axFdg6fk0Rg92VbMXgx91NFp8yQv5as=";
+      hash = "sha256-jhuFCwuxwCrYgEv5Z5Ji06XcDwLaO1repGemZ7254XA=";
     };
     gutenberg-carousel = mkWpPlugin {
       pname = "wp-gutenberg-carousel";
