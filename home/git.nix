@@ -9,6 +9,7 @@
   programs.git = {
     enable = lib.mkDefault true;
     package = pkgs.gitFull;
+
     signing = {
       key = "5963223E57296C53";
       signByDefault = true;
@@ -17,9 +18,23 @@
     settings = {
       user.email = "bart@bartoostveen.nl";
       user.name = "Bart Oostveen";
+
       pull.rebase = true;
       init.defaultBranch = "master";
       advice.detachedHead = false;
+
+      core.fsmonitor = true;
+      branch.sort = "-comitterdate";
+      merge.conflictStyle = "zdiff3";
+
+      rerere.enabled = true;
+
+      diff = {
+        algorithm = "histogram";
+        mnemonicPrefix = true;
+      };
+
+      push.followTags = true;
     };
 
     includes = [
