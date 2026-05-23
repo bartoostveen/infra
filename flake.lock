@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779471761,
-        "narHash": "sha256-zFhR06F7jpDaXd7YXa2lm7YDHCRmUAW4O7i6ZH90LAE=",
+        "lastModified": 1779485759,
+        "narHash": "sha256-lgL1feacjPiLDwupOsk+qZud7IpCCOviz7wcmCbYck8=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "30b23c6ae816d7e8142b395130934c5e02317331",
+        "rev": "ca406472f4b45f68842bc31716deb52b66698637",
         "type": "github"
       },
       "original": {
@@ -333,11 +333,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779336838,
-        "narHash": "sha256-n1+l78hJRABp4cQHKeD0BVByT0vZLPqd09Tvoq8Q+d8=",
+        "lastModified": 1779507042,
+        "narHash": "sha256-7wOwi8B6D0BYsieZCnHZZj2sNUzgJhLoIVSfkwB7lxQ=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "928d72376949e222ea4f07b44828a55b0136422e",
+        "rev": "509ed3c603349a9d43de9e2ae6613baea6bd5b34",
         "type": "github"
       },
       "original": {
@@ -360,11 +360,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779387401,
-        "narHash": "sha256-q0pko3LroDE++5qDxyKA5KI6uEjQ0p3JOAIG8P+NGAE=",
+        "lastModified": 1779531725,
+        "narHash": "sha256-8oQJdNWwd85f6fUNABc3wjXLPrWlsKLtY0660+M2rBI=",
         "ref": "refs/heads/master",
-        "rev": "14b0d4d5eb374a68f1f87a23d58ef00d8024b490",
-        "revCount": 11,
+        "rev": "92f329024e1390f041d07be68400be442043edd4",
+        "revCount": 13,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -583,11 +583,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1779436535,
-        "narHash": "sha256-jJ8YPw+bnLy1c8oI0hO4NKvbCQOt9V1aSUzhpLPs3Cw=",
+        "lastModified": 1779522599,
+        "narHash": "sha256-3F5IRy9EUlVYH9PYuBav+VVBSJsFK+XztqQ7AJU/I3M=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d04de155b837ea2ba199ec83851b9dbffe57af08",
+        "rev": "492bd1f77a7ccf2e2858b3935fe209d3b31f9159",
         "type": "github"
       },
       "original": {
@@ -674,11 +674,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779382265,
-        "narHash": "sha256-+/qsAxc6fKQoQOu0ZB6RXi7ny+xFCGWv1+6uskZYXXo=",
+        "lastModified": 1779531615,
+        "narHash": "sha256-tNNd/Uv8lRXj0JsJD/m/KHboy8ParJ8U6+h9w4O1lQM=",
         "ref": "refs/heads/master",
-        "rev": "afcb370ed19b959d82044f328b58457234e74794",
-        "revCount": 35,
+        "rev": "1630a456b664d3832909e5220209b5b14bab7168",
+        "revCount": 38,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -700,11 +700,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779382203,
-        "narHash": "sha256-9SNkpK+xC1gzD3NNLG/JmtRkAFVe7VNPklU5FW/hBhg=",
+        "lastModified": 1779531590,
+        "narHash": "sha256-05VdTpqrJqD+BVVVuJbEHnBI2CTgVwP0u2AbFLjqaqo=",
         "ref": "refs/heads/master",
-        "rev": "e795018104b60c6965e013a9506451f4ed0bd749",
-        "revCount": 26,
+        "rev": "e68d5e5acfce6ff7073198c91ed491ea1d05abc4",
+        "revCount": 28,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -969,11 +969,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779382187,
-        "narHash": "sha256-VePD3DlEYGh2jXI6WWQbHtEY8uPMgJEoxE/2PuOOAiY=",
+        "lastModified": 1779531599,
+        "narHash": "sha256-R68fEWVJAxF08zUENrGId7XYEK02Sxqx/fJ09JaO9wI=",
         "owner": "bartoostveen",
         "repo": "tcs-bot",
-        "rev": "76933ab6668d2e4c2be5e21024ffa394837d2d14",
+        "rev": "2e7726e4e0329d8645abc68c9fd398f242798109",
         "type": "github"
       },
       "original": {
