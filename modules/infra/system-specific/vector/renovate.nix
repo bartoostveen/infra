@@ -18,7 +18,7 @@ in
     settings = {
       endpoint = "https://git.bartoostveen.nl/";
       gitAuthor = "Renovate <renovate@bartoostveen.nl>";
-      platform = "gitea";
+      platform = "forgejo";
       onboarding = true;
       requireConfig = "optional";
 
