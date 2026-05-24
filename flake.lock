@@ -360,11 +360,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779531725,
-        "narHash": "sha256-8oQJdNWwd85f6fUNABc3wjXLPrWlsKLtY0660+M2rBI=",
+        "lastModified": 1779653663,
+        "narHash": "sha256-OqXcIGhZPD5+gA3BdQcel+WpAFJQXES4kTSL8h5k8Ks=",
         "ref": "refs/heads/master",
-        "rev": "92f329024e1390f041d07be68400be442043edd4",
-        "revCount": 13,
+        "rev": "1af78f3b650a14c68a0ea1bd557ab6e02420e1fc",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -674,11 +674,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779531615,
-        "narHash": "sha256-tNNd/Uv8lRXj0JsJD/m/KHboy8ParJ8U6+h9w4O1lQM=",
+        "lastModified": 1779653655,
+        "narHash": "sha256-F5UyJQo0hdV9GonrY+WTMnl4Flk1Dq82/P3qILfCvyk=",
         "ref": "refs/heads/master",
-        "rev": "1630a456b664d3832909e5220209b5b14bab7168",
-        "revCount": 38,
+        "rev": "97b5b0748f8d14acbe5bb247831e40773bc20ac5",
+        "revCount": 40,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -969,11 +969,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779531599,
-        "narHash": "sha256-R68fEWVJAxF08zUENrGId7XYEK02Sxqx/fJ09JaO9wI=",
+        "lastModified": 1779653669,
+        "narHash": "sha256-lL8XomM7y/DoSuJP1VQOpLCuhF3fU51sy7eeaC6dzMI=",
         "owner": "bartoostveen",
         "repo": "tcs-bot",
-        "rev": "2e7726e4e0329d8645abc68c9fd398f242798109",
+        "rev": "d54fb6d48157535a735b705f6894df25314f248e",
         "type": "github"
       },
       "original": {
