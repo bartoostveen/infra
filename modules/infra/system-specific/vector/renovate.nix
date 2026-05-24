@@ -19,9 +19,11 @@ in
       endpoint = "https://git.bartoostveen.nl/";
       gitAuthor = "Renovate <renovate@bartoostveen.nl>";
       platform = "gitea";
-      autodiscover = true;
       onboarding = true;
       requireConfig = "optional";
+
+      autodiscover = true;
+      autodiscoverFilter = [ "bart/*" ];
     };
     runtimePackages = with pkgs; [
       nix
