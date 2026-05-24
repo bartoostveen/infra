@@ -11,7 +11,7 @@ let
     appendLdapBindPwd
     ;
 
-  inherit (lib) concatStringsSep mkForce splitString;
+  inherit (lib) concatStringsSep splitString;
 
   domain = "popkoorklankkleur.nl";
 
@@ -105,10 +105,6 @@ in
       passwd_file_path = "${dovecotMasterPasswdFile}";
       result_success = "continue";
       master = "yes";
-    };
-    "passdb ldap" = {
-      passdb_ldap_bind = "yes";
-      fields.password = mkForce null;
     };
   };
 
