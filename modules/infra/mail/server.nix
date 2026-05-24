@@ -38,7 +38,7 @@ in
 
     useUTF8FolderNames = mkForce true;
 
-    stateVersion = mkDefault 4; # Only change this line after performing state migrations!
+    stateVersion = mkDefault 5; # Only change this line after performing state migrations!
   };
 
   services.nginx.virtualHosts.${cfg.systemDomain} = {
