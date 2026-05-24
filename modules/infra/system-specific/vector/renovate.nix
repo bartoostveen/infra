@@ -16,6 +16,7 @@ in
     credentials = {
       RENOVATE_TOKEN = config.sops.secrets.renovate-access-token.path;
       RENOVATE_GIT_PRIVATE_KEY = config.sops.secrets.renovate-gpg-private.path;
+      RENOVATE_GITHUB_COM_TOKEN = config.sops.secrets.renovate-github-pat.path;
     };
     environment.LOG_LEVEL = "debug";
     settings = {
@@ -74,6 +75,15 @@ in
     group = "renovate";
     mode = "0400";
     sopsFile = ../../../../secrets/renovate-gpg-private.secret;
+    restartUnits = [ "renovate.service" ];
+  };
+
+  sops.secrets.renovate-github-pat = {
+    format = "binary";
+    owner = "renovate";
+    group = "renovate";
+    mode = "0400";
+    sopsFile = ../../../../secrets/renovate-github-pat.secret;
     restartUnits = [ "renovate.service" ];
   };
 }
