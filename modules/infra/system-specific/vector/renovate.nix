@@ -34,6 +34,9 @@ in
       nix
       git
       gnupg
+      nodejs
+      bun
+      pnpm
     ];
   };
 
