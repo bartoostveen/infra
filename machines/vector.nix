@@ -35,6 +35,7 @@
     ../modules/infra/system-specific/vector/mail
     ../modules/infra/system-specific/vector/monitoring.nix
     ../modules/infra/system-specific/vector/onboarding.nix
+    ../modules/infra/system-specific/vector/renovate.nix
     ../modules/infra/system-specific/vector/wordpress.nix
     # keep-sorted end
   ];
