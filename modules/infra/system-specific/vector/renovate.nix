@@ -29,6 +29,18 @@ in
       autodiscoverFilter = [ "bart/*" ];
 
       prHourlyLimit = 50;
+
+      packageRules = [
+        {
+          matchUpdateTypes = [
+            "minor"
+            "patch"
+            "pin"
+            "digest"
+          ];
+          automerge = true;
+        }
+      ];
     };
     runtimePackages = with pkgs; [
       nix
