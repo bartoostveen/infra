@@ -87,7 +87,7 @@ in
       "webmaster@${domain}" = "akadmin@${domain}";
     };
 
-    stateVersion = 4;
+    stateVersion = 5;
   };
 
   infra.mail.additionalDeniedRecipients = [
