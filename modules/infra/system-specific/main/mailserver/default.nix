@@ -14,7 +14,7 @@
       "vitune.app"
       "omeduostuurcentenneef.nl"
     ];
-    stateVersion = 4;
+    stateVersion = 5;
   };
 
   services.roundcube = {
