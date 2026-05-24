@@ -51,6 +51,8 @@ in
       bun
       pnpm
       go
+      gradle
+      openjdk25_headless
     ];
   };
 
