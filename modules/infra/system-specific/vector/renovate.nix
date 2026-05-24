@@ -37,6 +37,7 @@ in
       nodejs
       bun
       pnpm
+      go
     ];
   };
 
