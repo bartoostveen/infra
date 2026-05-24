@@ -42,6 +42,8 @@ in
           automerge = true;
         }
       ];
+
+      lockFileMaintenance.enabled = true;
     };
     runtimePackages = with pkgs; [
       nix
