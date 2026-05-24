@@ -27,6 +27,8 @@ in
 
       autodiscover = true;
       autodiscoverFilter = [ "bart/*" ];
+
+      prHourlyLimit = 50;
     };
     runtimePackages = with pkgs; [
       nix
