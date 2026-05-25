@@ -7,7 +7,7 @@ jobs:
   nix-flake-update:
     runs-on: [gpg, native-x86_64-linux]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: ./.github/actions/setup-home
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
