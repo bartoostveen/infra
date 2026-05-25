@@ -30,12 +30,12 @@ in
 
     sops.secrets.borg-ssh-key = mkDefault {
       format = "binary";
-      sopsFile = ../../../secrets/borg-id_ed25519.secret;
+      sopsFile = ../../../secrets/borg/borg-id_ed25519.secret;
     };
 
     sops.secrets.borg-secret = mkDefault {
       format = "binary";
-      sopsFile = ../../../secrets/borg-key.secret;
+      sopsFile = ../../../secrets/borg/borg-key.secret;
     };
   };
 }

@@ -79,7 +79,7 @@ in
     group = "root";
     mode = "0600";
 
-    sopsFile = ../../secrets/autokuma.env.secret;
+    sopsFile = ../../secrets/autokuma/autokuma.env.secret;
     format = "binary";
     restartUnits = [ "autokuma-local.service" ];
   };
@@ -89,7 +89,7 @@ in
     group = "autokuma";
     mode = "0600";
 
-    sopsFile = ../../secrets/autokuma-matrix.toml.secret;
+    sopsFile = ../../secrets/autokuma/autokuma-matrix.toml.secret;
     format = "binary";
     restartUnits = [ "autokuma-local.service" ];
   };

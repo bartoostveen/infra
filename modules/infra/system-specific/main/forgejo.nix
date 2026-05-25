@@ -162,7 +162,7 @@ in
   };
 
   sops.secrets.forgejo-admin-password = {
-    sopsFile = ../../../../secrets/forgejo-admin-password.secret;
+    sopsFile = ../../../../secrets/forgejo/forgejo-admin-password.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -171,7 +171,7 @@ in
   };
 
   sops.secrets.forgejo-signing-key = {
-    sopsFile = ../../../../secrets/forgejo-signing-key.secret;
+    sopsFile = ../../../../secrets/forgejo/forgejo-signing-key.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -180,7 +180,7 @@ in
   };
 
   sops.secrets.git-email-password = {
-    sopsFile = ../../../../secrets/email-passwords/git.secret;
+    sopsFile = ../../../../secrets/mail/passwords/git.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0600";

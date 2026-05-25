@@ -56,7 +56,7 @@ in
     format = "binary";
     mode = "0600";
 
-    sopsFile = ../../secrets/email-passwords/alertmanager.secret;
+    sopsFile = ../../secrets/mail/passwords/alertmanager.secret;
     restartUnits = [ "alertmanager.service" ];
     owner = "alertmanager";
     group = "alertmanager";
