@@ -138,7 +138,7 @@ in
       format = "binary";
       owner = "mautrix-signal";
       group = "mautrix-signal";
-      sopsFile = ../../../secrets/mautrix-signal.env.secret;
+      sopsFile = ../../../secrets/mautrix/mautrix-signal.env.secret;
       mode = "0600";
       restartUnits = [ "mautrix-signal.service" ];
     };

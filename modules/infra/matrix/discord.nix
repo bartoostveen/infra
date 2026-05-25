@@ -129,7 +129,7 @@ in
       format = "binary";
       owner = "mautrix-discord";
       group = "mautrix-discord";
-      sopsFile = ../../../secrets/mautrix-discord.env.secret;
+      sopsFile = ../../../secrets/mautrix/mautrix-discord.env.secret;
       mode = "0600";
       restartUnits = [ "mautrix-discord.service" ];
     };
