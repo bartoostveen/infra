@@ -44,9 +44,6 @@ in
       ];
 
       lockFileMaintenance.enabled = true;
-
-      postUpgradeTasks.commands = [ "nix-update --flake default" ];
-      allowedCommands = [ "^nix-update" ];
     };
     runtimePackages = with pkgs; [
       nix
@@ -58,7 +55,6 @@ in
       go
       gradle
       openjdk25_headless
-      nix-update
     ];
   };
 
