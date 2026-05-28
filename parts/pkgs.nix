@@ -9,6 +9,7 @@
     {
       system,
       pkgs,
+      smallPkgs,
       ...
     }:
 
@@ -34,6 +35,7 @@
         overlays = [
           self.overlays.default
           (_final: prev: {
+            inherit (smallPkgs) roundcube;
             local = {
               inherit wordpressPackages;
             }
