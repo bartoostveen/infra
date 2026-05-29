@@ -646,11 +646,11 @@
     },
     "nixpkgs-wordpress": {
       "locked": {
-        "lastModified": 1779555505,
-        "narHash": "sha256-Fs06XYw0qEktBSmbaeuMbeRMwBh8uZo8yUjKH9pb4wc=",
+        "lastModified": 1780093507,
+        "narHash": "sha256-FfGjcWmiIMgErgWHQ6l39grVv4V0+U1UvadCSWgeeuI=",
         "owner": "bartoostveen",
         "repo": "nixpkgs",
-        "rev": "af21c605590b44df935e415e941f55a57f5f0fce",
+        "rev": "2bd6ce8569e7157615640a6d3969741b799c4bbd",
         "type": "github"
       },
       "original": {
