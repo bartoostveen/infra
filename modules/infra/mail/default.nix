@@ -13,6 +13,7 @@ in
   imports = [
     inputs.nixos-mailserver.nixosModule
     # keep-sorted start
+    ../postfix-digicert.nix
     ./autoconfig.nix
     ./bounce.nix
     ./dkim.nix
