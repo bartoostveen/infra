@@ -1,16 +1,52 @@
 keys:
-  - &server age1tfcfat3y9uekdw8u2ln4az4uqfznk25ntarte34292rz0zw3zy6qjcqqth
+  # keep-sorted start
   - &atlas age1nx9dryc4tvg62qs08qhh4x02fsqr8mqhc8zzz93znqer5qqp4eysvvnth3
+  - &bart age1qdslghtpq4zew5jkc6c23r9petqq3mc23xccn6hqk2qg26sx9prqdutrd3
+  - &bart-laptop-new age1qdslghtpq4zew5jkc6c23r9petqq3mc23xccn6hqk2qg26sx9prqdutrd3
+  - &bart-pc age1lzxxtwcxvk9slq5vn2rw35gm9r93c0w0hg0wlwgn7ctu89wxpums0r8ke7
+  - &bart-server age1tfcfat3y9uekdw8u2ln4az4uqfznk25ntarte34292rz0zw3zy6qjcqqth
   - &vector age1tdr644577pe28tz57802fvewxaphcv5dlu0p4n6ezzshzw7xdsfqgkzjur
-  - &laptop age1qdslghtpq4zew5jkc6c23r9petqq3mc23xccn6hqk2qg26sx9prqdutrd3
-  - &pc age1lzxxtwcxvk9slq5vn2rw35gm9r93c0w0hg0wlwgn7ctu89wxpums0r8ke7
+  # keep-sorted end
 
 creation_rules:
-  - path_regex: secrets/.+.secret
+  - path_regex: ^secrets/.+\.atlas\.secret$
     key_groups:
       - age:
-          - *server
+        - *atlas
+        - *bart
+
+  - path_regex: ^secrets/.+\.bart-laptop-new\.secret$
+    key_groups:
+      - age:
+        - *bart
+        - *bart-laptop-new
+
+  - path_regex: ^secrets/.+\.bart-pc\.secret$
+    key_groups:
+      - age:
+        - *bart
+        - *bart-pc
+
+  - path_regex: ^secrets/.+\.bart-server\.secret$
+    key_groups:
+      - age:
+        - *bart
+        - *bart-server
+
+  - path_regex: ^secrets/.+\.vector\.secret$
+    key_groups:
+      - age:
+        - *bart
+        - *vector
+
+  - path_regex: ^secrets/.+\.secret$
+    key_groups:
+      - age:
+          # keep-sorted start
           - *atlas
+          - *bart
+          - *bart-laptop-new
+          - *bart-pc
+          - *bart-server
           - *vector
-          - *laptop
-          - *pc
+          # keep-sorted end

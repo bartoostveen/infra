@@ -76,7 +76,7 @@ in
       useSystemdActivation = mkForce true;
       secrets.${sopsSecret} = {
         format = "binary";
-        sopsFile = ../secrets/wireguard/${cfg.host}.private.secret;
+        sopsFile = ../secrets/wireguard/private.${cfg.host}.secret;
         restartUnits = mkIf config.networking.wireguard.useNetworkd [ "systemd-networkd.service" ];
       };
     };

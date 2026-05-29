@@ -14,7 +14,7 @@
 
   sops.secrets.authentik-env = {
     format = "binary";
-    sopsFile = ../../../../secrets/vector-authentik.env.secret;
+    sopsFile = ../../../../secrets/authentik.env.vector.secret;
 
     owner = "authentik";
     group = "authentik";
@@ -28,7 +28,7 @@
 
   sops.secrets.ldap-bind-password = {
     format = "binary";
-    sopsFile = ../../../../secrets/vector-ldap-bind-password.secret;
+    sopsFile = ../../../../secrets/ldap-bind-password.vector.secret;
     restartUnits = [
       "authentik.service"
       "authentik-worker.service"

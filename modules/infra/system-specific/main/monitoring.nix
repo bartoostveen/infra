@@ -239,7 +239,7 @@ in
     format = "binary";
     mode = "0600";
 
-    sopsFile = ../../../../secrets/grafana.secret;
+    sopsFile = ../../../../secrets/grafana.bart-server.secret;
     restartUnits = [ "grafana.service" ];
     owner = "grafana";
     group = "grafana";

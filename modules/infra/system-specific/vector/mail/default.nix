@@ -208,7 +208,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/dovecot-master-password.secret;
+    sopsFile = ../../../../../secrets/mail/dovecot-master-password.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -222,7 +222,7 @@ in
     owner = "dovecot2";
     group = "dovecot2";
 
-    sopsFile = ../../../../../secrets/mail/dovecot-master-passwd.secret;
+    sopsFile = ../../../../../secrets/mail/dovecot-master-passwd.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -235,7 +235,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/roundcube-client.secret;
+    sopsFile = ../../../../../secrets/mail/roundcube-client.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -248,7 +248,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/roundcube-des.secret;
+    sopsFile = ../../../../../secrets/mail/roundcube-des.vector.secret;
 
     restartUnits = [ "phpfpm-roundcube.service" ];
   };
