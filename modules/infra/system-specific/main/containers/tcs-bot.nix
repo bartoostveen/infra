@@ -83,7 +83,7 @@ in
 
   # sops.secrets.tcs-bot-env = {
   #   format = "binary";
-  #   sopsFile = ../../../../../secrets/tcs-bot.env.secret;
+  #   sopsFile = ../../../../../secrets/tcs-bot.env.bart-server.secret;
   #   restartUnits = [ "podman-tcs-bot.service" ];
   # };
 

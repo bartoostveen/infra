@@ -96,7 +96,7 @@ in
 
   sops.secrets.authentik-env = {
     format = "binary";
-    sopsFile = ../secrets/authentik.env.secret;
+    sopsFile = ../secrets/authentik.env.bart-server.secret;
 
     owner = "authentik";
     group = "authentik";

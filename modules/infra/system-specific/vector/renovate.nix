@@ -56,7 +56,7 @@ in
     owner = "renovate";
     group = "renovate";
     mode = "0400";
-    sopsFile = ../../../../secrets/renovate/renovate-access-token.secret;
+    sopsFile = ../../../../secrets/renovate/renovate-access-token.vector.secret;
     restartUnits = [ "renovate.service" ];
   };
 
@@ -65,7 +65,7 @@ in
     owner = "renovate";
     group = "renovate";
     mode = "0400";
-    sopsFile = ../../../../secrets/renovate/renovate-gpg-private.secret;
+    sopsFile = ../../../../secrets/renovate/renovate-gpg-private.vector.secret;
     restartUnits = [ "renovate.service" ];
   };
 
@@ -74,7 +74,7 @@ in
     owner = "renovate";
     group = "renovate";
     mode = "0400";
-    sopsFile = ../../../../secrets/renovate/renovate-github-pat.secret;
+    sopsFile = ../../../../secrets/renovate/renovate-github-pat.vector.secret;
     restartUnits = [ "renovate.service" ];
   };
 }

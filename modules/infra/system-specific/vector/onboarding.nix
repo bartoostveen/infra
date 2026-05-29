@@ -97,7 +97,7 @@ in
   ];
 
   sops.secrets.onboarding-env = {
-    sopsFile = ../../../../secrets/onboarding.env.secret;
+    sopsFile = ../../../../secrets/onboarding.env.vector.secret;
     format = "binary";
     restartUnits = [ "authentik-onboarding.service" ];
   };

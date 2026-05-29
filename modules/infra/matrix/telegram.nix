@@ -177,7 +177,7 @@ in
       format = "binary";
       owner = "mautrix-telegram";
       group = "mautrix-telegram";
-      sopsFile = ../../../secrets/mautrix/mautrix-telegram.env.secret;
+      sopsFile = ../../../secrets/mautrix/mautrix-telegram.env.bart-server.secret;
       mode = "0600";
       restartUnits = [ "mautrix-telegram.service" ];
     };

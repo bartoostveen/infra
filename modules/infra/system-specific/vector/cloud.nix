@@ -14,9 +14,9 @@ in
     enable = true;
     package = pkgs.nextcloud33;
     hostName = fqdn;
-    secretFile = config.sops.secrets.vector-nextcloud-secrets.path;
+    secretFile = config.sops.secrets.nextcloud-secrets.path;
     config = {
-      adminpassFile = config.sops.secrets.vector-nextcloud-admin-pass.path;
+      adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
       dbtype = "pgsql";
     };
     database.createLocally = true;
@@ -91,18 +91,18 @@ in
 
   infra.backup.jobs.state.paths = [ config.services.nextcloud.home ];
 
-  sops.secrets.vector-nextcloud-admin-pass = {
+  sops.secrets.nextcloud-admin-pass = {
     format = "binary";
-    sopsFile = ../../../../secrets/vector-nextcloud-admin-pass.secret;
+    sopsFile = ../../../../secrets/nextcloud-admin-pass.vector.secret;
 
     owner = "nextcloud";
     group = "nextcloud";
     mode = "0660";
   };
 
-  sops.secrets.vector-nextcloud-secrets = {
+  sops.secrets.nextcloud-secrets = {
     format = "binary";
-    sopsFile = ../../../../secrets/vector-nextcloud-secrets.json.secret;
+    sopsFile = ../../../../secrets/nextcloud-secrets.json.vector.secret;
 
     owner = "nextcloud";
     group = "nextcloud";

@@ -25,7 +25,7 @@ in
         owner = "rspamd";
         group = "rspamd";
         mode = "0600";
-        sopsFile = ../../../secrets/dkim/${name}.mail.private.secret;
+        sopsFile = ../../../secrets/mail/dkim/${name}.mail.private.${config.networking.hostName}.secret;
         restartUnits = [ "rspamd.service" ];
       }
     )

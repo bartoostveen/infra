@@ -65,7 +65,7 @@ in
     };
 
     sops.secrets.alertmanager-matrix-env = {
-      sopsFile = ../../../secrets/matrix/alertmanager-matrix.env.secret;
+      sopsFile = ../../../secrets/matrix/alertmanager-matrix.env.bart-server.secret;
       owner = "alertmanager-matrix";
       group = "alertmanager-matrix";
       format = "binary";
