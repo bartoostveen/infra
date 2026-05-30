@@ -15,5 +15,5 @@ jobs:
           ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
-      - run: nix fmt -L --accept-flake-config --log-format raw -- --ci
-      - run: nix flake check -L --accept-flake-config --log-format raw
+      - run: nix fmt -L --accept-flake-config -- --ci
+      - run: nix flake check -L --accept-flake-config
