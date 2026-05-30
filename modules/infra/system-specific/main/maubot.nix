@@ -31,6 +31,10 @@ let
   };
 in
 {
+  imports = [
+    ../../maubot-exporter.nix
+  ];
+
   services.maubot = {
     enable = true;
     configMutable = false;
@@ -71,6 +75,24 @@ in
     };
   };
 
+  services.maubot-exporter = {
+    enable = true;
+    settings = {
+      MAUBOT_API_BASE = "https://${domain}";
+      MAUBOT_USERNAME = "bart";
+      MAUBOT_EXPORTER_PORT = 25614;
+    };
+    environmentFile = config.sops.secrets.maubot-exporter-env.path;
+  };
+  users.users.maubot-exporter = {
+    isSystemUser = true;
+    group = "maubot-exporter";
+  };
+  users.groups.maubot-exporter = { };
+
+  infra.extraScrapeConfigs.maubot.port =
+    config.services.maubot-exporter.settings.MAUBOT_EXPORTER_PORT;
+
   services.nginx.virtualHosts.${domain} = {
     enableACME = true;
     forceSSL = true;
@@ -78,5 +100,14 @@ in
       proxyPass = "http://${config.services.maubot.settings.server.hostname}:${toString config.services.maubot.settings.server.port}";
       proxyWebsockets = true;
     };
+  };
+
+  sops.secrets.maubot-exporter-env = {
+    sopsFile = ../../../../secrets/maubot-exporter.env.bart-server.secret;
+    owner = "maubot-exporter";
+    group = "maubot-exporter";
+    format = "binary";
+    mode = "0440";
+    restartUnits = [ "maubot-exporter.service" ];
   };
 }
