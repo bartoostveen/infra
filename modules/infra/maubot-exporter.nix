@@ -22,7 +22,7 @@ let
     submodule
     attrsOf
     package
-    ints
+    port
     path
     ;
 
@@ -50,7 +50,7 @@ in
     };
     port = mkOption {
       description = "Port";
-      type = ints.port;
+      type = port;
       default = 9100;
       example = 12345;
     };
