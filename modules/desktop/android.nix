@@ -7,7 +7,7 @@ let
       "36.0.0"
       "35.0.0"
     ];
-    platformVersions = [ "36" ];
+    platformVersions = [ "37" ];
     includeSystemImages = true;
     systemImageTypes = [ "google_apis_playstore" ];
     includeEmulator = true;
