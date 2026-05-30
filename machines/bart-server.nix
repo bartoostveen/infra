@@ -46,6 +46,7 @@ in
     ../modules/infra/autokuma-config.nix
     ../modules/infra/backup
     ../modules/infra/common.nix
+    ../modules/infra/dns.nix
     ../modules/infra/copyparty.nix
     ../modules/infra/fail2ban.nix
     ../modules/infra/forgejo-actions.nix

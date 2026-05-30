@@ -19,6 +19,7 @@
     ../modules/infra/alloy.nix
     ../modules/infra/backup
     ../modules/infra/common.nix
+    ../modules/infra/dns.nix
     ../modules/infra/forgejo-actions.nix
     ../modules/infra/git.nix
     ../modules/infra/networking.nix
