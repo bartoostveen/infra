@@ -613,6 +613,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-element-call": {
+      "locked": {
+        "lastModified": 1780144218,
+        "narHash": "sha256-KyK8dCu/yNWl+mu01uP7OihTzKtJHwR3Dg0USl1+e/w=",
+        "owner": "bartoostveen",
+        "repo": "nixpkgs",
+        "rev": "52fabda965afb0d8bcedfbefccbc489d11ed2cd4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bartoostveen",
+        "ref": "element-call-0.20.0",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1779589704,
@@ -825,6 +841,7 @@
         "nixpkgs-continuwuity": [
           "nixpkgs"
         ],
+        "nixpkgs-element-call": "nixpkgs-element-call",
         "nixpkgs-lib": "nixpkgs-lib",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-wordpress": "nixpkgs-wordpress",

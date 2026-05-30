@@ -70,6 +70,7 @@
         ketesa = pkgs.callPackage ../pkgs/ketesa/package.nix { };
         ketesa-unwrapped = pkgs.callPackage ../pkgs/ketesa/unwrapped.nix { };
         librepods = pkgs.callPackage ../pkgs/librepods/package.nix { };
+        maubot-exporter = pkgs.callPackage ../pkgs/maubot-exporter/package.nix { };
         mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
         meshcore-gui = pkgs.callPackage ../pkgs/meshcore-gui/package.nix { };
         meshcore-scan = pkgs.callPackage ../pkgs/meshcore-scan/package.nix { };

@@ -1,0 +1,32 @@
+From f5380839c176e76937e923e70a8c2747113b6127 Mon Sep 17 00:00:00 2001
+From: Bart Oostveen <bart@bartoostveen.nl>
+Date: Sat, 30 May 2026 18:05:09 +0200
+Subject: [PATCH] feat: support port environment variable
+
+---
+ exporter.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/exporter.py b/exporter.py
+index 37fdf67..8f4b5da 100644
+--- a/exporter.py
++++ b/exporter.py
+@@ -17,6 +17,7 @@ maubot_enabled_instances = Gauge('maubot_client_enabled_instances', 'The number
+ USERNAME = os.getenv('MAUBOT_USERNAME')
+ PASSWORD = os.getenv('MAUBOT_PASSWORD')
+ API_BASE = os.getenv('MAUBOT_API_BASE')
++PORT = os.getenv('MAUBOT_EXPORTER_PORT')
+ MAUBOT_LOGIN_URL = f"{API_BASE}/auth/login"
+ MAUBOT_CLIENTS_URL = f"{API_BASE}/clients"
+ 
+@@ -47,5 +48,5 @@ def metrics():
+     return Response(generate_latest(registry), mimetype="text/plain")
+ 
+ if __name__ == '__main__':
+-    start_http_server(9100)
+-    app.run(host='0.0.0.0', port=9100)
++    start_http_server(PORT)
++    app.run(host='0.0.0.0', port=PORT)
+-- 
+2.54.0
+
