@@ -1,8 +1,9 @@
 { lib, ... }:
 
 {
-  # TODO: add back
-  # services.resolved.enable = lib.mkForce false;
+  # TODO: make less ugly (https://github.com/nix-community/srvos/blob/77faea4aed26379aa30304850dd0ef2b6f2dfe28/nixos/common/networking.nix#L25)
+  services.resolved.enable = lib.mkForce false;
+  systemd.services.systemd-resolved.enable = lib.mkForce false;
   services.kresd.enable = lib.mkForce false;
 
   services.unbound = {
