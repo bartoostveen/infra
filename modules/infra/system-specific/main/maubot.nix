@@ -77,10 +77,10 @@ in
 
   services.maubot-exporter = {
     enable = true;
+    port = 25614;
     settings = {
       MAUBOT_API_BASE = "https://${domain}";
       MAUBOT_USERNAME = "bart";
-      MAUBOT_EXPORTER_PORT = 25614;
     };
     environmentFile = config.sops.secrets.maubot-exporter-env.path;
   };
@@ -90,8 +90,7 @@ in
   };
   users.groups.maubot-exporter = { };
 
-  infra.extraScrapeConfigs.maubot.port =
-    config.services.maubot-exporter.settings.MAUBOT_EXPORTER_PORT;
+  infra.extraScrapeConfigs.maubot.port = config.services.maubot-exporter.port;
 
   services.nginx.virtualHosts.${domain} = {
     enableACME = true;

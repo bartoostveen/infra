@@ -13,7 +13,6 @@ let
     types
     getExe
     optional
-    mapAttrs
     ;
 
   inherit (types)
@@ -43,6 +42,18 @@ in
       default = true;
       example = false;
     };
+    listen = mkOption {
+      description = "Listen address";
+      type = str;
+      default = "0.0.0.0";
+      example = "127.0.0.1";
+    };
+    port = mkOption {
+      description = "Port";
+      type = ints.port;
+      default = 9100;
+      example = 12345;
+    };
     settings = mkOption {
       description = "Settings (env vars) for maubot-exporter";
       type = submodule {
@@ -63,12 +74,6 @@ in
             type = nullOr str;
             default = null;
             example = "changeme";
-          };
-          MAUBOT_EXPORTER_PORT = mkOption {
-            description = "The value of the MAUBOT_EXPORTER_PORT env var, the port of the exporter";
-            type = ints.positive;
-            default = 9100;
-            example = 12345;
           };
         };
       };
@@ -93,10 +98,10 @@ in
       after = optional cfg.local "maubot.service";
       requires = optional cfg.local "maubot.service";
       wantedBy = [ "multi-user.target" ];
-      environment = cfg.settings |> mapAttrs (_: v: toString v);
+      environment = cfg.settings;
       serviceConfig = {
         Type = "simple";
-        ExecStart = getExe cfg.package;
+        ExecStart = "${getExe cfg.package} --bind ${cfg.listen}:${toString cfg.port}";
         EnvironmentFile = cfg.environmentFile;
         DynamicUser = true;
         Restart = "on-failure";
