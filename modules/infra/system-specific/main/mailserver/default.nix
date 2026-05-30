@@ -20,6 +20,14 @@
   services.roundcube = {
     enable = true;
     hostName = "webmail.bartoostveen.nl";
+    plugins = [
+      "roundcube_oidc"
+      "managesieve"
+      "markasjunk"
+      "newmail_notifier"
+      "vcard_attachments"
+      "zipdownload"
+    ];
     extraConfig = ''
       $config['imap_host'] = "ssl://${config.mailserver.fqdn}:993";
       $config['imap_auth_type'] = 'LOGIN';
@@ -41,6 +49,10 @@
               'verify_peer_name' => false,
           ),
       );
+
+      $config['managesieve_host'] = "tls://${config.mailserver.fqdn}";
+      $config['managesieve_port'] = 4190;
+      $config['managesieve_usetls'] = true;
     '';
   };
 }
