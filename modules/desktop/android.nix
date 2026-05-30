@@ -11,6 +11,7 @@ let
     includeSystemImages = true;
     systemImageTypes = [ "google_apis_playstore" ];
     includeEmulator = true;
+    includeSources = true;
   };
 in
 {
