@@ -8,16 +8,16 @@
 
 rustPlatform.buildRustPackage (_finalAttrs: {
   pname = "autokuma";
-  version = "2.0.0";
+  version = "0-unstable-2026-05-30";
 
   src = fetchFromGitHub {
-    owner = "bartoostveen";
+    owner = "BigBoot";
     repo = "AutoKuma";
-    rev = "7d616e1b4a47059610f25c10cff3fb4e3b5d3110";
-    hash = "sha256-eMyG4LXyhdzXy4tvlnxfVukB7CdQrSHRyMjTuVlqyVE=";
+    rev = "663d259439630bd7139593313fd9a62f34200ea3";
+    hash = "sha256-tPqGzzrrcLKEKsytZhO56+TznoifGTDDGFJlUaiM23A=";
   };
 
-  cargoHash = "sha256-+pMxHwFjX00O81EwQtGzh0M6YktP1wXNavhGoFUfjno=";
+  cargoHash = "sha256-TG0RQ+SE/x4SKXFAzWQlu2377USyTPu5Z6oaZ9Omh9M=";
 
   patches = [
     ./no-doctest.patch
