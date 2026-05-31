@@ -5,8 +5,10 @@
 }:
 
 let
+  inherit (lib) flatten reverseList mkDefault;
+
   reverseString =
-    string: builtins.concatStringsSep "" (lib.flatten (lib.reverseList (builtins.split "" string)));
+    string: builtins.concatStringsSep "" (flatten (reverseList (builtins.split "" string)));
 in
 {
   imports = [
@@ -37,12 +39,31 @@ in
     commonHttpConfig = ''
       log_format main '$remote_addr - $remote_user [$time_local] '
                       '"$request" $status $body_bytes_sent '
-                      '"$http_referer" "$http_user_agent"';
+                      '"$http_referer" "$http_user_agent" "$http_x_forwarded_for"';
 
       access_log /var/log/nginx/access.log main;
       error_log /var/log/nginx/error.log warn;
     '';
   };
+
+  services.prometheus.exporters = {
+    nginx.enable = mkDefault true;
+    nginxlog = mkDefault {
+      enable = true;
+      settings.namespaces = [
+        {
+          name = "default";
+          format = "$remote_addr - $remote_user [$time_local] \"$request\" $status $body_bytes_sent \"$http_referer\" \"$http_user_agent\" \"$http_x_forwarded_for\"";
+          source.files = [
+            "/var/log/nginx/access.log"
+            "/var/log/nginx/error.log"
+          ];
+        }
+      ];
+    };
+  };
+
+  systemd.services.prometheus-nginxlog-exporter.serviceConfig.SupplementaryGroups = [ "nginx" ];
 
   services.fail2ban.jails = {
     nginx-http-auth = ''

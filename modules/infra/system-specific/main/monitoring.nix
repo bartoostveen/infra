@@ -145,8 +145,6 @@ in
     retentionTime = "180d";
 
     exporters = {
-      nginx.enable = true;
-      nginxlog.enable = true;
       systemd.enable = true;
       postgres.enable = true;
       node.enable = true;
