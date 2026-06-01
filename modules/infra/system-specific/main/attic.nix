@@ -69,6 +69,7 @@ in
     locations."/" = {
       proxyPass = "http://${config.services.atticd.settings.listen}";
       proxyWebsockets = true;
+      rateLimit.burst = 250;
       extraConfig = ''
         client_max_body_size 0;
         proxy_buffering off;
