@@ -7,7 +7,6 @@ let
   certDir = config.security.acme.certs.${vHost}.directory;
   cert = "${certDir}/cert.pem";
   key = "${certDir}/key.pem";
-  dhParams = "${config.security.dhparams.path}/nginx.pem";
 in
 {
   services.nginx.virtualHosts.${vHost} = {
@@ -25,7 +24,6 @@ in
     config = {
       SSLCertFile = cert;
       SSLKeyFile = key;
-      SSLDHParamFile = dhParams;
       TrustedProxy = [
         "127.0.0.1"
         "::1"
