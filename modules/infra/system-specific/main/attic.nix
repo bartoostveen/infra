@@ -75,6 +75,8 @@ in
     enableACME = true;
     forceSSL = true;
 
+    serverAliases = [ "cache.bartoostveen.nl" ];
+
     locations."/" = {
       proxyPass = "http://unix://${config.services.anubis.instances.attic.settings.BIND}";
       proxyWebsockets = true;
