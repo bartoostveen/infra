@@ -2,6 +2,7 @@
 
 let
   vHost = "attic.bartoostveen.nl";
+  serverAliases = [ "cache.bartoostveen.nl" ];
 
   port = 64153;
   metricsPort = 64154;
@@ -18,7 +19,7 @@ in
     environmentFile = config.sops.secrets.attic-env.path;
 
     settings = {
-      allowed-hosts = [ vHost ];
+      allowed-hosts = [ vHost ] ++ serverAliases;
       api-endpoint = "https://${vHost}/";
       listen = "127.0.0.1:${toString port}";
       max-nar-info-size = 1048576;
@@ -75,7 +76,7 @@ in
     enableACME = true;
     forceSSL = true;
 
-    serverAliases = [ "cache.bartoostveen.nl" ];
+    inherit serverAliases;
 
     locations."/" = {
       proxyPass = "http://unix://${config.services.anubis.instances.attic.settings.BIND}";
