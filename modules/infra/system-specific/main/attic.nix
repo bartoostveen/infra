@@ -42,6 +42,8 @@ in
     };
   };
 
+  infra.backup.jobs.state.paths = [ config.services.atticd.settings.storage.path ];
+
   users.users.${user} = {
     isSystemUser = true;
     group = user;
