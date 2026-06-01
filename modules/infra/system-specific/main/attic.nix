@@ -4,9 +4,6 @@ let
   vHost = "attic.bartoostveen.nl";
   serverAliases = [ "cache.bartoostveen.nl" ];
 
-  port = 64153;
-  metricsPort = 64154;
-
   user = "atticd";
 in
 {
@@ -21,7 +18,7 @@ in
     settings = {
       allowed-hosts = [ vHost ] ++ serverAliases;
       api-endpoint = "https://${vHost}/";
-      listen = "127.0.0.1:${toString port}";
+      listen = "127.0.0.1:64153";
       max-nar-info-size = 1048576;
       require-proof-of-possession = true;
 
@@ -63,15 +60,6 @@ in
     ];
   };
 
-  services.anubis.instances.attic.settings = {
-    BIND = "/run/anubis/anubis-attic/anubis-attic.sock";
-    TARGET = "http://${config.services.atticd.settings.listen}";
-    METRICS_BIND = "0.0.0.0:${toString metricsPort}";
-    METRICS_BIND_NETWORK = "tcp";
-  };
-
-  infra.extraScrapeConfigs.attic-anubis.port = metricsPort;
-
   services.nginx.virtualHosts.${vHost} = {
     enableACME = true;
     forceSSL = true;
@@ -79,7 +67,7 @@ in
     inherit serverAliases;
 
     locations."/" = {
-      proxyPass = "http://unix://${config.services.anubis.instances.attic.settings.BIND}";
+      proxyPass = "http://${config.services.atticd.settings.listen}";
       proxyWebsockets = true;
       extraConfig = ''
         client_max_body_size 0;
