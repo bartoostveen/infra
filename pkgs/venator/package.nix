@@ -10,15 +10,15 @@
 
 buildGoModule (finalAttrs: {
   pname = "venator";
-  version = "0.2605.13";
+  version = "0.2606.03";
   __structuredAttrs = true;
 
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "timedout";
     repo = "venator";
-    rev = "1203bc7e6d333f5dee7cecf8e6cf5824a7e26a39";
-    hash = "sha256-wcKzQBshWBIEPo1MydfYs4pjEN298G1a9JSus/bd17Y=";
+    rev = "f59aec2b3f7e81547c950dbf37e053c451756ecd";
+    hash = "sha256-nIBHQ9ojBaUBuQGriQ5WHD9B1ZyyPm2JV05wKn/7Dp8=";
     fetchSubmodules = true; # because Codeberg or smth
   };
 
