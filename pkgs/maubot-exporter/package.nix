@@ -8,7 +8,7 @@
 
 stdenv.mkDerivation (_finalAttrs: {
   pname = "maubot-exporter";
-  version = "0-unstable-2026-05-30";
+  version = "0-unstable-2026-06-03";
 
   pyproject = false;
 
@@ -19,8 +19,8 @@ stdenv.mkDerivation (_finalAttrs: {
     domain = "git.kurocon.nl";
     owner = "kuronet";
     repo = "maubot-exporter";
-    rev = "461f80cb6b5a69cfa76c38f2b0c014d87978facb";
-    hash = "sha256-wrmy1z443zx6CogX5eLiRL7bBm96XkGM/IvWYkcEyBc=";
+    rev = "72125b8dc8328ca837014669f88b788c89a5b1d8";
+    hash = "sha256-l5v9pEPJf/oChVqM/WwVLoVWia4xqFs4JYIoB51DJvE=";
   };
 
   nativeBuildInputs = [
