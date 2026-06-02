@@ -2,7 +2,7 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
-  nodejs_24,
+  nodejs_26,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -18,17 +18,12 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-oiB+OA6a/okbWezOODY8EpWPxy6BgnceoXQrOOIZUy4=";
 
-  patches = [
-    # as specified in https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#on-other-platforms
-    # ./0001-fix-express-dependency.patch
-  ];
-
   dontNpmBuild = true;
 
   installPhase = ''
     runHook preInstall
     cp -r . $out/
-    makeWrapper ${lib.getExe nodejs_24} $out/bin/${finalAttrs.pname} --append-flag "$out/express.js"
+    makeWrapper ${lib.getExe nodejs_26} $out/bin/${finalAttrs.pname} --append-flag "$out/express.js"
     runHook postInstall
   '';
 
