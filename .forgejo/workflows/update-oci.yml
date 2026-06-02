@@ -4,7 +4,7 @@
   workflow_dispatch: {}
 
 jobs:
-  nix-flake-update:
+  oci-update:
     runs-on: [gpg, native-x86_64-linux]
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -15,8 +15,8 @@ jobs:
           gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
-      - name: nix flake update
-        run: nix run .#nix-oci-lock update --commit
+      - name: nix-oci-lock update
+        run: nix run .#nix-oci-lock -- update --commit
 
       - name: send PR
         run: |
