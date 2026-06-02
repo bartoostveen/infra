@@ -1,14 +1,14 @@
-From 093ae159bd2930ed84b9813e67ce06a21da59fde Mon Sep 17 00:00:00 2001
+From 190ca55f0ae23fc8e12b7d7eda809af026f0e680 Mon Sep 17 00:00:00 2001
 From: Bart Oostveen <bart@bartoostveen.nl>
 Date: Sat, 9 May 2026 22:25:07 +0200
 Subject: [PATCH] fix: proper color handing according to spec
 
 ---
- pkg/bot/formatting.go | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ pkg/bot/formatting.go | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
 diff --git a/pkg/bot/formatting.go b/pkg/bot/formatting.go
-index c2fd0b1..b647f50 100644
+index c2fd0b1..3f57d89 100644
 --- a/pkg/bot/formatting.go
 +++ b/pkg/bot/formatting.go
 @@ -18,7 +18,7 @@ import (
@@ -20,6 +20,29 @@ index c2fd0b1..b647f50 100644
  )
  
  //go:embed templates/silence.md.tmpl
+@@ -27,14 +27,14 @@ var silenceTemplate string
+ // Default color and icon values.
+ var (
+ 	DefaultColors = map[string]string{ //nolint:gochecknoglobals // used as constant
+-		"alert":       "black",
+-		"information": "blue",
+-		"info":        "blue",
+-		"warning":     "orange",
+-		"critical":    "red",
+-		"error":       "red",
+-		"resolved":    "green",
+-		"silenced":    "gray",
++		"alert":       "#000000",
++		"information": "#0000ff",
++		"info":        "#0000ff",
++		"warning":     "#ffa500",
++		"critical":    "#ff0000",
++		"error":       "#ff0000",
++		"resolved":    "#00ff00",
++		"silenced":    "#808080",
+ 	}
+ 
+ 	DefaultIcons = map[string]string{ //nolint:gochecknoglobals // used as constant
 -- 
-2.53.0
+2.54.0
 
