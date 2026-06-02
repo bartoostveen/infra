@@ -73,7 +73,6 @@
         librepods = pkgs.callPackage ../pkgs/librepods/package.nix { };
         maubot-exporter = pkgs.callPackage ../pkgs/maubot-exporter/package.nix { };
         mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
-        meshcore-gui = pkgs.callPackage ../pkgs/meshcore-gui/package.nix { };
         meshcore-scan = pkgs.callPackage ../pkgs/meshcore-scan/package.nix { };
         meshcoredecoder = pkgs.callPackage ../pkgs/meshcoredecoder/package.nix { };
         roundcube-oidc = pkgs.callPackage ../pkgs/roundcube-oidc/package.nix { };
