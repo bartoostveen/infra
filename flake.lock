@@ -526,6 +526,32 @@
         "type": "github"
       }
     },
+    "nix-oci-lock": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780213912,
+        "narHash": "sha256-mcp5Ka/IzmrPI8H+kTUQFsWlYdFqlooy6e0tLLyTWZE=",
+        "ref": "refs/heads/master",
+        "rev": "5ec1c93def6dfbdedd53e472c44c04a08a6d6a2c",
+        "revCount": 7,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
+      }
+    },
     "nixos-facter-modules": {
       "locked": {
         "lastModified": 1773858690,
@@ -818,6 +844,7 @@
         "meshcoretomqtt": "meshcoretomqtt",
         "nix-auth": "nix-auth",
         "nix-index-database": "nix-index-database",
+        "nix-oci-lock": "nix-oci-lock",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",

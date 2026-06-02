@@ -125,6 +125,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-oci-lock = {
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
     nixos-mailserver = {
