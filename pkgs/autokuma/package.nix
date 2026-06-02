@@ -8,13 +8,13 @@
 
 rustPlatform.buildRustPackage (_finalAttrs: {
   pname = "autokuma";
-  version = "0-unstable-2026-05-30";
+  version = "0-unstable-2026-06-03";
 
   src = fetchFromGitHub {
     owner = "BigBoot";
     repo = "AutoKuma";
-    rev = "663d259439630bd7139593313fd9a62f34200ea3";
-    hash = "sha256-tPqGzzrrcLKEKsytZhO56+TznoifGTDDGFJlUaiM23A=";
+    rev = "3379fbaeb27d66a5b8d977e66765d8b4eca94bef";
+    hash = "sha256-blt2G/3yf+rBqH39buUaeIL0JDbc2SGwMsJgLtyqz9M=";
   };
 
   cargoHash = "sha256-TG0RQ+SE/x4SKXFAzWQlu2377USyTPu5Z6oaZ9Omh9M=";
