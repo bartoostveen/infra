@@ -7,6 +7,7 @@
 {
   perSystem =
     {
+      inputs',
       system,
       pkgs,
       smallPkgs,
@@ -82,6 +83,8 @@
         venator = pkgs.callPackage ../pkgs/venator/package.nix { };
         wp-oidc-roles = pkgs.callPackage ../pkgs/wp-oidc-roles/package.nix { };
         # keep-sorted end
+
+        inherit (inputs'.nix-oci-lock.packages) nix-oci-lock;
 
         sops-rotate =
           with pkgs;

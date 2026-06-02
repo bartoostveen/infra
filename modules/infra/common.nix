@@ -14,6 +14,7 @@ in
 {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    inputs.nix-oci-lock.nixosModules.default
   ];
 
   options.infra = {
@@ -69,6 +70,11 @@ in
         extraArgs = "--keep 3 --optimise";
         dates = "weekly";
       };
+    };
+
+    programs.nix-oci-lock = {
+      enable = true;
+      lockFile = ../../oci-lock.json;
     };
 
     services.postgresql = {
