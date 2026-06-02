@@ -14,15 +14,15 @@
             "containers": {
                 "ical-proxy-redis": {
                     "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9"
+                    "locked": "docker.io/valkey/valkey:latest@sha256:fea8b3e67b15729d4bb70589eb03367bab9ad1ee89c876f54327fc7c6e618571"
                 },
                 "tcs-bot-db": {
                     "original": "postgres:latest",
-                    "locked": "docker.io/library/postgres:latest@sha256:8ff36f3c66371cba71d20ceedccfc3de9669a68737607888c4ef0af93abe8e39"
+                    "locked": "docker.io/library/postgres:latest@sha256:41fc5342eefba6cc2ccda736aaf034bbbb7c3df0fdb81516eba1ba33f360162c"
                 },
                 "tcs-bot-redis": {
                     "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9"
+                    "locked": "docker.io/valkey/valkey:latest@sha256:fea8b3e67b15729d4bb70589eb03367bab9ad1ee89c876f54327fc7c6e618571"
                 }
             }
         },
