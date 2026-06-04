@@ -317,11 +317,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780408569,
-        "narHash": "sha256-s7Tv6FUQThRAvW8En8XVC6HMb0uiikzVccCcCo9u/Bg=",
+        "lastModified": 1780515920,
+        "narHash": "sha256-8KX2hEeOX6KP3hBBJJI8dGWVrzbOOf1rBPmg/GUG24U=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f384af1bec6423a0d4ba1855917ab948f64e5808",
+        "rev": "4c5c1e8ba14f1c7475fa31ff11bc1c19cd220974",
         "type": "github"
       },
       "original": {
@@ -539,11 +539,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780433409,
-        "narHash": "sha256-gY2dSa00Werj4OejTRjzk/G0GhCa4rzqmdnC2x6K7K4=",
+        "lastModified": 1780435266,
+        "narHash": "sha256-owHCo/PH/XbuTM5xLIC3G3Hf09J7SeTd0c+w1cjTnUM=",
         "ref": "refs/heads/master",
-        "rev": "a843ec96cc368a5d58d503989afbee61b5e77267",
-        "revCount": 9,
+        "rev": "840036c4bb5897071c4d2fe1414cc613c7b17ce4",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
@@ -593,11 +593,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1780388882,
-        "narHash": "sha256-QE9zstp9lpV4uKW0p3v5401WPEIe2t95HVpqZo3eCxg=",
+        "lastModified": 1780567460,
+        "narHash": "sha256-MBjOVsZ/muhkBdLaBkiJyIa+Et3HTmJYGCjfsVTeBH8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9ad99deda7c38cc4d40a7b8f18904e94a818bcd1",
+        "rev": "3fbe2b9a53598b72d185b2b67c64159a066b8083",
         "type": "github"
       },
       "original": {
@@ -875,11 +875,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777944972,
-        "narHash": "sha256-VfGRo1qTBKOe3s2gOv8LSoA6Fk19PvBlwQ1ECN0Evn8=",
+        "lastModified": 1780547341,
+        "narHash": "sha256-Gq8KNx5A7hBB3uGJaj6eQfLDIz5YdLu92gqBcvHvoUo=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "c591bf665727040c6cc5cb409079acb22dcce33c",
+        "rev": "9ed65852b6257fbeae4355bc24ecfea307ca759a",
         "type": "github"
       },
       "original": {
@@ -895,11 +895,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780391957,
-        "narHash": "sha256-dPoi/DCQYlMGk9MRNODrI0VKTyLw4VzXMgIijQqhRIo=",
+        "lastModified": 1780545143,
+        "narHash": "sha256-y9aFcK8A3pctkW9G9LdppzPDsuBa3VzToADnacjir/A=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "f7378bf89f4c4c0b5e3bf18079a7366a78beba07",
+        "rev": "bc0ca7b0f7c8ca9dc55166438fec4dc2dd74f8a4",
         "type": "github"
       },
       "original": {
