@@ -258,7 +258,16 @@ in
       ))
     ];
 
-    scrapeConfigs = concatMap (
+    scrapeConfigs = [
+      {
+        job_name = "elisaado_ooye";
+        scheme = "https";
+        static_configs = [
+          { targets = [ "ooye.elisaado.com" ]; }
+        ];
+      }
+    ]
+    ++ concatMap (
       name:
       staticConfigsFor {
         inherit name;
