@@ -31,6 +31,8 @@ in
 
       prHourlyLimit = 50;
       lockFileMaintenance.enabled = true;
+      allowedUnsafeExecutions = [ "gradleWrapper" ];
+      minimumReleaseAge = "7 days";
     };
     runtimePackages = with pkgs; [
       nix
