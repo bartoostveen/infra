@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (lib) mkForce;
+  inherit (lib) mkForce getExe';
 in
 {
   services.renovate = {
@@ -46,6 +46,11 @@ in
       openjdk25_headless
     ];
   };
+
+  systemd.services.renovate.serviceConfig.BindReadOnlyPaths = [
+    "${getExe' pkgs.bash "sh"}:/bin/sh"
+    "${getExe' pkgs.coreutils "env"}:/usr/bin/env"
+  ];
 
   users.users.renovate = {
     isSystemUser = true;
