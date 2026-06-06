@@ -54,6 +54,14 @@
           signingKey = "2D4FB795E873C2C3";
         };
       }
+      {
+        condition = "hasconfig:remote.*.url:git@gitlab.ia.utwente.nl:*/**";
+        contents.user = {
+          email = "oostveenb@inter-actief.net";
+          name = "Bart Oostveen";
+          signingKey = "3A251B9812E9186C";
+        };
+      }
     ];
   };
 
