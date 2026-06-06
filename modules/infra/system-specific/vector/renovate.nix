@@ -31,6 +31,7 @@ in
 
       prHourlyLimit = 50;
       lockFileMaintenance.enabled = true;
+      allowedUnsafeExecutions = [ "gradleWrapper" ];
     };
     runtimePackages = with pkgs; [
       nix
