@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
   # TODO: make less ugly (https://github.com/nix-community/srvos/blob/77faea4aed26379aa30304850dd0ef2b6f2dfe28/nixos/common/networking.nix#L25)
@@ -8,11 +8,13 @@
 
   services.unbound = {
     enable = true;
+    localControlSocketPath = "/run/unbound/control.sock";
     settings = {
       server = {
         rrset-cache-size = "64M";
         msg-cache-size = "64M";
         discard-timeout = 4800;
+        extended-statistics = true;
       };
       forward-zone = [
         {
@@ -25,4 +27,11 @@
       ];
     };
   };
+
+  services.prometheus.exporters.unbound = {
+    enable = true;
+    unbound.host = "unix://${config.services.unbound.localControlSocketPath}";
+  };
+
+  systemd.services.prometheus-unbound-exporter.serviceConfig.SupplementaryGroups = [ "unbound" ];
 }
