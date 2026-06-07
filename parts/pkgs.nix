@@ -98,25 +98,27 @@
               findutils
             ];
           };
-        
-        yaml2nix = with pkgs; writeShellApplication {
-          name = "yaml2nix";
-          text = ''
-            temp=$(mktemp)
-            yq . "$1" > "$temp"
-            nix \
-              --extra-experimental-features 'nix-command' \
-              eval --impure \
-              --expr "builtins.fromJSON (builtins.readFile \"""$temp""\")" | nixfmt | bat -l nix
-            rm "$temp"
-          '';
-          runtimeInputs = [
-            yq
-            nix
-            nixfmt
-            bat
-          ];
-        };
+
+        yaml2nix =
+          with pkgs;
+          writeShellApplication {
+            name = "yaml2nix";
+            text = ''
+              temp=$(mktemp)
+              yq . "$1" > "$temp"
+              nix \
+                --extra-experimental-features 'nix-command' \
+                eval --impure \
+                --expr "builtins.fromJSON (builtins.readFile \"""$temp""\")" | nixfmt | bat -l nix
+              rm "$temp"
+            '';
+            runtimeInputs = [
+              yq
+              nix
+              nixfmt
+              bat
+            ];
+          };
       }
       // wordpressPackages.plugins;
     };
