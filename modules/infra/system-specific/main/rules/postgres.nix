@@ -64,18 +64,6 @@
           };
         }
         {
-          alert = "PostgresqlTooManyConnections";
-          annotations = {
-            description = "PostgreSQL instance has too many connections (> 80%).\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Postgresql too many connections (instance {{ $labels.instance }})";
-          };
-          expr = "sum by (instance, job, server) (pg_stat_activity_count) > min by (instance, job, server) (pg_settings_max_connections * 0.8)";
-          for = "2m";
-          labels = {
-            severity = "warning";
-          };
-        }
-        {
           alert = "PostgresqlNotEnoughConnections";
           annotations = {
             description = "PostgreSQL instance should have more connections (> 5)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";

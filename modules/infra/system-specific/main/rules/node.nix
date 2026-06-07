@@ -28,18 +28,6 @@
           };
         }
         {
-          alert = "HostMemoryIsUnderutilized";
-          annotations = {
-            description = "Node memory usage is < 20% for 1 week. Consider reducing memory space. (instance {{ $labels.instance }})\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Host Memory is underutilized (instance {{ $labels.instance }})";
-          };
-          expr = "min_over_time(node_memory_MemFree_bytes[1w]) > node_memory_MemTotal_bytes * .8";
-          for = "0m";
-          labels = {
-            severity = "info";
-          };
-        }
-        {
           alert = "HostUnusualNetworkThroughputIn";
           annotations = {
             description = "Host receive bandwidth is high (>80%).\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
@@ -169,18 +157,6 @@
           for = "10m";
           labels = {
             severity = "warning";
-          };
-        }
-        {
-          alert = "HostCpuIsUnderutilized";
-          annotations = {
-            description = "CPU load has been < 20% for 1 week. Consider reducing the number of CPUs.\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Host CPU is underutilized (instance {{ $labels.instance }})";
-          };
-          expr = "(min without (cpu) (rate(node_cpu_seconds_total{mode=\"idle\"}[1h]))) > 0.8";
-          for = "1w";
-          labels = {
-            severity = "info";
           };
         }
         {
