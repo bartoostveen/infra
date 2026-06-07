@@ -343,11 +343,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780831986,
-        "narHash": "sha256-3xe+vlXouhh5zh4+Eu0i9/NR1AJyjW3/EXxDyr30hhg=",
+        "lastModified": 1780832747,
+        "narHash": "sha256-w/hPLu7lpDoY7RdavFPqjIuLbhUK/f5F7wvaQRxTa9w=",
         "ref": "refs/heads/master",
-        "rev": "2663614459fa2242a0b3b12fea2c99ff1ff59a62",
-        "revCount": 34,
+        "rev": "8dc90f12be61fbe207b2f233a1f5acbb9283063a",
+        "revCount": 36,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -996,11 +996,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780831862,
-        "narHash": "sha256-ZFnc6wg1LtwDK63bi9ChV9+r/bXefzMDh0JTO6eH2ls=",
+        "lastModified": 1780836768,
+        "narHash": "sha256-lYSKQCw89AB0UC2m08eSQGdvbpa0XMc8oqTO8pInNnk=",
         "owner": "bartoostveen",
         "repo": "tcs-bot",
-        "rev": "91c9d4af34e85bb75003e4adf285ffe460234433",
+        "rev": "ff3d940f1112d6b191b4cb9c7077806e71ccafb4",
         "type": "github"
       },
       "original": {
