@@ -247,4 +247,6 @@ in
       storage_config.filesystem.directory = "/tmp/loki/chunks";
     };
   };
+
+  infra.extraScrapeConfigs.loki.port = config.services.loki.configuration.server.http_listen_port;
 }
