@@ -79,7 +79,7 @@ in
     enable = true;
     port = 25614;
     settings = {
-      MAUBOT_API_BASE = "https://${domain}";
+      MAUBOT_API_BASE = "https://${domain}/_matrix/maubot/v1";
       MAUBOT_USERNAME = "bart";
     };
     environmentFile = config.sops.secrets.maubot-exporter-env.path;

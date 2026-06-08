@@ -62,7 +62,7 @@ in
           MAUBOT_API_BASE = mkOption {
             description = "The value of the MAUBOT_API_BASE env var, the maubot base url WITHOUT the trailing slash";
             type = str;
-            example = "https://maubot.example.com";
+            example = "https://maubot.example.com/_matrix/maubot/v1";
           };
           MAUBOT_USERNAME = mkOption {
             description = "The value of the MAUBOT_USERNAME env var, the username of a maubot user";
@@ -79,7 +79,7 @@ in
       };
       default = { };
       example = {
-        MAUBOT_API_BASE = "https://maubot.example.com";
+        MAUBOT_API_BASE = "https://maubot.example.com/_matrix/maubot/v1";
         MAUBOT_USERNAME = "admin";
         MAUBOT_PASSWORD = "changeme";
       };
