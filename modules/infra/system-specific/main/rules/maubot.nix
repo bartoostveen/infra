@@ -9,7 +9,7 @@
             description = "Bot {{ $labels.bot_id }} is not enabled";
             summary = "Bot is not enabled";
           };
-          expr = "maubot_client_enabled{bot_id!~\".*\"} == 0";
+          expr = "maubot_client_enabled == 0";
           for = "5m";
           labels.severity = "warning";
         }
@@ -19,7 +19,7 @@
             description = "Bot {{ $labels.bot_id }} is not started";
             summary = "Bot is not started";
           };
-          expr = "maubot_client_started{bot_id!~\".*\"} == 0";
+          expr = "maubot_client_started == 0";
           for = "5m";
           labels.severity = "warning";
         }
@@ -29,7 +29,7 @@
             description = "Bot {{ $labels.bot_id }} is not online";
             summary = "Bot is not online";
           };
-          expr = "maubot_client_online{bot_id!~\".*\"} == 0";
+          expr = "maubot_client_online == 0";
           for = "5m";
           labels.severity = "warning";
         }
