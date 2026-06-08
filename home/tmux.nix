@@ -5,7 +5,10 @@ let
 
   attrsToGlobals =
     attrs:
-    attrs |> attrsToList |> map ({ name, value }: "set -g ${name} ${value}") |> concatStringsSep "\n";
+    attrs
+    |> attrsToList
+    |> map ({ name, value }: "set -g ${name} ${value}")
+    |> concatStringsSep "\n";
 in
 {
   programs.tmux = {

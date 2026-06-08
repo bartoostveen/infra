@@ -15,7 +15,12 @@ let
 
   domain = "popkoorklankkleur.nl";
 
-  toLdapDC = domain: domain |> splitString "." |> map (part: "dc=${part}") |> concatStringsSep ",";
+  toLdapDC =
+    domain:
+    domain
+    |> splitString "."
+    |> map (part: "dc=${part}")
+    |> concatStringsSep ",";
 
   ldapDomain = "ldap.${domain}";
   ldapBase = toLdapDC ldapDomain;

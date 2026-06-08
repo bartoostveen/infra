@@ -67,5 +67,10 @@ rec {
     };
   };
 
-  primaryIpOf = name: nodes.${name}.ips |> first |> splitString "/" |> first;
+  primaryIpOf =
+    name:
+    nodes.${name}.ips
+    |> first
+    |> splitString "/"
+    |> first;
 }
