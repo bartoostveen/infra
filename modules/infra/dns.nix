@@ -15,6 +15,7 @@
         msg-cache-size = "64M";
         discard-timeout = 4800;
         extended-statistics = true;
+        log-servfail = true;
       };
       forward-zone = [
         {
