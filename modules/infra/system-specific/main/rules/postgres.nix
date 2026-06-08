@@ -63,7 +63,7 @@
             severity = "warning";
           };
         }
-	      {
+        {
           alert = "PostgresqlTooManyConnections";
           annotations = {
             description = "PostgreSQL instance has too many connections (> 80%).\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
