@@ -9,7 +9,7 @@
     ../alacritty.nix
     ../copyparty-fuse.nix
     ../common.nix
-    ../git.nix
+    ../git
     ../gpg.nix
     ../jetbrains.nix
     ../plasma.nix

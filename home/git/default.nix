@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 
 {
+  imports = [ ./remotes.nix ];
+
   programs.delta = {
     enable = lib.mkDefault true;
     enableGitIntegration = true;
@@ -37,32 +39,23 @@
       push.followTags = true;
     };
 
-    includes = [
-      {
-        condition = "hasconfig:remote.*.url:git@gitlab.utwente.nl:*/**";
-        contents.user = {
-          email = "b.oostveen@student.utwente.nl";
-          name = "Oostveen, B. (Bart, Student B-TCS)";
-          signingKey = "FAD453F45800E974";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:git@gitlab.snt.utwente.nl:*/**";
-        contents.user = {
-          email = "oostveen@snt.utwente.nl";
-          name = "Bart Oostveen";
-          signingKey = "2D4FB795E873C2C3";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:git@gitlab.ia.utwente.nl:*/**";
-        contents.user = {
-          email = "oostveenb@inter-actief.net";
-          name = "Bart Oostveen";
-          signingKey = "3A251B9812E9186C";
-        };
-      }
-    ];
+    remotes = {
+      "git@gitlab.utwente.nl" = {
+        email = "b.oostveen@student.utwente.nl";
+        name = "Oostveen, B. (Bart, Student B-TCS)";
+        signingKey = "FAD453F45800E974";
+      };
+      "git@gitlab.snt.utwente.nl" = {
+        email = "oostveen@snt.utwente.nl";
+        name = "Bart Oostveen";
+        signingKey = "2D4FB795E873C2C3";
+      };
+      "git@gitlab.ia.utwente.nl" = {
+        email = "oostveenb@inter-actief.net";
+        name = "Bart Oostveen";
+        signingKey = "3A251B9812E9186C";
+      };
+    };
   };
 
   programs.gh = {

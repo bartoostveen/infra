@@ -3,7 +3,7 @@
     ../alacritty.nix
     ../common.nix
     ../copyparty-fuse.nix
-    ../git.nix
+    ../git
     ../gpg.nix
     ../jetbrains.nix
     ../plasma.nix
