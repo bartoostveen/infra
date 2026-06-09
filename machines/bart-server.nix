@@ -109,18 +109,5 @@ in
     ];
   };
 
-  services.postgresql = {
-    enableTCPIP = true;
-    ensureDatabases = [ "tascheduling" ];
-    ensureUsers = [
-      {
-        name = "tascheduling";
-        ensureDBOwnership = true;
-      }
-    ];
-  };
-
-  networking.firewall.allowedTCPPorts = [ 5432 ];
-
   system.stateVersion = "26.11";
 }
