@@ -16,6 +16,10 @@
                     "original": "valkey/valkey:latest",
                     "locked": "docker.io/valkey/valkey:latest@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9"
                 },
+                "tascheduling-db": {
+                    "original": "postgres:latest",
+                    "locked": "docker.io/library/postgres:latest@sha256:8ff36f3c66371cba71d20ceedccfc3de9669a68737607888c4ef0af93abe8e39"
+                },
                 "tcs-bot-db": {
                     "original": "postgres:latest",
                     "locked": "docker.io/library/postgres:latest@sha256:8ff36f3c66371cba71d20ceedccfc3de9669a68737607888c4ef0af93abe8e39"
