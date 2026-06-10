@@ -8,15 +8,22 @@ in
   services.gitlab-runner = {
     enable = true;
     services.docker = {
+      registrationFlags = [
+        "--cache-type=path"
+        "--cache-path=gitlab-runner"
+        "--cache-shared=true"
+      ];
       authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-env.path;
       dockerImage = "docker:stable";
       dockerVolumes = [
         "/var/run/docker.sock:/var/run/docker.sock"
+        "/var/lib/gitlab-runner/cache:/cache"
       ];
       tagList = [ "docker" ];
       requestConcurrency = 6;
     };
   };
+  services.gitlab-runner.clear-docker-cache.enable = true;
 
   systemd.services.gitlab-runner = {
     requires = [ "sops-install-secrets.service" ];
