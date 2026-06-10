@@ -40,7 +40,7 @@
     }
   ];
 
-  # services.fwupd.enable = lib.mkForce false;
+  services.fwupd.enable = lib.mkForce false;
 
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

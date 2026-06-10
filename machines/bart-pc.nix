@@ -5,6 +5,7 @@
     ../modules/infra/backup
     ../modules/infra/forgejo-actions.nix
 
+    ../modules/gitlab-runner.nix
     ../modules/wireguard.nix
 
     ../modules/desktop/users/bart.nix
