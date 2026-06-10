@@ -1,6 +1,10 @@
-{ config, ... }:
+{ config, lib, ... }:
 
+let
+  inherit (lib) mkForce;
+in
 {
+  virtualisation.docker.enable = mkForce false;
   services.gitlab-runner = {
     enable = true;
     services.docker = {
