@@ -17,6 +17,11 @@ in
     };
   };
 
+  systemd.services.gitlab-runner = {
+    requires = [ "sops-install-secrets.service" ];
+    after = [ "sops-install-secrets.service" ];
+  };
+
   sops.secrets.gitlab-runner-env = {
     sopsFile = ../secrets/gitlab-runner.env.bart-pc.secret;
     mode = "0440";
