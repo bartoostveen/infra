@@ -14,6 +14,7 @@ in
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
       tagList = [ "docker" ];
+      requestConcurrency = 6;
     };
   };
 
