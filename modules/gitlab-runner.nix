@@ -19,7 +19,6 @@ in
       authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-env.path;
       dockerImage = "docker:stable";
       dockerVolumes = [
-        "/var/run/docker.sock:/var/run/docker.sock"
         "/var/lib/gitlab-runner/cache:/cache"
       ];
       dockerPrivileged = true;
