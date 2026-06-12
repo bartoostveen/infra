@@ -2,16 +2,19 @@
 
 let
   inherit (lib) mkForce;
+  paralellism = 6;
 in
 {
   virtualisation.docker.enable = mkForce false;
   services.gitlab-runner = {
     enable = true;
+    settings.concurrent = paralellism;
     services.docker = {
       registrationFlags = [
         "--cache-type=path"
         "--cache-path=gitlab-runner"
         "--cache-shared=true"
+        "--limit=${toString paralellism}"
       ];
       authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-env.path;
       dockerImage = "docker:stable";
@@ -20,7 +23,7 @@ in
         "/var/lib/gitlab-runner/cache:/cache"
       ];
       tagList = [ "docker" ];
-      requestConcurrency = 6;
+      requestConcurrency = paralellism;
     };
   };
   services.gitlab-runner.clear-docker-cache.enable = true;
