@@ -22,6 +22,7 @@ in
         "/var/run/docker.sock:/var/run/docker.sock"
         "/var/lib/gitlab-runner/cache:/cache"
       ];
+      dockerPrivileged = true;
       tagList = [ "docker" ];
       requestConcurrency = paralellism;
     };
