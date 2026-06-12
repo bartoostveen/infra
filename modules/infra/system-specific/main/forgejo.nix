@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  smallPkgs,
   ...
 }:
 
@@ -22,6 +23,8 @@ in
 {
   services.forgejo = {
     enable = true;
+    # TODO: remove
+    package = smallPkgs.forgejo;
     lfs.enable = true;
     database = {
       createDatabase = true;
