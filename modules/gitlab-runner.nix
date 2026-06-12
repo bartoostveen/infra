@@ -22,6 +22,7 @@ in
         "/var/lib/gitlab-runner/cache:/cache"
       ];
       dockerPrivileged = true;
+      dockerPullPolicy = "if-not-present";
       tagList = [ "docker" ];
       requestConcurrency = paralellism;
     };
