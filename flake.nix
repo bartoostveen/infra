@@ -71,7 +71,7 @@
     };
 
     ical-proxy = {
-      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git";
+      url = "git+https://git.bartoostveen.nl/bart/ical-proxy.git";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
@@ -147,7 +147,7 @@
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
 
     omeduostuurcentenneef-web = {
-      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb";
+      url = "git+https://git.bartoostveen.nl/bart/omeduoweb";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         bun2nix.url = "github:nix-community/bun2nix";

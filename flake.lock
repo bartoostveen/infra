@@ -349,11 +349,11 @@
         "rev": "8dc90f12be61fbe207b2f233a1f5acbb9283063a",
         "revCount": 36,
         "type": "git",
-        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
+        "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ical-proxy.git"
+        "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       }
     },
     "import-tree": {
@@ -669,22 +669,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-wordpress": {
-      "locked": {
-        "lastModified": 1780396542,
-        "narHash": "sha256-wKiH3EVPrkUTu2IRG3D7SSIN/TTykqACbW/trDLK3r8=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "18efcbed8d98481ded121c6ac0f1d2bde06ef770",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "wordpress-7.0",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "omeduostuurcentenneef-web": {
       "inputs": {
         "bun2nix": "bun2nix",
@@ -705,11 +689,11 @@
         "rev": "bd4ad1c4ef3858cac87b9ded5425a2a0f835e9c8",
         "revCount": 62,
         "type": "git",
-        "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
+        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
       "original": {
         "type": "git",
-        "url": "ssh://forgejo@git.bartoostveen.nl/bart/omeduoweb"
+        "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       }
     },
     "onboarding": {
@@ -854,7 +838,6 @@
         "nixpkgs-element-call": "nixpkgs-element-call",
         "nixpkgs-lib": "nixpkgs-lib",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nixpkgs-wordpress": "nixpkgs-wordpress",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
