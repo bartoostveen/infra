@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   virtualisation = {
     containers.enable = true;
@@ -13,4 +15,9 @@
   };
 
   infra.backup.jobs.state.paths = [ "/var/lib/containers/storage" ];
+
+  environment.systemPackages = with pkgs; [
+    dive
+    podman-compose
+  ];
 }
