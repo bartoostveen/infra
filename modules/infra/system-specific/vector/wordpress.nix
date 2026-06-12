@@ -1,11 +1,9 @@
 {
   pkgs,
   config,
-  wordpressPkgs,
   ...
 }:
 
-# TODO: remove wordpressPkgs
 let
   domain = "popkoorklankkleur.nl";
 
@@ -41,7 +39,7 @@ in
           view-transitions
           # keep-sorted end
           ;
-        inherit (wordpressPkgs.wordpressPackages.plugins)
+        inherit (pkgs.wordpressPackages.plugins)
           # keep-sorted start
           antispam-bee
           opengraph
@@ -51,10 +49,10 @@ in
         inherit (pkgs.local) wp-oidc-roles;
       };
       themes = {
-        inherit (wordpressPkgs.wordpressPackages.themes) twentytwentyfive;
+        inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
       };
       languages = [ nl ];
-      package = wordpressPkgs.wordpress_7_0;
+      package = pkgs.wordpress_7_0;
     };
   };
 
