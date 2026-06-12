@@ -87,7 +87,6 @@ in
             smallPkgs,
             stablePkgs,
             continuwuityPkgs,
-            wordpressPkgs,
             ...
           }:
 
@@ -100,7 +99,6 @@ in
                 smallPkgs
                 stablePkgs
                 continuwuityPkgs
-                wordpressPkgs
                 wireguard
                 ;
             };
