@@ -25,7 +25,7 @@
         proxy = { };
         wifi = {
           mode = "infrastructure";
-          mtu = "1280";
+          mtu = "1496";
           ssid = "\\\\; DROP TABLE WIFI\\\\; --";
         };
         wifi-security = {
