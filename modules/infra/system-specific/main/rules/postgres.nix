@@ -88,18 +88,6 @@
           };
         }
         {
-          alert = "PostgresqlHighRollbackRate";
-          annotations = {
-            description = "Ratio of transactions being aborted compared to committed is > 2 %\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Postgresql high rollback rate (instance {{ $labels.instance }})";
-          };
-          expr = "sum by (namespace,datname,instance) (rate(pg_stat_database_xact_rollback{datname!~\"template.*|postgres\",datid!=\"0\"}[3m])) / (sum by (namespace,datname,instance) (rate(pg_stat_database_xact_rollback{datname!~\"template.*|postgres\",datid!=\"0\"}[3m])) + sum by (namespace,datname,instance) (rate(pg_stat_database_xact_commit{datname!~\"template.*|postgres\",datid!=\"0\"}[3m]))) > 0.02 and (sum by (namespace,datname,instance) (rate(pg_stat_database_xact_rollback{datname!~\"template.*|postgres\",datid!=\"0\"}[3m])) + sum by (namespace,datname,instance) (rate(pg_stat_database_xact_commit{datname!~\"template.*|postgres\",datid!=\"0\"}[3m]))) > 0";
-          for = "0m";
-          labels = {
-            severity = "warning";
-          };
-        }
-        {
           alert = "PostgresqlCommitRateLow";
           annotations = {
             description = "Postgresql seems to be processing very few transactions\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
