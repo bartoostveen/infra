@@ -20,6 +20,7 @@ in
 
       imports = [
         ./basic.nix
+        ./borg.nix
         ./golang.nix
         ./loki.nix
         ./maubot.nix
