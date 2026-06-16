@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
 
@@ -95,6 +96,15 @@
   infra.backup.enableDefaults = true;
 
   programs.steam.enable = true;
+
+  environment.systemPackages =
+    let
+      system = pkgs.stdenv.system;
+    in
+    [
+      inputs.winapps.packages.${system}.winapps
+      inputs.winapps.packages.${system}.winapps-launcher
+    ];
 
   system.stateVersion = "26.11";
 }
