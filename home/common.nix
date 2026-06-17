@@ -71,7 +71,6 @@ in
           # keep-sorted start
           discord
           element-desktop
-          jabref
           kdePackages.kate
           kdePackages.krdc
           kdePackages.krfb
