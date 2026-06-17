@@ -71,7 +71,6 @@ in
           # keep-sorted start
           discord
           element-desktop
-          jabref
           kdePackages.kate
           kdePackages.krdc
           kdePackages.krfb
@@ -112,14 +111,6 @@ in
       enableBashIntegration = true;
       nix-direnv.enable = true;
       config.hide_env_diff = true;
-    };
-
-    programs.librewolf = {
-      enable = lib.mkDefault cfg.gui;
-      nativeMessagingHosts = with pkgs; [
-        jabref
-        kdePackages.plasma-browser-integration
-      ];
     };
 
     services.nextcloud-client = {
