@@ -112,18 +112,6 @@
           };
         }
         {
-          alert = "HostInodesMayFillIn24Hours";
-          annotations = {
-            description = "Filesystem will likely run out of inodes within the next 24 hours at current write rate\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Host inodes may fill in 24 hours (instance {{ $labels.instance }})";
-          };
-          expr = "predict_linear(node_filesystem_files_free{fstype!~\"^(fuse.*|tmpfs|cifs|nfs)\"}[1h], 86400) <= 0 and node_filesystem_files_free > 0";
-          for = "2m";
-          labels = {
-            severity = "warning";
-          };
-        }
-        {
           alert = "HostUnusualDiskReadLatency";
           annotations = {
             description = "Disk latency is growing (read operations > 100ms)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
