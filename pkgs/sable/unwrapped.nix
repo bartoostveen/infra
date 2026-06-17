@@ -14,13 +14,13 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "sable";
-  version = "1.18.1";
+  version = "1.18.2";
 
   src = fetchFromGitHub {
     owner = "SableClient";
     repo = "Sable";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-puZPqdBsbCDF/t2C6Emx/LF+zfc2zLfEncQ6UZGNL30=";
+    hash = "sha256-ONndTikUn7RgTJ3QwOHaOHnSMk9nwSiF5NSPnO1nwxQ=";
   };
 
   patches = [
@@ -37,7 +37,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src;
     inherit pnpm;
     fetcherVersion = 4;
-    hash = "sha256-cIdtzUAh1lSLUo0RZQun7bDM3xJ3peN6K7FcIWfTpRw=";
+    hash = "sha256-gEs92C/8VuS9MonXlJBHx1Dt6Yag2oqUGZ5U/I2ZztU=";
   };
 
   buildPhase = ''
