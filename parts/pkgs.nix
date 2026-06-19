@@ -66,8 +66,6 @@
         alertmanager-matrix = pkgs.callPackage ../pkgs/alertmanager-matrix/package.nix { };
         autokuma = pkgs.callPackage ../pkgs/autokuma/package.nix { };
         github-readme-stats = pkgs.callPackage ../pkgs/github-readme-stats/package.nix { };
-        ketesa = pkgs.callPackage ../pkgs/ketesa/package.nix { };
-        ketesa-unwrapped = pkgs.callPackage ../pkgs/ketesa/unwrapped.nix { };
         librepods = pkgs.callPackage ../pkgs/librepods/package.nix { };
         maubot-exporter = pkgs.callPackage ../pkgs/maubot-exporter/package.nix { };
         mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
