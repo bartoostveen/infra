@@ -24,7 +24,7 @@
     ];
   };
 
-  boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_0;
+  boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_1;
 
   nix.settings.experimental-features = [
     "nix-command"
