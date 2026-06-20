@@ -21,7 +21,7 @@
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
     nixpkgs-stable.url = "github:nixos/nixpkgs/1cd347bf3355fce6c64ab37d3967b4a2cb4b878c"; # /nixos-25.11";
     nixpkgs-element-call.url = "github:bartoostveen/nixpkgs/element-call-0.20.0";
-    nixpkgs-continuwuity.follows = "nixpkgs"; # .url = "github:bartoostveen/nixpkgs/continuwuity-0.5.9";
+    nixpkgs-continuwuity.url = "github:bartoostveen/nixpkgs/continuwuity-0.5.10";
     prismlauncher-nixpkgs.url = "github:nixos/nixpkgs/077cb3aa7d111ff4d36e8bd18d906bb4a3d621f9";
 
     home-manager = {
