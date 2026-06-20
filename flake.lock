@@ -348,11 +348,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781890084,
-        "narHash": "sha256-0HPkaiZtNBOaA9KsF26YI18sBvp1KDs/o8Ioo2qCqaw=",
+        "lastModified": 1781906751,
+        "narHash": "sha256-6Ld1PqmptFtFKblE+SynhRgyBApUWcmrISetWqWHeeo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "153bad8fb58fd3ad9bbfcbdd0a965acc89a869e1",
+        "rev": "37f21dfa5d27e71b75bacd9418b156f9265e312e",
         "type": "github"
       },
       "original": {
@@ -585,11 +585,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780598326,
-        "narHash": "sha256-RjQSny97zKLXVVZJNP5NrkN8RcOE/ODO2A0ZLDSmBJ4=",
+        "lastModified": 1781976538,
+        "narHash": "sha256-RbPigwZiMncV5ekwDdWolPZ/+lgiVelYFe+KJy9hCGc=",
         "ref": "refs/heads/master",
-        "rev": "5d4c7dd77e8aed392213aee9efebf9a8716a2461",
-        "revCount": 12,
+        "rev": "8dc5a0f256f7f56f7c5147d4a90e31400dd2ee10",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
@@ -772,11 +772,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781397056,
-        "narHash": "sha256-JdK8osorLG2pvpj5kY+9389DVzrMMNppqwEkAU1Ch0U=",
+        "lastModified": 1781963564,
+        "narHash": "sha256-kWNNSsnU8SM2/dryEUP7LfuUBmKm3mbuxyg0E5bD9Rc=",
         "ref": "refs/heads/master",
-        "rev": "9decc7f95139e58fe4e2bc999d6b3adb1cda9932",
-        "revCount": 45,
+        "rev": "bf66eb31799f07d7ca3d9a247235c6bc1e30e668",
+        "revCount": 48,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -919,11 +919,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780547341,
-        "narHash": "sha256-Gq8KNx5A7hBB3uGJaj6eQfLDIz5YdLu92gqBcvHvoUo=",
+        "lastModified": 1781943681,
+        "narHash": "sha256-NFHmA7H47adqiyp+0iEOyZOQhmigDqA/NBAlf4imB6U=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "9ed65852b6257fbeae4355bc24ecfea307ca759a",
+        "rev": "420f8d2e9882911f65cfac15cc706f639ba96cca",
         "type": "github"
       },
       "original": {
