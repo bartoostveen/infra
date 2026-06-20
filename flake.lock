@@ -669,6 +669,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-continuwuity": {
+      "locked": {
+        "lastModified": 1781969522,
+        "narHash": "sha256-bQEQtIj2+xBhQCeInLEkfavKCLp63LpZvMfLyQ0vQnU=",
+        "owner": "bartoostveen",
+        "repo": "nixpkgs",
+        "rev": "b4ce04e490f1c4ed8fd9837208effdfaa0b73e21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bartoostveen",
+        "ref": "continuwuity-0.5.10",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-element-call": {
       "locked": {
         "lastModified": 1780908342,
@@ -879,9 +895,7 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": [
-          "nixpkgs"
-        ],
+        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
         "nixpkgs-element-call": "nixpkgs-element-call",
         "nixpkgs-lib": "nixpkgs-lib",
         "nixpkgs-stable": "nixpkgs-stable",
