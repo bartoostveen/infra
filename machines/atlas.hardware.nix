@@ -1,7 +1,7 @@
-{ lib, smallPkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
-  boot.kernelPackages = lib.mkForce smallPkgs.linuxKernel.packages.linux_6_12;
+  boot.kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_6_12;
   boot.kernelParams = [
     "console=ttyS1,115200n8"
     "console=tty0"
