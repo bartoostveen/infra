@@ -1057,16 +1057,16 @@
       },
       "locked": {
         "lastModified": 1782000210,
-        "narHash": "sha256-U+RUAHtHqspSjjEReUjIShl5TxsCeRhlaiNof8IR+Y8=",
-        "owner": "bartoostveen",
-        "repo": "tcs-bot",
+        "narHash": "sha256-ZMypA2TOKJVmBt+gIkC7jckQYeNzcYr2YXYzBYAHUo4=",
+        "ref": "refs/heads/master",
         "rev": "ecfbb56d13f5e20a259fe0e73dc0f7e3f34d040b",
-        "type": "github"
+        "revCount": 105,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/tcs-bot"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "tcs-bot",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/tcs-bot"
       }
     },
     "tlsa-exporter": {

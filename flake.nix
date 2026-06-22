@@ -188,7 +188,7 @@
     systems.url = "github:nix-systems/default";
 
     tcs-bot = {
-      url = "github:bartoostveen/tcs-bot";
+      url = "git+https://git.bartoostveen.nl/bart/tcs-bot";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
