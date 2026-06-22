@@ -41,7 +41,10 @@ in
         APP_NAME = "Bart's Forgejo";
         APP_SLOGAN = "er gebeuren dingen hier";
       };
-      actions.ENABLED = true;
+      actions = {
+        ENABLED = true;
+        DEFAULT_ACTIONS_URL = "https://git.bartoostveen.nl";
+      };
       service.DISABLE_REGISTRATION = true;
       mailer = rec {
         ENABLED = true;
