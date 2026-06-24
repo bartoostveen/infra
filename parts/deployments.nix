@@ -14,11 +14,6 @@
         sshUser = "bart";
         ip = "10.0.0.7"; # TODO: remove
       };
-      atlas = {
-        sshUser = "root";
-        system = "aarch64-linux";
-        ip = "atlas-wg"; # "192.168.1.145";
-      };
       vector = {
         sshUser = "root";
         ip = "vector.bartoostveen.nl";
