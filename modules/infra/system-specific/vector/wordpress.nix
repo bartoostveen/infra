@@ -31,6 +31,7 @@ in
       plugins = {
         inherit (pkgs.local.wordpressPackages.plugins)
           # keep-sorted start
+          antispam-bee
           contact-form-7
           generic-oidc
           gutenberg
@@ -42,7 +43,6 @@ in
           ;
         inherit (pkgs.wordpressPackages.plugins)
           # keep-sorted start
-          antispam-bee
           opengraph
           wp-user-avatars
           # keep-sorted end

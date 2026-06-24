@@ -19,6 +19,12 @@ let
 in
 {
   plugins = {
+    antispam-bee = mkWpPlugin {
+      pname = "antispam-bee";
+      version = "2.11.12";
+      id = "antispam-bee";
+      hash = "sha256-PsymEQIKhMNRS+Q/A/54G3vPlBwudlOVULKpH4q0fXg=";
+    };
     contact-form-7 = mkWpPlugin {
       pname = "wp-contact-form-7";
       version = "6.1.6";
@@ -40,9 +46,9 @@ in
     };
     gutenberg = mkWpPlugin {
       pname = "gutenberg";
-      version = "23.2.2";
+      version = "23.4.0";
       id = "gutenberg";
-      hash = "sha256-jhuFCwuxwCrYgEv5Z5Ji06XcDwLaO1repGemZ7254XA=";
+      hash = "sha256-y0cK0h1t27EHjt1v9/e0mm9Uva0HuW5ets9UKkgCHjM=";
     };
     gutenberg-carousel = mkWpPlugin {
       pname = "wp-gutenberg-carousel";
