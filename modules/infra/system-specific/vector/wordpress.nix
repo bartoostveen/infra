@@ -32,6 +32,7 @@ in
         inherit (pkgs.local.wordpressPackages.plugins)
           # keep-sorted start
           contact-form-7
+          indexnow
           generic-oidc
           gutenberg
           gutenberg-carousel

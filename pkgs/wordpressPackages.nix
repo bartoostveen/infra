@@ -25,6 +25,13 @@ in
       id = "contact-form-7";
       hash = "sha256-5s5y2+NveHIrLVhZmS9sPvYnCxFd+/ggbqq2nyusg3E=";
     };
+    indexnow = mkWpPlugin {
+      pname = "indexnow";
+      version = "1.0.3";
+      id = "indexnow";
+      url = "https://downloads.wordpress.org/plugin/indexnow.zip";
+      hash = "sha256-iUqYrUUBSz2ytovpPWcukMWVR+IsYgZPe1zwI9Pgj0E=";
+    };
     generic-oidc = mkWpPlugin {
       pname = "wp-generic-oidc";
       version = "3.11.3";
