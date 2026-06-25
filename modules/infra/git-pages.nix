@@ -43,6 +43,12 @@ in
       default = configFormat.generate "git-pages.toml" cfg.settings;
       defaultText = "<<generated TOML from services.git-pages.settings>>";
     };
+    enableWrapper = mkOption {
+      description = "Whether to add a wrapped git-pages to the path that refers to the server's config file";
+      type = bool;
+      default = true;
+      example = false;
+    };
     environmentFile = mkOption {
       description = ''
         File that contains values for the git-pages config. This file may be used for secrets.
@@ -277,5 +283,15 @@ in
       isSystemUser = true;
     };
     users.groups.git-pages = { };
+
+    environment.systemPackages = mkIf cfg.enableWrapper [
+      (pkgs.writeShellApplication {
+        name = "git-pages";
+        runtimeInputs = [ cfg.package ];
+        text = ''
+          git-pages -config ${cfg.configFile} "$@"
+        '';
+      })
+    ];
   };
 }
