@@ -37,6 +37,7 @@
       };
 
       push.followTags = true;
+      url."forgejo@git.bartoostveen.nl:".insteadOf = "https://git.bartoostveen.nl/";
     };
 
     remotes = {
