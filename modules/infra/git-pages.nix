@@ -7,6 +7,7 @@
 
 let
   inherit (lib)
+    mkDefault
     mkIf
     mkOption
     mkEnableOption
@@ -56,44 +57,46 @@ in
           # TODO
         };
       };
-      default = {
-        audit = {
-          collect = false;
-          include-ip = "";
-          node-id = 0;
-          notify-url = "";
-        };
-        fallback = {
-          insecure = false;
-          proxy-to = "https://codeberg.page";
-        };
-        limits = {
-          allow-basic-auth = false;
-          allow-expiration = false;
-          allowed-custom-headers = [ "X-Clacks-Overhead" ];
-          allowed-repository-url-prefixes = [ ];
-          concurrent-uploads = 1024;
-          forbidden-domains = [ ];
-          git-large-object-threshold = "1M";
-          max-heap-size-ratio = 0.5;
-          max-inline-file-size = "256B";
-          max-manifest-size = "1M";
-          max-site-size = "128M";
-          max-symlink-depth = 16;
-          update-timeout = "60s";
-        };
-        log-format = "text";
-        observability.slow-response-threshold = "500ms";
-        server = {
-          caddy = "-";
-          metrics = "-";
-          pages = "tcp/localhost:3000";
-        };
-        storage.fs.root = "./data";
-      };
+      default = { };
     };
   };
   config = mkIf cfg.enable {
+    services.git-pages.settings = {
+      audit = {
+        collect = mkDefault false;
+        include-ip = mkDefault "";
+        node-id = mkDefault 0;
+        notify-url = mkDefault "";
+      };
+      fallback = {
+        insecure = mkDefault false;
+        proxy-to = mkDefault "https://codeberg.page";
+      };
+      limits = {
+        allow-basic-auth = mkDefault false;
+        allow-expiration = mkDefault false;
+        allowed-custom-headers = mkDefault [ "X-Clacks-Overhead" ];
+        allowed-repository-url-prefixes = mkDefault [ ];
+        concurrent-uploads = mkDefault 1024;
+        forbidden-domains = mkDefault [ ];
+        git-large-object-threshold = mkDefault "1M";
+        max-heap-size-ratio = mkDefault 0.5;
+        max-inline-file-size = mkDefault "256B";
+        max-manifest-size = mkDefault "1M";
+        max-site-size = mkDefault "128M";
+        max-symlink-depth = mkDefault 16;
+        update-timeout = mkDefault "60s";
+      };
+      log-format = mkDefault "text";
+      observability.slow-response-threshold = mkDefault "500ms";
+      server = {
+        caddy = mkDefault "-";
+        metrics = mkDefault "-";
+        pages = mkDefault "tcp/localhost:3000";
+      };
+      storage.fs.root = mkDefault "./data";
+    };
+
     systemd.services.git-pages = {
       description = "git-pages, Scalable static site server for Git forges (like GitHub Pages or Netlify)";
       after = [ "network.target" ];
