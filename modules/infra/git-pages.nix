@@ -85,8 +85,8 @@ in
         log-format = "text";
         observability.slow-response-threshold = "500ms";
         server = {
-          caddy = "tcp/localhost:3001";
-          metrics = "tcp/localhost:3002";
+          caddy = "-";
+          metrics = "-";
           pages = "tcp/localhost:3000";
         };
         storage.fs.root = "./data";
