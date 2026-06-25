@@ -92,11 +92,12 @@ in
               default = false;
               description = "Whether HTTP Basic Authentication is allowed for hosted sites";
             };
-            allow-expiration = mkOption {
-              type = bool;
-              default = false;
-              description = "Allow deployment expirations or TTLs on hosted sites";
-            };
+            # Unstable
+            # allow-expiration = mkOption {
+            #   type = bool;
+            #   default = false;
+            #   description = "Allow deployment expirations or TTLs on hosted sites";
+            # };
             allowed-custom-headers = mkOption {
               type = listOf str;
               default = [ "X-Clacks-Overhead" ];
@@ -207,7 +208,7 @@ in
       };
       limits = {
         allow-basic-auth = mkDefault false;
-        allow-expiration = mkDefault false;
+        # allow-expiration = mkDefault false;
         allowed-custom-headers = mkDefault [ "X-Clacks-Overhead" ];
         allowed-repository-url-prefixes = mkDefault [ ];
         concurrent-uploads = mkDefault 1024;
