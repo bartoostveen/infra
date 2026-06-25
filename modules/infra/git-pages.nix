@@ -228,7 +228,7 @@ in
         metrics = mkDefault "-";
         pages = mkDefault "tcp/localhost:3000";
       };
-      storage.fs.root = mkDefault "./data";
+      storage.fs.root = mkDefault "/var/lib/git-pages/data";
     };
 
     systemd.services.git-pages = {
