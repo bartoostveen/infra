@@ -687,16 +687,16 @@
     },
     "nixpkgs-element-call": {
       "locked": {
-        "lastModified": 1780908342,
-        "narHash": "sha256-EaXtUEtuOUcpgvLIOekHfeQA6KNQ9rc1sMG60vsQWH4=",
-        "owner": "bartoostveen",
+        "lastModified": 1782429778,
+        "narHash": "sha256-pHb9srJ8br8hAz1o4IBOJcg4QJ6KkA8UMLBXuaYxTAc=",
+        "owner": "pbsds",
         "repo": "nixpkgs",
-        "rev": "708884d57dc73054cf78aaac8c5251019bf551a6",
+        "rev": "dec0814cd6a20e46a4891632e1413c94e9cc1568",
         "type": "github"
       },
       "original": {
-        "owner": "bartoostveen",
-        "ref": "element-call-0.20.0",
+        "owner": "pbsds",
+        "ref": "tmp-backport-element-call-1782429534",
         "repo": "nixpkgs",
         "type": "github"
       }
