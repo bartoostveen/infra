@@ -235,6 +235,7 @@ in
       description = "git-pages, Scalable static site server for Git forges (like GitHub Pages or Netlify)";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
+      preStart = "mkdir -p ${cfg.settings.storage.fs.root} | true";
       serviceConfig = {
         Type = "simple";
         ExecStart = ''
