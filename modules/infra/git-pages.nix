@@ -228,14 +228,13 @@ in
         metrics = mkDefault "-";
         pages = mkDefault "tcp/localhost:3000";
       };
-      storage.fs.root = mkDefault "/var/lib/git-pages/data";
+      storage.fs.root = mkDefault "data";
     };
 
     systemd.services.git-pages = {
       description = "git-pages, Scalable static site server for Git forges (like GitHub Pages or Netlify)";
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
-      preStart = "mkdir -p ${cfg.settings.storage.fs.root} | true";
       serviceConfig = {
         Type = "simple";
         ExecStart = ''
@@ -244,7 +243,7 @@ in
         DynamicUser = true;
         EnvironmentFile = cfg.environmentFile;
         StateDirectory = "git-pages";
-        WorkingDirectory = "/var/lib/git-pages";
+        WorkingDirectory = "%S/git-pages";
         Restart = "on-failure";
         AmbientCapabilities = "";
         CapabilityBoundingSet = "";
@@ -272,5 +271,11 @@ in
         UMask = 27;
       };
     };
+
+    users.users.git-pages = {
+      group = "git-pages";
+      isSystemUser = true;
+    };
+    users.groups.git-pages = { };
   };
 }
