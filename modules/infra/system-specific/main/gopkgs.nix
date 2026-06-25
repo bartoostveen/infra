@@ -15,7 +15,6 @@ in
             return 200 "<!doctype html>
             <html><head>
             <meta name=\"go-import\" content=\"go.bartoostveen.nl/$1 git https://${gitDomain}/bart/$1\">
-            <meta name=\"go-source\" content=\"go.bartoostveen.nl/$1 https://${gitDomain}/bart/$1 https://${gitDomain}/bart/$1/tree/main{/dir} https://${gitDomain}/bart/$1/blob/main{/dir}/{file}#L{line}\">
             </head></html>";
         }
 
