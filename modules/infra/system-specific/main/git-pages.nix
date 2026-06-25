@@ -43,6 +43,7 @@ in
 
   security.acme.certs = genAttrs vHosts (h: {
     domain = "*.${h}";
+    extraDomainNames = [ h ];
     dnsProvider = "cloudflare";
     environmentFile = config.sops.secrets.acme-env.path;
     group = "nginx";
@@ -52,7 +53,6 @@ in
     h:
     nameValuePair "*.${h}" {
       forceSSL = true;
-      extraDomainNames = [ h ];
       useACMEHost = h;
       locations."/".proxyPass = "http://localhost:${toString port}";
     }
