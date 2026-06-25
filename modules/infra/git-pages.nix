@@ -21,6 +21,12 @@ let
     attrs
     path
     nullOr
+    bool
+    str
+    ints
+    listOf
+    numbers
+    enum
     ;
 
   cfg = config.services.git-pages;
@@ -54,7 +60,134 @@ in
       type = submodule {
         freeformType = attrs;
         options = {
-          # TODO
+          audit = {
+            collect = mkEnableOption "collecting audit logs";
+            include-ip = mkOption {
+              type = str;
+              default = "";
+              description = "IP addresses or CIDR blocks to include in auditing";
+            };
+            node-id = mkOption {
+              type = ints.unsigned;
+              default = 0;
+              description = "Unique ID for the cluster node producing the audit logs";
+            };
+            notify-url = mkOption {
+              type = str;
+              default = "";
+              description = "Webhook URL to notify when audit events are triggered";
+            };
+          };
+          fallback = {
+            insecure = mkEnableOption "allowing insecure fallback connections (e.g., ignoring untrusted SSL certificates)";
+            proxy-to = mkOption {
+              type = str;
+              default = "https://codeberg.page";
+              description = "The upstream target URL to proxy requests to when a matching page is not found";
+            };
+          };
+          limits = {
+            allow-basic-auth = mkOption {
+              type = bool;
+              default = false;
+              description = "Whether HTTP Basic Authentication is allowed for hosted sites";
+            };
+            allow-expiration = mkOption {
+              type = bool;
+              default = false;
+              description = "Allow deployment expirations or TTLs on hosted sites";
+            };
+            allowed-custom-headers = mkOption {
+              type = listOf str;
+              default = [ "X-Clacks-Overhead" ];
+              description = "HTTP response headers that sites are allowed to customize";
+            };
+            allowed-repository-url-prefixes = mkOption {
+              type = listOf str;
+              default = [ ];
+              description = "Allowed Git repository URL prefixes for deployment origins";
+            };
+            concurrent-uploads = mkOption {
+              type = ints.positive;
+              default = 1024;
+              description = "Maximum number of simultaneous file uploads allowed globally";
+            };
+            forbidden-domains = mkOption {
+              type = listOf str;
+              default = [ ];
+              description = "List of domain names or patterns forbidden from being used as custom domains";
+            };
+            git-large-object-threshold = mkOption {
+              type = str;
+              default = "1M";
+              description = "The file size threshold after which objects are handled as Git Large Files";
+            };
+            max-heap-size-ratio = mkOption {
+              type = numbers.between 0.0 1.0;
+              default = 0.5;
+              description = "The fraction of system memory the server process runtime is allowed to utilize";
+            };
+            max-inline-file-size = mkOption {
+              type = str;
+              default = "256B";
+              description = "Maximum size of files that can be stored inline in metadata structures rather than written to disk storage";
+            };
+            max-manifest-size = mkOption {
+              type = str;
+              default = "1M";
+              description = "Maximum allowed size of a site deployment manifest file";
+            };
+            max-site-size = mkOption {
+              type = str;
+              default = "128M";
+              description = "Maximum total uncompressed size limit for a single deployed static site";
+            };
+            max-symlink-depth = mkOption {
+              type = ints.unsigned;
+              default = 16;
+              description = "Maximum depth of symbolic link resolution before throwing a traversal error";
+            };
+            update-timeout = mkOption {
+              type = str;
+              default = "60s";
+              description = "Maximum duration permitted for an update or site build operation to finish";
+            };
+          };
+          log-format = mkOption {
+            type = enum [
+              "text"
+              "json"
+            ];
+            default = "text";
+            description = "The formatting layout for system logging";
+          };
+          observability.slow-response-threshold = mkOption {
+            type = str;
+            default = "500ms";
+            description = "Requests taking longer than this duration will be logged as slow responses";
+          };
+          server = {
+            caddy = mkOption {
+              type = str;
+              default = "-";
+              description = "Configuration path or control address for Caddy integration. Set to '-' to disable";
+            };
+            metrics = mkOption {
+              type = str;
+              default = "-";
+              description = "Network address or path to expose Prometheus metrics. Set to '-' to disable";
+            };
+            pages = mkOption {
+              type = str;
+              default = "tcp/localhost:3000";
+              description = "Network address socket bind point for serving static site pages";
+            };
+          };
+          storage.fs.root = mkOption {
+            type = str;
+            default = "./data";
+            description = "The path on the local filesystem serving as root storage directory for deployments";
+          };
         };
       };
       default = { };
