@@ -28,7 +28,6 @@ in
     };
     call = {
       enable = true;
-      # TODO: remove
       package = smallPkgs.element-call;
       domain = "call.${fqdn}";
     };

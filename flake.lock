@@ -669,38 +669,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1781975993,
-        "narHash": "sha256-6Ne5N3jeND7DraBG2VXqwJNFFpzlb73/9gZqV3HCgVk=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "47d2fffb5b40e244d46f87dd14ab8bcc47da8701",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "continuwuity-0.5.10",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-element-call": {
-      "locked": {
-        "lastModified": 1782429778,
-        "narHash": "sha256-pHb9srJ8br8hAz1o4IBOJcg4QJ6KkA8UMLBXuaYxTAc=",
-        "owner": "pbsds",
-        "repo": "nixpkgs",
-        "rev": "dec0814cd6a20e46a4891632e1413c94e9cc1568",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pbsds",
-        "ref": "tmp-backport-element-call-1782429534",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1782010777,
@@ -808,22 +776,6 @@
         "type": "github"
       }
     },
-    "prismlauncher-nixpkgs": {
-      "locked": {
-        "lastModified": 1757441125,
-        "narHash": "sha256-9RpnHoDZBwh5q9EYywXcsXfbFQHzZDr+A3oxLcF6jZo=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "077cb3aa7d111ff4d36e8bd18d906bb4a3d621f9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "077cb3aa7d111ff4d36e8bd18d906bb4a3d621f9",
-        "type": "github"
-      }
-    },
     "pyproject-build-systems": {
       "inputs": {
         "nixpkgs": [
@@ -895,14 +847,14 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
-        "nixpkgs-element-call": "nixpkgs-element-call",
+        "nixpkgs-continuwuity": [
+          "nixpkgs"
+        ],
         "nixpkgs-lib": "nixpkgs-lib",
         "nixpkgs-stable": "nixpkgs-stable",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
-        "prismlauncher-nixpkgs": "prismlauncher-nixpkgs",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "systems": "systems_4",

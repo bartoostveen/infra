@@ -37,7 +37,6 @@
           self.overlays.default
           (_final: prev: {
             inherit (smallPkgs) roundcube;
-            inherit (inputs.nixpkgs-element-call.legacyPackages.${system}) element-call;
             local = {
               inherit wordpressPackages;
             }

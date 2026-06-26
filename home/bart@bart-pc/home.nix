@@ -21,7 +21,7 @@
   home = {
     packages = with pkgs; [
       wrk
-      (inputs.prismlauncher-nixpkgs.legacyPackages.x86_64-linux.prismlauncher.override {
+      (prismlauncher.override {
         additionalPrograms = [ ffmpeg ];
         jdks = [
           zulu8
