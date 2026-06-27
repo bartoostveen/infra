@@ -29,6 +29,15 @@
     # keep-sorted end
   ];
 
+  nix.settings = {
+    system-features = [ "uid-range" ];
+    auto-allocate-uids = true;
+    extra-experimental-features = [
+      "cgroups"
+      "auto-allocate-uids"
+    ];
+  };
+
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   boot.loader.grub =
