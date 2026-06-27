@@ -50,6 +50,7 @@
       "kwinrc"."Effect-slide"."HorizontalGap" = 0;
       "kwinrc"."Effect-slide"."VerticalGap" = 0;
       "kwinrc"."Effect-zoom"."MousePointer" = 1;
+      "kwinrc"."Effect-zoom"."UsePatternUpscaler" = false;
       "kwinrc"."Plugins"."blurEnabled" = true;
       "kwinrc"."Plugins"."mousemarkEnabled" = true;
       "kwinrc"."Plugins"."sheetEnabled" = true;
