@@ -832,7 +832,6 @@
         "srvos": "srvos",
         "systems": "systems_4",
         "tcs-bot": "tcs-bot",
-        "tlsa-exporter": "tlsa-exporter",
         "treefmt-nix": "treefmt-nix_2",
         "winapps": "winapps"
       }
@@ -992,22 +991,6 @@
       "original": {
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/tcs-bot"
-      }
-    },
-    "tlsa-exporter": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1749709915,
-        "narHash": "sha256-5c3epExz3tv6gRiIfpDyV1pkfcRVWjtNpl93LWsYKdk=",
-        "owner": "ietf-tools",
-        "repo": "mail-tlsa-check-exporter",
-        "rev": "9843bf85971fbe130e8cd32e6fcf0dfcee92e929",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ietf-tools",
-        "repo": "mail-tlsa-check-exporter",
-        "type": "github"
       }
     },
     "treefmt-nix": {
