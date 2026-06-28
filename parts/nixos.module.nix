@@ -85,7 +85,6 @@ in
           {
             pkgs,
             smallPkgs,
-            stablePkgs,
             continuwuityPkgs,
             ...
           }:
@@ -97,7 +96,6 @@ in
               inherit
                 inputs
                 smallPkgs
-                stablePkgs
                 continuwuityPkgs
                 wireguard
                 ;
@@ -117,12 +115,11 @@ in
         withSystem arch (
           {
             pkgs,
-            stablePkgs,
             ...
           }:
           inputs.nixpkgs.lib.nixosSystem {
             inherit pkgs;
-            specialArgs = { inherit inputs stablePkgs; };
+            specialArgs = { inherit inputs; };
             modules = [ ../images/${name}.nix ];
           }
         )

@@ -19,7 +19,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
-    nixpkgs-stable.url = "github:nixos/nixpkgs/1cd347bf3355fce6c64ab37d3967b4a2cb4b878c"; # /nixos-25.11";
     nixpkgs-continuwuity.follows = "nixpkgs"; # .url = "github:bartoostveen/nixpkgs/continuwuity-0.5.10";
 
     home-manager = {
