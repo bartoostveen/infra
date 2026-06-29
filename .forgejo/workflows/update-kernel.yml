@@ -13,7 +13,7 @@ jobs:
       GIT_SSH_COMMAND: ${{ needs.setup.outputs.git-ssh-command }}
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-      - uses: actions/setup-home@3eb6ecf58a5ed10197a584f96f9d3d8d85aba46f
+      - uses: actions/setup-home@85c04dfa32da72ea8d9d9058601121a7194672fa
         with:
           gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
@@ -57,7 +57,7 @@ jobs:
 
             git switch -c "$head"
             git push --force-with-lease origin "$head"
-            
+
             jq -n \
               --arg base "$base" \
               --arg head "$head" \
