@@ -415,17 +415,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1775519174,
-        "narHash": "sha256-1ph3KT/pYsDI0mauuMc/egP/6mWeYMHdoIalRy9ve4Y=",
-        "owner": "bartoostveen",
-        "repo": "invoice",
-        "rev": "f5e5c402cd726531d3a0639fcbdbcb33d46c5004",
-        "type": "github"
+        "lastModified": 1782758672,
+        "narHash": "sha256-kw0pqOCv5tG7JNeSb+5j3LvQgHFdtj+L366omO4wBqY=",
+        "ref": "refs/heads/main",
+        "rev": "3e39476359a99145a83819e1242087ba1416215a",
+        "revCount": 66,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
       "original": {
-        "owner": "bartoostveen",
-        "repo": "invoice",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/invoice.git"
       }
     },
     "meowbot": {

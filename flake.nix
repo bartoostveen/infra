@@ -80,7 +80,7 @@
     import-tree.url = "github:vic/import-tree";
 
     invoice = {
-      url = "github:bartoostveen/invoice";
+      url = "git+https://git.bartoostveen.nl/bart/invoice.git";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
