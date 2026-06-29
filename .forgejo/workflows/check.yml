@@ -11,6 +11,8 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: actions/setup-home@3eb6ecf58a5ed10197a584f96f9d3d8d85aba46f
         with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
       - run: nix fmt -L --accept-flake-config -- --ci
