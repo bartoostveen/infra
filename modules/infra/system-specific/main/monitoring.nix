@@ -8,7 +8,6 @@
 }:
 
 let
-  kumaVHost = "uptime.bartoostveen.nl";
   grafanaVHost = "grafana.vitune.app";
 
   inherit (lib)
@@ -210,9 +209,10 @@ in
 
   infra.extraScrapeConfigs.uptime-kuma-anubis.port = uptimeKumaMetricsPort;
 
-  services.nginx.virtualHosts.${kumaVHost} = {
+  services.nginx.virtualHosts."uptime.bartoostveen.nl" = {
     enableACME = true;
     forceSSL = true;
+    serverAliases = [ "status.bartoostveen.nl" ];
     locations."/" = {
       proxyPass = "http://unix://${config.services.anubis.instances.uptime-kuma.settings.BIND}";
       proxyWebsockets = true;
