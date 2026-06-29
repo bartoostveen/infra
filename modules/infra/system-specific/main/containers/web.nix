@@ -66,6 +66,7 @@ in
     enableACME = true;
     enableHSTS = true;
     locations."/".proxyPass = "http://localhost:${toString port}";
+    locations."/status".return = "302 https://status.bartoostveen.nl";
   };
 
   sops.secrets.web-env = {
