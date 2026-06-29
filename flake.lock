@@ -347,11 +347,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782657028,
-        "narHash": "sha256-PHTCpYZCMzJYS3phhywqRAZphKVr2zjvlGYa+H20ZZ4=",
+        "lastModified": 1782749631,
+        "narHash": "sha256-slFTUgDy0KTPA4LBAmC/9SngDq8GCPdX+ZR0yQHHN1E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4ad9aaae70c9aaab504127f926c0fa9cfbc2b365",
+        "rev": "5d72a29fc36ac21adae6ae35568fe5ee6700850f",
         "type": "github"
       },
       "original": {
@@ -612,11 +612,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1782635378,
-        "narHash": "sha256-sQuJpHbAT4duBEOVPr4XkmXnFk7BOkTcPeWWVeQrfcE=",
+        "lastModified": 1782731455,
+        "narHash": "sha256-weCjCyph1saaHwUdjTk6AAFn/w2riVwOimn/qZMFxKY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fb53a43965cfe3d54b9924e9be6a82c923ff36a1",
+        "rev": "9c4c05a947a91dc14625265fab505fb695e93218",
         "type": "github"
       },
       "original": {
@@ -697,11 +697,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782605251,
-        "narHash": "sha256-8aoUm6U+WV9fUGm+E9gN5Sdcqn8BiOyFZXHeIbEVM1Q=",
+        "lastModified": 1782753875,
+        "narHash": "sha256-wTjWTDKU2fkzi4KQOy1CE1Qz3+u+PPrLT2f5w1b3h3A=",
         "ref": "refs/heads/master",
-        "rev": "026222259133add54888b92128ed8fcc54ae9a3c",
-        "revCount": 51,
+        "rev": "7d74782fd6efba0c0d9f476135e4edd5bbbfdc7e",
+        "revCount": 54,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -846,11 +846,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782526166,
-        "narHash": "sha256-t4OVI0LJQZCtYV03nKQeEvWcIxiUN1NInmqMmJ/fI48=",
+        "lastModified": 1782700116,
+        "narHash": "sha256-E63+nvH3jkAt/hBxhMa5aykstXdqRvBSeqNRDpQNv78=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "9f3040c7e16880d80c1dffcfd6eb86346f3af467",
+        "rev": "d45cf79058f2d42c0b0dd7912bedb5d14faa00ed",
         "type": "github"
       },
       "original": {
