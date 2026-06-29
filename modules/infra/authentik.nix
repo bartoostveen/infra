@@ -79,9 +79,9 @@ in
       };
     };
 
-    services.nginx.virtualHosts.${cfg.domain}.locations."/static" = {
-      inherit (config.services.nginx.virtualHosts.${cfg.domain}.locations."/") proxyPass;
-      rateLimit.enable = false;
+    services.nginx.virtualHosts.${cfg.domain} = {
+      rateLimit.burst = 2000;
+      connectionLimit.connections = 1000;
     };
 
     services.authentik-ldap = {

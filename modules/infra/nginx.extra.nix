@@ -21,63 +21,85 @@ let
 
   reqLimitZoneName = "reqlimit";
   connLimitZoneName = "connlimit";
+
+  rateLimitModule = global: {
+    enable = mkOption {
+      type = bool;
+      default = true;
+      description = "Enable${optionalString global " global"} rate limiting for this ${
+        if global then "vhost" else "location"
+      }";
+    };
+    burst = mkOption {
+      type = int;
+      default = 100;
+      description = "max burst size before dropping requests that arrive too quickly";
+    };
+  };
+
+  connectionLimitModule = global: {
+    enable = mkOption {
+      type = bool;
+      default = true;
+      description = "Enable${optionalString global " global"} connection limiting for this ${
+        if global then "vhost" else "location"
+      }";
+    };
+    connections = mkOption {
+      type = int;
+      default = 200;
+      description = "max allowed connections before dropping connections that are initiated too quickly";
+    };
+  };
 in
 {
   options.services.nginx.virtualHosts = mkOption {
     type = attrsOf (
       submodule (
         { config, ... }:
+
         {
           options = {
-            enableRateLimit = mkOption {
-              type = bool;
-              default = true;
-              description = "Enable global rate limiting for this vhost";
-            };
+            rateLimit = rateLimitModule true;
+            connectionLimit = connectionLimitModule true;
             enableHSTS = mkEnableOption "HSTS";
             locations = mkOption {
               type = attrsOf (
                 submodule (
                   let
-                    global = config.enableRateLimit;
+                    globalConfig = config;
                   in
                   { config, ... }:
+
                   {
-                    options.rateLimit = {
-                      enable = mkOption {
-                        type = bool;
-                        default = true;
-                        description = "Enable global rate limiting for this location";
-                      };
-                      burst = mkOption {
-                        type = int;
-                        default = 100;
-                        description = "max burst size before dropping requests that arrive too quickly";
-                      };
+                    options = {
+                      rateLimit = rateLimitModule false;
+                      connectionLimit = connectionLimitModule false;
                     };
 
-                    config = mkIf (global && config.rateLimit.enable) {
-                      extraConfig = mkAfter ''
+                    config.extraConfig =
+                      optionalString (globalConfig.rateLimit.enable && config.rateLimit.enable) ''
                         limit_req zone=${reqLimitZoneName} burst=${toString config.rateLimit.burst} nodelay;
+                      ''
+                      + optionalString (globalConfig.connectionLimit.enable && config.connectionLimit.enable) ''
+                        limit_conn ${connLimitZoneName} ${toString config.connectionLimit.connections};
                       '';
-                    };
                   }
                 )
               );
             };
           };
           config = {
-            extraConfig = mkAfter (
-              optionalString config.enableHSTS ''
-                add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
-              ''
-            );
+            extraConfig = optionalString config.enableHSTS ''
+              add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+            '';
             kTLS = mkDefault false;
           };
         }
       )
     );
   };
+
   config.services.nginx.commonHttpConfig = ''
     geo $whitelist {
       default 0;
@@ -92,7 +114,6 @@ in
     }
 
     limit_conn_zone      $limit    zone=${connLimitZoneName}:10m;
-    limit_conn           ${connLimitZoneName} 1000;
     limit_conn_log_level warn;
     limit_conn_status    429;
 

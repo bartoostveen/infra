@@ -60,7 +60,7 @@ in
   services.nginx.virtualHosts.${domain} = {
     enableACME = true;
     forceSSL = true;
-    enableRateLimit = false;
+    rateLimit.enable = false;
     enableHSTS = true;
     serverAliases = [ "www.${domain}" ];
     locations."/".proxyWebsockets = true;
