@@ -17,6 +17,7 @@ let
     submodule
     bool
     int
+    nullOr
     ;
 
   reqLimitZoneName = "reqlimit";
@@ -24,33 +25,35 @@ let
 
   rateLimitModule = global: {
     enable = mkOption {
-      type = bool;
-      default = true;
+      type = if global then bool else nullOr bool;
+      default = if global then true else null;
       description = "Enable${optionalString global " global"} rate limiting for this ${
         if global then "vhost" else "location"
       }";
     };
     burst = mkOption {
-      type = int;
-      default = 100;
+      type = if global then int else nullOr int;
+      default = if global then 100 else null;
       description = "max burst size before dropping requests that arrive too quickly";
     };
   };
 
   connectionLimitModule = global: {
     enable = mkOption {
-      type = bool;
-      default = true;
+      type = if global then bool else nullOr bool;
+      default = if global then true else null;
       description = "Enable${optionalString global " global"} connection limiting for this ${
         if global then "vhost" else "location"
       }";
     };
     connections = mkOption {
-      type = int;
-      default = 200;
+      type = if global then int else nullOr int;
+      default = if global then 200 else null;
       description = "max allowed connections before dropping connections that are initiated too quickly";
     };
   };
+
+  either = a: b: if a == null then b else a;
 in
 {
   options.services.nginx.virtualHosts = mkOption {
@@ -78,11 +81,11 @@ in
                     };
 
                     config.extraConfig =
-                      optionalString (globalConfig.rateLimit.enable && config.rateLimit.enable) ''
-                        limit_req zone=${reqLimitZoneName} burst=${toString config.rateLimit.burst} nodelay;
+                      optionalString (either config.rateLimit.enable globalConfig.rateLimit.enable) ''
+                        limit_req zone=${reqLimitZoneName} burst=${toString (either config.rateLimit.burst globalConfig.rateLimit.burst)} nodelay;
                       ''
-                      + optionalString (globalConfig.connectionLimit.enable && config.connectionLimit.enable) ''
-                        limit_conn ${connLimitZoneName} ${toString config.connectionLimit.connections};
+                      + optionalString (either config.connectionLimit.enable globalConfig.connectionLimit.enable) ''
+                        limit_conn ${connLimitZoneName} ${toString (either config.connectionLimit.connections globalConfig.connectionLimit.connections)};
                       '';
                   }
                 )

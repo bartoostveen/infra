@@ -80,8 +80,8 @@ in
     };
 
     services.nginx.virtualHosts.${cfg.domain} = {
-      rateLimit.burst = 5000;
-      connectionLimit.connections = 5000;
+      rateLimit.burst = 2000;
+      connectionLimit.connections = 1000;
     };
 
     services.authentik-ldap = {
