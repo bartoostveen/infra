@@ -23,7 +23,6 @@ in
       ];
       dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
-      tagList = [ "docker" ];
       requestConcurrency = paralellism;
     };
   };
