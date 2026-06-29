@@ -4,8 +4,6 @@ let
   inherit (lib)
     mkOption
     types
-    mkIf
-    mkAfter
     mkEnableOption
     mkDefault
     concatStringsSep
