@@ -13,9 +13,14 @@ let
   domain = "pages.bartoostveen.nl";
   preview-domain = "preview.bartoostveen.nl";
 
-  vHosts = [
+  wildcardVHosts = [
     domain
     preview-domain
+  ];
+
+  vHosts = wildcardVHosts ++ [
+    "search.boostveen.nl"
+    "test.search.bartoostveen.nl"
   ];
 in
 {
@@ -41,7 +46,7 @@ in
     };
   };
 
-  security.acme.certs = genAttrs vHosts (h: {
+  security.acme.certs = genAttrs wildcardVHosts (h: {
     domain = "*.${h}";
     extraDomainNames = [ h ];
     dnsProvider = "cloudflare";
@@ -53,7 +58,8 @@ in
     h:
     nameValuePair "*.${h}" {
       forceSSL = true;
-      useACMEHost = h;
+      useACMEHost = if builtins.elem h wildcardVHosts then h else null;
+      enableACME = !(builtins.elem h wildcardVHosts);
       locations."/" = {
         proxyPass = "http://localhost:${toString port}";
         extraConfig = ''
