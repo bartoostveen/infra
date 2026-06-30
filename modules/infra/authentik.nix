@@ -2,6 +2,7 @@
   inputs,
   lib,
   config,
+  options,
   ...
 }:
 
@@ -11,6 +12,7 @@ let
     mkOption
     mkIf
     types
+    mkDefault
     ;
   inherit (types) int str path;
 
@@ -53,9 +55,17 @@ in
       type = str;
       default = "auth@bartoostveen.nl";
     };
+    nginx = {
+      inherit (options.services.nginx.virtualHosts.type.getSubOptions {}) rateLimit connectionLimit;
+    };
   };
 
   config = mkIf cfg.enable {
+    infra.authentik.nginx = {
+      rateLimit.burst = mkDefault 2000;
+      connectionLimit.connections = mkDefault 1000;
+    };
+
     services.authentik = {
       enable = true;
       inherit (cfg) environmentFile;
@@ -79,10 +89,7 @@ in
       };
     };
 
-    services.nginx.virtualHosts.${cfg.domain} = {
-      rateLimit.burst = 2000;
-      connectionLimit.connections = 1000;
-    };
+    services.nginx.virtualHosts.${cfg.domain} = cfg.nginx;
 
     services.authentik-ldap = {
       enable = true;

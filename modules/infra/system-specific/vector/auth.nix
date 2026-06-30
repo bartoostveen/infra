@@ -10,6 +10,10 @@
     enablePrometheus = true;
     environmentFile = config.sops.secrets.authentik-env.path;
     domain = "auth.popkoorklankkleur.nl";
+    nginx = {
+      rateLimit.enable = false;
+      connectionLimit.enable = false;
+    };
   };
 
   sops.secrets.authentik-env = {
