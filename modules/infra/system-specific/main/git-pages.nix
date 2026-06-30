@@ -54,7 +54,15 @@ in
     nameValuePair "*.${h}" {
       forceSSL = true;
       useACMEHost = h;
-      locations."/".proxyPass = "http://localhost:${toString port}";
+      locations."/" = {
+        proxyPass = "http://localhost:${toString port}";
+        extraConfig = ''
+          ssi on;
+          proxy_pass_header Server;
+          proxy_set_header Accept-Encoding "";
+          proxy_intercept_errors on;
+        '';
+      };
     }
   );
 
