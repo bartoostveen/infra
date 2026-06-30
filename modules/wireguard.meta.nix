@@ -52,6 +52,7 @@ rec {
       ];
       endpoint = "${connectivity.ipsFor "vector" |> first}:${toString listenPort}";
     };
+
     bart-windows-vm = {
       ips = [
         "10.0.0.6/32"

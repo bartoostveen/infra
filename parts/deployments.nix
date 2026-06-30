@@ -1,23 +1,24 @@
+{ wireguard, ... }:
+
 {
-  # TODO: wireguard dns
   deployments = {
     nixos = {
       bart-server = {
         sshUser = "root";
-        ip = "bartoostveen.nl";
+        ip = "bart-server.bartoostveen.nl";
       };
       bart-laptop-new = {
         sshUser = "bart";
-        ip = "10.0.0.2"; # TODO: remove
+        ip = wireguard.primaryIpOf "bart-laptop-new";
       };
       bart-pc = {
         sshUser = "bart";
-        ip = "10.0.0.7"; # TODO: remove
+        ip = wireguard.primaryIpOf "bart-pc";
       };
       atlas = {
         sshUser = "root";
         system = "aarch64-linux";
-        ip = "atlas-wg"; # "192.168.1.145";
+        ip = wireguard.primaryIpOf "atlas";
       };
       vector = {
         sshUser = "root";
