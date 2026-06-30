@@ -56,7 +56,7 @@ in
       default = "auth@bartoostveen.nl";
     };
     nginx = {
-      inherit (options.services.nginx.virtualHosts.type.getSubOptions {}) rateLimit connectionLimit;
+      inherit (options.services.nginx.virtualHosts.type.getSubOptions { }) rateLimit connectionLimit;
     };
   };
 
