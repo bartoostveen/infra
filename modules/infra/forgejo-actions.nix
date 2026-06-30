@@ -68,7 +68,7 @@ in
   # TODO: add prestart provision script?
   config = mkIf cfg.enable {
     infra.forgejo-actions.labels = [
-      "docker:docker://ghcr.io/catthehacker/ubuntu:act-22.04"
+      "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
       "nix:docker://docker.io/nixos/nix:2.32.8"
       "lix:docker://git.toostveen.nl/tom/lix-with-node:latest"
       "native-${pkgs.stdenv.system}:host"
