@@ -20,7 +20,7 @@ let
 
   vHosts = wildcardVHosts ++ [
     "search.boostveen.nl"
-    "test.search.bartoostveen.nl"
+    "test.search.boostveen.nl"
   ];
 in
 {
