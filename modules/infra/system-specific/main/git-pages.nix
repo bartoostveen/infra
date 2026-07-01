@@ -56,10 +56,14 @@ in
 
   services.nginx.virtualHosts = genAttrs' vHosts (
     h:
-    nameValuePair "*.${h}" {
+
+    let
+      isWildcard = builtins.elem h wildcardVHosts;
+    in
+    nameValuePair (if isWildcard then "*.${h}" else h) {
       forceSSL = true;
-      useACMEHost = if builtins.elem h wildcardVHosts then h else null;
-      enableACME = !(builtins.elem h wildcardVHosts);
+      useACMEHost = if isWildcard then h else null;
+      enableACME = !isWildcard;
       locations."/" = {
         proxyPass = "http://localhost:${toString port}";
         extraConfig = ''
