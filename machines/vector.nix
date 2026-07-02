@@ -15,6 +15,7 @@
     # keep-sorted start
     ../modules/infra/alertmanager.nix
     ../modules/infra/alloy.nix
+    ../modules/infra/anubis.nix
     ../modules/infra/autokuma-config.nix
     ../modules/infra/backup
     ../modules/infra/common.nix
