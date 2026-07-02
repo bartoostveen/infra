@@ -5,6 +5,7 @@
 
   services.vert = {
     enable = true;
+    environmentFile = config.sops.secrets.vert-env.path;
     hostName = "vert.vitune.app";
     nginx = {
       enable = true;
@@ -21,5 +22,14 @@
   systemd.services.vert.serviceConfig = {
     MemoryHigh = "2G";
     CPUQuota = "200%";
+  };
+
+  sops.secrets.vert-env = {
+    sopsFile = ../../../../secrets/vert.env.vector.secret;
+    owner = "vert";
+    group = "vert";
+    mode = "0440";
+    restartUnits = [ "vert.service" ];
+    format = "binary";
   };
 }
