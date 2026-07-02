@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 {
   imports = [ inputs.vert-nix.nixosModules.default ];
@@ -11,5 +11,15 @@
       enableACME = true;
       forceSSL = true;
     };
+  };
+  
+  services.nginx.virtualHosts.${config.services.vert.hostName} = {
+    rateLimit.burst = 100;
+    connectionLimit.connections = 50;
+  };
+
+  systemd.services.vert.serviceConfig = {
+    MemoryHigh = "2G";
+    CPUQuota = "200%";
   };
 }
