@@ -12,7 +12,7 @@
       forceSSL = true;
     };
   };
-  
+
   services.nginx.virtualHosts.${config.services.vert.hostName} = {
     rateLimit.burst = 100;
     connectionLimit.connections = 50;
