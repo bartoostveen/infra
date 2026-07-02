@@ -201,6 +201,15 @@
       url = "github:winapps-org/winapps";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vert-nix = {
+      url = "git+https://git.bartoostveen.nl/bart/vert-nix.git?ref=release"; # optionally use `release` branch here
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
   };
 
   outputs =

@@ -46,6 +46,7 @@
           self.overlays.nix-auth
           self.overlays.invoice
 
+          inputs.vert-nix.overlays.default
           inputs.copyparty.overlays.default
           # The design of deploy-rs' flake is truly wonderful, see also deploy.module.nix
           (_final: prev: {
