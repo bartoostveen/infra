@@ -26,10 +26,10 @@
 
   sops.secrets.vert-env = {
     sopsFile = ../../../../secrets/vert.env.vector.secret;
-    owner = "vert";
-    group = "vert";
+    owner = "vertd";
+    group = "vertd";
     mode = "0440";
-    restartUnits = [ "vert.service" ];
+    restartUnits = [ "vertd.service" ];
     format = "binary";
   };
 }
