@@ -1159,11 +1159,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783026767,
-        "narHash": "sha256-GKnYXVNyUEIbxXbWLAD23wR870kvUIPaqQWJAgBS7ko=",
+        "lastModified": 1783028146,
+        "narHash": "sha256-seUVpQBYndxzG23HC9ll2DBe9IYHY4RDSQ3Td8I4AX8=",
         "ref": "release",
-        "rev": "a5996e5cd950815ac6d35b893c7ecdb22325f435",
-        "revCount": 6,
+        "rev": "87782aafa2186cbb5e438382addbddfafeb2a242",
+        "revCount": 8,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/vert-nix.git"
       },
