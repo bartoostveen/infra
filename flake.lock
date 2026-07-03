@@ -21,11 +21,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1782385544,
-        "narHash": "sha256-b9k01gZV57mbfd2unu3hU9uROeG/9MdHZX7CGJpYHUs=",
+        "lastModified": 1783089004,
+        "narHash": "sha256-DQFZGbgeHSKkztG9Sy72mfrBxHq87XOysLgGT95a8As=",
         "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "c2144eb8a943341da3f7982e663b060b3b39e657",
+        "rev": "d08d2c853ee68752b225ede0fa770b8fe131d7ec",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783005591,
-        "narHash": "sha256-NcLHV5uBAeggDUE2wPbKszjfyaSLsoqaYt7izOphkZw=",
+        "lastModified": 1783099620,
+        "narHash": "sha256-prQSM9PGnrfSaqknJOZ3DCQKbpMiXAWLVC5SHbjLcJ4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f469c79b955609d6a8fdd9e689be76a93b1621d7",
+        "rev": "b2e4390ff35319c52935d6a700b615da4c0f204d",
         "type": "github"
       },
       "original": {
@@ -420,11 +420,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782520142,
-        "narHash": "sha256-QyYeiBOOLMieY8EDNbF+BWwfn410gD9Tig1mpAwmzRE=",
+        "lastModified": 1783089094,
+        "narHash": "sha256-pVbfBKm9yrWspH8ZQkog2vYKF1yJcVk5MwcGSryaucc=",
         "ref": "refs/heads/master",
-        "rev": "44c04332ba4378dba8e588ac52b3c2d0f024d3bf",
-        "revCount": 46,
+        "rev": "f7d3570442964851e72069792d517d6728802d44",
+        "revCount": 48,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -578,11 +578,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782636943,
-        "narHash": "sha256-ripjZa7BBLwL1uS5VJF3s/VpZpWt5ZIQEvkJ/FJNpQw=",
+        "lastModified": 1783023993,
+        "narHash": "sha256-gaOvvY/lL1eWoSmSRO17pWry8R49AuPMrF4nzu47K5o=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "058b1f9381fa79fcda49982370a750ff92dbba43",
+        "rev": "f8ed6cdcb1fd28a6ab7b61f4467a4f67fe2d9074",
         "type": "github"
       },
       "original": {
@@ -658,11 +658,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1783003425,
-        "narHash": "sha256-CLVsEepcFedoiIwXVlAYam9bbTt3mmTJXgGrvoLDDFM=",
+        "lastModified": 1783089885,
+        "narHash": "sha256-02ary8OtZROV9b1sqlNaU2NEhzA706qmTBfX8Alvyk0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6147971a7160e60cf691651d97cc8411395f5d90",
+        "rev": "04b4e759e84353279524e23661cd1622f76df6ed",
         "type": "github"
       },
       "original": {
@@ -1025,11 +1025,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782518969,
-        "narHash": "sha256-ASFLDYtuFhwcjZqOIYUZUlAingOX3EsZFDyyA8KhNuc=",
+        "lastModified": 1783089103,
+        "narHash": "sha256-MbGZJMrNAtVMv7Q9w1Hx7uV7yZ11NlqyTPdW0AmvWLM=",
         "ref": "refs/heads/master",
-        "rev": "8ec5c65fc991c53555258818372dbf4cabf8b159",
-        "revCount": 110,
+        "rev": "02adb6e416f98ea057f2bdbc557516c85f1c4ee7",
+        "revCount": 112,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/tcs-bot"
       },
