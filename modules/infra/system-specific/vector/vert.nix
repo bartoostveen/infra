@@ -79,7 +79,7 @@ in
       name = "vertd";
       color = "#ff0000";
     };
-    monitors.vertd = {
+    monitors.vertd-probe = {
       type = "json-query";
       name = "${config.services.vert.hostName} vertd";
       description = "Vertd success test for ${config.services.vert.hostName} Managed by AutoKuma";
