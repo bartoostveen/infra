@@ -74,6 +74,35 @@ in
   };
 
   infra.extraScrapeConfigs.vert-anubis.port = anubisMetricsPort;
+  infra.autokuma.instances.local = {
+    tags.vertd = {
+      name = "vertd";
+      color = "#ff0000";
+    };
+    monitors.vertd = {
+      type = "json-query";
+      name = "${config.services.vert.hostName} vertd";
+      description = "Vertd success test for ${config.services.vert.hostName} Managed by AutoKuma";
+      url = "https://${config.services.vert.hostName}/daemon/api/version";
+      notification_name_list = [ "autokuma-matrix" ];
+      tag_names = [
+        {
+          name = "autokuma";
+          value = "Matrix";
+        }
+        {
+          name = "vertd";
+          value = config.services.vert.hostName;
+        }
+      ];
+      json_path = "type";
+      json_path_operator = "==";
+      expected_value = "success";
+      timeout = 10;
+      interval = 20;
+      retry_interval = 20;
+    };
+  };
 
   systemd.services.vert.serviceConfig = {
     MemoryHigh = "2G";
