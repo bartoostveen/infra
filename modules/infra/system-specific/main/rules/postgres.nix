@@ -88,18 +88,6 @@
           };
         }
         {
-          alert = "PostgresqlCommitRateLow";
-          annotations = {
-            description = "Postgresql seems to be processing very few transactions\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
-            summary = "Postgresql commit rate low (instance {{ $labels.instance }})";
-          };
-          expr = "increase(pg_stat_database_xact_commit{datname!~\"template.*|postgres\",datid!=\"0\"}[5m]) < 5";
-          for = "2m";
-          labels = {
-            severity = "critical";
-          };
-        }
-        {
           alert = "PostgresqlLowXidConsumption";
           annotations = {
             description = "Postgresql seems to be consuming transaction IDs very slowly\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}";
