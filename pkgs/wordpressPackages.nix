@@ -64,9 +64,9 @@ in
     };
     view-transitions = mkWpPlugin {
       pname = "wp-view-transitions";
-      version = "1.2.0";
+      version = "1.2.1";
       id = "view-transitions";
-      hash = "sha256-mHdek0LI51mfurpyXpM8QOK2E38PwoL8Ad3OQl9yW28=";
+      hash = "sha256-RNcdPFfRuRHljuh2IhR+L/NuayreNBeLAvuAEqLMrFA=";
     };
   };
   lang =
