@@ -46,9 +46,9 @@ in
     };
     gutenberg = mkWpPlugin {
       pname = "gutenberg";
-      version = "23.4.0";
+      version = "23.5.0";
       id = "gutenberg";
-      hash = "sha256-y0cK0h1t27EHjt1v9/e0mm9Uva0HuW5ets9UKkgCHjM=";
+      hash = "sha256-b9EZVkP/Yh6ucbtfyTyUBKKCv4VTZF2+b3/c05YcyIQ=";
     };
     gutenberg-carousel = mkWpPlugin {
       pname = "wp-gutenberg-carousel";
