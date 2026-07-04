@@ -33,10 +33,10 @@ in
     };
     indexnow = mkWpPlugin {
       pname = "indexnow";
-      version = "1.0.3";
+      version = "1.0.4";
       id = "indexnow";
       url = "https://downloads.wordpress.org/plugin/indexnow.zip";
-      hash = "sha256-iUqYrUUBSz2ytovpPWcukMWVR+IsYgZPe1zwI9Pgj0E=";
+      hash = "sha256-YLzRJ7gXl03nUcEuYa3+jn5QdapDeyxZZHtYxgIoHOA=";
     };
     generic-oidc = mkWpPlugin {
       pname = "wp-generic-oidc";
