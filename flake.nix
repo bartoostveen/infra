@@ -20,6 +20,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
     nixpkgs-continuwuity.follows = "nixpkgs"; # .url = "github:bartoostveen/nixpkgs/continuwuity-0.5.10";
+    nixpkgs-php-security.url = "github:bartoostveen/nixpkgs/php-security-2026-07-04";
 
     home-manager = {
       url = "github:nix-community/home-manager";

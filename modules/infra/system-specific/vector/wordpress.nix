@@ -10,7 +10,7 @@ let
   nl = pkgs.local.wordpressPackages.lang {
     lang = "nl_NL";
     inherit (config.services.wordpress.sites.${domain}.package) version;
-    hash = "sha256-03/zOJUtsFjJFqcpqXsrPlbt7ddOAWAnL+rNZo0BBnc=";
+    hash = "sha256-fB8r4hLvJQnfSk4xQdnfs6NAu+qgEhDVPJou2m4QBbo=";
   };
 in
 {
