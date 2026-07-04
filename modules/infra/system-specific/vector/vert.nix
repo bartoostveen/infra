@@ -88,7 +88,7 @@ in
       tag_names = [
         {
           name = "autokuma";
-          value = "Matrix";
+          value = "vertd";
         }
         {
           name = "vertd";
