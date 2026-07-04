@@ -58,9 +58,9 @@ in
     };
     modify-profile-fields = mkWpPlugin {
       pname = "wp-modify-profile-fields";
-      version = "1.1.0";
+      version = "1.2.0";
       id = "user-profile-dashboard-fields-control";
-      hash = "sha256-f2lALAuTVTWmZB8z+A7fvv87vbwcwiASH7fsrK4WWGI=";
+      hash = "sha256-hsUXAah7EFRKwB6Z/HzkBLCVH0kZl3oohHUXN1mWn2g=";
     };
     view-transitions = mkWpPlugin {
       pname = "wp-view-transitions";
