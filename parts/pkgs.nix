@@ -11,6 +11,7 @@
       system,
       pkgs,
       smallPkgs,
+      phpPkgs,
       ...
     }:
 
@@ -41,6 +42,16 @@
               inherit wordpressPackages;
             }
             // prev.local;
+            inherit (phpPkgs)
+              php82
+              php82Packages
+              php83
+              php83Packages
+              php84
+              php84Packages
+              php85
+              php85Packages
+              ;
           })
 
           self.overlays.nix-auth
@@ -57,6 +68,7 @@
         ];
       };
 
+      _module.args.phpPkgs = mkSimplePkgs inputs.nixpkgs-php-security;
       _module.args.smallPkgs = mkSimplePkgs inputs.nixos-small;
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 
