@@ -474,6 +474,22 @@
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       }
     },
+    "ip-bans": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783295558,
+        "narHash": "sha256-GeASPbAT3jRJI08yM7A9cr76cFpBtAyOfrAKHmkTdaI=",
+        "ref": "refs/heads/master",
+        "rev": "36cc1ad474d82cd30a69d99d3540e46883140491",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git"
+      }
+    },
     "meowbot": {
       "inputs": {
         "flake-parts": [
@@ -857,6 +873,7 @@
         "ical-proxy": "ical-proxy",
         "import-tree": "import-tree",
         "invoice": "invoice",
+        "ip-bans": "ip-bans",
         "meowbot": "meowbot",
         "meshcoretomqtt": "meshcoretomqtt",
         "nix-auth": "nix-auth",

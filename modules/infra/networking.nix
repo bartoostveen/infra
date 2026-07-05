@@ -1,5 +1,9 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 
+let
+  inherit (lib) concatStringsSep splitString;
+  inherit (builtins) readFile;
+in
 {
   networking.nat.enable = true;
   networking.domain = "bartoostveen.nl";
@@ -11,6 +15,11 @@
   };
 
   networking.firewall.extraCommands = ''
-    iptables -I INPUT -s 77.160.138.6 -j REJECT
+    ${
+      readFile "${inputs.ip-bans}/bans.txt"
+      |> splitString "\n"
+      |> map (ban: "iptables -I INPUT -s ${ban} -j REJECT")
+      |> concatStringsSep "\n"
+    }
   '';
 }

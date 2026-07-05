@@ -22,6 +22,11 @@
     nixpkgs-continuwuity.follows = "nixpkgs"; # .url = "github:bartoostveen/nixpkgs/continuwuity-0.5.10";
     nixpkgs-php-security.url = "github:bartoostveen/nixpkgs/php-security-2026-07-04";
 
+    ip-bans = {
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
