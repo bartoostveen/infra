@@ -21,7 +21,7 @@ jobs:
         run: |
           git switch "$FORGEJO_REF_NAME"
           kver() {
-            nix eval --inputs-from . --raw nixos-small#linuxKernel.packages.linux_7_0.kernel.version --accept-flake-config
+            nix eval --inputs-from . --raw nixos-small#linuxKernel.packages.linux_7_1.kernel.version --accept-flake-config
           }
           old="$(kver)"
           nix flake update --commit-lock-file nixos-small --accept-flake-config
