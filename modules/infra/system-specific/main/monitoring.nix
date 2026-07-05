@@ -15,6 +15,7 @@ let
     attrNames
     concatMap
     filterAttrs
+    genAttrs
     mapAttrsToList
     optionals
     removeAttrs
@@ -208,6 +209,54 @@ in
   };
 
   infra.extraScrapeConfigs.uptime-kuma-anubis.port = uptimeKumaMetricsPort;
+
+  infra.autokuma.instances.local = {
+    additionalMonitorFiles = [ config.sops.secrets.autokuma-toostveen.path ];
+    tags.toostveen = {
+      name = "toostveen";
+      color = "#ff9900";
+    };
+    monitors =
+      # let inherit (inputs.nixpkgs.lib) uniqueStrings filter flatten mapAttrsToList attrNames; in uniqueStrings (filter (d: d != "localhost") (flatten (mapAttrsToList (_: c: attrNames c.config.services.nginx.virtualHosts) nixosConfigurations)))
+      genAttrs
+        [
+          "fs.toostveen.nl"
+          "git.toostveen.nl"
+          "im.toostveen.nl"
+          "md.toostveen.nl"
+          "prometheus.toostveen.nl"
+          "rss.toostveen.nl"
+          "toostveen.nl"
+        ]
+        (vhost: {
+          type = "http";
+          name = "toostveen: ${vhost}";
+          description = "toostveen vhost ${vhost}";
+          expiry_notification = true;
+          url = "https://${vhost}";
+          accepted_statuscodes = [ "200-399" ];
+          notification_name_list = [ "autokuma-toostveen" ];
+          tag_names = [
+            {
+              name = "toostveen";
+              value = vhost;
+            }
+          ];
+          timeout = 10;
+          interval = 20;
+          retry_interval = 20;
+        });
+  };
+
+  sops.secrets.autokuma-toostveen = {
+    owner = "autokuma";
+    group = "autokuma";
+    mode = "0600";
+
+    sopsFile = ../../../../secrets/autokuma/autokuma-toostveen.toml.bart-server.secret;
+    format = "binary";
+    restartUnits = [ "autokuma-local.service" ];
+  };
 
   services.nginx.virtualHosts."uptime.bartoostveen.nl" = {
     enableACME = true;
