@@ -1,4 +1,8 @@
-{ stdenv, fetchzip, ... }:
+{
+  stdenv,
+  fetchzip,
+  callPackage,
+}:
 
 let
   mkWpPlugin =
@@ -44,12 +48,7 @@ in
       id = "daggerhart-openid-connect-generic";
       hash = "sha256-/mqGWQz1lHsnA2dpQEZQVCWmqFSmDslFd4rzeEC4PA8=";
     };
-    gutenberg = mkWpPlugin {
-      pname = "gutenberg";
-      version = "23.5.0";
-      id = "gutenberg";
-      hash = "sha256-b9EZVkP/Yh6ucbtfyTyUBKKCv4VTZF2+b3/c05YcyIQ=";
-    };
+    gutenberg = callPackage ../pkgs/gutenberg/package.nix { };
     gutenberg-carousel = mkWpPlugin {
       pname = "wp-gutenberg-carousel";
       version = "2.1.5";
