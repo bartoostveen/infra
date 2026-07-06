@@ -9,16 +9,16 @@
 
 buildGoModule (finalAttrs: {
   pname = "mautrix-telegram";
-  version = "0.2605.0";
+  version = "0.2606.0";
 
   src = fetchFromGitHub {
     owner = "mautrix";
     repo = "telegram";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-9TCXyGvFCZAv8xIUW3oiVRv5EBdObrLuALfME/oAWBE=";
+    hash = "sha256-tKoqtGCkUtCT/SMxRX6LzivGu0p/AM6TPDQoW9plTyE=";
   };
 
-  vendorHash = "sha256-xcBbBIsFXQ90WyQ8OY+CCVIiBepIlOD/o+ZjabNvM0Q=";
+  vendorHash = "sha256-+VDdJg5RZzMrphJ5SK+YbdENhPiHJpwGY/JqBJewtUo=";
 
   ldflags = [
     "-X"
