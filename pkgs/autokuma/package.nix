@@ -6,15 +6,15 @@
   openssl,
 }:
 
-rustPlatform.buildRustPackage (_finalAttrs: {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "autokuma";
-  version = "0-unstable-2026-06-03";
+  version = "2.1.0-rc.2";
 
   src = fetchFromGitHub {
     owner = "BigBoot";
     repo = "AutoKuma";
-    rev = "3379fbaeb27d66a5b8d977e66765d8b4eca94bef";
-    hash = "sha256-blt2G/3yf+rBqH39buUaeIL0JDbc2SGwMsJgLtyqz9M=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-1vp4g1EZVFrx0HotnXx77MEUwA4bK61A1HnXtbjvjPs=";
   };
 
   cargoHash = "sha256-TG0RQ+SE/x4SKXFAzWQlu2377USyTPu5Z6oaZ9Omh9M=";
