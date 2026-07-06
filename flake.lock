@@ -914,11 +914,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783377713,
-        "narHash": "sha256-FbxOFg3wYBsDq1+X2yVNPk1oRcoyocH60Nqfjf9k0sQ=",
+        "lastModified": 1783377959,
+        "narHash": "sha256-kKMmdmA6xvLKKvv8ZBGb+sd7SyOK4lGc96KYDXXq5sA=",
         "ref": "refs/heads/master",
-        "rev": "d804b1a195dcd9921a20a0f2eff9395e33fcf945",
-        "revCount": 62,
+        "rev": "eb429d6de8999bf0d960d80afefb520911e5c268",
+        "revCount": 63,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       },
