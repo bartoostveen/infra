@@ -719,22 +719,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-php-security": {
-      "locked": {
-        "lastModified": 1783184557,
-        "narHash": "sha256-kiVVuHnyqvzDn0hvkEXANVSZykvQr05++q9E3MVVkxs=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "f69ac641afecfc419864af79801ba97917515f65",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "php-security-2026-07-04",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "omeduostuurcentenneef-web": {
       "inputs": {
         "bun2nix": "bun2nix",
@@ -887,7 +871,6 @@
           "nixpkgs"
         ],
         "nixpkgs-lib": "nixpkgs-lib",
-        "nixpkgs-php-security": "nixpkgs-php-security",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
