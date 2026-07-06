@@ -21,11 +21,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1783089004,
-        "narHash": "sha256-DQFZGbgeHSKkztG9Sy72mfrBxHq87XOysLgGT95a8As=",
+        "lastModified": 1783353508,
+        "narHash": "sha256-JzU4Us0jo27PIG4B9Vzewejcxi6VAiLrcYuha/vE2VU=",
         "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "d08d2c853ee68752b225ede0fa770b8fe131d7ec",
+        "rev": "d2f0782d5e43cc7e2d6f10a89faa6f25389816ce",
         "type": "github"
       },
       "original": {
@@ -171,11 +171,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783267681,
-        "narHash": "sha256-cYRJkmynMtRafWfkxeB9B5/MBgpAqh1PaMYt0KQQBIY=",
+        "lastModified": 1783354658,
+        "narHash": "sha256-abY5JToGeJwp9its3vEOHYesUzzAX2rVWiYCzApi4x8=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "32d074ffc5d75bbbad31879d2e29383ab6f8bb5d",
+        "rev": "89040874f53e426e54a94787a3e3ddfa2acd1bad",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783222121,
-        "narHash": "sha256-E/ElL373TO8lQ2aMvYyzN+k4xkVaUGoRqoa8AtM71tI=",
+        "lastModified": 1783358420,
+        "narHash": "sha256-UEyBpf+XmQe8laXfDzIlo11Er7E0rKrLS8jeMnMj0Ds=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a1645f40777620c4bd2b6d854b290c2fc354a266",
+        "rev": "0d33882bd46c1f9ef62276700f5e5f2bd6ff6604",
         "type": "github"
       },
       "original": {
@@ -674,11 +674,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1783264223,
-        "narHash": "sha256-3Uiwx/j6LYuQH3hYkPLOZrKjLtQO03fPkO3K0hIp8Jc=",
+        "lastModified": 1783306753,
+        "narHash": "sha256-yBvwRKoVMLe2a1nQvFZCDN5/zjiO2MiMzuIJWc/VW9U=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "28d4faad49f8095ec21ebf0454aa8e9c7d7d0af9",
+        "rev": "38f52fc9057a249e1e9c93e2781e439aad5a10bd",
         "type": "github"
       },
       "original": {
@@ -749,11 +749,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783255578,
-        "narHash": "sha256-t7qy2HYhDho+uA1ffYwftBNWwQHZa0VCy8s3ObdKa/M=",
+        "lastModified": 1783327884,
+        "narHash": "sha256-CK8s29QucNu6QwKa2RIKFIaZTtAskeo8xen5WL1U05E=",
         "ref": "refs/heads/master",
-        "rev": "17b0036a218afc307bf2fb58aa46819af1f1454d",
-        "revCount": 106,
+        "rev": "8ec0ba5480de0aa8f0f9f61e8bc5b2c169a13b21",
+        "revCount": 113,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -848,11 +848,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782089418,
-        "narHash": "sha256-LRD1SuQWr49fGq3A+8GLXfsLE2xqIpQA440YDZwms3M=",
+        "lastModified": 1782905613,
+        "narHash": "sha256-SvXJcAemihifkTn4BGvyE5K1FJX9bl4U8DQ5pqKvD0s=",
         "owner": "pyproject-nix",
         "repo": "pyproject.nix",
-        "rev": "43f0b40edd0a74c63f66b7b48d969ae6b740d611",
+        "rev": "7af23cfe91064865ecf2e835da28b45b3c6f49fd",
         "type": "github"
       },
       "original": {
@@ -1166,11 +1166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782100052,
-        "narHash": "sha256-UfyLY3Hfwb3JqxCcj0953GxTFI5dEL85EKEe6DAFiVs=",
+        "lastModified": 1783307743,
+        "narHash": "sha256-oseisp2tblvzYZdojkA5URLnMjrpPiemzr5T7BdUyuU=",
         "owner": "pyproject-nix",
         "repo": "uv2nix",
-        "rev": "920fc6dfaf9f10ec56de93b184055e1a9f380d5e",
+        "rev": "288b0a580ede39d3d7f96e3d835f9df0a7080223",
         "type": "github"
       },
       "original": {
@@ -1217,11 +1217,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780830314,
-        "narHash": "sha256-i7odo7wn2IO2oEeu21U1+hhWW1GNwNnCw1piKZftv0I=",
+        "lastModified": 1783340356,
+        "narHash": "sha256-ZzdtK1oVnhtll5BzNldgseoL3C7hOKCFnhR9ZDl7DeY=",
         "owner": "winapps-org",
         "repo": "winapps",
-        "rev": "abc2c3da1a7980a8e87c616f7387bd898aadfeb3",
+        "rev": "b5a602fb3499dfac1b44bde4a532331e639ad73a",
         "type": "github"
       },
       "original": {
