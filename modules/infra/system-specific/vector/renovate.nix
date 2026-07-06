@@ -42,6 +42,7 @@ in
       bun
       pnpm
       go
+      phpPackages.composer
       gradle
       openjdk25_headless
     ];
