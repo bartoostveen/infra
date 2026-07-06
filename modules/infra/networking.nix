@@ -1,8 +1,8 @@
 { lib, inputs, ... }:
 
 let
-  inherit (lib) concatStringsSep splitString;
-  inherit (builtins) readFile;
+  inherit (lib) concatStringsSep splitString trim;
+  inherit (builtins) readFile filter;
 in
 {
   networking.nat.enable = true;
@@ -18,6 +18,8 @@ in
     ${
       readFile "${inputs.ip-bans}/bans.txt"
       |> splitString "\n"
+      |> map trim
+      |> filter (rule: rule != "")
       |> map (ban: "iptables -I INPUT -s ${ban} -j REJECT")
       |> concatStringsSep "\n"
     }
