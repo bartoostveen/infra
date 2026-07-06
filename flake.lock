@@ -891,6 +891,7 @@
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
+        "roundcube-oidc": "roundcube-oidc",
         "sops-nix": "sops-nix",
         "srvos": "srvos",
         "systems": "systems_4",
@@ -898,6 +899,32 @@
         "treefmt-nix": "treefmt-nix_2",
         "vert-nix": "vert-nix",
         "winapps": "winapps"
+      }
+    },
+    "roundcube-oidc": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783377027,
+        "narHash": "sha256-Tgwx79naPeRo3OfSBLIMZO0KSF47Ktv2q8uVQIBWaio=",
+        "ref": "refs/heads/master",
+        "rev": "5d24e8052396765287530bc607b4eba7d909e1c7",
+        "revCount": 61,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       }
     },
     "sops-nix": {
