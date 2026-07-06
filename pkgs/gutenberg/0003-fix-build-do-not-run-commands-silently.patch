@@ -1,14 +1,14 @@
-From ac9f36136263197162db15c982efc8817d0f0fa3 Mon Sep 17 00:00:00 2001
+From 277b689e68ed1e61e1f2c0517f1f00bc32d396fc Mon Sep 17 00:00:00 2001
 From: Bart Oostveen <bart@bartoostveen.nl>
-Date: Fri, 26 Jun 2026 21:19:06 +0200
+Date: Mon, 6 Jul 2026 23:25:15 +0200
 Subject: [PATCH 3/4] fix(build): do not run commands silently
 
 ---
- tools/build-scripts/build.mjs | 121 +++++++++-------------------------
- 1 file changed, 30 insertions(+), 91 deletions(-)
+ tools/build-scripts/build.mjs | 133 ++++++++--------------------------
+ 1 file changed, 30 insertions(+), 103 deletions(-)
 
 diff --git a/tools/build-scripts/build.mjs b/tools/build-scripts/build.mjs
-index c094083f162..8d4acfe79cd 100644
+index fc2f6aaca27..8d4acfe79cd 100644
 --- a/tools/build-scripts/build.mjs
 +++ b/tools/build-scripts/build.mjs
 @@ -3,75 +3,33 @@
@@ -105,21 +105,33 @@ index c094083f162..8d4acfe79cd 100644
  }
  
  /**
-@@ -85,26 +43,10 @@ async function build() {
+@@ -85,38 +43,10 @@ async function build() {
  	const startTime = Date.now();
  
  	try {
--		// Step 0: Verify node_modules is in sync with package-lock.json
--		console.log( '🔍 Checking dependencies...' );
--		await exec( 'npm', [
--			'run',
--			'check-installed-deps',
--			'--workspace',
--			'@wordpress/validation-tools',
--			'--silent',
--		] ).catch( () => {
--			throw new Error( 'Run `npm install` to update.' );
--		} );
+-		/*
+-		 * Step 0: Verify node_modules is in sync with package-lock.json.
+-		 *
+-		 * GUTENBERG_CHECK_INSTALLED_DEPS controls when this runs:
+-		 *   - `BEFORE_BUILD` (default): pre-build gate.
+-		 *   - `NEVER`: skip entirely (sticky opt-out for power users).
+-		 */
+-		if ( process.env.GUTENBERG_CHECK_INSTALLED_DEPS === 'NEVER' ) {
+-			console.log(
+-				'🔍 Skipping dependency check (GUTENBERG_CHECK_INSTALLED_DEPS=NEVER).'
+-			);
+-		} else {
+-			console.log( '🔍 Checking dependencies...' );
+-			await exec( 'npm', [
+-				'run',
+-				'check-installed-deps',
+-				'--workspace',
+-				'@wordpress/validation-tools',
+-				'--silent',
+-			] ).catch( () => {
+-				throw new Error( 'Run `npm install` to update.' );
+-			} );
+-		}
 -
 -		console.log( '\n🧹 Cleaning packages...' );
 -		await exec( 'npm', [ 'run', 'clean:packages' ], { silent: true } );
@@ -133,7 +145,7 @@ index c094083f162..8d4acfe79cd 100644
  		);
  
  		// This must happen before TypeScript compilation because some packages
-@@ -143,9 +85,10 @@ async function build() {
+@@ -155,9 +85,10 @@ async function build() {
  		const buildArgs = process.argv
  			.slice( 2 )
  			.filter( ( arg ) => arg !== '--skip-types' );
@@ -147,7 +159,7 @@ index c094083f162..8d4acfe79cd 100644
  
  		console.log( '\n📦 Building blocks manifests...' );
  		const blocksDirs = [
-@@ -163,22 +106,18 @@ async function build() {
+@@ -175,22 +106,18 @@ async function build() {
  			},
  		];
  		for ( const { input, output } of blocksDirs ) {

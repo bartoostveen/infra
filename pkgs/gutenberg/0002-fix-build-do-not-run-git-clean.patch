@@ -1,4 +1,4 @@
-From 33e0239ed849cad436d14262754be0f575fb2c6d Mon Sep 17 00:00:00 2001
+From adb4c6c24495f41b2229800ab09f608a157c13b1 Mon Sep 17 00:00:00 2001
 From: Bart Oostveen <bart@bartoostveen.nl>
 Date: Fri, 26 Jun 2026 20:37:05 +0200
 Subject: [PATCH 2/4] fix(build): do not run git clean
