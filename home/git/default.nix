@@ -26,7 +26,7 @@
       advice.detachedHead = false;
 
       core.fsmonitor = true;
-      branch.sort = "-comitterdate";
+      branch.sort = "-committerdate";
       merge.conflictStyle = "zdiff3";
 
       rerere.enabled = true;
