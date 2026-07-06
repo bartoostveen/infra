@@ -15,13 +15,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "librepods";
-  version = "0.2.5";
+  version = "1.0.0-rc1";
 
   src = fetchFromGitHub {
     owner = "kavishdevar";
     repo = "librepods";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-6l1WjwjDbv5e3tDaWo9+XSEjr9ge/hKysIkeUqyiO4U=";
+    hash = "sha256-Q1JX83ewLgyscgcTbh6Mb21ZBCMxrOZFv1jhqNkwMUI=";
   };
 
   sourceRoot = "source/linux";
