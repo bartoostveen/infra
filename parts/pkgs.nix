@@ -11,7 +11,6 @@
       system,
       pkgs,
       smallPkgs,
-      phpPkgs,
       ...
     }:
 
@@ -37,12 +36,8 @@
         overlays = [
           self.overlays.default
           (_final: prev: {
-            inherit (smallPkgs) roundcube;
-            local = {
-              inherit wordpressPackages;
-            }
-            // prev.local;
-            inherit (phpPkgs)
+            inherit (smallPkgs)
+              roundcube
               php82
               php82Packages
               php83
@@ -52,6 +47,10 @@
               php85
               php85Packages
               ;
+            local = {
+              inherit wordpressPackages;
+            }
+            // prev.local;
           })
 
           self.overlays.nix-auth
@@ -68,7 +67,6 @@
         ];
       };
 
-      _module.args.phpPkgs = mkSimplePkgs inputs.nixpkgs-php-security;
       _module.args.smallPkgs = mkSimplePkgs inputs.nixos-small;
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 
