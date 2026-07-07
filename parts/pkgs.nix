@@ -82,6 +82,7 @@
         mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
         meshcore-scan = pkgs.callPackage ../pkgs/meshcore-scan/package.nix { };
         meshcoredecoder = pkgs.callPackage ../pkgs/meshcoredecoder/package.nix { };
+        roundcube-oidc = pkgs.callPackage ../pkgs/roundcube-oidc/package.nix { };
         sable = pkgs.callPackage ../pkgs/sable/package.nix { };
         sable-unwrapped = pkgs.callPackage ../pkgs/sable/unwrapped.nix { };
         tilp = pkgs.callPackage ../pkgs/tilp/package.nix { };
