@@ -168,6 +168,15 @@
       };
     };
 
+    roundcube-oidc = {
+      url = "git+https://git.bartoostveen.nl/bart/roundcube-oidc.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs = {
