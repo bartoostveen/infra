@@ -23,6 +23,8 @@ let
     "test.search.boostveen.nl"
     "nix-vert.bartoostveen.nl"
     "test.nix-vert.bartoostveen.nl"
+    "nix-oci-lock.bartoostveen.nl"
+    "test.nix-oci-lock.bartoostveen.nl"
   ];
 in
 {
