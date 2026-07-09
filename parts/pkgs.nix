@@ -35,7 +35,7 @@
 
         overlays = [
           self.overlays.default
-          (_final: prev: {
+          (final: prev: {
             inherit (smallPkgs)
               roundcube
               php82
@@ -51,6 +51,13 @@
               inherit wordpressPackages;
             }
             // prev.local;
+            wordpress_7_0 = prev.wordpress_7_0.overrideAttrs rec {
+              version = "7.0.1";
+              src = final.fetchurl {
+                url = "https://wordpress.org/wordpress-${version}.tar.gz";
+                hash = "sha256-3BBZLam1gMdSVjKFDgzO03GxMIGFOsKa/pO11bsA25g=";
+              };
+            };
           })
 
           self.overlays.nix-auth
