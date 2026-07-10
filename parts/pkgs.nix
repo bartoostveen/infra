@@ -58,6 +58,14 @@
                 hash = "sha256-3BBZLam1gMdSVjKFDgzO03GxMIGFOsKa/pO11bsA25g=";
               };
             };
+            tmuxp = prev.tmuxp.overrideAttrs (finalAttrs: rec {
+              version = "1.74.0";
+              src = final.fetchPypi {
+                inherit (finalAttrs) pname;
+                inherit version;
+                hash = "sha256-ngSA6gEpmWAmNYh+BGHTlcLYqm42qFtabR1l3NbHgJw=";
+              };
+            });
           })
 
           self.overlays.nix-auth
