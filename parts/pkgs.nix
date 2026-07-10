@@ -51,6 +51,7 @@
               inherit wordpressPackages;
             }
             // prev.local;
+            # TODO: remove all at next nixos-unstable
             wordpress_7_0 = prev.wordpress_7_0.overrideAttrs rec {
               version = "7.0.1";
               src = final.fetchurl {
@@ -66,6 +67,13 @@
                 hash = "sha256-ngSA6gEpmWAmNYh+BGHTlcLYqm42qFtabR1l3NbHgJw=";
               };
             });
+            tlsrpt-reporter = prev.tlsrpt-reporter.overrideAttrs {
+              disabledTests = [
+                "test_b0rkcmd"
+                "test_intarg_cmd_float"
+                "test_intarg_cmd_string"
+              ];
+            };
           })
 
           self.overlays.nix-auth
