@@ -2,11 +2,14 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
 let
   inherit (lib) mkForce getExe';
+
+  forgeUrl = inputs.self.nixosConfigurations.bart-server.config.services.forgejo.settings.server.DOMAIN;
 in
 {
   services.renovate = {
@@ -20,7 +23,7 @@ in
     };
     environment.LOG_LEVEL = "debug";
     settings = {
-      endpoint = "https://git.bartoostveen.nl/";
+      endpoint = "https://${forgeUrl}/";
       gitAuthor = "Renovate <renovate@bartoostveen.nl>";
       platform = "forgejo";
       onboarding = true;
@@ -37,6 +40,13 @@ in
         {
           matchManagers = [ "github-actions" ];
           overrideDatasource = "forgejo-tags";
+        }
+      ];
+
+      hostRules = [
+        {
+          hostType = "forgejo";
+          endpoint = "https://${forgeUrl}/api/v1";
         }
       ];
     };
