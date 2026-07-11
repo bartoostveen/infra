@@ -41,12 +41,9 @@ in
           matchManagers = [ "github-actions" ];
           overrideDatasource = "forgejo-tags";
         }
-      ];
-
-      hostRules = [
         {
-          hostType = "forgejo";
-          endpoint = "https://${forgeUrl}/api/v1";
+          matchDatasources = [ "forgejo-tags" ];
+          registryUrls = [ "https://${forgeUrl}" ];
         }
       ];
     };
