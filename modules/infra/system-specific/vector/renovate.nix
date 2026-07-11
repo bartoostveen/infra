@@ -50,6 +50,7 @@ in
           matchManagers = [ "github-actions" ];
           matchPackageNames = [ "actions/setup-home" ];
           automerge = true;
+          minimumReleaseAge = null;
         }
       ];
     };
