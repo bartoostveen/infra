@@ -87,10 +87,10 @@ in
                 else
                   [ "/" ]
               )
-              {
+              (_: {
                 proxyPass = socket;
                 rateLimit.enable = false;
-              };
+              });
         };
       };
 
