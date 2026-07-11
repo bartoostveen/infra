@@ -46,6 +46,11 @@ in
           matchDatasources = [ "forgejo-tags" ];
           registryUrls = [ "https://${forgeUrl}" ];
         }
+        {
+          matchManagers = [ "github-actions" ];
+          matchPackageNames = [ "actions/setup-home" ];
+          automerge = true;
+        }
       ];
     };
     runtimePackages = with pkgs; [
