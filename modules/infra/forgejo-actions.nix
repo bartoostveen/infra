@@ -103,6 +103,7 @@ in
             wget
             zip
             unzip
+            which
             # keep-sorted end
           ];
           settings.runner.envs = cfg.environment;
