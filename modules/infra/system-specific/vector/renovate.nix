@@ -37,6 +37,8 @@ in
       lockFileMaintenance.enabled = true;
       minimumReleaseAge = "7 days";
 
+      cacheTtlOverride.datasource-forgejo-tags = 0;
+
       packageRules = [
         {
           matchManagers = [ "github-actions" ];
@@ -47,7 +49,7 @@ in
           matchPackageNames = [ "actions/setup-home" ];
           overrideDatasource = "forgejo-tags";
           automerge = true;
-          minimumReleaseAge = null;
+          minimumReleaseAge = "1 second";
         }
         {
           matchDatasources = [ "forgejo-tags" ];
