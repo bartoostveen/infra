@@ -90,6 +90,7 @@
 
       packages = {
         # keep-sorted start
+        action-docs = pkgs.callPackage ../pkgs/action-docs/package.nix { };
         alertmanager-matrix = pkgs.callPackage ../pkgs/alertmanager-matrix/package.nix { };
         autokuma = pkgs.callPackage ../pkgs/autokuma/package.nix { };
         github-readme-stats = pkgs.callPackage ../pkgs/github-readme-stats/package.nix { };
