@@ -8,7 +8,7 @@
 let
   cfg = config.infra.matrix;
 
-  inherit (lib) mkIf;
+  inherit (lib) mkIf genAttrs;
 
   inherit (pkgs.callPackage ./lib.nix { }) mkAutokumaMonitor;
 in
@@ -76,10 +76,21 @@ in
           enableACME = true;
           forceSSL = true;
 
-          locations.${if (cfg.cinny.enable && cfg.cinny.replaceContinuwuity) then "/_matrix" else "/"} = {
-            proxyPass = socket;
-            rateLimit.enable = false;
-          };
+          locations =
+            genAttrs
+              (
+                if (cfg.cinny.enable && cfg.cinny.replaceContinuwuity) then
+                  [
+                    "/_matrix"
+                    "/_continuwuity"
+                  ]
+                else
+                  [ "/" ]
+              )
+              {
+                proxyPass = socket;
+                rateLimit.enable = false;
+              };
         };
       };
 
