@@ -46,19 +46,14 @@
               php84Packages
               php85
               php85Packages
+              wordpress_7_0
+              wordpress
               ;
             local = {
               inherit wordpressPackages;
             }
             // prev.local;
             # TODO: remove all at next nixos-unstable
-            wordpress_7_0 = prev.wordpress_7_0.overrideAttrs rec {
-              version = "7.0.1";
-              src = final.fetchurl {
-                url = "https://wordpress.org/wordpress-${version}.tar.gz";
-                hash = "sha256-3BBZLam1gMdSVjKFDgzO03GxMIGFOsKa/pO11bsA25g=";
-              };
-            };
             tmuxp = prev.tmuxp.overrideAttrs (finalAttrs: rec {
               version = "1.74.0";
               src = final.fetchPypi {
