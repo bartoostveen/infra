@@ -225,6 +225,7 @@ in
           "im.toostveen.nl"
           "md.toostveen.nl"
           "prometheus.toostveen.nl"
+          "rd.toostveen.nl"
           "rss.toostveen.nl"
           "toostveen.nl"
         ]
