@@ -88,18 +88,22 @@ in
           tokenFile =
             config.sops.secrets."forgejo-runner-token-${config.networking.hostName}-runner${n}".path;
           hostPackages = with pkgs; [
+            # keep-sorted start
             bash
+            config.nix.package
             coreutils
             curl
             gawk
-            gnused
-            gnupg
-            nodejs
-            wget
-            jq
             gitFull
-            config.nix.package
+            gnupg
+            gnused
+            jq
+            nodejs
             openssh
+            wget
+            zip
+            unzip
+            # keep-sorted end
           ];
           settings.runner.envs = cfg.environment;
         }
