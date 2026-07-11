@@ -394,11 +394,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783689750,
-        "narHash": "sha256-iMO/Ypany7DPXD6D7sQgH7METtEUihnOvdb+A9ehn8k=",
+        "lastModified": 1783744526,
+        "narHash": "sha256-yYVxW+uIbCx0Nt870fbErQbz+b2+3Gwpppe+JbIU+Co=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "79e6082586b3680ff32c8e75127545058f074fa4",
+        "rev": "2afec152df4e284d264f8489d16004c264aebf4c",
         "type": "github"
       },
       "original": {
@@ -462,11 +462,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783253398,
-        "narHash": "sha256-v2oM3rdp0/lP5QSHywWeltmTo2WX2bzSHYa3Q+H2upQ=",
+        "lastModified": 1783759799,
+        "narHash": "sha256-SsCqWtuQ/6Ye80DiwWMaZfhlRzE9q/pCZFsKhHFmLZY=",
         "ref": "refs/heads/master",
-        "rev": "a1aba5c7f261ac5f9a051f49f24252049135e30d",
-        "revCount": 87,
+        "rev": "d518e0a52e9d2fb0be849d047544c6f924cbeca7",
+        "revCount": 90,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
@@ -675,11 +675,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1783693695,
-        "narHash": "sha256-ll8SjCNgwWuou5Q64GMjuUrrqRJW1gy3uCMjd+oa9KA=",
+        "lastModified": 1783717504,
+        "narHash": "sha256-zuIR1jOzbfBTfyMfSv3oSkfr9lw9EQieOJPVJr5nWFs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "dc29ee8fa098c86053cc8ef25594738f28be5b6b",
+        "rev": "1aa63e215e84f5977b85ea56b39d888e3240f755",
         "type": "github"
       },
       "original": {
