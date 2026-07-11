@@ -36,9 +36,7 @@ in
       packageRules = [
         {
           matchManagers = [ "github-actions" ];
-          matchPackageNames = [ "actions/**" "bart/**" ];
-          datasource = "gitea-tags";
-          registryUrl = "https://git.bartoostveen.nl";
+          overrideDatasource = "forgejo-tags";
         }
       ];
     };
