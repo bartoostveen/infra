@@ -77,8 +77,8 @@ in
       replaceContinuwuity = mkOption {
         description = "Whether to replace c10y's 'welcome to continuwuity' with Cinny";
         type = bool;
-        default = true;
-        example = false;
+        default = false;
+        example = true;
       };
       domains = mkOption {
         description = "Domains to host a Cinny instance on";
