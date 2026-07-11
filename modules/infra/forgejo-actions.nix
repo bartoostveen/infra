@@ -100,10 +100,10 @@ in
             jq
             nodejs
             openssh
-            wget
-            zip
             unzip
+            wget
             which
+            zip
             # keep-sorted end
           ];
           settings.runner.envs = cfg.environment;
