@@ -43,14 +43,15 @@ in
           overrideDatasource = "forgejo-tags";
         }
         {
-          matchDatasources = [ "forgejo-tags" ];
-          registryUrls = [ "https://${forgeUrl}" ];
-        }
-        {
           matchManagers = [ "github-actions" ];
           matchPackageNames = [ "actions/setup-home" ];
+          overrideDatasource = "forgejo-tags";
           automerge = true;
           minimumReleaseAge = null;
+        }
+        {
+          matchDatasources = [ "forgejo-tags" ];
+          registryUrls = [ "https://${forgeUrl}" ];
         }
       ];
     };
