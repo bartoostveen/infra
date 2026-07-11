@@ -477,11 +477,11 @@
     "ip-bans": {
       "flake": false,
       "locked": {
-        "lastModified": 1783295558,
-        "narHash": "sha256-GeASPbAT3jRJI08yM7A9cr76cFpBtAyOfrAKHmkTdaI=",
+        "lastModified": 1783779068,
+        "narHash": "sha256-YBBQRRW6UGvk29fJ+1bVI1mOWydIph4UBb9v/W1axdE=",
         "ref": "refs/heads/master",
-        "rev": "36cc1ad474d82cd30a69d99d3540e46883140491",
-        "revCount": 1,
+        "rev": "3335b1f2e491a04d50d28ecf69a6b3d5ccdc2ba7",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git"
       },
