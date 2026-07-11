@@ -32,6 +32,15 @@ in
       prHourlyLimit = 50;
       lockFileMaintenance.enabled = true;
       minimumReleaseAge = "7 days";
+
+      packageRules = [
+        {
+          matchManagers = [ "github-actions" ];
+          matchPackageNames = [ "actions/**" "bart/**" ];
+          datasource = "gitea-tags";
+          registryUrl = "https://git.bartoostveen.nl";
+        }
+      ];
     };
     runtimePackages = with pkgs; [
       nix
