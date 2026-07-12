@@ -100,6 +100,7 @@ in
         with pkgs;
         [
           curl
+          iftop
           wget
           # https://nixos.org/manual/nixos/unstable/#module-services-postgres-upgrading
         ]
