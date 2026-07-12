@@ -11,7 +11,7 @@ in
 {
 
   imports = [
-    inputs.nixos-mailserver.nixosModule
+    inputs.nixos-mailserver.nixosModules.default
     # keep-sorted start
     ./autoconfig.nix
     ./bounce.nix
