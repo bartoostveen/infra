@@ -35,7 +35,7 @@
 
         overlays = [
           self.overlays.default
-          (final: prev: {
+          (_final: prev: {
             inherit (smallPkgs)
               roundcube
               php82
@@ -53,22 +53,6 @@
               inherit wordpressPackages;
             }
             // prev.local;
-            # TODO: remove all at next nixos-unstable
-            tmuxp = prev.tmuxp.overrideAttrs (finalAttrs: rec {
-              version = "1.74.0";
-              src = final.fetchPypi {
-                inherit (finalAttrs) pname;
-                inherit version;
-                hash = "sha256-ngSA6gEpmWAmNYh+BGHTlcLYqm42qFtabR1l3NbHgJw=";
-              };
-            });
-            tlsrpt-reporter = prev.tlsrpt-reporter.overrideAttrs {
-              disabledTests = [
-                "test_b0rkcmd"
-                "test_intarg_cmd_float"
-                "test_intarg_cmd_string"
-              ];
-            };
           })
 
           self.overlays.nix-auth
