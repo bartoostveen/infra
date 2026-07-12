@@ -58,7 +58,7 @@ in
     };
 
     services.matrix-continuwuity.settings.global = {
-      well_known.rtc_focus_server_urls = [
+      matrix_rtc.foci = [
         {
           type = "livekit";
           livekit_service_url = "https://${cfg.livekit.domain}/livekit/jwt";
