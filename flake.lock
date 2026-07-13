@@ -171,11 +171,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783637983,
-        "narHash": "sha256-zKYemA+ZGFiW7ac5+9w8FEounKLt4eOb7HI17wp1Rxs=",
+        "lastModified": 1783882035,
+        "narHash": "sha256-pkzLrA8E07RerGgaN3dkA7gy2NC+QEUeIHQuYUiDdEU=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "96bafb8f4af83bb7473b75e4b77ab8e1445e6b46",
+        "rev": "daee3e85001a7bb8716577e84b01aafce8f813bb",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783823409,
-        "narHash": "sha256-OI4IkRjRXa1e7hYmCGJDPDq5H/kPwhsyoS80cNUF9fI=",
+        "lastModified": 1783963347,
+        "narHash": "sha256-r376E2XpakiXwModDHIxlvB6qLq4iFVEq730vxOO4JY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7566825d4652a1b885bd4ce65bd9e8def432fec9",
+        "rev": "a45a7c451455a51ae740ec3bce4024b312809c29",
         "type": "github"
       },
       "original": {
@@ -674,11 +674,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1783847910,
-        "narHash": "sha256-eo8sxyBYLPsG92eXzhrOqLk4z6rrHFHHx6wM+b6mnh4=",
+        "lastModified": 1783935015,
+        "narHash": "sha256-wCWfznifGmMeHxx1zBWYnjBXOdARSgSjWh9PWoph2/0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4ebb8d6c14644779d1ba80cc1a9b50861a2214d0",
+        "rev": "fa0063eb13bd6adb9ce0dc849b997dd77a6c5ee6",
         "type": "github"
       },
       "original": {
@@ -749,11 +749,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783816150,
-        "narHash": "sha256-ggCtgLC50ed0BEiunomS83uHJ3ElmsD3OUK5b9+pbCI=",
+        "lastModified": 1783912588,
+        "narHash": "sha256-aUIrNYPk6oyfujtUXfc8I/OGUL/CLxWrOcG0XpnhhNs=",
         "ref": "refs/heads/master",
-        "rev": "7063f31749d5bd46967d91cf0b1fbdc6fa3b42c7",
-        "revCount": 122,
+        "rev": "82c065d5b8a8bf0f60e02bf051991933fad6d492",
+        "revCount": 128,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -911,11 +911,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783817695,
-        "narHash": "sha256-TZxRW2ncnPEjaPGADx53pKM0gF94Cd7ImcPho6zHs5Y=",
+        "lastModified": 1783940502,
+        "narHash": "sha256-zHDSLA2Vwo9UquLpRXCoogUpGe8yHNv/Qs/83QlLr/g=",
         "ref": "refs/heads/master",
-        "rev": "564d0f6a0e0e006026523e5f2e57513617f3f5cb",
-        "revCount": 80,
+        "rev": "ea81f86c358e75a378626b9f9b4feb128e404cf8",
+        "revCount": 86,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       },
@@ -951,11 +951,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783564915,
-        "narHash": "sha256-FSJW7P6nv6QUbjMZvWvdfrwNEPHGkoQjqGNGnZL9qFU=",
+        "lastModified": 1783909676,
+        "narHash": "sha256-vv2nJXQerOPlhDbdPY6zhXwXXYEJL4+wUGAyyxe4ze0=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "cc4362a6bfb33523d7d19e587c8d99ca5a00b7d8",
+        "rev": "35119abd9f2a347af72e3b2b8b110d921e17bb2a",
         "type": "github"
       },
       "original": {
