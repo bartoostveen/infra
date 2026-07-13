@@ -1083,11 +1083,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783820197,
-        "narHash": "sha256-nug7+Gca7oaq23O/Xyrz7nezSsCHINX+pXN15ZateUw=",
+        "lastModified": 1783976438,
+        "narHash": "sha256-6LDGapi/vf7/279X4MjafejXi2zMH9sMTC45Pm3C48w=",
         "ref": "refs/heads/master",
-        "rev": "3b93b2124f12bd14375079fd50c3725825415448",
-        "revCount": 129,
+        "rev": "784e296fe1f087789e5f280928abed502198a3cc",
+        "revCount": 131,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/tcs-bot"
       },
