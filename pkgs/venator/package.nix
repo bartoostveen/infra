@@ -10,19 +10,18 @@
 
 buildGoModule (finalAttrs: {
   pname = "venator";
-  version = "0.2606.03";
+  version = "0.1.0a2";
   __structuredAttrs = true;
 
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "timedout";
     repo = "venator";
-    rev = "f59aec2b3f7e81547c950dbf37e053c451756ecd";
-    hash = "sha256-nIBHQ9ojBaUBuQGriQ5WHD9B1ZyyPm2JV05wKn/7Dp8=";
-    fetchSubmodules = true; # because Codeberg or smth
+    tag = finalAttrs.version;
+    hash = "sha256-P6eGj4foZf1DPHD6xD3rhkOWRZ81g++wn5T+O2yNsNg=";
   };
 
-  vendorHash = "sha256-vnZbYMXEbwrHDz5OI4UDAyAZC3xE0zrWljvgBki8d8M=";
+  vendorHash = "sha256-ZI27vi362YozkggQW7gbJQTCqaJgs/fN08V5F6m5Qdc=";
 
   preBuild = lib.optionalString withDocs ''
     if [ -d vendor ]; then
