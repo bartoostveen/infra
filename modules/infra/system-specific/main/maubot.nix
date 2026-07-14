@@ -37,28 +37,6 @@ in
 
   services.maubot = {
     enable = true;
-    package = pkgs.maubot.override {
-      python = pkgs.python3.override {
-        packageOverrides = final: _prev: {
-          sqlalchemy_1_3 = final.buildPythonPackage (finalAttrs: {
-            pname = "SQLAlchemy";
-            version = "1.3.24";
-            pyproject = true;
-            src = pkgs.fetchPypi {
-              inherit (finalAttrs) pname version;
-              sha256 = "sha256-67t3fL+TEjWbiXv4G6ANrg9ctp+6KhgmXcwYpvXvdRk=";
-            };
-            build-system = with final; [
-              setuptools
-            ];
-            postInstall = ''
-              sed -e 's:--max-worker-restart=5::g' -i setup.cfg
-            '';
-            doCheck = false;
-          });
-        };
-      };
-    };
     configMutable = false;
     pythonPackages = with pkgs.python3Packages; [ semver ];
     plugins = with plugins; [
