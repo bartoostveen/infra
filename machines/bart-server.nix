@@ -37,6 +37,7 @@ in
     ../modules/infra/system-specific/main/maubot.nix
     ../modules/infra/system-specific/main/meowbot.nix
     ../modules/infra/system-specific/main/monitoring.nix
+    ../modules/infra/system-specific/main/tascheduling-db.nix
     ../modules/infra/system-specific/main/venator.nix
     ../modules/infra/system-specific/main/wireguard.monitoring.nix
     # keep-sorted end
@@ -109,23 +110,6 @@ in
       "authentik-worker.service"
       "authentik-ldap.service"
     ];
-  };
-
-  virtualisation.oci-containers.containers.tascheduling-db = {
-    image = "postgres:18";
-    environment = {
-      POSTGRES_USER = "tascheduling";
-      POSTGRES_DB = "tascheduling";
-    };
-    environmentFiles = [ config.sops.secrets.tascheduling-db-env.path ];
-    volumes = [ "tascheduling-db-data:/var/lib/postgresql" ];
-    ports = [ "5433:5432" ];
-  };
-
-  sops.secrets.tascheduling-db-env = {
-    sopsFile = ../secrets/tascheduling-db.env.bart-server.secret;
-    format = "binary";
-    restartUnits = [ "podman-tascheduling-db.service" ];
   };
 
   system.stateVersion = "26.11";
