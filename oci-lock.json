@@ -17,12 +17,12 @@
                     "locked": "docker.io/valkey/valkey:latest@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9"
                 },
                 "tascheduling-db": {
-                    "original": "postgres:latest",
-                    "locked": "docker.io/library/postgres:latest@sha256:b913fd5699b8bd23fa4b06d72ecdd939fad43b80fb8651bac06caa0e6d135cac"
+                    "original": "postgres:18",
+                    "locked": "docker.io/library/postgres:18@sha256:b913fd5699b8bd23fa4b06d72ecdd939fad43b80fb8651bac06caa0e6d135cac"
                 },
                 "tcs-bot-db": {
-                    "original": "postgres:latest",
-                    "locked": "docker.io/library/postgres:latest@sha256:b913fd5699b8bd23fa4b06d72ecdd939fad43b80fb8651bac06caa0e6d135cac"
+                    "original": "postgres:18",
+                    "locked": "docker.io/library/postgres:18@sha256:b913fd5699b8bd23fa4b06d72ecdd939fad43b80fb8651bac06caa0e6d135cac"
                 },
                 "tcs-bot-redis": {
                     "original": "valkey/valkey:latest",
