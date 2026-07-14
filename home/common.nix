@@ -70,7 +70,6 @@ in
         ++ lib.optionals cfg.gui [
           # keep-sorted start
           discord
-          element-desktop
           kdePackages.kate
           kdePackages.krdc
           kdePackages.krfb
