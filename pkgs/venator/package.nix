@@ -11,7 +11,9 @@
 buildGoModule (finalAttrs: {
   pname = "venator";
   version = "0.1.0a2";
+
   __structuredAttrs = true;
+  strictDeps = true;
 
   src = fetchFromGitea {
     domain = "codeberg.org";
