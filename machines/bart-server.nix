@@ -112,7 +112,7 @@ in
   };
 
   virtualisation.oci-containers.containers.tascheduling-db = {
-    image = "postgres:latest";
+    image = "postgres:18";
     environment = {
       POSTGRES_USER = "tascheduling";
       POSTGRES_DB = "tascheduling";

@@ -52,7 +52,7 @@ in
     #   ];
     # };
     "${name}-db" = {
-      image = "postgres:latest";
+      image = "postgres:18";
       environment = {
         POSTGRES_USER = dbUser;
         POSTGRES_PASSWORD = dbPassword;
