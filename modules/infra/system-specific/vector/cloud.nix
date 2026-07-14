@@ -12,7 +12,7 @@ in
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud33;
+    package = pkgs.nextcloud34;
     hostName = fqdn;
     secretFile = config.sops.secrets.nextcloud-secrets.path;
     config = {

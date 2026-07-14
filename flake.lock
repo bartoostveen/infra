@@ -420,11 +420,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783816136,
-        "narHash": "sha256-jC86hYoOFDhnRaWNB7pVI+tr1gZCuZDYwseSEpHQEfc=",
+        "lastModified": 1784031707,
+        "narHash": "sha256-4JKxCtGZYaVD9MGUYXnA5IPxxJy7PKofjdd5tNbP/XE=",
         "ref": "refs/heads/master",
-        "rev": "1b27a3276cd6746efca1e374994918a8e6ae2b51",
-        "revCount": 61,
+        "rev": "e598d0bfe8beb0df023fb61b128a740565b54902",
+        "revCount": 64,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -674,11 +674,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1783935015,
-        "narHash": "sha256-wCWfznifGmMeHxx1zBWYnjBXOdARSgSjWh9PWoph2/0=",
+        "lastModified": 1784023459,
+        "narHash": "sha256-SdAl2p+bZEwh5akQ0vkaKBnS6yQduvj7kf24q6FHvxY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fa0063eb13bd6adb9ce0dc849b997dd77a6c5ee6",
+        "rev": "5b6151d7156c90731f5723e0751d2b8684c62433",
         "type": "github"
       },
       "original": {
@@ -690,32 +690,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1783776592,
-        "narHash": "sha256-UgCQzxeWI75XM8G+hPrPh+MKzEPjG3SpAj7dtqSbksA=",
+        "lastModified": 1784007870,
+        "narHash": "sha256-djcLt/JJphyNt4eDY9XTly+/WbCK5lqWq9lSgCmJkkQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "e7a3ca8092b61ff85b6a45bf863ea2b2d6a661b3",
+        "rev": "18b9261cb3294b6d2a06d03f96872827b8fe2698",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1783892481,
-        "narHash": "sha256-oRAnufhRC2xJFOpcW0FXJ0JPksVa7pPuqr/+52uqERQ=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "9af645506c710799906e7a45bdcaa00fc9552b93",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "matrix-continuwuity-26.6.2",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -883,7 +867,9 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixpkgs"
+        ],
         "nixpkgs-lib": "nixpkgs-lib",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
