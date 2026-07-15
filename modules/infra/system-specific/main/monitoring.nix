@@ -16,7 +16,6 @@ let
     concatMap
     filterAttrs
     genAttrs
-    mapAttrs
     mapAttrsToList
     optionals
     removeAttrs
