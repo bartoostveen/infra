@@ -24,16 +24,20 @@
 
       wordpressPackages = pkgs.callPackage ../pkgs/wordpressPackages.nix { };
 
-      patchInput = pkgs: patches: src: pkgs.applyPatches {
-        name = "source";
-        inherit src patches;
-      };
+      patchInput =
+        pkgs: patches: src:
+        pkgs.applyPatches {
+          name = "source";
+          inherit src patches;
+        };
 
       patchFetchers = rec {
-        ghPr = owner: repo: id: hash: smallPkgs.fetchurl {
-          url = "https://github.com/${owner}/${repo}/pull/${toString id}.diff?full_index=1";
-          inherit hash;
-        };
+        ghPr =
+          owner: repo: id: hash:
+          smallPkgs.fetchurl {
+            url = "https://github.com/${owner}/${repo}/pull/${toString id}.diff?full_index=1";
+            inherit hash;
+          };
         nixpkgsPr = ghPr "NixOS" "nixpkgs";
       };
 
