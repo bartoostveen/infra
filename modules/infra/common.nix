@@ -127,12 +127,16 @@ in
             cd "$NEWDATA"
             sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${lib.escapeShellArgs cfg.initdbArgs}
 
+            # TODO: remove
             sudo -u postgres "$NEWBIN/pg_checksums" --disable --pgdata "$NEWDATA"
 
             sudo -u postgres "$NEWBIN/pg_upgrade" \
               --old-datadir "$OLDDATA" --new-datadir "$NEWDATA" \
               --old-bindir "$OLDBIN" --new-bindir "$NEWBIN" \
               "$@"
+
+            # TODO: remove
+            sudo -u postgres "$NEWBIN/pg_checksums" --enable --pgdata "$NEWDATA"
 
             rm delete_old_cluster.sh || true
             popd
