@@ -80,7 +80,7 @@ in
     services.mysql.package = pkgs.mariadb_114;
 
     services.postgresql = {
-      package = pkgs.postgresql_17;
+      package = pkgs.postgresql_18;
       authentication = ''
         # type	database	user	origin-address	auth-method
         local	all		all			trust
