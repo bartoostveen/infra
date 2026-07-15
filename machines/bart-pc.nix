@@ -62,7 +62,7 @@
 
   infra.forgejo-actions = {
     enable = true;
-    amount = 4;
+    amount = 8;
     labels = [ "bigger-parallel:host" ];
   };
 
