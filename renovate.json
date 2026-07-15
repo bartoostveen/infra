@@ -3,5 +3,31 @@
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/\\.nix$/"
+      ],
+      "matchStrings": [
+        "docker://(?<depName>[^:]+):(?<currentValue>[^@\"\\s\\r\\n]+)(?:@(?<currentDigest>sha256:[a-f0-9]{64}))?\""
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "pinDigests": true,
+      "groupName": "Forgejo Action Runner Images",
+      "groupSlug": "forgejo-runner-images",
+      "schedule": [
+        "before 8am on monday"
+      ]
+    }
   ]
 }
