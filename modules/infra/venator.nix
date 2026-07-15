@@ -93,19 +93,22 @@ in
               default = true;
               example = false;
             };
-            # TODO: read this from a file and warn about world-readable stuff
-            admin_pre_shared_secret = mkOption {
-              description = "admin PSK";
-              type = nullOr str;
+            admin_pre_shared_secret_file = mkOption {
+              description = "Path to a file containing the admin pre-shared secret.";
+              type = nullOr path;
               default = null;
-              example = "verysecretstringyes";
             };
-            # TODO: read this from a file and warn about world-readable stuff
-            token = mkOption {
-              description = "registration token";
+            admin_pre_shared_secret = mkOption {
+              description = ''
+                The admin pre-shared secret as text.
+
+                ::: {.warning}
+                Please note that this copies the admin pre-shared secret into the world-readable Nix store.
+                It is recommended to use `admin_pre_shared_secret_file` instead.
+                :::
+              '';
               type = nullOr str;
               default = null;
-              example = "otherverysecretstringyes";
             };
           };
           server_name = mkOption {
@@ -124,7 +127,6 @@ in
           writers = [
             {
               format = "pretty-colored";
-              min_level = "debug";
               type = "stdout";
             }
           ];
@@ -149,13 +151,17 @@ in
     assertions = [
       {
         assertion =
-          cfg.settings.registration.enabled
-          ->
-            cfg.settings.registration.admin_pre_shared_secret != null
-            && cfg.settings.registration.token != null;
-        message = "The admin PSK and registration may both not be null if registration is enabled!";
+          (cfg.settings.registration.admin_pre_shared_secret_file == null)
+          || (cfg.settings.registration.admin_pre_shared_secret == null);
+        message = "Only one of registration.admin_pre_shared_secret_file and registration.admin_pre_shared_secret may be set, not both!";
       }
     ];
+
+    warnings = optional (cfg.settings.registration.admin_pre_shared_secret != null) ''
+      `settings.registration.admin_pre_shared_secret` is set.
+      This copies the admin pre-shared secret into the world-readable Nix store.
+      It is recommended to use `admin_pre_shared_secret_file` instead.
+    '';
 
     services.venator.settings.database.url =
       mkIf cfg.configurePostgres "postgresql://venator?host=/var/run/postgresql";

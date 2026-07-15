@@ -11,8 +11,8 @@
     localControlSocketPath = "/run/unbound/control.sock";
     settings = {
       server = {
-        rrset-cache-size = "64M";
-        msg-cache-size = "64M";
+        rrset-cache-size = "128M";
+        msg-cache-size = "128M";
         discard-timeout = 4800;
         extended-statistics = true;
         log-servfail = true;
@@ -23,6 +23,8 @@
           forward-addr = [
             "1.1.1.1"
             "1.0.0.1"
+            "8.8.8.8"
+            "8.8.4.4"
           ];
         }
       ];

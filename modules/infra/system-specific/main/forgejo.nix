@@ -128,7 +128,6 @@ in
     unixSocketPerm = 770;
   };
 
-  # TODO: simplify
   services.anubis.instances.forgejo.settings = {
     BIND = "/run/anubis/anubis-forgejo/anubis-forgejo.sock";
     TARGET = "http://localhost:${toString config.services.forgejo.settings.server.HTTP_PORT}";

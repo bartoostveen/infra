@@ -113,6 +113,8 @@ in
 
   systemd.services.nginx.serviceConfig.SupplementaryGroups = [ "grafana" ];
 
+  infra.monitoring.groups.NodeExporter.rules.HostContextSwitchingHigh.enable = false;
+
   services.prometheus = {
     enable = true;
 
@@ -152,9 +154,38 @@ in
       node.enable = true;
     };
 
-    ruleFiles = [
-      (pkgs.writers.writeJSON "infra.json" config.infra.monitoring)
-    ];
+    ruleFiles =
+      let
+        groups =
+          config.infra.monitoring.groups
+          |> filterAttrs (_: group: group.enable)
+          |> mapAttrsToList (
+            name: group:
+            (removeAttrs group [
+              "enable"
+              "name"
+            ])
+            // {
+              inherit name;
+              rules =
+                group.rules
+                |> filterAttrs (_: rule: rule.enable)
+                |> mapAttrsToList (
+                  name: rule:
+                  (removeAttrs rule [
+                    "enable"
+                    "name"
+                  ])
+                  // {
+                    alert = name;
+                  }
+                );
+            }
+          );
+      in
+      [
+        (pkgs.writers.writeJSON "infra.json" { inherit groups; })
+      ];
 
     scrapeConfigs = [
       {
