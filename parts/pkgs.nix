@@ -22,8 +22,6 @@
           config.allowUnfree = true;
         };
 
-      wordpressPackages = pkgs.callPackage ../pkgs/wordpressPackages.nix { };
-
       patchInput =
         pkgs: patches: src:
         pkgs.applyPatches {
@@ -57,8 +55,7 @@
         ];
 
         overlays = [
-          self.overlays.default
-          (_final: prev: {
+          (_: _: {
             inherit (smallPkgs)
               roundcube
               php82
@@ -72,14 +69,18 @@
               wordpress_7_0
               wordpress
               ;
-            local = {
-              inherit wordpressPackages;
-            }
-            // prev.local;
           })
 
           self.overlays.nix-auth
           self.overlays.invoice
+
+          (_: _: {
+            _bartPackages = {
+              suppressSystemWarning = true;
+              prefix = "local";
+            };
+          })
+          inputs.bart-packages.overlays.default
 
           inputs.vert-nix.overlays.default
           inputs.copyparty.overlays.default
@@ -96,23 +97,6 @@
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 
       packages = {
-        # keep-sorted start
-        action-docs = pkgs.callPackage ../pkgs/action-docs/package.nix { };
-        alertmanager-matrix = pkgs.callPackage ../pkgs/alertmanager-matrix/package.nix { };
-        autokuma = pkgs.callPackage ../pkgs/autokuma/package.nix { };
-        github-readme-stats = pkgs.callPackage ../pkgs/github-readme-stats/package.nix { };
-        librepods = pkgs.callPackage ../pkgs/librepods/package.nix { };
-        maubot-exporter = pkgs.callPackage ../pkgs/maubot-exporter/package.nix { };
-        mautrix-telegram-go = pkgs.callPackage ../pkgs/mautrix-telegram-go/package.nix { };
-        meshcore-scan = pkgs.callPackage ../pkgs/meshcore-scan/package.nix { };
-        meshcoredecoder = pkgs.callPackage ../pkgs/meshcoredecoder/package.nix { };
-        sable = pkgs.callPackage ../pkgs/sable/package.nix { };
-        sable-unwrapped = pkgs.callPackage ../pkgs/sable/unwrapped.nix { };
-        tilp = pkgs.callPackage ../pkgs/tilp/package.nix { };
-        venator = pkgs.callPackage ../pkgs/venator/package.nix { };
-        wp-oidc-roles = pkgs.callPackage ../pkgs/wp-oidc-roles/package.nix { };
-        # keep-sorted end
-
         inherit (inputs'.nix-oci-lock.packages) nix-oci-lock;
 
         sops-rotate =
@@ -149,7 +133,6 @@
               bat
             ];
           };
-      }
-      // wordpressPackages.plugins;
+      };
     };
 }

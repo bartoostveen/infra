@@ -51,6 +51,32 @@
         "type": "github"
       }
     },
+    "bart-packages": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784142383,
+        "narHash": "sha256-OcIOmzi0bjlGb0cvf8ihtsQYyBDuQAVtnid/o9PJjkI=",
+        "ref": "refs/heads/master",
+        "rev": "999c894cd6faff66f8baf3fcebbb4c7eb34a6fce",
+        "revCount": 4,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
+      }
+    },
     "blobs": {
       "flake": false,
       "locked": {
@@ -848,6 +874,7 @@
     "root": {
       "inputs": {
         "authentik": "authentik",
+        "bart-packages": "bart-packages",
         "copyparty": "copyparty",
         "deploy-rs": "deploy-rs",
         "disko": "disko",
