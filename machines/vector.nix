@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -8,7 +8,6 @@
     inputs.nixos-facter-modules.nixosModules.facter
 
     inputs.srvos.nixosModules.server
-    inputs.srvos.nixosModules.hardware-hetzner-online-amd
 
     ../modules/wireguard.nix
 
@@ -42,6 +41,9 @@
     ../modules/infra/system-specific/vector/wordpress.nix
     # keep-sorted end
   ];
+
+  services.qemuGuest.enable = true;
+  systemd.services.qemu-guest-agent.path = [ pkgs.shadow ];
 
   facter.reportPath = ./vector.json;
   systemd.network.networks."10-uplink".networkConfig.Address = "2a01:4f8:1c19:1cd2::1/128";
