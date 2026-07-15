@@ -257,9 +257,10 @@ let
   trimHash =
     file:
     let
-      matched = builtins.match "^[a-zA-Z0-9]\{32\}-(.+)" (baseNameOf file);
+      baseName = baseNameOf file;
+      matched = builtins.match "^[a-zA-Z0-9]\{32\}-(.+)" baseName;
     in
-    if matched == null then baseNameOf file else last matched;
+    if matched == null then baseName else last matched;
 
   instanceKeys =
     instance:
