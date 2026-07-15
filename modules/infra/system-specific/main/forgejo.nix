@@ -23,7 +23,8 @@ in
 {
   services.forgejo = {
     enable = true;
-    package = smallPkgs.forgejo;
+    # TODO: readd after Forgejo PR is merged
+    # package = smallPkgs.forgejo;
     lfs.enable = true;
     database = {
       createDatabase = true;

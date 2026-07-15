@@ -23,9 +23,28 @@
         };
 
       wordpressPackages = pkgs.callPackage ../pkgs/wordpressPackages.nix { };
+
+      patchInput = pkgs: patches: src: pkgs.applyPatches {
+        name = "source";
+        inherit src patches;
+      };
+
+      patchFetchers = rec {
+        ghPr = owner: repo: id: hash: smallPkgs.fetchurl {
+          url = "https://github.com/${owner}/${repo}/pull/${toString id}.diff?full_index=1";
+          inherit hash;
+        };
+        nixpkgsPr = ghPr "NixOS" "nixpkgs";
+      };
+
+      nixpkgsPatches = with patchFetchers; [
+        (nixpkgsPr 542224 "sha256-vapCjSfhJLRwJ2GtzAHRJhOtQYCv59KdrCkUCbMc0yY=")
+      ];
+
+      patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
     in
     {
-      _module.args.pkgs = import inputs.nixpkgs {
+      _module.args.pkgs = import patchedNixpkgs {
         inherit system;
         config.allowUnfree = true;
         config.android_sdk.accept_license = true;
