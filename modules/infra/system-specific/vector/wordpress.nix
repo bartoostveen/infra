@@ -53,13 +53,7 @@ in
         inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
       };
       languages = [ nl ];
-      package =
-        (pkgs.wordpress_7_0.override { hash = "sha256-2e9AUZF2wpP5NMwP0qjClCdmhrzqwstpPuhL4W6V9TU="; })
-        .overrideAttrs
-          {
-            version = "7.1-beta1";
-            __intentionallyOverridingVersion = true;
-          };
+      package = pkgs.wordpress_7_0;
     };
   };
 
