@@ -11,8 +11,9 @@
         "/\\.nix$/"
       ],
       "matchStrings": [
-        "docker://(?<depName>[^:]+):(?<currentValue>[^@\"\\s\\r\\n]+)(?:@(?<currentDigest>sha256:[a-f0-9]{64}))?\""
+        "\"(?<prefix>[^\"\\r\\n]+?docker://(?<depName>[^:]+):)(?<currentValue>[^@\"\\s\\r\\n]+)(?:@(?<currentDigest>sha256:[a-f0-9]{64}))?\""
       ],
+      "autoReplaceStringTemplate": "\"{{{prefix}}}{{{newValue}}}{{#if newDigest}}@{{{newDigest}}}{{/if}}\"",
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
