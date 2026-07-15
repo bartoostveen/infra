@@ -42,6 +42,15 @@
       };
     };
 
+    bart-packages = {
+      url = "git+https://git.bartoostveen.nl/bart/nix-packages.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+
     copyparty = {
       url = "github:9001/copyparty";
       inputs = {
