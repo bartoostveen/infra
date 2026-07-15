@@ -108,11 +108,13 @@ in
         ]
         ++ lib.optional config.services.postgresql.enable (
           let
-            newPostgres = pkgs.postgresql_18;
+            newPostgres = pkgs.postgresql_19;
             cfg = config.services.postgresql;
           in
           pkgs.writeScriptBin "upgrade-pg-cluster" ''
             set -eux
+
+            pushd /var/lib/postgresql
             systemctl stop postgresql
 
             export NEWDATA="/var/lib/postgresql/${newPostgres.psqlSchema}"
@@ -125,10 +127,15 @@ in
             cd "$NEWDATA"
             sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${lib.escapeShellArgs cfg.initdbArgs}
 
+            sudo -u postgres "$NEWBIN/pg_checksums" --disable --pgdata "$NEWDATA"
+
             sudo -u postgres "$NEWBIN/pg_upgrade" \
               --old-datadir "$OLDDATA" --new-datadir "$NEWDATA" \
               --old-bindir "$OLDBIN" --new-bindir "$NEWBIN" \
               "$@"
+
+            rm delete_old_cluster.sh || true
+            popd
           ''
         );
       variables.NH_SHOW_ACTIVATION_LOGS = 1;
