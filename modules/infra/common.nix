@@ -77,6 +77,8 @@ in
       lockFile = ../../oci-lock.json;
     };
 
+    services.mysql = pkgs.mariadb_114;
+
     services.postgresql = {
       package = pkgs.postgresql_17;
       authentication = ''
