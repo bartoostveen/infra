@@ -8,13 +8,17 @@
 let
   inherit (lib)
     # keep-sorted start
+    attrNames
     attrValues
     attrsToList
     concatStringsSep
     filterAttrs
     filterAttrsRecursive
+    flatten
     foldl'
     getExe
+    groupBy
+    id
     last
     mapAttrs
     mapAttrs'
@@ -29,6 +33,7 @@ let
     recursiveUpdate
     removeSuffix
     types
+    uniqueStrings
     # keep-sorted end
     ;
 
@@ -249,18 +254,60 @@ let
 
   cfg = config.infra.autokuma;
 
-  addType = type: mapAttrs (_name: value: value // { inherit type; });
+  trimHash =
+    file:
+    let
+      matched = builtins.match "^[a-zA-Z0-9]\{32\}-(.+)" (baseNameOf file);
+    in
+    if matched == null then baseNameOf file else last matched;
+
+  instanceKeys =
+    instance:
+    (
+      (
+        [
+          instance.dockerHosts
+          instance.notifications
+          instance.tags
+          instance.monitors
+        ]
+        |> map attrNames
+      )
+      ++ (instance.additionalMonitorFiles |> map (file: trimHash file))
+    )
+    |> flatten;
+
+  allStringsUnique = list: builtins.length (uniqueStrings list) == builtins.length list;
+  isDisjoint = instance: instanceKeys instance |> allStringsUnique;
+
+  addType = type: mapAttrs (_: value: value // { inherit type; });
   mkMonitorAttrs =
     instance:
-    (addType "docker_host" instance.dockerHosts)
-    // (addType "notification" instance.notifications)
-    // (addType "tag" instance.tags)
-    // instance.monitors;
+    if isDisjoint instance then
+      (addType "docker_host" instance.dockerHosts)
+      // (addType "notification" instance.notifications)
+      // (addType "tag" instance.tags)
+      // instance.monitors
+    else
+      throw ''
+        Instance is not disjoint! Make sure the attribute names of { dockerHosts, notifications, tags, monitors }
+        and the file names in additionalMonitorFiles are disjoint!
+
+        Duplicate names:
+        ${
+          instance
+          |> instanceKeys
+          |> groupBy id
+          |> filterAttrs (_: o: builtins.length o > 1)
+          |> attrNames # almost the implementation of uniqueStrings (O(n)), can be seen as A - B in set notation, returns a set
+          |> map (k: "- ${k}")
+          |> concatStringsSep "\n"
+        }
+      '';
 
   format = pkgs.formats.toml { };
 
   validTOML = filterAttrsRecursive (_: v: (v != null));
-  trimHash = file: last (builtins.match "^[a-zA-Z0-9]\{32\}-(.+)" (baseNameOf file));
 in
 {
   options.infra.autokuma = {
