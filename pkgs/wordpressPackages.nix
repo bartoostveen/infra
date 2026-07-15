@@ -2,6 +2,7 @@
   stdenv,
   fetchzip,
   callPackage,
+  lib,
 }:
 
 let
@@ -20,6 +21,8 @@ let
       };
       installPhase = "mkdir -p $out; cp -R * $out/";
     });
+
+  inherit (lib) substring;
 in
 {
   plugins = {
@@ -71,20 +74,21 @@ in
   lang =
     {
       lang,
+      langShort ? substring 0 2 lang,
       version,
       hash,
       ...
     }:
-    stdenv.mkDerivation {
-      name = "wp-language-nl";
-      inherit version;
+    stdenv.mkDerivation (finalAttrs: {
+      name = "wp-language-${langShort}";
+      inherit version lang langShort;
 
       src = fetchzip {
-        url = "https://nl.wordpress.org/wordpress-${version}-${lang}.zip";
-        name = "wp-${version}-language-nl";
+        url = "https://${langShort}.wordpress.org/wordpress-${finalAttrs.version}-${finalAttrs.lang}.zip";
+        name = "wp-${finalAttrs.version}-language-${finalAttrs.langShort}";
         inherit hash;
       };
 
       installPhase = "mkdir -p $out; cp -r ./wp-content/languages/* $out/";
-    };
+    });
 }
