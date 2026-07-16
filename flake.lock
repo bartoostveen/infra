@@ -198,11 +198,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783882035,
-        "narHash": "sha256-pkzLrA8E07RerGgaN3dkA7gy2NC+QEUeIHQuYUiDdEU=",
+        "lastModified": 1784152833,
+        "narHash": "sha256-Gh1SDdoo1TIfGzP2IXTokNMudCX5muLBXnG/POKgN5A=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "daee3e85001a7bb8716577e84b01aafce8f813bb",
+        "rev": "5952401815eab89d0ccfc7f29052940274bc8233",
         "type": "github"
       },
       "original": {
@@ -488,11 +488,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783816144,
-        "narHash": "sha256-kz8z1qO18L9xlgHrLFPYGt8/kR2JEaEGiS5y9PmwfTo=",
+        "lastModified": 1784150873,
+        "narHash": "sha256-NwmyaeibY5XWZQNaff3be2ByPZBkXS7tY7pgrO6xcn8=",
         "ref": "refs/heads/master",
-        "rev": "c37910642ca3623d14da520362f1cbcf95cd86fd",
-        "revCount": 106,
+        "rev": "e236a3e4fbe581ee9e82db1545099c50ee0524a0",
+        "revCount": 107,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
@@ -530,11 +530,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783807189,
-        "narHash": "sha256-/fUI+4j4PBZnmuF1h90b4iOjUkXp3c1c77TzPTfaaGI=",
+        "lastModified": 1784150853,
+        "narHash": "sha256-KZ0vq8nbcg0VqYCz0kKYJUnFWw+rIFKm/l5uWf+JyZA=",
         "ref": "refs/heads/master",
-        "rev": "19981022d398157e7abd515e160c7f6b92e3d14c",
-        "revCount": 80,
+        "rev": "fc23718ccc2a1144e0d1a5c05ea01774df43109e",
+        "revCount": 82,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -647,11 +647,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784142581,
-        "narHash": "sha256-gBbr2m7uiara2Vgg5OK1eZli4Jw1jtrHvjY7tB7VvdQ=",
+        "lastModified": 1784228825,
+        "narHash": "sha256-xqq7BNU288d6IVnU2LwWcBWXCHyajZcPswun4mxTpIQ=",
         "ref": "refs/heads/master",
-        "rev": "073fc57d6ca3421f8523e0869fd84f1422bc6d69",
-        "revCount": 36,
+        "rev": "37bd68a414453209131fa12d48e028b515fb46ea",
+        "revCount": 41,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
@@ -701,11 +701,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1784157011,
-        "narHash": "sha256-CEHmSwSc+5kzd6tP/4ol4KEA9fMDVSKGTam7rbBPQqw=",
+        "lastModified": 1784224299,
+        "narHash": "sha256-FEyouc/8OeIlHTg8zMlHsFFPxPFP09amZFiUQYuF+Xg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d4a57f162b50db6d7e49580a772ccbdb3a1605a4",
+        "rev": "fd40dc70a9554de4370b6d5d08b858f7c4e49e30",
         "type": "github"
       },
       "original": {
@@ -717,11 +717,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1784007870,
-        "narHash": "sha256-djcLt/JJphyNt4eDY9XTly+/WbCK5lqWq9lSgCmJkkQ=",
+        "lastModified": 1784120854,
+        "narHash": "sha256-KesHgItiZPgGX740axSiQLcIQ8D24MDqNpkKYWIek8k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "18b9261cb3294b6d2a06d03f96872827b8fe2698",
+        "rev": "753cc8a3a87467296ddd1fa93f0cc3e81120ee46",
         "type": "github"
       },
       "original": {
@@ -786,11 +786,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783807216,
-        "narHash": "sha256-Yriz4C2r6VyvI817lSCwU8Fq213+lxyWtUQjMvBRy50=",
+        "lastModified": 1784228797,
+        "narHash": "sha256-gp2KSc4xrWUgcLXTzdl4BsFkurSy6akppVCEwZ4TAGE=",
         "ref": "refs/heads/master",
-        "rev": "74cf427d0b05e264e5322e5e48fe7350f45d7a6e",
-        "revCount": 70,
+        "rev": "208a325ea1f815174aedb1b079c3a4be88f2c00f",
+        "revCount": 75,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -965,11 +965,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783909676,
-        "narHash": "sha256-vv2nJXQerOPlhDbdPY6zhXwXXYEJL4+wUGAyyxe4ze0=",
+        "lastModified": 1784168883,
+        "narHash": "sha256-hWmfFLu41IWMghHzuHtnOHGXVF4MyE2JSr391hGR828=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "35119abd9f2a347af72e3b2b8b110d921e17bb2a",
+        "rev": "3b2a8c899e225d001b859cc66717f8668b60a4bc",
         "type": "github"
       },
       "original": {
