@@ -24,10 +24,13 @@
 
       patchInput =
         pkgs: patches: src:
-        pkgs.applyPatches {
-          name = "source";
-          inherit src patches;
-        };
+        if patches == [ ] then
+          src
+        else
+          pkgs.applyPatches {
+            name = "source";
+            inherit src patches;
+          };
 
       patchFetchers = rec {
         ghPr =
@@ -40,7 +43,6 @@
       };
 
       nixpkgsPatches = with patchFetchers; [
-        (nixpkgsPr 542224 "sha256-vapCjSfhJLRwJ2GtzAHRJhOtQYCv59KdrCkUCbMc0yY=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;

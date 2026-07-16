@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  smallPkgs,
   ...
 }:
 
@@ -22,8 +23,7 @@ in
 {
   services.forgejo = {
     enable = true;
-    # TODO: readd after Forgejo PR is merged
-    # package = smallPkgs.forgejo;
+    package = smallPkgs.forgejo;
     lfs.enable = true;
     database = {
       createDatabase = true;
