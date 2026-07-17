@@ -107,6 +107,10 @@ in
             ];
             urlPreview = true;
             useInAppNotifications = true;
+            gifs = {
+              proxyUrl = "gifs.sable.moe";
+              klipyApiKey = "IfeIBlDMvq0av2BcKPDuxwRqbnYRbS90yNqFHEkK2Ja207tkR5nssh3NIlJRCr76";
+            };
           };
         };
       };
