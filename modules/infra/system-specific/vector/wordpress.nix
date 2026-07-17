@@ -10,7 +10,7 @@ let
   nl = pkgs.local.wordpressPackages.lang {
     lang = "nl_NL";
     inherit (config.services.wordpress.sites.${domain}.package) version;
-    hash = "sha256-bXYI3d7Jnm7qxspLhFuY7Vgptj3StOvUyi3Ru96/atg=";
+    hash = "sha256-T9A5hSqlGD+yuklkxmbSP7T2Xjj8bfsIS4kqbMkrjQk=";
   };
 in
 {
@@ -53,7 +53,14 @@ in
         inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
       };
       languages = [ nl ];
-      package = pkgs.wordpress_7_0;
+      # TODO: remove at next nixos-unstable-small
+      package =
+        (pkgs.wordpress_7_0.override { hash = "sha256-1KTSGd6mTGxo5i8v/D8zHFR1UQJG1sRPYftS83fSlbk="; })
+        .overrideAttrs
+          {
+            version = "7.0.2";
+            __intentionallyOverridingVersion = true;
+          };
     };
   };
 
