@@ -198,11 +198,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784152833,
-        "narHash": "sha256-Gh1SDdoo1TIfGzP2IXTokNMudCX5muLBXnG/POKgN5A=",
+        "lastModified": 1784233955,
+        "narHash": "sha256-G8SFhPrB1PwVpIFo/D9gpMX++dRIubGV2dckFudKF+s=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "5952401815eab89d0ccfc7f29052940274bc8233",
+        "rev": "6a9437b77c6fcd8f6f28fc016727e958b3eb6f0e",
         "type": "github"
       },
       "original": {
@@ -462,11 +462,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1778781969,
-        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
+        "lastModified": 1784254960,
+        "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "rev": "4ebb10ae17d5f1ad366e7aef5b92cb8eecf24f69",
         "type": "github"
       },
       "original": {
@@ -701,11 +701,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1784224299,
-        "narHash": "sha256-FEyouc/8OeIlHTg8zMlHsFFPxPFP09amZFiUQYuF+Xg=",
+        "lastModified": 1784293129,
+        "narHash": "sha256-oT4sZ9BMbbi6PwgValMQCCkgZmFtUdBV0LkGicrqpGg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fd40dc70a9554de4370b6d5d08b858f7c4e49e30",
+        "rev": "09233832ac9676c8a4105a82a0204283362b0e84",
         "type": "github"
       },
       "original": {
@@ -925,11 +925,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783940502,
-        "narHash": "sha256-zHDSLA2Vwo9UquLpRXCoogUpGe8yHNv/Qs/83QlLr/g=",
+        "lastModified": 1784238164,
+        "narHash": "sha256-RlpIma/O0mDRh2SwbSo0UOiRBk56gKJFGbgO9xELs24=",
         "ref": "refs/heads/master",
-        "rev": "ea81f86c358e75a378626b9f9b4feb128e404cf8",
-        "revCount": 86,
+        "rev": "8bd88047df7c44d4cc0e728c1541f4cac6072898",
+        "revCount": 88,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       },
