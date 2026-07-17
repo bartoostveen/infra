@@ -214,7 +214,10 @@ in
       "/var/lib/${config.services.prometheus.stateDir}"
       config.services.grafana.dataDir
     ];
-    exclude = [ "/var/lib/${config.services.prometheus.stateDir}/data/wal" ];
+    exclude = [
+      "/var/lib/${config.services.prometheus.stateDir}/data/wal"
+      "${config.services.grafana.dataDir}/data/log"
+    ];
   };
 
   sops.secrets.grafana-secret = {
