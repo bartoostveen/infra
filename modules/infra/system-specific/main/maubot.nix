@@ -29,6 +29,18 @@ let
       hash = "sha256-IP985g6cPR3YRyrIaDikj3VAodIZjuYCYrJPiZGEDVw=";
     };
   };
+
+  altcaps = plugins.buildMaubotPlugin rec {
+    pname = "pl.rom4nik.maubot.alternatingcaps";
+    version = "0.1.3";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "rom4nik";
+      repo = "maubot-alternatingcaps";
+      tag = "v${version}";
+      hash = "sha256-RUwZ6SOsWiygyb10GnDmvskAurSiW9rFwDylYgr6wII=";
+    };
+  };
 in
 {
   imports = [
@@ -42,6 +54,7 @@ in
     plugins = with plugins; [
       # keep-sorted start
       alertbot
+      altcaps
       autoreply
       choose
       communitybot
