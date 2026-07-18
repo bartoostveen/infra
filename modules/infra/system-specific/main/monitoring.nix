@@ -278,8 +278,8 @@ in
             }
           ];
           timeout = 10;
-          interval = 20;
-          retry_interval = 20;
+          interval = 60;
+          retry_interval = 120;
         });
   };
 
