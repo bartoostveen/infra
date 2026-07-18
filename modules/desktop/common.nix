@@ -59,7 +59,7 @@ in
     # keep-sorted end
     (writeShellApplication {
       name = "minikube";
-      runtimeEnv = makeLibraryPath [ libvirt ];
+      runtimeEnv.LD_LIBRARY_PATH = makeLibraryPath [ libvirt ];
       runtimeInputs = [
         libvirt
         minikube
