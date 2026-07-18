@@ -6,6 +6,9 @@
   ...
 }:
 
+let
+  inherit (lib) makeLibraryPath;
+in
 {
   imports = [
     inputs.nix-index-database.nixosModules.default
@@ -54,6 +57,17 @@
     sops
     wget
     # keep-sorted end
+    (writeShellApplication {
+      name = "minikube";
+      runtimeEnv = makeLibraryPath [ libvirt ];
+      runtimeInputs = [
+        libvirt
+        minikube
+      ];
+      text = ''
+        minikube "$@"
+      '';
+    })
   ];
 
   programs.nix-index-database.comma.enable = lib.mkDefault true;
@@ -72,13 +86,6 @@
   programs.gnupg.agent = {
     enable = lib.mkDefault true;
     enableSSHSupport = true;
-  };
-
-  programs.nix-ld = {
-    enable = lib.mkDefault true;
-    libraries = with pkgs; [
-      libvirt
-    ];
   };
 
   programs.nano = {
