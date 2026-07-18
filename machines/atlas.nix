@@ -10,7 +10,7 @@
 
     # keep-sorted start
     ../modules/infra/system-specific/atlas/backshots.nix
-    ../modules/infra/system-specific/atlas/mc2mqtt.nix
+    # ../modules/infra/system-specific/atlas/mc2mqtt.nix
     ../modules/infra/system-specific/atlas/monitoring.nix
     # keep-sorted end
 
