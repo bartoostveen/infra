@@ -53,14 +53,6 @@ in
         inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
       };
       languages = [ nl ];
-      # TODO: remove at next nixos-unstable-small
-      package =
-        (pkgs.wordpress_7_0.override { hash = "sha256-1KTSGd6mTGxo5i8v/D8zHFR1UQJG1sRPYftS83fSlbk="; })
-        .overrideAttrs
-          {
-            version = "7.0.2";
-            __intentionallyOverridingVersion = true;
-          };
     };
   };
 
