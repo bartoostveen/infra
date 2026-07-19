@@ -7,11 +7,9 @@
 
 let
   inherit (lib) getExe mkIf;
-
-  alertmanager = config.services.prometheus.alertmanager;
 in
 {
-  config = mkIf (config.infra.matrix.enable && alertmanager.enable) {
+  config = mkIf (config.infra.matrix.enable && config.infra.matrix.alertmanager.enable) {
     systemd.services.alertmanager-matrix = {
       description = "Alertmanager Matrix bot";
       after = [
@@ -21,15 +19,19 @@ in
       ];
       requires = [ "sops-install-secrets.service" ];
       wantedBy = [ "multi-user.target" ];
-      environment = {
-        ARGS = "";
-        MESSAGE_TYPE = "m.text";
-        LOG_LEVEL = "debug";
-        SHOW_LABELS = "true";
-        HOMESERVER = "https://${config.infra.matrix.domain}";
-        USER_ID = "@alerts:bartoostveen.nl";
-        ALERTMANAGER = "http://${alertmanager.listenAddress}:${toString alertmanager.port}";
-      };
+      environment =
+        let
+          alertmanager = config.services.prometheus.alertmanager;
+        in
+        {
+          ARGS = "";
+          MESSAGE_TYPE = "m.text";
+          LOG_LEVEL = "debug";
+          SHOW_LABELS = "true";
+          HOMESERVER = "https://${config.infra.matrix.domain}";
+          USER_ID = "@alerts:bartoostveen.nl";
+          ALERTMANAGER = "http://${alertmanager.listenAddress}:${toString alertmanager.port}";
+        };
       serviceConfig = {
         Type = "simple";
         ExecStart = getExe pkgs.local.alertmanager-matrix;

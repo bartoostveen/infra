@@ -14,6 +14,7 @@
     in
     {
       enable = true;
+      alertmanager.enable = false;
       package = pkgs.callPackage (
         {
           rustPlatform,

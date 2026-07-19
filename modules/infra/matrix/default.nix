@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 
@@ -50,6 +51,9 @@ in
         type = str;
         default = "lk.example.com";
       };
+    };
+    alertmanager.enable = mkEnableOption "matrix-alertmanager" // {
+      default = config.services.prometheus.alertmanager.enable;
     };
     discord.enable = mkEnableOption "Discord bridge";
     signal.enable = mkEnableOption "Signal bridge";
