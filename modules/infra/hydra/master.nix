@@ -48,6 +48,10 @@ in
       upload_logs_to_binary_cache = false
       allow_import_from_derivation = true
 
+      <dynamicruncommand>
+        enable = 1
+      </dynamicruncommand>
+
       queue_runner_endpoint = http://${config.services.hydra-queue-runner-dev.rest.address}:${toString config.services.hydra-queue-runner-dev.rest.port}
 
       <hydra_notify>
