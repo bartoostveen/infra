@@ -20,6 +20,7 @@ in
   infra.matrix = {
     enable = true;
     package = continuwuityPkgs.matrix-continuwuity;
+    enableBackups = true;
     inherit fqdn;
     domain = "matrix.${fqdn}";
     livekit = {

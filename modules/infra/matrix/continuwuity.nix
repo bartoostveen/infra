@@ -100,7 +100,7 @@ in
 
     infra.autokuma.instances.local = mkAutokumaMonitor cfg.fqdn;
 
-    infra.backup.jobs.state.paths = [
+    infra.backup.jobs.state.paths = mkIf cfg.enableBackups [
       config.services.matrix-continuwuity.settings.global.database_path
     ];
   };

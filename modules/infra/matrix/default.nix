@@ -32,6 +32,7 @@ in
   options.infra.matrix = {
     enable = mkEnableOption "Continuwuity with Livekit, Cinny and Element Call";
     package = mkPackageOption pkgs "matrix-continuwuity" { };
+    enableBackups = mkEnableOption "Continuwuity database backups";
     fqdn = mkOption {
       description = "Full home server name";
       type = str;
