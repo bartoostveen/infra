@@ -8,7 +8,11 @@
 let
   cfg = config.infra.matrix;
 
-  inherit (lib) mkIf genAttrs;
+  inherit (lib)
+    mkIf
+    genAttrs
+    mkDefault
+    ;
 
   inherit (pkgs.callPackage ./lib.nix { }) mkAutokumaMonitor;
 in
@@ -71,7 +75,11 @@ in
         socket = "http://unix://${config.services.matrix-continuwuity.settings.global.unix_socket_path}";
       in
       {
-        ${cfg.fqdn}.locations."/.well-known/matrix/".proxyPass = socket;
+        ${cfg.fqdn} = {
+          enableACME = mkDefault true;
+          forceSSL = mkDefault true;
+          locations."/.well-known/matrix/".proxyPass = socket;
+        };
         ${cfg.domain} = {
           enableACME = true;
           forceSSL = true;
