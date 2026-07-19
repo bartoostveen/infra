@@ -27,6 +27,7 @@ let
 in
 {
   imports = [
+    ./common.nix
     inputs.hydra.nixosModules.hydra
     inputs.hydra.nixosModules.queue-runner
   ];

@@ -13,6 +13,7 @@ let
 in
 {
   imports = [
+    ./common.nix
     inputs.hydra.nixosModules.builder
   ];
 
