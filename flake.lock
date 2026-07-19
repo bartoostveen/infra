@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784419269,
-        "narHash": "sha256-2SOPwS59ArYw0NoYzrFyxZkywX2w+caOgTU6nQMbVDc=",
+        "lastModified": 1784419494,
+        "narHash": "sha256-kmnEeU8M8tH7OEOLTZyjlsrzBm6AUSN9sK0Fqd6fIUE=",
         "ref": "refs/heads/master",
-        "rev": "1b1ad5a269b8f65d00ade19d49e444827f8e3fb1",
-        "revCount": 10,
+        "rev": "263404cc0199acc4bcc1f157f75718fc407278bf",
+        "revCount": 12,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -198,11 +198,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784326856,
-        "narHash": "sha256-Oq0y7f+qO7y4RCd8HJukIQr76PivZJibyKXDpyFjKoM=",
+        "lastModified": 1784407001,
+        "narHash": "sha256-R6Omyx6lZOlzee7qFheo1fEGiy9JbjWwK8meZHJCUFg=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "4543ab31d354c739bf7a82ca30c069ed19ed1a47",
+        "rev": "b2e4b1c46cafbfbe40bfb570ac4f938e8827d56f",
         "type": "github"
       },
       "original": {
@@ -420,11 +420,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784351324,
-        "narHash": "sha256-By+kuRJZRqs2TuXgtR8vJ8cTKWXw33YG/Yollu5cO1U=",
+        "lastModified": 1784407317,
+        "narHash": "sha256-iZrxHToDJWnvt+5LGAtvuQMTy1NZYlNEKbKaVtBJNcc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "460108009ca1ff69ca2ff19079ca2c838d6e3080",
+        "rev": "39411a8e12a5526d992e65bc7e3dc9a4414d6713",
         "type": "github"
       },
       "original": {
@@ -447,11 +447,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784031707,
-        "narHash": "sha256-4JKxCtGZYaVD9MGUYXnA5IPxxJy7PKofjdd5tNbP/XE=",
+        "lastModified": 1784419604,
+        "narHash": "sha256-D5W3x1AFol7D/FktOyn01+Y0uEbFPikKuUvUpenM6ik=",
         "ref": "refs/heads/master",
-        "rev": "e598d0bfe8beb0df023fb61b128a740565b54902",
-        "revCount": 64,
+        "rev": "ecc5fa21aebd58607a0085bc0470f171ac84769a",
+        "revCount": 66,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -488,11 +488,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784150873,
-        "narHash": "sha256-NwmyaeibY5XWZQNaff3be2ByPZBkXS7tY7pgrO6xcn8=",
+        "lastModified": 1784419530,
+        "narHash": "sha256-cdJx4RNprP70vgPPwAOPZ75/MXV2LBeQSVYFaXgtOTA=",
         "ref": "refs/heads/master",
-        "rev": "e236a3e4fbe581ee9e82db1545099c50ee0524a0",
-        "revCount": 107,
+        "rev": "03e79f148d826051da0d3b37c93b2067d767a458",
+        "revCount": 109,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
@@ -530,11 +530,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784150853,
-        "narHash": "sha256-KZ0vq8nbcg0VqYCz0kKYJUnFWw+rIFKm/l5uWf+JyZA=",
+        "lastModified": 1784419512,
+        "narHash": "sha256-1rU9AMQW/gg/o2FRgk6E3e4Gq3+4zXK41xbmjqSmLr8=",
         "ref": "refs/heads/master",
-        "rev": "fc23718ccc2a1144e0d1a5c05ea01774df43109e",
-        "revCount": 82,
+        "rev": "788d494933a98ff310e74b1270dd0d1cc9213cbf",
+        "revCount": 84,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -760,11 +760,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784142604,
-        "narHash": "sha256-KGt3tXr0usINCsHHmC0eBISzgiUmAbD1Elr9zENOXcM=",
+        "lastModified": 1784419550,
+        "narHash": "sha256-7iMCZbWAiJRL+2yrN/j4Thdo5NYCalLczLb4AbPLgdg=",
         "ref": "refs/heads/master",
-        "rev": "c73ff28329e0ca9548193c224be7377d1670cd4d",
-        "revCount": 134,
+        "rev": "f283b1e0c36b88abb43ba06d9e0686c20fe26cbc",
+        "revCount": 136,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -925,11 +925,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784238164,
-        "narHash": "sha256-RlpIma/O0mDRh2SwbSo0UOiRBk56gKJFGbgO9xELs24=",
+        "lastModified": 1784419479,
+        "narHash": "sha256-hmuBSvHY14xuov3O9JbrjusFjEX9XC1/GzJEw/OKR9s=",
         "ref": "refs/heads/master",
-        "rev": "8bd88047df7c44d4cc0e728c1541f4cac6072898",
-        "revCount": 88,
+        "rev": "fa7a08fa421ddf593948ee601be4769b3491b5b4",
+        "revCount": 90,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       },
@@ -1097,11 +1097,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783976438,
-        "narHash": "sha256-6LDGapi/vf7/279X4MjafejXi2zMH9sMTC45Pm3C48w=",
+        "lastModified": 1784419611,
+        "narHash": "sha256-HauEZSAiBYEZk6jtUqjCwAxeqtiscoHVgXPOQ/X32tc=",
         "ref": "refs/heads/master",
-        "rev": "784e296fe1f087789e5f280928abed502198a3cc",
-        "revCount": 131,
+        "rev": "7b3ded3e48024f4e87e2f44cca60aad675f0d76f",
+        "revCount": 133,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/tcs-bot"
       },
@@ -1231,11 +1231,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783816181,
-        "narHash": "sha256-1Gz5UZNBgTujd3ko7z8KX8UuakdKGyE4/pJmB8OKMZw=",
+        "lastModified": 1784419911,
+        "narHash": "sha256-kWXPQTceXa+y2L4ro9Xh3bjMun+NX81e0wQBak1RaXw=",
         "ref": "release",
-        "rev": "0b734a68dd352a3ffe9c6be0052e999f36055aa7",
-        "revCount": 31,
+        "rev": "10320d8df52a88da3f8995357051072ec7b53474",
+        "revCount": 34,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/vert-nix.git"
       },
