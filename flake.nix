@@ -83,6 +83,14 @@
       inputs.systems.follows = "systems";
     };
 
+    hydra = {
+      url = "github:NixOS/hydra";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     ical-proxy = {
       url = "git+https://git.bartoostveen.nl/bart/ical-proxy.git";
       inputs = {

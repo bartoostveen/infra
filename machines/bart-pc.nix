@@ -2,8 +2,11 @@
   imports = [
     ./bart-pc.hardware.nix
 
+    # keep-sorted start
     ../modules/infra/backup
     ../modules/infra/forgejo-actions.nix
+    ../modules/infra/hydra/builder.nix
+    # keep-sorted end
 
     ../modules/gitlab-runner.nix
     ../modules/wireguard.nix
