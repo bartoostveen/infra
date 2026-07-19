@@ -8,21 +8,24 @@ let
     ;
 
   cfg = config.infra.matrix;
+  inherit (cfg.cinny.package) conf;
 
   location = {
     root = "${cfg.cinny.package}";
-    extraConfig = optionalString (!cfg.cinny.package.conf.hashRouter.enabled) ''
-      rewrite ^/config.json$ /config.json break;
-      rewrite ^/manifest.json$ /manifest.json break;
+    extraConfig =
+      optionalString (!(conf ? hashRouter && conf.hashRouter ? enabled && conf.hashRouter.enabled))
+        ''
+          rewrite ^/config.json$ /config.json break;
+          rewrite ^/manifest.json$ /manifest.json break;
 
-      rewrite ^/sw.js$ /sw.js break;
-      rewrite ^/pdf.worker.min.js$ /pdf.worker.min.js break;
+          rewrite ^/sw.js$ /sw.js break;
+          rewrite ^/pdf.worker.min.js$ /pdf.worker.min.js break;
 
-      rewrite ^/public/(.*)$ /public/$1 break;
-      rewrite ^/assets/(.*)$ /assets/$1 break;
+          rewrite ^/public/(.*)$ /public/$1 break;
+          rewrite ^/assets/(.*)$ /assets/$1 break;
 
-      rewrite ^(.+)$ /index.html break;
-    '';
+          rewrite ^(.+)$ /index.html break;
+        '';
   };
 
   cinnies = genAttrs cfg.cinny.domains (_: {
