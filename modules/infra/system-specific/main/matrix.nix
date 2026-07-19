@@ -52,7 +52,6 @@ in
           defaultHomeserver = 0;
           allowCustomHomeservers = true;
           featuredCommunities = { };
-          hashRouter.enabled = true;
           settingsDefaults = {
             alwaysShowCallButton = true;
             badgeCountDMsOnly = true;
