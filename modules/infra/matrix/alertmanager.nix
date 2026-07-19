@@ -72,5 +72,11 @@ in
       mode = "440";
       restartUnits = [ "alertmanager-matrix.service" ];
     };
+
+    users.users.alertmanager-matrix = {
+      isSystemUser = true;
+      group = "alertmanager-matrix";
+    };
+    users.groups.alertmanager-matrix = { };
   };
 }

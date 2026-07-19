@@ -90,19 +90,11 @@ in
     systemd.services.continuwuity.serviceConfig.SupplementaryGroups = [ "matrix-livekit" ];
     systemd.services.livekit.serviceConfig.SupplementaryGroups = [ "nginx" ];
 
-    users.users =
-      genAttrs [ "livekit" "lk-jwt-service" ] (_name: {
-        isSystemUser = true;
-        group = "matrix-livekit";
-      })
-      // {
-        alertmanager-matrix = {
-          isSystemUser = true;
-          group = "alertmanager-matrix";
-        };
-      };
+    users.users = genAttrs [ "livekit" "lk-jwt-service" ] (_name: {
+      isSystemUser = true;
+      group = "matrix-livekit";
+    });
     users.groups.matrix-livekit = { };
-    users.groups.alertmanager-matrix = { };
 
     sops.secrets.livekit-keys = {
       sopsFile = ../../../secrets/matrix/livekit-keys.bart-server.secret;
