@@ -78,6 +78,8 @@ in
     "hydra.bartoostveen.nl" = {
       forceSSL = true;
       enableACME = true;
+      rateLimit.enable = false;
+      connectionLimit.enable = false;
       locations = {
         "/" = {
           proxyPass = "http://unix://${config.services.anubis.instances.hydra.settings.BIND}";
@@ -102,6 +104,8 @@ in
     "queue.hydra.bartoostveen.nl" = {
       forceSSL = true;
       enableACME = true;
+      rateLimit.enable = false;
+      connectionLimit.enable = false;
       locations = {
         "/metrics".extraConfig = "return 404;";
         "/".extraConfig = ''
