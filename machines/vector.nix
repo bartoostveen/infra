@@ -23,6 +23,7 @@
     ../modules/infra/fail2ban.nix
     ../modules/infra/forgejo-actions.nix
     ../modules/infra/git.nix
+    ../modules/infra/hydra/master.nix
     ../modules/infra/networking.nix
     ../modules/infra/nginx.extra.nix
     ../modules/infra/nginx.nix

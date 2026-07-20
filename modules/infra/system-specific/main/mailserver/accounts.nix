@@ -37,6 +37,10 @@
       sendOnly = true;
     };
     "git@bartoostveen.nl".hashedPasswordFile = config.sops.secrets.git-email-password-encrypted.path;
+    "hydra@bartoostveen.nl" = {
+      hashedPasswordFile = config.sops.secrets.hydra-email-password-encrypted.path;
+      sendOnly = true;
+    };
   };
 
   sops.secrets.alertmanager-email-password-encrypted = {
@@ -72,6 +76,16 @@
   sops.secrets.git-email-password-encrypted = {
     format = "binary";
     sopsFile = ../../../../../secrets/mail/passwords/git.enc.bart-server.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot.service"
+    ];
+  };
+
+  sops.secrets.hydra-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/mail/passwords/hydra.enc.bart-server.secret;
 
     restartUnits = [
       "postfix-setup.service"
