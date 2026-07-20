@@ -61,7 +61,7 @@
     };
 
     continuwuity = {
-      url = "git+https://forgejo.ellis.link/continuwuation/continuwuity.git";
+      url = "git+https://forgejo.ellis.link/continuwuation/continuwuity.git?rev=153ef3a173ea061db94467ce0792d0bfe05983fa";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
