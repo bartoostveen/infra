@@ -60,6 +60,15 @@
       };
     };
 
+    continuwuity = {
+      url = "git+https://forgejo.ellis.link/continuwuation/continuwuity.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+
     deploy-rs = {
       url = "github:serokell/deploy-rs";
       inputs = {

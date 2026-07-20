@@ -2,7 +2,7 @@
   pkgs,
   smallPkgs,
   lib,
-  continuwuityPkgs,
+  inputs,
   ...
 }:
 
@@ -19,17 +19,9 @@ in
 
   infra.matrix = {
     enable = true;
-    package = continuwuityPkgs.matrix-continuwuity.overrideAttrs {
-      src = pkgs.fetchFromForgejo {
-        domain = "forgejo.ellis.link";
-        owner = "continuwuation";
-        repo = "continuwuity";
-        rev = "153ef3a173ea061db94467ce0792d0bfe05983fa";
-        hash = "sha256-gFSl9mYf4rHNuZ/zueJu6TkC2Y8oAuOzfKw0mr49UKc=";
-      };
-
-      cargoHash = "sha256-Hkprt2BYv1rh5T5jlU4lf92nqnvsTe7rrQS7YjwixiY=";
-    };
+    # package = continuwuityPkgs.matrix-continuwuity;
+    # TODO: remove
+    package = inputs.continuwuity.packages.${pkgs.stdenv.hostPlatform.system}.default;
     enableBackups = true;
     inherit fqdn;
     domain = "matrix.${fqdn}";
