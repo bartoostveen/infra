@@ -6,6 +6,7 @@
   ];
 
   services.prometheus.exporters = {
+    systemd.enable = true;
     node.enable = true;
   };
 }
