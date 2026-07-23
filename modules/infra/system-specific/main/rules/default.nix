@@ -85,6 +85,7 @@ in
           ./node.nix
           ./postgres.nix
           ./tlsa.nix
+          ./systemd.nix
         ];
       };
     };
