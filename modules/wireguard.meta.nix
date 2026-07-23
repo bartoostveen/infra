@@ -66,6 +66,14 @@ rec {
         "fd42:42:42::7/128"
       ];
     };
+
+    prism = {
+      ips = [
+        "10.0.0.8/32"
+        "fd42:42:42::8/128"
+      ];
+      endpoint = "${connectivity.ipsFor "prism" |> first}:${toString listenPort}";
+    };
   };
 
   primaryIpOf =

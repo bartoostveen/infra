@@ -16,6 +16,10 @@ rec {
       "46.225.142.85/32"
       "2a01:4f8:1c19:1cd2::1/128"
     ];
+    prism = [
+      "152.70.20.16"
+      "2603:c020:8026:9b0:0:d49f:65c6:5f2f/128"
+    ];
   };
 
   allRanges = builtins.attrValues _hosts |> builtins.concatLists;

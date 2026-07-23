@@ -20,4 +20,12 @@ in
     unixSocket = redisSocket;
     unixSocketPerm = 770;
   };
+
+  users = {
+    users.anubis = {
+      isSystemUser = true;
+      group = "anubis";
+    };
+    groups.anubis = { };
+  };
 }
