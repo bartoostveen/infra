@@ -24,6 +24,11 @@
         sshUser = "root";
         ip = "vector.bartoostveen.nl";
       };
+      prism = {
+        sshUser = "root";
+        ip = "delta.bartoostveen.nl";
+        system = "aarch64-linux";
+      };
     };
 
     extraNixOSConfigurations = {
