@@ -30,8 +30,7 @@
     };
 
     authentik = {
-      # url = "github:nix-community/authentik-nix";
-      url = "github:MarcelCoding/authentik-nix/ak-update";
+      url = "github:nix-community/authentik-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
