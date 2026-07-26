@@ -42,10 +42,8 @@
     dhcpV4Config.UseRoutes = true;
     routes = [
       {
-        routeConfig = {
-          Gateway = "_dhcp4";
-          GatewayOnLink = true;
-        };
+        Gateway = "_dhcp4";
+        GatewayOnLink = true;
       }
     ];
   };
