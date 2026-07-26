@@ -22,7 +22,7 @@
             summary = "Postgresql restarted (instance {{ $labels.instance }})";
           };
           expr = "time() - pg_postmaster_start_time_seconds < 60";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "critical";
           };
@@ -34,7 +34,7 @@
             summary = "Postgresql exporter error (instance {{ $labels.instance }})";
           };
           expr = "pg_exporter_last_scrape_error > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "critical";
           };
@@ -46,7 +46,7 @@
             summary = "Postgresql table not auto vacuumed (instance {{ $labels.instance }})";
           };
           expr = "((pg_stat_user_tables_n_tup_del + pg_stat_user_tables_n_tup_upd + pg_stat_user_tables_n_tup_hot_upd) > pg_settings_autovacuum_vacuum_threshold) and (time() - pg_stat_user_tables_last_autovacuum) > 60 * 60 * 24 * 10";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -58,7 +58,7 @@
             summary = "Postgresql table not auto analyzed (instance {{ $labels.instance }})";
           };
           expr = "((pg_stat_user_tables_n_tup_del + pg_stat_user_tables_n_tup_upd + pg_stat_user_tables_n_tup_hot_upd) > pg_settings_autovacuum_analyze_threshold) and (time() - pg_stat_user_tables_last_autoanalyze) > 24 * 60 * 60 * 10";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -82,7 +82,7 @@
             summary = "Postgresql dead locks (instance {{ $labels.instance }})";
           };
           expr = "increase(pg_stat_database_deadlocks{datname!~\"template.*|postgres\",datid!=\"0\"}[1m]) > 5";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -130,7 +130,7 @@
             summary = "Postgresql configuration changed (instance {{ $labels.instance }})";
           };
           expr = "{__name__=~\"pg_settings_.*\",__name__!=\"pg_settings_transaction_read_only\"} != ON(__name__, instance) {__name__=~\"pg_settings_.*\",__name__!=\"pg_settings_transaction_read_only\"} OFFSET 5m";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "info";
           };
@@ -142,7 +142,7 @@
             summary = "Postgresql SSL compression active (instance {{ $labels.instance }})";
           };
           expr = "sum by (instance) (pg_stat_ssl_compression) > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };

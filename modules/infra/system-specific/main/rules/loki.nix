@@ -10,7 +10,7 @@
             summary = "Loki process too many restarts (instance {{ $labels.instance }})";
           };
           expr = "changes(process_start_time_seconds{job=~\".*loki.*\"}[15m]) > 2";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -34,7 +34,7 @@
             summary = "Loki request panic (instance {{ $labels.instance }})";
           };
           expr = "sum(increase(loki_panic_total[5m])) by (namespace, job) > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "critical";
           };

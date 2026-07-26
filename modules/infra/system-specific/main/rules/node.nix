@@ -22,7 +22,7 @@
             summary = "Host memory under memory pressure (instance {{ $labels.instance }})";
           };
           expr = "(deriv(node_vmstat_pgmajfault[5m]) > 1000)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -34,7 +34,7 @@
             summary = "Host unusual network throughput in (instance {{ $labels.instance }})";
           };
           expr = "((rate(node_network_receive_bytes_total[5m]) / node_network_speed_bytes) > .80) and node_network_speed_bytes > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -46,7 +46,7 @@
             summary = "Host unusual network throughput out (instance {{ $labels.instance }})";
           };
           expr = "((rate(node_network_transmit_bytes_total[5m]) / node_network_speed_bytes) > .80) and node_network_speed_bytes > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -58,7 +58,7 @@
             summary = "Host disk IO utilization high (instance {{ $labels.instance }})";
           };
           expr = "(rate(node_disk_io_time_seconds_total[5m]) > .80)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -154,7 +154,7 @@
             summary = "Host CPU steal noisy neighbor (instance {{ $labels.instance }})";
           };
           expr = "avg without (cpu) (rate(node_cpu_seconds_total{mode=\"steal\"}[5m])) * 100 > 10";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -166,7 +166,7 @@
             summary = "Host CPU high iowait (instance {{ $labels.instance }})";
           };
           expr = "avg without (cpu) (rate(node_cpu_seconds_total{mode=\"iowait\"}[5m])) > .10";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -190,7 +190,7 @@
             summary = "Host context switching high (instance {{ $labels.instance }})";
           };
           expr = "(rate(node_context_switches_total[15m])/count without(mode,cpu) (node_cpu_seconds_total{mode=\"idle\"})) / (rate(node_context_switches_total[1d])/count without(mode,cpu) (node_cpu_seconds_total{mode=\"idle\"})) > 2 and rate(node_context_switches_total[1d]) > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -214,7 +214,7 @@
             summary = "Host systemd service crashed (instance {{ $labels.instance }})";
           };
           expr = "(node_systemd_unit_state{state=\"failed\"} == 1)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -238,7 +238,7 @@
             summary = "Host node overtemperature alarm (instance {{ $labels.instance }})";
           };
           expr = "((node_hwmon_temp_crit_alarm_celsius == 1) or (node_hwmon_temp_alarm == 1))";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "critical";
           };
@@ -250,7 +250,7 @@
             summary = "Host software RAID insufficient drives (instance {{ $labels.instance }})";
           };
           expr = "((node_md_disks_required - ignoring(state) node_md_disks{state=\"active\"}) > 0)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "critical";
           };
@@ -274,7 +274,7 @@
             summary = "Host kernel version deviations (instance {{ $labels.instance }})";
           };
           expr = "changes(node_uname_info[1h]) > 0";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "info";
           };
@@ -286,7 +286,7 @@
             summary = "Host OOM kill detected (instance {{ $labels.instance }})";
           };
           expr = "(delta(node_vmstat_oom_kill[30m]) > 0)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
@@ -298,7 +298,7 @@
             summary = "Host EDAC Correctable Errors detected (instance {{ $labels.instance }})";
           };
           expr = "(increase(node_edac_correctable_errors_total[1m]) > 0)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "info";
           };
@@ -310,7 +310,7 @@
             summary = "Host EDAC Uncorrectable Errors detected (instance {{ $labels.instance }})";
           };
           expr = "(node_edac_uncorrectable_errors_total > 0)";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };

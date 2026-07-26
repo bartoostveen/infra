@@ -94,7 +94,7 @@
             summary = "Go heap in-use growing (instance {{ $labels.instance }})";
           };
           expr = "deriv(go_memstats_heap_inuse_bytes[10m]) > 1e7";
-          for = "0m";
+          for = "1m";
           labels = {
             severity = "warning";
           };
