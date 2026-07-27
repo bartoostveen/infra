@@ -2,7 +2,7 @@
   pkgs,
   smallPkgs,
   lib,
-  inputs,
+  continuwuityPkgs,
   ...
 }:
 
@@ -19,9 +19,7 @@ in
 
   infra.matrix = {
     enable = true;
-    # package = continuwuityPkgs.matrix-continuwuity;
-    # TODO: remove
-    package = inputs.continuwuity.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = continuwuityPkgs.matrix-continuwuity;
     enableBackups = true;
     inherit fqdn;
     domain = "matrix.${fqdn}";

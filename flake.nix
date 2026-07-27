@@ -17,7 +17,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
-    nixpkgs-continuwuity.follows = "nixpkgs"; # .url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.6.2";
+    nixpkgs-continuwuity.url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.7.0";
 
     ip-bans = {
       url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git";
@@ -54,15 +54,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
-      };
-    };
-
-    continuwuity = {
-      url = "git+https://forgejo.ellis.link/continuwuation/continuwuity.git?rev=153ef3a173ea061db94467ce0792d0bfe05983fa";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-        flake-parts.follows = "flake-parts";
       };
     };
 
