@@ -87,6 +87,8 @@ in
     inputs.srvos.nixosModules.mixins-telegraf
     inputs.srvos.nixosModules.roles-prometheus
 
+    inputs.bart-packages.nixosModules.uptime-kuma-matrix
+
     ./rules
   ];
 
@@ -233,6 +235,12 @@ in
   services.uptime-kuma = {
     enable = true;
     settings.HOST = "0.0.0.0";
+  };
+
+  services.uptime-kuma-matrix = {
+    enable = true;
+    package = pkgs.local.uptime-kuma-matrix;
+    settings.port = 36999;
   };
 
   services.anubis.instances.uptime-kuma.settings = {
