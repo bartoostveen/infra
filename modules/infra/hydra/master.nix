@@ -8,7 +8,6 @@
 
 let
   inherit (lib)
-    mkAfter
     mkForce
     listToAttrs
     nameValuePair
@@ -17,10 +16,8 @@ let
   fqdn = "bartoostveen.nl";
   domain = "hydra.${fqdn}";
 
-  metricsPort = 9199;
   anubisMetricsPort = 11024;
 
-  # TODO
   machines = [
     "bart-pc"
   ];
@@ -58,7 +55,6 @@ in
       <hydra_notify>
         <prometheus>
           listen_address = 0.0.0.0
-          port = ${toString metricsPort}
         </prometheus>
       </hydra_notify>
     '';
@@ -74,6 +70,30 @@ in
     };
   };
 
+  # Because hydra-queue-runner refuses to listen on ipv4 for some reason
+  systemd.sockets.hydra-queue-runner-dev-ipv4-proxy = {
+    description = "hydra-queue-runner IPv4 proxy socket";
+    wantedBy = [ "sockets.target" ];
+    socketConfig = {
+      ListenStream = "0.0.0.0:${toString config.services.hydra-queue-runner-dev.rest.port}";
+      NoDelay = true;
+    };
+  };
+  systemd.services.hydra-queue-runner-dev-ipv4-proxy = {
+    description = "hydra-queue-runner IPv4 proxy service";
+    requires = [ "hydra-queue-runner-dev-ipv4-proxy.socket" ];
+    serviceConfig =
+      let
+        originalAddr = "::1:${toString config.services.hydra-queue-runner-dev.rest.port}";
+      in
+      {
+        ExecStart = "${pkgs.systemd}/lib/systemd/systemd-socket-proxyd ${originalAddr}";
+        Type = "notify";
+        DynamicUser = true;
+        PrivateNetwork = false;
+      };
+  };
+
   services.nginx.virtualHosts = {
     "hydra.bartoostveen.nl" = {
       forceSSL = true;
@@ -81,6 +101,7 @@ in
       rateLimit.enable = false;
       connectionLimit.enable = false;
       locations = {
+        "/prometheus".extraConfig = "return 404;";
         "/" = {
           proxyPass = "http://unix://${config.services.anubis.instances.hydra.settings.BIND}";
           proxyWebsockets = true;
@@ -149,16 +170,6 @@ in
     ) machines
   );
 
-  programs.ssh.extraConfig = mkAfter ''
-    ServerAliveInterval 120
-    TCPKeepAlive yes
-  '';
-
-  services.openssh.knownHosts = {
-    "10.0.0.7".publicKey =
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB3bxbppcuf+FdbIgG7v1ndZPUeh5KEE0bEjhHmfupnS";
-  };
-
   services.anubis.instances.hydra.settings = {
     BIND = "/run/anubis/anubis-hydra/anubis-hydra.sock";
     TARGET = "http://localhost:${toString config.services.hydra-dev.port}";
@@ -169,7 +180,10 @@ in
   systemd.services.hydra-notify.enable = mkForce false;
 
   infra.extraScrapeConfigs = {
-    hydra.port = metricsPort;
+    hydra = {
+      port = config.services.hydra-dev.port;
+      metrics_path = "/prometheus";
+    };
     hydra-queue-runner = { inherit (config.services.hydra-queue-runner-dev.rest) port; };
     abubis-hydra.port = anubisMetricsPort;
   };
