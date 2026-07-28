@@ -169,7 +169,6 @@
       url = "git+https://git.bartoostveen.nl/bart/omeduoweb";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        bun2nix.url = "github:nix-community/bun2nix";
         flake-parts.follows = "flake-parts";
         treefmt-nix.follows = "treefmt-nix";
       };
