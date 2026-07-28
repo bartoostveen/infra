@@ -731,11 +731,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1785152149,
-        "narHash": "sha256-vbH+CBdQn1k5xyEJE0m5In4lEXgZk9sjQHZdxjMgxN8=",
+        "lastModified": 1785249703,
+        "narHash": "sha256-41upEYWDix+ZruxPn80QHtHe304w3RHWY5RvIpw/kPg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "aac3a899cc6ce8d928dfc5818dafc093b7936010",
+        "rev": "170ad806965c0046fb97f0d823deba0a61834aac",
         "type": "github"
       },
       "original": {
@@ -757,22 +757,6 @@
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1785204738,
-        "narHash": "sha256-rvp51bZH2Q1oqLJyfW/2K+4y5lPl5tx3FEORk8J3iM0=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "c87de54afc4653896c445f84f15ffb0b92edc5c3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "continuwuity-rocksdb-overridable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -941,7 +925,9 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixos-small"
+        ],
         "nixpkgs-lib": "nixpkgs-lib",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
