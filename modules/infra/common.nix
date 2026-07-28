@@ -8,8 +8,16 @@
 }:
 
 let
-  inherit (lib) mkOption types;
-  inherit (types) attrsOf attrs;
+  inherit (lib)
+    mkOption
+    mkDefault
+    types
+    ;
+
+  inherit (types)
+    attrsOf
+    attrs
+    ;
 in
 {
   imports = [
@@ -76,6 +84,8 @@ in
       enable = true;
       lockFile = ../../oci-lock.json;
     };
+
+    services.prometheus.exporters.postgres.runAsLocalSuperUser = mkDefault true;
 
     services.mysql.package = pkgs.mariadb_114;
 
