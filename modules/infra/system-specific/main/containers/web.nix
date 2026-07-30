@@ -23,7 +23,7 @@ let
       bashInteractive
     ];
     config = {
-      Cmd = [ "/bin/omeduostuurcentenneef-web" ];
+      Cmd = [ "/bin/omeduoweb" ];
       Env = [ "NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-bundle.crt" ];
     };
   };
