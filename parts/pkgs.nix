@@ -43,7 +43,6 @@
       };
 
       nixpkgsPatches = with patchFetchers; [
-        (nixpkgsPr 543298 "sha256-lygR7p/nVV3/3AlZhlBpyECUdgQYvEkOjmpat4uPm3A=")
         (nixpkgsPr 536032 "sha256-C2PQHGEUeM1hNdzHAECymtgTlDxlhxIE07ec+t3XOQ0=")
       ];
 
