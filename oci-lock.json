@@ -14,19 +14,19 @@
             "containers": {
                 "ical-proxy-redis": {
                     "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:8e8d64b405ce18f41b8e5ee20aa4687a8ed0022d1298f2ce31cdcf3a76e09411"
+                    "locked": "docker.io/valkey/valkey:latest@sha256:3acc0687f2a2e1091fae6450d7842dd658c941338cf0a873ddd9e14b9e4ea4dd"
                 },
                 "tascheduling-db": {
                     "original": "postgres:18",
-                    "locked": "docker.io/library/postgres:18@sha256:32ca0af8e77bfb8c6610c488e4691f83f972a3e9e64d3b02facf3ab111ad5500"
+                    "locked": "docker.io/library/postgres:18@sha256:3a82e1f56c8f0f5616a11103ac3d47e632c3938698946a7ad26da0df1334744a"
                 },
                 "tcs-bot-db": {
                     "original": "postgres:18",
-                    "locked": "docker.io/library/postgres:18@sha256:32ca0af8e77bfb8c6610c488e4691f83f972a3e9e64d3b02facf3ab111ad5500"
+                    "locked": "docker.io/library/postgres:18@sha256:3a82e1f56c8f0f5616a11103ac3d47e632c3938698946a7ad26da0df1334744a"
                 },
                 "tcs-bot-redis": {
                     "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:8e8d64b405ce18f41b8e5ee20aa4687a8ed0022d1298f2ce31cdcf3a76e09411"
+                    "locked": "docker.io/valkey/valkey:latest@sha256:3acc0687f2a2e1091fae6450d7842dd658c941338cf0a873ddd9e14b9e4ea4dd"
                 }
             }
         },
@@ -34,6 +34,9 @@
             "containers": {}
         },
         "minimal-sd": {
+            "containers": {}
+        },
+        "prism": {
             "containers": {}
         },
         "vector": {
