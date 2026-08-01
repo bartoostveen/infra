@@ -26,7 +26,7 @@ in
 
     services.matrix-continuwuity = {
       enable = true;
-      package = cfg.package;
+      inherit (cfg) package;
       settings.global = {
         server_name = cfg.fqdn;
         new_user_displayname_suffix = "";

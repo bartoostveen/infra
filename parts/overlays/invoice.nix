@@ -1,9 +1,7 @@
 { inputs, ... }:
 
 {
-  flake.overlays.invoice = (
-    final: _prev: {
+  flake.overlays.invoice = final: _prev: {
       invoice = inputs.invoice.packages.${final.stdenv.system}.default;
-    }
-  );
+    };
 }

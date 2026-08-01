@@ -227,11 +227,11 @@ in
       # This is way too cursed. The old solution was better but nix decided not to cooperate
       # adios(-flake) solves this (callable modules). downside: options harder to document
       eval = tryEval {
-        assertions = if nixosModule ? assertions then nixosModule.assertions else { };
-        programs = if nixosModule ? programs then nixosModule.programs else { };
-        systemd = if nixosModule ? systemd then nixosModule.systemd else { };
-        services = if nixosModule ? services then nixosModule.services else { };
-        environment = if nixosModule ? environment then nixosModule.environment else { };
+        assertions = nixosModule.assertions or { };
+        programs = nixosModule.programs or { };
+        systemd = nixosModule.systemd or { };
+        services = nixosModule.services or { };
+        environment = nixosModule.environment or { };
       };
     in
     if eval.success then

@@ -17,7 +17,7 @@ in
     selectors.mail.keyFile = config.sops.secrets."${name}.mail.key".path;
   });
 
-  sops.secrets = mkIf (metaCfg.sops) (
+  sops.secrets = mkIf metaCfg.sops (
     genAttrs' (attrNames cfg.dkim.domains) (
       name:
       nameValuePair "${name}.mail.key" {

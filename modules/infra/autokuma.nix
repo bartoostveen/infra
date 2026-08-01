@@ -274,7 +274,7 @@ let
         ]
         |> map attrNames
       )
-      ++ (instance.additionalMonitorFiles |> map (file: trimHash file))
+      ++ (instance.additionalMonitorFiles |> map trimHash)
     )
     |> flatten;
 

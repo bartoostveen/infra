@@ -87,7 +87,7 @@ in
   };
 
   infra.extraScrapeConfigs.onboarding = {
-    port = cfg.port;
+    inherit (cfg) port;
     metrics_path = "/metrics";
   };
 

@@ -46,7 +46,7 @@ in
             }
           ];
         }
-      ) (config.networking.wireguard.interfaces.${config.infra.wireguard.interface}.peers)
+      ) config.networking.wireguard.interfaces.${config.infra.wireguard.interface}.peers
       |> listToAttrs;
   };
 }
