@@ -49,6 +49,7 @@ let
         static_configs = [
           {
             targets = [ "${host}:${toString config'.services.prometheus.exporters.${jobName}.port}" ];
+            labels = { inherit host; };
           }
         ];
       })
@@ -59,6 +60,7 @@ let
         static_configs = [
           {
             targets = [ "${host}${config'.services.telegraf.extraConfig.outputs.prometheus_client.listen}" ];
+            labels = { inherit host; };
           }
         ];
       }
@@ -74,6 +76,7 @@ let
             static_configs = [
               {
                 targets = [ "${host}:${toString value.port}" ];
+                labels = { inherit host; };
               }
             ];
           }
