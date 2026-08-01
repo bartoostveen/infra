@@ -73,6 +73,9 @@
               wordpress
               ;
 
+            inherit (inputs'.nix-auth.packages) nix-auth;
+            inherit (inputs'.invoice.packages) invoice;
+
             # HACK: regression in latest NixOS Unstable, should investigate later
             # Reverts https://github.com/NixOS/nixpkgs/pull/541979
             # Overriding impossible because of nested overrides
@@ -158,9 +161,6 @@
               }
             ) { };
           })
-
-          self.overlays.nix-auth
-          self.overlays.invoice
 
           (_: _: {
             _bartPackages = {
