@@ -484,11 +484,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785027714,
-        "narHash": "sha256-whE4VpEz1M9kvA+4z8C9kU6zxsv+2b2+BBv14jaJhb8=",
+        "lastModified": 1785602376,
+        "narHash": "sha256-7xgT4/08UvENdskiMTGGUOKoOldtK/vnFy8vLJRY2+E=",
         "ref": "refs/heads/master",
-        "rev": "6f9459803848de4f3437358500d4299c9be4a313",
-        "revCount": 118,
+        "rev": "c10bd75dbd436f7dafacc87f667dc62fcd5dfa08",
+        "revCount": 119,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
