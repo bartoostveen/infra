@@ -41,7 +41,7 @@
     };
 
     bart-packages = {
-      url = "git+https://git.bartoostveen.nl/bart/nix-packages.git";
+      url = "git+https://git.bartoostveen.nl/bart/nix-packages.git?ref=sable-next";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
