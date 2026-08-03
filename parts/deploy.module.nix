@@ -20,9 +20,10 @@ let
   deployLibForSystem = system: withSystem system ({ deployLib, ... }: deployLib);
 in
 {
-  flake.deploy = {
+  flake = {
     inherit deployLibForSystem;
-    nodes =
+
+    deploy.nodes =
       recursiveUpdate
         (genAttrs' config.deployments.home (
           {
