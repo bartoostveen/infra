@@ -61,7 +61,9 @@ in
       dice
       disruptor
       echo
-      factorial
+      (factorial.overrideAttrs {
+        patches = [ ./0001-fix-don-t-respond-to-notices.patch ];
+      })
       forgejo
       github
       gitlab

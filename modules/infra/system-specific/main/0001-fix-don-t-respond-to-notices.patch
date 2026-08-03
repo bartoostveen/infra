@@ -1,0 +1,35 @@
+From 7efee65c4e73193b2d2005e28e1767b8b7f5e4e4 Mon Sep 17 00:00:00 2001
+From: Bart Oostveen <bart@bartoostveen.nl>
+Date: Mon, 3 Aug 2026 20:01:10 +0200
+Subject: [PATCH] fix: don't respond to notices
+
+---
+ factorial.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/factorial.py b/factorial.py
+index d4ffc71..6b2d22d 100644
+--- a/factorial.py
++++ b/factorial.py
+@@ -23,6 +23,8 @@ except ImportError:
+     pydecimal = False
+ import math
+ 
++from mautrix.types import MessageType
++
+ from maubot import Plugin, MessageEvent
+ from maubot.handlers import command
+ 
+@@ -78,6 +80,9 @@ class FactorialBot(Plugin):
+     @command.passive("([0-9]+)(!+)", multiple=True)
+     async def handler(self, evt: MessageEvent, matches: list[tuple[str, str]]) -> None:
+         await evt.mark_read()
++        if evt.content.msgtype is MessageType.NOTICE:
++            return
++
+         msgs = []
+         dedup = set()
+         for _, n_str, interval_str in matches:
+-- 
+2.55.0
+
