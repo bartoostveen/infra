@@ -20,67 +20,70 @@ let
   deployLibForSystem = system: withSystem system ({ deployLib, ... }: deployLib);
 in
 {
-  flake.deploy.nodes =
-    recursiveUpdate
-      (genAttrs' config.deployments.home (
-        {
-          hostname,
-          ip ? null,
-          username,
-          sshUser ? null,
-          system,
-          ...
-        }:
-        nameValuePair hostname {
-          hostname = if ip != null then ip else hostname;
-
-          profiles.${username} = {
-            user = username;
-            sshUser = if sshUser != null then sshUser else username;
-
-            interactiveSudo = sshUser != username;
-
-            path =
-              (deployLibForSystem system).activate.home-manager
-                self.homeConfigurations."${username}@${hostname}";
-          };
-        }
-      ))
-      (
-        mapAttrs (
-          name:
+  flake.deploy = {
+    inherit deployLibForSystem;
+    nodes =
+      recursiveUpdate
+        (genAttrs' config.deployments.home (
           {
+            hostname,
             ip ? null,
-            hostname ? null,
-            sshUser ? null,
             username,
+            sshUser ? null,
             system,
             ...
           }:
+          nameValuePair hostname {
+            hostname = if ip != null then ip else hostname;
 
-          let
-            h =
-              if ip != null then
-                ip
-              else if hostname != null then
-                hostname
-              else
-                name;
-          in
-          {
-            hostname = h;
-
-            profiles.system = {
+            profiles.${username} = {
               user = username;
               sshUser = if sshUser != null then sshUser else username;
 
               interactiveSudo = sshUser != username;
 
-              path = (deployLibForSystem system).activate.nixos self.nixosConfigurations.${name};
+              path =
+                (deployLibForSystem system).activate.home-manager
+                  self.homeConfigurations."${username}@${hostname}";
             };
           }
-        ) config.deployments.nixos
-      );
+        ))
+        (
+          mapAttrs (
+            name:
+            {
+              ip ? null,
+              hostname ? null,
+              sshUser ? null,
+              username,
+              system,
+              ...
+            }:
+
+            let
+              h =
+                if ip != null then
+                  ip
+                else if hostname != null then
+                  hostname
+                else
+                  name;
+            in
+            {
+              hostname = h;
+
+              profiles.system = {
+                user = username;
+                sshUser = if sshUser != null then sshUser else username;
+
+                interactiveSudo = sshUser != username;
+
+                path = (deployLibForSystem system).activate.nixos self.nixosConfigurations.${name};
+              };
+            }
+          ) config.deployments.nixos
+        );
+  };
 
   perSystem =
     { pkgs, deployLib, ... }:
