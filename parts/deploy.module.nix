@@ -31,12 +31,14 @@ in
             username,
             sshUser ? null,
             system,
+            groups ? [ ],
             ...
           }:
           nameValuePair hostname {
             hostname = if ip != null then ip else hostname;
 
             profiles.${username} = {
+              inherit groups;
               user = username;
               sshUser = if sshUser != null then sshUser else username;
 
@@ -57,6 +59,7 @@ in
               sshUser ? null,
               username,
               system,
+              groups ? [ ],
               ...
             }:
 
@@ -73,6 +76,7 @@ in
               hostname = h;
 
               profiles.system = {
+                inherit groups;
                 user = username;
                 sshUser = if sshUser != null then sshUser else username;
 

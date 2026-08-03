@@ -49,6 +49,11 @@ in
           type = str;
           default = "x86_64-linux";
         };
+        groups = mkOption {
+          description = "The groups this profile belong to";
+          type = listOf str;
+          default = [ ];
+        };
       };
     });
   };
