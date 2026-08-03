@@ -41,6 +41,10 @@ let
       hash = "sha256-RUwZ6SOsWiygyb10GnDmvskAurSiW9rFwDylYgr6wII=";
     };
   };
+
+  factorial = plugins.factorial.overrideAttrs {
+    patches = [ ./0001-fix-don-t-respond-to-notices.patch ];
+  };
 in
 {
   imports = [
@@ -61,9 +65,7 @@ in
       dice
       disruptor
       echo
-      (factorial.overrideAttrs {
-        patches = [ ./0001-fix-don-t-respond-to-notices.patch ];
-      })
+      factorial
       forgejo
       github
       gitlab
