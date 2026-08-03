@@ -2,6 +2,23 @@
 
 {
   deployments = {
+    groups = rec {
+      desktop = [
+        "bart-laptop-new"
+        "bart-pc"
+      ];
+      server = [
+        "atlas"
+        "vector"
+        "prism"
+        "bart-server"
+      ];
+      x86_64-linux = desktop ++ [
+        "vector"
+        "bart-server"
+      ];
+    };
+
     nixos = {
       bart-server = {
         sshUser = "root";

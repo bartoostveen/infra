@@ -9,6 +9,9 @@
 
 let
   inherit (lib)
+    mkMerge
+    mapAttrsToList
+    genAttrs
     mkOption
     mapAttrs
     types
@@ -62,6 +65,12 @@ in
       });
     };
 
+    groups = mkOption {
+      description = "Groups of nodes";
+      type = attrsOf (listOf str);
+      default = { };
+    };
+
     extraNixOSConfigurations = mkOption {
       description = "Additional NixOS configurations that should be exported in the `nixosConfigurations` flake output, but not deployed";
       type = attrsOf (submodule {
@@ -81,6 +90,15 @@ in
 
     flake = {
       inherit wireguard;
+
+      deploy.nodes = mkMerge (
+        mapAttrsToList (
+          group: members:
+          genAttrs members (_: {
+            groups = [ group ];
+          })
+        ) config.deployments.groups
+      );
 
       nixosConfigurations =
         (mapAttrs (
