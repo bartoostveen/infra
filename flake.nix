@@ -24,6 +24,11 @@
       flake = false;
     };
 
+    wireless-profiles = {
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/wireless-profiles.git";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

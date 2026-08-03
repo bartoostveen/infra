@@ -957,7 +957,8 @@
         "tcs-bot": "tcs-bot",
         "treefmt-nix": "treefmt-nix",
         "vert-nix": "vert-nix",
-        "winapps": "winapps"
+        "winapps": "winapps",
+        "wireless-profiles": "wireless-profiles"
       }
     },
     "roundcube-oidc": {
@@ -1277,6 +1278,22 @@
         "owner": "winapps-org",
         "repo": "winapps",
         "type": "github"
+      }
+    },
+    "wireless-profiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785789540,
+        "narHash": "sha256-vuaGV3CmgTSAGpU/6gkOarMhqXkoL/NUMza3l7FD+gY=",
+        "ref": "refs/heads/master",
+        "rev": "1e9c0da2e8b7c48d27717b33f7d31e12f186a0f6",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/wireless-profiles.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://forgejo@git.bartoostveen.nl/bart/wireless-profiles.git"
       }
     }
   },
