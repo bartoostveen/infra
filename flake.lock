@@ -191,11 +191,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785710517,
-        "narHash": "sha256-7fEwiXlMyt2aRWx4Swqi1p6mvOUnO94FYNEJ8G0jELA=",
+        "lastModified": 1785789038,
+        "narHash": "sha256-KohHJ2hiS+btlz72jNyi3wz+p8vMsNFb6/M5khRVGpo=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "288011726595544d8de7826a1152643fd34094f7",
+        "rev": "24a4090fc72e270c9d2a78582cfc4bbc9f7e1564",
         "type": "github"
       },
       "original": {
@@ -434,11 +434,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785260963,
-        "narHash": "sha256-M6CW0tFhZAwKjRjB0VOwcOUP+GlxOTFSl3UKd4mMZPA=",
+        "lastModified": 1785786375,
+        "narHash": "sha256-LsaaPB8geqJfdRxaE69Y6Axg2IxiN1C9AjV/RwmVLvQ=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "8f7a4c43e11f6c44b3ceaed58b37fce3655f4346",
+        "rev": "cdebd8c53cb4af8537371daf4056d84e431263d0",
         "type": "github"
       },
       "original": {
@@ -590,11 +590,11 @@
     "nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1783987836,
-        "narHash": "sha256-UkRzz0meYeuSQt5rQodwfiSe1If+5JojDP7Kxk0beXM=",
+        "lastModified": 1785219042,
+        "narHash": "sha256-rUXay2ZwV1ojaI7fC97x/SjzrSy8TI74Md6W3VLTyno=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "aa2613fa02ca6199fe0ebf61a0f7f6d781d32a47",
+        "rev": "4969304fd81c9bf498d94b82cf2ea651594e0c26",
         "type": "github"
       },
       "original": {
@@ -833,11 +833,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785629237,
-        "narHash": "sha256-sAM+9/hNTy0undayNtZL/pmwxZWvTu8ncz+R9AtGuPA=",
+        "lastModified": 1785783643,
+        "narHash": "sha256-mNiQVdysz6hR3dO8WhvlgySJNNBm1tmgjuLiK2JhL4U=",
         "ref": "refs/heads/master",
-        "rev": "c5701c73ce709db0b3c615e86011c7f9e3a1223e",
-        "revCount": 84,
+        "rev": "7e74c2c179bc96db561e4f2c09f7f1a66f56da34",
+        "revCount": 87,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
