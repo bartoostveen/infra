@@ -15,9 +15,22 @@ let
     recursiveUpdate
     genAttrs'
     nameValuePair
+    foldl'
+    attrNames
     ;
 
   deployLibForSystem = system: withSystem system ({ deployLib, ... }: deployLib);
+
+  inheritedGroups = foldl' (
+    acc: group:
+    foldl' (
+      acc': node:
+      acc'
+      // {
+        ${node} = (acc'.${node} or [ ]) ++ [ group ];
+      }
+    ) acc config.deployments.groups.${group}
+  ) { } (attrNames config.deployments.groups);
 in
 {
   flake = {
@@ -39,7 +52,7 @@ in
             hostname = if ip != null then ip else hostname;
 
             profiles.${username} = {
-              inherit groups;
+              groups = groups ++ inheritedGroups.${hostname};
               user = username;
               sshUser = if sshUser != null then sshUser else username;
 
@@ -77,7 +90,7 @@ in
               hostname = h;
 
               profiles.system = {
-                inherit groups;
+                groups = groups ++ inheritedGroups.${name};
                 user = username;
                 sshUser = if sshUser != null then sshUser else username;
 

@@ -9,9 +9,6 @@
 
 let
   inherit (lib)
-    mkMerge
-    mapAttrsToList
-    genAttrs
     mkOption
     mapAttrs
     types
@@ -90,15 +87,6 @@ in
 
     flake = {
       inherit wireguard;
-
-      deploy.nodes = mkMerge (
-        mapAttrsToList (
-          group: members:
-          genAttrs members (_: {
-            groups = [ group ];
-          })
-        ) config.deployments.groups
-      );
 
       nixosConfigurations =
         (mapAttrs (
