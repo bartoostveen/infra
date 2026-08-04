@@ -191,11 +191,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785789038,
-        "narHash": "sha256-KohHJ2hiS+btlz72jNyi3wz+p8vMsNFb6/M5khRVGpo=",
+        "lastModified": 1785796596,
+        "narHash": "sha256-Zd38vtS+SEDAq+792iPS8nGUyeVAIDH6gndXhKoXsv4=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "24a4090fc72e270c9d2a78582cfc4bbc9f7e1564",
+        "rev": "ef75220faf25f2eb040f84f2ea02bc09c0c946b2",
         "type": "github"
       },
       "original": {
@@ -434,11 +434,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785786375,
-        "narHash": "sha256-LsaaPB8geqJfdRxaE69Y6Axg2IxiN1C9AjV/RwmVLvQ=",
+        "lastModified": 1785859923,
+        "narHash": "sha256-wtmVYoNRJM12/XbJsckDs2lya1d03pR5EOEjFa/zqQ8=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "cdebd8c53cb4af8537371daf4056d84e431263d0",
+        "rev": "65da21b2e98a8a924a10756a549e526c1e5289bc",
         "type": "github"
       },
       "original": {
@@ -749,11 +749,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1785759394,
-        "narHash": "sha256-WYP7h3gNv9qLjMu5iCxlOFZX+BIcJv+kVXiNcFuFw/U=",
+        "lastModified": 1785859399,
+        "narHash": "sha256-pY4X50au95QrTpAbEm08pURmeU3/Ud2oa0s2XzpDdz8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04b6fa9fd2d8c742f4472dcb25e4a39e9be2b301",
+        "rev": "85f62611fa3f3eacbcfe3bc7a6d6518b443ca442",
         "type": "github"
       },
       "original": {
@@ -765,11 +765,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785692966,
-        "narHash": "sha256-vUfIeBEfpbAfZ5zjgIkYk7eHBeVfCYVjLbWnMkseYnk=",
+        "lastModified": 1785828668,
+        "narHash": "sha256-8fsyqeO+mJqvIzeO4xIpgJe/f7MTbbVTEC6RT6WSXNs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "643809054d65fdd466a63e3155b8c498cb483c04",
+        "rev": "e72e4f299401a3689d4b3d5fc6496b11db7064eb",
         "type": "github"
       },
       "original": {
