@@ -35,8 +35,9 @@ in
         allow_federation = true;
         allow_legacy_media = false;
         trusted_servers = [
-          "matrix.org"
           "utwente.io"
+          "starstruck.systems"
+          "matrix.org"
         ];
 
         address = null;
