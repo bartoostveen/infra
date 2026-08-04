@@ -22,7 +22,6 @@ in
       RENOVATE_GIT_PRIVATE_KEY = config.sops.secrets.renovate-gpg-private.path;
       RENOVATE_GITHUB_COM_TOKEN = config.sops.secrets.renovate-github-pat.path;
     };
-    environment.LOG_LEVEL = "debug";
     settings = {
       endpoint = "https://${forgeUrl}/";
       gitAuthor = "Renovate <renovate@bartoostveen.nl>";
