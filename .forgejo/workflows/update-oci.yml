@@ -14,7 +14,7 @@ jobs:
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
 
       - name: nix-oci-lock update
-        run: nix run .#nix-oci-lock -- update --commit
+        run: nix run --inputs-from . nix-oci-lock -- update --commit
 
       - name: send PR
         run: |

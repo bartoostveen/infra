@@ -182,8 +182,6 @@
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 
       packages = {
-        inherit (inputs'.nix-oci-lock.packages) nix-oci-lock;
-
         sops-rotate =
           with pkgs;
           writeShellApplication {
