@@ -29,13 +29,6 @@ in
 
   boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_1;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-    "pipe-operators"
-  ];
-  nix.channel.enable = lib.mkForce false;
-
   services.resolved.enable = lib.mkDefault true;
   services.kresd.enable = lib.mkForce false;
 
@@ -134,6 +127,17 @@ in
   nix = {
     daemonIOSchedClass = lib.mkDefault "idle";
     daemonCPUSchedPolicy = lib.mkDefault "idle";
+
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "pipe-operators"
+      ];
+      log-format = "bar-with-logs";
+    };
+
+    channel.enable = lib.mkForce false;
   };
 
   systemd.services.nix-daemon.serviceConfig.Slice = "-.slice";
