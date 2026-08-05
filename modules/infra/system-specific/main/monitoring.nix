@@ -37,6 +37,7 @@ let
     in
     (
       config'.services.prometheus.exporters
+      |> (flip removeAttrs) [ "unifi-poller" ]
       |> filterAttrs (
         _: e:
         let
@@ -164,7 +165,6 @@ in
       let
         groups =
           config.infra.monitoring.groups
-          |> (flip removeAttrs) [ "unifi-poller" ]
           |> filterAttrs (_: group: group.enable)
           |> mapAttrsToList (
             name: group:
