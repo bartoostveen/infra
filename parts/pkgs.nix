@@ -40,7 +40,7 @@
 
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 547959 "sha256-JciEDG7NjqZoVQAv2QlsWZd+cbjMI1Afz2RCHWWPtC4=")
-        (nixpkgsPr 549005 "sha256-gLiNAr/3bGKyaAAwBD329zb1kcCN4KlQPauOJ18Rf3k=")
+        (nixpkgsPr 549005 "sha256-F/MzRZai2QrkgM2Hm21lfp56V8T6eJ3SJRqEJqE3f34=")
         (nixpkgsPr 549133 "sha256-6EWyOnh/D96g8UbPLvpNxLNf7RQNRei/3zo0KOuYnxA=")
       ];
 
