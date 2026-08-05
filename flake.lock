@@ -408,11 +408,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785531816,
-        "narHash": "sha256-vkMnV0JIyw+g/NmcfoajlGaAO+9a0ezia+FZohQJrik=",
+        "lastModified": 1785944609,
+        "narHash": "sha256-oVALwpE6ztz2Ll6vGlCHJs7fhblEmOFz3/TTcgZnrqM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bf9ce9fec78f95f374e8dd3b503863a3ec128ebe",
+        "rev": "44a1a0ab16b1b6b8e6b673227d870c3a89cab35e",
         "type": "github"
       },
       "original": {
@@ -434,11 +434,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785859923,
-        "narHash": "sha256-wtmVYoNRJM12/XbJsckDs2lya1d03pR5EOEjFa/zqQ8=",
+        "lastModified": 1785912859,
+        "narHash": "sha256-RxXNsOLlU9YTtDKyBqs3aSlAscVoHDF+LPqs5OTlymE=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "65da21b2e98a8a924a10756a549e526c1e5289bc",
+        "rev": "7a623fe78de92443bb836881f4525b9228345876",
         "type": "github"
       },
       "original": {
@@ -461,11 +461,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785901133,
-        "narHash": "sha256-uX9qRP6r6ZFY6hvNz1EkSz+pZGaU+RBFPSebZPU7g2k=",
+        "lastModified": 1785921861,
+        "narHash": "sha256-nm2pNKSfC0PbfkKjH5rLUYZYW+0O37cIFN0VEmBtL2M=",
         "ref": "refs/heads/master",
-        "rev": "eaf487a4a62dbdbf64971d9c00c7465bfad1db65",
-        "revCount": 74,
+        "rev": "0111dae6c90422e6451ab7deccba58dc981147fa",
+        "revCount": 80,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -749,11 +749,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1785892310,
-        "narHash": "sha256-5hAgM7wWateoaQTEP7HlQUvURWaO0Y+AKOaF928wjuA=",
+        "lastModified": 1785925688,
+        "narHash": "sha256-taRLhiPA3s8J5+b6BLzUugC/0T4mQuyhkPiqr+fai2w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b0db7f491d2cc2f578eee685d2f2fb37f7e58b9e",
+        "rev": "379e2fc6c7612f7341d941ae4d1ea38021c41d6e",
         "type": "github"
       },
       "original": {
@@ -1151,11 +1151,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785360170,
-        "narHash": "sha256-XE1lKgQ3eIO3E7zWryqcRsax+mYXod/5RHBn4YaR9YE=",
+        "lastModified": 1785945821,
+        "narHash": "sha256-NLSyTCW4K4ofhNBllt3omPasm6QpralXH1DBZOc91Dw=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "d1187f8bc71fb8aab02395869ec3f5c1920f75c0",
+        "rev": "ae7910970dddc408fe6ab1c8e4b277bb21d72dc0",
         "type": "github"
       },
       "original": {
