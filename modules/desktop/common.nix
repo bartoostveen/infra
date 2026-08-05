@@ -140,6 +140,8 @@ in
     channel.enable = lib.mkForce false;
   };
 
+  documentation.nixos.enable = false;
+
   systemd.services.nix-daemon.serviceConfig.Slice = "-.slice";
   environment.variables = {
     NIX_REMOTE = "daemon";

@@ -101,6 +101,8 @@ in
       '';
     };
 
+    documentation.nixos.enable = false;
+
     environment = {
       systemPackages =
         with pkgs;
