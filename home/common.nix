@@ -138,7 +138,10 @@ in
       sessionVariables.PROMPT_COMMAND = "history -a; history -n";
     };
 
-    nix.settings.keep-going = true;
+    nix = {
+      package = pkgs.nix;
+      settings.keep-going = true;
+    };
 
     sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   };
