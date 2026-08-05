@@ -164,8 +164,8 @@ in
       let
         groups =
           config.infra.monitoring.groups
-          |> filterAttrs (_: group: group.enable)
           |> (flip removeAttrs) [ "unifi-poller" ]
+          |> filterAttrs (_: group: group.enable)
           |> mapAttrsToList (
             name: group:
             (removeAttrs group [
