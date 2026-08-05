@@ -15,6 +15,7 @@ let
     attrNames
     concatMap
     filterAttrs
+    flip
     genAttrs
     mapAttrsToList
     optionals
@@ -164,6 +165,7 @@ in
         groups =
           config.infra.monitoring.groups
           |> filterAttrs (_: group: group.enable)
+          |> (flip removeAttrs) [ "unifi-poller" ]
           |> mapAttrsToList (
             name: group:
             (removeAttrs group [
