@@ -96,6 +96,17 @@ in
       recursive = true;
     };
 
+    services.gpg-agent.pinentry = {
+      package = pkgs.writeShellScriptBin "pinentry" ''
+        if [ "$XDG_SESSION_TYPE" = "tty" ]; then
+          ${lib.getExe pkgs.pinentry-curses} "$@"
+        else
+          ${lib.getExe pkgs.pinentry-qt} "$@"
+        fi
+      '';
+      program = "pinentry";
+    };
+
     fonts.fontconfig.enable = true;
 
     programs.home-manager.enable = true;
@@ -136,11 +147,6 @@ in
       enableCompletion = true;
       historyControl = [ "erasedups" ];
       sessionVariables.PROMPT_COMMAND = "history -a; history -n";
-    };
-
-    nix = {
-      package = pkgs.nix;
-      settings.keep-going = true;
     };
 
     sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
