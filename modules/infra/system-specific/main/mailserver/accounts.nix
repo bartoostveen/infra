@@ -41,6 +41,10 @@
       hashedPasswordFile = config.sops.secrets.hydra-email-password-encrypted.path;
       sendOnly = true;
     };
+    "vault@bartoostveen.nl" = {
+      hashedPasswordFile = config.sops.secrets.vaultwarden-email-password-encrypted.path;
+      sendOnly = true;
+    };
   };
 
   sops.secrets.alertmanager-email-password-encrypted = {
@@ -86,6 +90,16 @@
   sops.secrets.hydra-email-password-encrypted = {
     format = "binary";
     sopsFile = ../../../../../secrets/mail/passwords/hydra.enc.bart-server.secret;
+
+    restartUnits = [
+      "postfix-setup.service"
+      "dovecot.service"
+    ];
+  };
+
+  sops.secrets.vaultwarden-email-password-encrypted = {
+    format = "binary";
+    sopsFile = ../../../../../secrets/mail/passwords/vaultwarden.enc.bart-server.secret;
 
     restartUnits = [
       "postfix-setup.service"
