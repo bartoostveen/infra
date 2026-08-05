@@ -134,7 +134,8 @@ in
         "flakes"
         "pipe-operators"
       ];
-      log-format = "bar-with-logs";
+      # TODO: conditional if using Lix
+      # log-format = "bar-with-logs";
     };
 
     channel.enable = lib.mkForce false;
