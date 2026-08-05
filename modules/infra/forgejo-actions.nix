@@ -28,6 +28,8 @@ let
 
   cfg = config.infra.forgejo-actions;
   runners = range 0 (cfg.amount - 1);
+
+  inherit (pkgs.stdenv.hostPlatform) system;
 in
 {
   options.infra.forgejo-actions = {
@@ -71,7 +73,7 @@ in
       "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
       "nix:docker://docker.io/nixos/nix:2.32.8"
       "lix:docker://git.toostveen.nl/tom/lix-with-node:latest"
-      "native-${pkgs.stdenv.system}:host"
+      "native-${system}:host"
       "${config.networking.hostName}:host"
     ]
     ++ (map (feat: "${feat}:host") config.nix.settings.system-features)

@@ -101,7 +101,7 @@
 
   environment.systemPackages =
     let
-      system = pkgs.stdenv.system;
+      inherit (pkgs.stdenv.hostPlatform) system;
     in
     [
       inputs.winapps.packages.${system}.winapps

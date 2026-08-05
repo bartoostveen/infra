@@ -7,6 +7,7 @@
 }:
 
 let
+  inherit (pkgs.stdenv.hostPlatform) system;
   redisSocket = "/run/redis-onboarding/redis.sock";
 
   emailUser = "onboarding";
@@ -26,7 +27,7 @@ let
 
   inherit (lib) getExe;
 
-  pkg = inputs.onboarding.packages.${pkgs.stdenv.system}.default;
+  pkg = inputs.onboarding.packages.${system}.default;
 in
 {
   systemd.services.authentik-onboarding =

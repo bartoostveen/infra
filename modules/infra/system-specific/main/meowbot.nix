@@ -8,6 +8,8 @@
 
 let
   inherit (lib) getExe;
+
+  inherit (pkgs.stdenv.hostPlatform) system;
 in
 {
   systemd.services.meowbot = {
@@ -16,7 +18,7 @@ in
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = getExe inputs.meowbot.packages.${pkgs.stdenv.system}.default;
+      ExecStart = getExe inputs.meowbot.packages.${system}.default;
       EnvironmentFile = config.sops.secrets.meowbot-env.path;
       Restart = "on-failure";
       DynamicUsers = true;

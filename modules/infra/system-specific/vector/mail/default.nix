@@ -7,6 +7,7 @@
 }:
 
 let
+  inherit (pkgs.stdenv.hostPlatform) system;
   inherit (import "${inputs.nixos-mailserver}/mail-server/common.nix" { inherit config pkgs lib; })
     appendLdapBindPwd
     ;
@@ -119,7 +120,7 @@ in
 
   services.roundcube =
     let
-      oidcPlugin = inputs.roundcube-oidc.packages.${pkgs.stdenv.system}.withConfig.override {
+      oidcPlugin = inputs.roundcube-oidc.packages.${system}.withConfig.override {
         configText = ''
           <?php
 
