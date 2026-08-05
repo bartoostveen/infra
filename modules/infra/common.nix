@@ -62,6 +62,7 @@ in
     services.dbus.implementation = "dbus";
 
     services.openssh.enable = lib.mkDefault true;
+    systemd.services.sshd.serviceConfig.MemoryMin = "100M";
 
     users.users.root.openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdc+Tbt0d+pHMYrDjrT3Ui09NV38T3bFWk/OMEL4Dp6 u0_a374@bart-phone"
