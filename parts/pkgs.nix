@@ -67,8 +67,9 @@
               php84Packages
               php85
               php85Packages
-              wordpress_7_0
-              wordpress
+              # wordpress_7_0
+              # wordpress
+              # TODO: remove
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
