@@ -12,6 +12,7 @@ let
     mkOption
     mkDefault
     types
+    mkAfter
     ;
 
   inherit (types)
@@ -92,7 +93,7 @@ in
 
     services.postgresql = {
       package = pkgs.postgresql_18;
-      identMap = ''
+      identMap = mkAfter ''
         # arbitraryMapName	systemUser	DBUser
         superuser_map		root		postgres
         superuser_map		postgres  	postgres
