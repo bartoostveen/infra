@@ -1,16 +1,21 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }:
 
 let
-  domain = "popkoorklankkleur.nl";
+  inherit (lib) genAttrs;
+
+  domains = [
+    "popkoorklankkleur.nl"
+  ];
 in
 {
   services.wordpress = {
     webserver = "nginx";
-    sites.${domain} = {
+    sites = genAttrs domains (domain: {
       settings = {
         WP_DEFAULT_THEME = "twentytwentyfive";
         WP_SITEURL = "https://${domain}";
@@ -56,17 +61,17 @@ in
             hash = "sha256-rJusvePa19yMuBVn0sCX7sZGNnJ+srPS55lN3aOreak=";
           })
         ];
-    };
+    });
   };
 
-  services.nginx.virtualHosts.${domain} = {
+  services.nginx.virtualHosts = genAttrs domains (domain: {
     enableACME = true;
     forceSSL = true;
     rateLimit.enable = false;
     enableHSTS = true;
     serverAliases = [ "www.${domain}" ];
     locations."/".proxyWebsockets = true;
-  };
+  });
 
-  infra.backup.jobs.state.paths = [ "/var/lib/wordpress/${domain}" ];
+  infra.backup.jobs.state.paths = map (domain:  "/var/lib/wordpress/${domain}") domains;
 }
