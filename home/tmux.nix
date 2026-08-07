@@ -5,10 +5,13 @@ let
 
   attrsToGlobals =
     attrs:
-    attrs
-    |> attrsToList
-    |> map ({ name, value }: "set -g ${name} ${value}")
-    |> concatStringsSep "\n";
+    (
+      attrs
+      |> attrsToList
+      |> map ({ name, value }: "set -g ${name} ${value}")
+      |> concatStringsSep "\n"
+    )
+    + "\n";
 in
 {
   programs.tmux = {
@@ -21,13 +24,17 @@ in
     tmuxinator.enable = true;
     tmuxp.enable = true;
 
-    extraConfig = attrsToGlobals {
-      "automatic-rename" = "on";
-      "allow-rename" = "on";
-      "set-titles" = "on";
-      "window-status-format" = "\"#I:#(basename #{pane_current_command})\"";
-      "window-status-current-format" = "\"#[bold]#I:#(basename #{pane_current_command})\"";
-    };
+    extraConfig =
+      (attrsToGlobals {
+        "automatic-rename" = "on";
+        "allow-rename" = "on";
+        "set-titles" = "on";
+        "window-status-format" = "\"#I:#(basename #{pane_current_command})\"";
+        "window-status-current-format" = "\"#[bold]#I:#(basename #{pane_current_command})\"";
+      })
+      + ''
+        bind S run-shell "tmux setw synchronize-panes && tmux display 'Synchronize panes toggled'"
+      '';
 
     plugins = with pkgs.tmuxPlugins; [
       cpu
