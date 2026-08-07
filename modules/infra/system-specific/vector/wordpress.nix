@@ -73,5 +73,5 @@ in
     locations."/".proxyWebsockets = true;
   });
 
-  infra.backup.jobs.state.paths = map (domain:  "/var/lib/wordpress/${domain}") domains;
+  infra.backup.jobs.state.paths = map (domain: "/var/lib/wordpress/${domain}") domains;
 }
