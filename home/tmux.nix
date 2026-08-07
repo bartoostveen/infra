@@ -48,16 +48,7 @@ in
         };
       }
       {
-        plugin = mkTmuxPlugin {
-          pluginName = "tmux-statusline-themes";
-          version = "unstable";
-          src = pkgs.fetchFromGitHub {
-            owner = "dmitry-kabanov";
-            repo = "tmux-statusline-themes";
-            rev = "5239a3b8d0de860ef573a688678c64a47d3d431f";
-            hash = "sha256-A4PxrkUGZHjIt0np95848quUo42i+4CX9LwOJ5ek0/Y=";
-          };
-        };
+        plugin = pkgs.local.tmux-statusline-themes;
         extraConfig = attrsToGlobals {
           "@tmux-statusline-theme" = "'solarized-dark'";
         };
