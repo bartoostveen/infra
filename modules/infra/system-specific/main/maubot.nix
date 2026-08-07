@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -48,7 +49,7 @@ let
 in
 {
   imports = [
-    ../../maubot-exporter.nix
+    inputs.bart-packages.nixosModules.maubot-exporter
   ];
 
   services.maubot = {
@@ -94,13 +95,15 @@ in
 
   services.maubot-exporter = {
     enable = true;
+    package = pkgs.local.maubot-exporter;
     port = 25614;
     settings = {
-      MAUBOT_API_BASE = "https://${domain}/_matrix/maubot/v1";
-      MAUBOT_USERNAME = "bart";
+      api.base = "https://${domain}/_matrix/maubot/v1";
+      username = "bart";
     };
     environmentFile = config.sops.secrets.maubot-exporter-env.path;
   };
+
   users.users.maubot-exporter = {
     isSystemUser = true;
     group = "maubot-exporter";
