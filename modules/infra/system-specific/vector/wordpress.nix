@@ -6,12 +6,6 @@
 
 let
   domain = "popkoorklankkleur.nl";
-
-  nl = pkgs.local.wordpressPackages.lang {
-    lang = "nl_NL";
-    inherit (config.services.wordpress.sites.${domain}.package) version;
-    hash = "sha256-rJusvePa19yMuBVn0sCX7sZGNnJ+srPS55lN3aOreak=";
-  };
 in
 {
   services.wordpress = {
@@ -52,7 +46,16 @@ in
       themes = {
         inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
       };
-      languages = [ nl ];
+      languages =
+        let
+          inherit (pkgs.local.wordpressPackages.languages) nl;
+        in
+        [
+          (nl.override {
+            wordpress = config.services.wordpress.sites.${domain}.package;
+            hash = "sha256-rJusvePa19yMuBVn0sCX7sZGNnJ+srPS55lN3aOreak=";
+          })
+        ];
     };
   };
 
