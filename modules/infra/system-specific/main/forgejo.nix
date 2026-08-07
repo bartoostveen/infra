@@ -78,7 +78,7 @@ in
       };
       cron.ENABLED = true;
       metrics.ENABLED = true;
-      packages.ENABLED = false;
+      packages.ENABLED = true;
     };
     # TODO: restore script
     dump.enable = true; # exists in statedir by default, so should get backed up
