@@ -19,30 +19,6 @@ let
     };
   };
 
-  forgejo = plugins.buildMaubotPlugin rec {
-    pname = "vibb.me.forgebot";
-    version = "0.1.7";
-
-    src = pkgs.fetchFromCodeberg {
-      owner = "palchrb";
-      repo = "maubot_forgejo";
-      tag = "v${version}";
-      hash = "sha256-IP985g6cPR3YRyrIaDikj3VAodIZjuYCYrJPiZGEDVw=";
-    };
-  };
-
-  altcaps = plugins.buildMaubotPlugin rec {
-    pname = "pl.rom4nik.maubot.alternatingcaps";
-    version = "0.1.3";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "rom4nik";
-      repo = "maubot-alternatingcaps";
-      tag = "v${version}";
-      hash = "sha256-RUwZ6SOsWiygyb10GnDmvskAurSiW9rFwDylYgr6wII=";
-    };
-  };
-
   factorial = plugins.factorial.overrideAttrs {
     patches = [ ./0001-fix-don-t-respond-to-notices.patch ];
   };
@@ -59,7 +35,6 @@ in
     plugins = with plugins; [
       # keep-sorted start
       alertbot
-      altcaps
       autoreply
       choose
       communitybot
@@ -67,12 +42,13 @@ in
       disruptor
       echo
       factorial
-      forgejo
       github
       gitlab
       join
       karma
       media
+      pkgs.local.maubot-alternatingcaps
+      pkgs.local.maubot-forgejo
       reactbot
       reminder
       rss
