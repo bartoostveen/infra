@@ -1,4 +1,10 @@
-{ config, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib)
@@ -28,10 +34,11 @@ let
   ];
 in
 {
-  imports = [ ../../git-pages.nix ];
+  imports = [ inputs.bart-packages.nixosModules.git-pages ];
 
   services.git-pages = {
     enable = true;
+    package = pkgs.local.git-pages;
     settings = {
       server = {
         pages = "tcp/127.0.0.1:${toString port}";
@@ -41,10 +48,10 @@ in
         {
           authorization = "forgejo";
           clone-url = "https://${config.services.forgejo.settings.server.DOMAIN}/<user>/<project>.git";
-          inherit domain; # preview-domain; # Unstable
+          inherit domain preview-domain;
           index-repo = "pages";
           index-repo-branch = "main";
-          # max-preview-lifetime = "7d"; # Unstable
+          max-preview-lifetime = 7;
         }
       ];
     };
@@ -91,4 +98,10 @@ in
     mode = "0770";
     restartUnits = map (d: "acme-${d}.service") vHosts;
   };
+
+  users.users.git-pages = {
+    group = "git-pages";
+    isSystemUser = true;
+  };
+  users.groups.git-pages = { };
 }
