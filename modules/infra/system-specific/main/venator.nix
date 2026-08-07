@@ -31,6 +31,11 @@ in
     };
   };
 
+  systemd.services.venator = {
+    requires = [ "sops-install-secrets.service" ];
+    after = [ "sops-install-secrets.service" ];
+  };
+
   users = {
     users.venator = {
       isSystemUser = true;
