@@ -53,7 +53,6 @@
         config.android_sdk.accept_license = true;
         config.permittedInsecurePackages = [
           "olm-3.2.16"
-          "github-readme-stats-0-unstable-2026-05-19"
         ];
 
         overlays = [

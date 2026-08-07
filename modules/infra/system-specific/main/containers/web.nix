@@ -29,7 +29,7 @@ let
   };
 
   readmeStatsName = "gh-readme-stats";
-  readmeStatsPkg = pkgs.local.github-readme-stats;
+  readmeStatsPkg = pkgs.local.github-readme-stats-extended;
   readmeStatsDockerImage = pkgs.dockerTools.streamLayeredImage {
     name = readmeStatsName;
     tag = readmeStatsPkg.version;
@@ -38,7 +38,7 @@ let
       cacert
     ];
     config = {
-      Cmd = [ "/bin/github-readme-stats" ];
+      Cmd = [ "/bin/${readmeStatsPkg.meta.mainProgram}" ];
       Env = [ "NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-bundle.crt" ];
     };
   };
