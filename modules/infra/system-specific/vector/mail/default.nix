@@ -120,7 +120,7 @@ in
 
   services.roundcube =
     let
-      oidcPlugin = inputs.roundcube-oidc.packages.${system}.withConfig.override {
+      oidcPlugin = pkgs.local.roundcube-oidc.override {
         configText = ''
           <?php
 
