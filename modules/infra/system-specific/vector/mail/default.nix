@@ -7,7 +7,6 @@
 }:
 
 let
-  inherit (pkgs.stdenv.hostPlatform) system;
   inherit (import "${inputs.nixos-mailserver}/mail-server/common.nix" { inherit config pkgs lib; })
     appendLdapBindPwd
     ;
