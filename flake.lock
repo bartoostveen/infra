@@ -778,6 +778,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-continuwuity": {
+      "locked": {
+        "lastModified": 1786485386,
+        "narHash": "sha256-wkOR7DFQ3QpZ0cL+2qBkztZAGUgTE+ztwfokaF0cSNA=",
+        "owner": "bartoostveen",
+        "repo": "nixpkgs",
+        "rev": "d578214c2746c7830918777a16d45074795ac37a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bartoostveen",
+        "ref": "matrix-continuwuity-26.7.3",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1786237858,
@@ -942,9 +958,7 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": [
-          "nixos-small"
-        ],
+        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
         "nixpkgs-lib": "nixpkgs-lib",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
