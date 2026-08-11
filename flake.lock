@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786256839,
-        "narHash": "sha256-0Mwdfz0J67xz2mwkKkVwdTofLYgpwqQ6c0FyxH/PCsI=",
+        "lastModified": 1786393088,
+        "narHash": "sha256-TN5QZI2zTCkf5zgezHtHbrpRTbcsoLQBWbxxQFXWTvg=",
         "ref": "refs/heads/master",
-        "rev": "4ac1aa777d3ae8a62cf79c52c4c4683686774c0e",
-        "revCount": 112,
+        "rev": "6b4901727850a93c5f84cf4766b2d6d2bf0a9e55",
+        "revCount": 114,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -973,11 +973,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786256633,
-        "narHash": "sha256-KNoTPXT/R+JDblV7w5ZO+WmyiwqnfUneVw3wudVypZI=",
+        "lastModified": 1786393571,
+        "narHash": "sha256-lk4JqbsLvwnTcGydXjLaiknoYw97bQlUZExHLlGyTjM=",
         "ref": "refs/heads/master",
-        "rev": "30c2f0d5125552015bdad11ee05c0e97ef386792",
-        "revCount": 110,
+        "rev": "c9bc261a68e72a6b81d1b462c2a1e3459fbb675d",
+        "revCount": 115,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/roundcube-oidc.git"
       },
