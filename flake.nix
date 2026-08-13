@@ -93,7 +93,9 @@
     };
 
     hydra = {
-      url = "github:NixOS/hydra";
+      # url = "github:NixOS/hydra";
+      # TODO: remove
+      url = "github:bartoostveen/hydra/fix/eval-warnings";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
