@@ -206,7 +206,9 @@
     systems.url = "github:nix-systems/default";
 
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      # url = "github:numtide/treefmt-nix";
+      # TODO: remove
+      url = "github:qowoz/treefmt-nix/eval-warning";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
