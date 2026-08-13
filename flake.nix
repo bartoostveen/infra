@@ -4,12 +4,10 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
-      "https://attic.bartoostveen.nl/tcs-bot"
       "https://winapps.cachix.org/"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "tcs-bot:cUYt7f0r3vvOriZybjYHTKK+jFuJPdOrPII4aXBi+1Q="
       "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g="
     ];
   };
@@ -207,15 +205,6 @@
     };
 
     systems.url = "github:nix-systems/default";
-
-    tcs-bot = {
-      url = "git+https://git.bartoostveen.nl/bart/tcs-bot";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
