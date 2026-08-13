@@ -362,11 +362,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786356609,
-        "narHash": "sha256-ou8fYz5w9yhXC8YbvvExybFIa19MyW5G/8dEPqa90hM=",
+        "lastModified": 1786630952,
+        "narHash": "sha256-a952+jEQ1I6sMd6yzi2GIsO/EFNtEFvzwbJ+oOG9Cg0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c30c7955cec30d664a9baced6bc0112e263d4647",
+        "rev": "2d1bac51b2513914ace47797765c3265164de78e",
         "type": "github"
       },
       "original": {
@@ -415,11 +415,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786256923,
-        "narHash": "sha256-7IdrqNx3iez35tw1Xzp7H7GwAHcOdgJuHtVW1zTyjPY=",
+        "lastModified": 1786630606,
+        "narHash": "sha256-RMM0wZERZX5RTx29xHu29BTTvjLxZUgKf5jc8O6tliQ=",
         "ref": "refs/heads/master",
-        "rev": "81b34745c05bb52d82781b9acc9c164c5aa4f2bb",
-        "revCount": 82,
+        "rev": "fe29e02fd13ef5b9bfcbfe8ee80c8d47d54450b2",
+        "revCount": 84,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -703,11 +703,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1786463514,
-        "narHash": "sha256-lDVA1kYvHuXlcwnBss5Ws70qskNSIwaDLhI9+MIEyiM=",
+        "lastModified": 1786614121,
+        "narHash": "sha256-qF9a4PzIXQn/XrvtpJkIdXlsKK6sYTH9yFAejxXvkBQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5c406c24ab27a146b8321f419a5536e3cf6842a0",
+        "rev": "592c38b175d0c7bb9ccf1eb3b80872a7bba5f125",
         "type": "github"
       },
       "original": {
@@ -719,32 +719,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1786384358,
-        "narHash": "sha256-RzPPiWeUtuvymnpuEWsdtzli5w4kjZs49FqEs3/1u+I=",
+        "lastModified": 1786599213,
+        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2fcb964de67fcf60b43471c55d5d99e61a9ccb5a",
+        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1786485386,
-        "narHash": "sha256-wkOR7DFQ3QpZ0cL+2qBkztZAGUgTE+ztwfokaF0cSNA=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "d578214c2746c7830918777a16d45074795ac37a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "matrix-continuwuity-26.7.3",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -777,11 +761,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786256610,
-        "narHash": "sha256-WmP7HROEUZf7RN2V5t4lWIYFAN/n3v1VPraQxoJhR6A=",
+        "lastModified": 1786583421,
+        "narHash": "sha256-cVjMlNb91P8z3GigKK+L+xRMtmLYHUmuzfkDd3BBH6w=",
         "ref": "refs/heads/master",
-        "rev": "bf14a25104667152540441a99e0c72a8a8dad1fd",
-        "revCount": 159,
+        "rev": "92323bd6608ac719f4830318ae56d57849ba7863",
+        "revCount": 162,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -913,7 +897,9 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixos-small"
+        ],
         "nixpkgs-lib": "nixpkgs-lib",
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
@@ -934,11 +920,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786375908,
-        "narHash": "sha256-G7qDAT98nywA4EFmJCwIRO5wKvDlBBN3BWpsOnjAto8=",
+        "lastModified": 1786629091,
+        "narHash": "sha256-gkig4nPi1CWc4Z50GBsjE4ygSE7hMpl/TwID2an2Cck=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "d1337e05ba0a8e88a75d2c0e1595d82f3b3e2ac4",
+        "rev": "a8627b21b9107c5711c96b84f32a9a4b3d45295f",
         "type": "github"
       },
       "original": {
@@ -954,11 +940,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786456754,
-        "narHash": "sha256-vQQfW97UW5EnvsAGd4x/pMa7NPE5mX7Z0kyK5uSsevk=",
+        "lastModified": 1786588414,
+        "narHash": "sha256-OVAaMIDfjEDamr1Xh4XZKqoX/Xzhg9ShO40julUxZrs=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "03b1bfd49ecb11bc720f9372dba3a4dcf574bb4a",
+        "rev": "fb298f6a85da3241b2d024e82b618ab3f5cc6de2",
         "type": "github"
       },
       "original": {
