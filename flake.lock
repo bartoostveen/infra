@@ -19,7 +19,9 @@
         "systems": [
           "systems"
         ],
-        "uv2nix": "uv2nix"
+        "uv2nix": [
+          "uv2nix"
+        ]
       },
       "locked": {
         "lastModified": 1786375669,
@@ -908,6 +910,7 @@
         "srvos": "srvos",
         "systems": "systems_3",
         "treefmt-nix": "treefmt-nix",
+        "uv2nix": "uv2nix",
         "vert-nix": "vert-nix",
         "winapps": "winapps",
         "wireless-profiles": "wireless-profiles"
@@ -1092,7 +1095,6 @@
     "uv2nix": {
       "inputs": {
         "nixpkgs": [
-          "authentik",
           "nixpkgs"
         ],
         "pyproject-nix": [
@@ -1101,11 +1103,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786026603,
-        "narHash": "sha256-payw8w/aqR/Vr7LvDp14jxa5egFrZN7g8INsPzn7rN0=",
+        "lastModified": 1786615403,
+        "narHash": "sha256-U++y7nM/6xiEcWI7q4fQoPZjPvRaTwkSqzBOVoEBjUE=",
         "owner": "pyproject-nix",
         "repo": "uv2nix",
-        "rev": "0dfa8388dc855b1774f509725d8ea6806291571d",
+        "rev": "4b59abb2ae1896d2a0e1abfc47fbc9bf985ea730",
         "type": "github"
       },
       "original": {
