@@ -19,14 +19,6 @@
                 "tascheduling-db": {
                     "original": "postgres:18",
                     "locked": "docker.io/library/postgres:18@sha256:a02db8cac496f15b094798a38254f14d6e00741f709360e5e00bb6668ea31636"
-                },
-                "tcs-bot-db": {
-                    "original": "postgres:18",
-                    "locked": "docker.io/library/postgres:18@sha256:a02db8cac496f15b094798a38254f14d6e00741f709360e5e00bb6668ea31636"
-                },
-                "tcs-bot-redis": {
-                    "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:3acc0687f2a2e1091fae6450d7842dd658c941338cf0a873ddd9e14b9e4ea4dd"
                 }
             }
         },
