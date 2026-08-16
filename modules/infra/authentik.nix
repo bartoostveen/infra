@@ -13,6 +13,7 @@ let
     mkIf
     types
     mkDefault
+    recursiveUpdate
     ;
   inherit (types) int str path;
 
@@ -89,7 +90,14 @@ in
       };
     };
 
-    services.nginx.virtualHosts.${cfg.domain} = cfg.nginx;
+    services.nginx.virtualHosts.${cfg.domain} = recursiveUpdate {
+      enableHSTS = mkDefault true;
+      locations."/".extraConfig = ''
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Pragma "no-cache";
+        add_header Expires "0";
+      '';
+    } cfg.nginx;
 
     services.authentik-ldap = {
       enable = true;
