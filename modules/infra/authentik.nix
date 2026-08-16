@@ -113,8 +113,9 @@ in
           add_header Pragma "no-cache";
           add_header Expires "0";
           ${subFilter}
+          proxy_set_header Accept-Encoding "";
         '';
-        locations."/static".extraConfig = ''
+        locations."/static/".extraConfig = ''
           ${subFilter}
         '';
       } cfg.nginx;
