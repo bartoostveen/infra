@@ -40,8 +40,6 @@
 
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 547959 "sha256-JciEDG7NjqZoVQAv2QlsWZd+cbjMI1Afz2RCHWWPtC4=")
-        (nixpkgsPr 551494 "sha256-/8O/4duUQI+2QWav6+TaAyqC5ysk+AedkgqmHJcVX0A=")
-        (nixpkgsPr 551923 "sha256-a3sAAiJ+wZTNeIHBhphmT1JOSobjh1jy3JyKYXd1Sak=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
