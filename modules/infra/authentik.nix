@@ -7,6 +7,7 @@
 }:
 
 let
+  inherit (builtins) elemAt;
   inherit (lib)
     mkEnableOption
     mkOption
@@ -14,6 +15,8 @@ let
     types
     mkDefault
     recursiveUpdate
+    split
+    flip
     ;
   inherit (types) int str path;
 
@@ -92,15 +95,29 @@ in
       };
     };
 
-    services.nginx.virtualHosts.${cfg.domain} = recursiveUpdate {
-      enableHSTS = mkDefault true;
-      locations."/".extraConfig = ''
-        add_header Cache-Control "no-cache, no-store, must-revalidate";
-        add_header Pragma "no-cache";
-        add_header Expires "0";
-      '';
-      locations."/static/dist/user/".alias = "${authentikComponents.frontend}/static/dist/user/";
-    } cfg.nginx;
+    services.nginx.virtualHosts.${cfg.domain} =
+      let
+        cacheBustParam = baseNameOf authentikComponents.frontend |> split "-" |> flip elemAt 0;
+        cacheBustFilter = fileType: "sub_filter '.${fileType}' '.${fileType}?revision=${cacheBustParam}';";
+        subFilter = ''
+          sub_filter_types text/html;
+          ${cacheBustFilter "js"}
+          ${cacheBustFilter "css"}
+          sub_filter_once off;
+        '';
+      in
+      recursiveUpdate {
+        enableHSTS = mkDefault true;
+        locations."/".extraConfig = ''
+          add_header Cache-Control "no-cache, no-store, must-revalidate";
+          add_header Pragma "no-cache";
+          add_header Expires "0";
+          ${subFilter}
+        '';
+        locations."/static".extraConfig = ''
+          ${subFilter}
+        '';
+      } cfg.nginx;
 
     services.authentik-ldap = {
       enable = true;
