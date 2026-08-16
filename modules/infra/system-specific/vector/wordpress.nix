@@ -56,18 +56,7 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          (
-            (nl.override {
-              wordpress = config.services.wordpress.sites.${domain}.package;
-              hash = "sha256-rJusvePa19yMuBVn0sCX7sZGNnJ+srPS55lN3aOreak=";
-            }).overrideAttrs
-            {
-              # TODO: remove
-              # They haven't published any language files for the backported fix
-              version = "7.0.3";
-              __intentionallyOverridingVersion = true;
-            }
-          )
+          nl
         ];
     });
   };
