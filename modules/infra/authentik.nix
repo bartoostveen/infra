@@ -18,6 +18,8 @@ let
   inherit (types) int str path;
 
   cfg = config.infra.authentik;
+
+  inherit (config.services.authentik) authentikComponents;
 in
 {
   imports = [
@@ -97,6 +99,8 @@ in
         add_header Pragma "no-cache";
         add_header Expires "0";
       '';
+      locations."/static/dist/user/UserInterface-${authentikComponents.frontend.version}.js".alias =
+        "${authentikComponents.frontend}/static/dist/user/UserInterface-${authentikComponents.frontend.version}.js";
     } cfg.nginx;
 
     services.authentik-ldap = {
