@@ -99,8 +99,7 @@ in
         add_header Pragma "no-cache";
         add_header Expires "0";
       '';
-      locations."/static/dist/user/UserInterface-${authentikComponents.frontend.version}.js".alias =
-        "${authentikComponents.frontend}/static/dist/user/UserInterface-${authentikComponents.frontend.version}.js";
+      locations."/static/dist/user/".alias = "${authentikComponents.frontend}/static/dist/user/";
     } cfg.nginx;
 
     services.authentik-ldap = {
