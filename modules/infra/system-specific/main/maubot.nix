@@ -31,7 +31,10 @@ in
   services.maubot = {
     enable = true;
     configMutable = false;
-    pythonPackages = with pkgs.python3Packages; [ semver ];
+    pythonPackages = with pkgs.python3Packages; [
+      semver
+      sqlalchemy_1_4
+    ];
     plugins = with plugins; [
       # keep-sorted start
       alertbot
