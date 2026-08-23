@@ -780,11 +780,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787523444,
-        "narHash": "sha256-Gj24R7cwqoyhu7S2IEXSVFHryFssrrHqMfy0SDEO0VE=",
+        "lastModified": 1787523483,
+        "narHash": "sha256-fK+ZRf2t7No+CzBZrATqr6vFb5imuS0VN18kziRIEgk=",
         "ref": "refs/heads/master",
-        "rev": "42e6b8ffcdaa0b16bb54264e7625a4ea43f35c26",
-        "revCount": 172,
+        "rev": "8e21f606979d34bd0e18f8c6e66e9d94d64a1355",
+        "revCount": 173,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
