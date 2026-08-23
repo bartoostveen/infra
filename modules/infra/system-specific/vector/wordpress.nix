@@ -61,7 +61,8 @@ in
               __intentionallyOverridingVersion = true;
             }).override
             {
-              hash = "sha256-vt8ybK01BBl04IMZerWwkllI1y/Ka9pxBNsbDU8m9yU=";
+              # TODO: remove
+              hash = "sha256-iVqEkf2y1MxCALCfMfu9E8wpG4aij6s4Xg92HD9D1TA=";
             }
           )
         ];
