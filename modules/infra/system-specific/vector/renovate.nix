@@ -9,8 +9,7 @@
 let
   inherit (lib) mkForce getExe';
 
-  forgeUrl =
-    inputs.self.nixosConfigurations.sentinel.config.services.forgejo.settings.server.DOMAIN;
+  forgeUrl = inputs.self.nixosConfigurations.sentinel.config.services.forgejo.settings.server.DOMAIN;
 in
 {
   services.renovate = {
