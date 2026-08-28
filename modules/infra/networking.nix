@@ -6,7 +6,7 @@ let
 in
 {
   networking.nat.enable = true;
-  networking.domain = "bartoostveen.nl";
+  networking.domain = "node.boostveen.nl";
 
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = lib.mkForce 1;
