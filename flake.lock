@@ -738,16 +738,16 @@
     },
     "nixpkgs-continuwuity": {
       "locked": {
-        "lastModified": 1787445579,
-        "narHash": "sha256-2caE3JLThnV6EaXCtKSija9qN/Pqj5Waaxw/qaPQrrI=",
-        "owner": "Henry-Hiles",
+        "lastModified": 1787930499,
+        "narHash": "sha256-OKmZ6G691BwiBBnUaM7RtRUX1qAoPspprVC8m9xiZWc=",
+        "owner": "bartoostveen",
         "repo": "nixpkgs",
-        "rev": "eef928cd8012922a92234729882466fce5b0ca7c",
+        "rev": "a9e0061ca90504766ddd2a419d4f02f411e25725",
         "type": "github"
       },
       "original": {
-        "owner": "Henry-Hiles",
-        "ref": "bump-c10y",
+        "owner": "bartoostveen",
+        "ref": "matrix-continuwuity-26.8.1-unstable-2026-08-28",
         "repo": "nixpkgs",
         "type": "github"
       }
