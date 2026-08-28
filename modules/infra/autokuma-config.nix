@@ -21,7 +21,7 @@ in
     defaultEnvFile = config.sops.secrets.autokuma-env.path;
     defaultSettings = {
       kuma = {
-        url = "http://${wireguard.primaryIpOf "bart-server"}:${toString inputs.self.nixosConfigurations.bart-server.config.services.uptime-kuma.settings.PORT}";
+        url = "http://${wireguard.primaryIpOf "sentinel"}:${toString inputs.self.nixosConfigurations.sentinel.config.services.uptime-kuma.settings.PORT}";
         username = "adm";
       };
       tag_name = "Managed by AutoKuma @ ${config.networking.fqdn}";

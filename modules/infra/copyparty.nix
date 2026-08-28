@@ -199,7 +199,7 @@ in
 
     sops.secrets.copyparty-adm-password-enc = {
       format = "binary";
-      sopsFile = ../../secrets/copyparty/copyparty-password.enc.bart-server.secret;
+      sopsFile = ../../secrets/copyparty/copyparty-password.enc.sentinel.secret;
 
       owner = group;
       inherit group;

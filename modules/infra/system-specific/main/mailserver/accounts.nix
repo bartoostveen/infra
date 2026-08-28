@@ -49,7 +49,7 @@
 
   sops.secrets.alertmanager-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/alertmanager.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/alertmanager.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -59,7 +59,7 @@
 
   sops.secrets.authentik-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/auth.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/auth.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -69,7 +69,7 @@
 
   sops.secrets.bart-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/bart.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/bart.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -79,7 +79,7 @@
 
   sops.secrets.git-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/git.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/git.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -89,7 +89,7 @@
 
   sops.secrets.hydra-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/hydra.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/hydra.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -99,7 +99,7 @@
 
   sops.secrets.vaultwarden-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/vaultwarden.enc.bart-server.secret;
+    sopsFile = ../../../../../secrets/mail/passwords/vaultwarden.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"

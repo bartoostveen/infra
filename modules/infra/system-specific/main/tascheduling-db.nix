@@ -13,7 +13,7 @@
   };
 
   sops.secrets.tascheduling-db-env = {
-    sopsFile = ../../../../secrets/tascheduling-db.env.bart-server.secret;
+    sopsFile = ../../../../secrets/tascheduling-db.env.sentinel.secret;
     format = "binary";
     restartUnits = [ "podman-tascheduling-db.service" ];
   };

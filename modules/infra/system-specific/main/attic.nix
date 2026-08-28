@@ -86,7 +86,7 @@ in
     owner = user;
     mode = "0600";
 
-    sopsFile = ../../../../secrets/attic.env.bart-server.secret;
+    sopsFile = ../../../../secrets/attic.env.sentinel.secret;
     restartUnits = [ "atticd.service" ];
     format = "binary";
   };

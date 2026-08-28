@@ -8,7 +8,7 @@ let
 in
 rec {
   _hosts = {
-    bart-server = [
+    sentinel = [
       "78.46.150.107/32"
       "2a01:4f8:c2c:2f66::1/128"
     ];

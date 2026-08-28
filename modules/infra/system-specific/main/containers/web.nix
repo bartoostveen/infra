@@ -71,13 +71,13 @@ in
 
   sops.secrets.web-env = {
     format = "binary";
-    sopsFile = ../../../../../secrets/web.env.bart-server.secret;
+    sopsFile = ../../../../../secrets/web.env.sentinel.secret;
     restartUnits = [ "podman-${name}.service" ];
   };
 
   sops.secrets.readme-stats-env = {
     format = "binary";
-    sopsFile = ../../../../../secrets/readme-stats.env.bart-server.secret;
+    sopsFile = ../../../../../secrets/readme-stats.env.sentinel.secret;
     restartUnits = [ "podman-${readmeStatsName}.service" ];
   };
 }

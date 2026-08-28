@@ -10,7 +10,16 @@
         "bart-pc": {
             "containers": {}
         },
-        "bart-server": {
+        "installer": {
+            "containers": {}
+        },
+        "minimal-sd": {
+            "containers": {}
+        },
+        "prism": {
+            "containers": {}
+        },
+        "sentinel": {
             "containers": {
                 "ical-proxy-redis": {
                     "original": "valkey/valkey:latest",
@@ -21,15 +30,6 @@
                     "locked": "docker.io/library/postgres:18@sha256:4ef4dbc939d61acea57712655ddb4b4ab27419c913f94cca0cd57cb3ea3c2280"
                 }
             }
-        },
-        "installer": {
-            "containers": {}
-        },
-        "minimal-sd": {
-            "containers": {}
-        },
-        "prism": {
-            "containers": {}
         },
         "vector": {
             "containers": {}

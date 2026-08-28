@@ -60,7 +60,7 @@ in
 
   sops.secrets.meowbot-env = {
     format = "binary";
-    sopsFile = ../../../../secrets/meowbot.env.bart-server.secret;
+    sopsFile = ../../../../secrets/meowbot.env.sentinel.secret;
     restartUnits = [ "meowbot.service" ];
   };
 }

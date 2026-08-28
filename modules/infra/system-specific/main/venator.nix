@@ -48,7 +48,7 @@ in
   };
 
   sops.secrets.venator-admin-psk = {
-    sopsFile = ../../../../secrets/venator-admin-psk.bart-server.secret;
+    sopsFile = ../../../../secrets/venator-admin-psk.sentinel.secret;
     format = "binary";
     owner = "venator";
     group = "venator";
@@ -57,7 +57,7 @@ in
   };
 
   sops.secrets.venator-pepper = {
-    sopsFile = ../../../../secrets/venator-pepper.bart-server.secret;
+    sopsFile = ../../../../secrets/venator-pepper.sentinel.secret;
     format = "binary";
     owner = "venator";
     group = "venator";

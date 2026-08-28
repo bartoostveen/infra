@@ -101,7 +101,7 @@ in
   };
 
   sops.secrets.maubot-exporter-env = {
-    sopsFile = ../../../../secrets/maubot-exporter.env.bart-server.secret;
+    sopsFile = ../../../../secrets/maubot-exporter.env.sentinel.secret;
     owner = "maubot-exporter";
     group = "maubot-exporter";
     format = "binary";

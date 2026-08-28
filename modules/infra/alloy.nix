@@ -6,7 +6,7 @@
 }:
 
 let
-  endpoint = "http://${wireguard.primaryIpOf "bart-server"}:${toString inputs.self.nixosConfigurations.bart-server.config.services.loki.configuration.server.http_listen_port}/loki/api/v1/push";
+  endpoint = "http://${wireguard.primaryIpOf "sentinel"}:${toString inputs.self.nixosConfigurations.sentinel.config.services.loki.configuration.server.http_listen_port}/loki/api/v1/push";
 in
 {
   services.alloy = {

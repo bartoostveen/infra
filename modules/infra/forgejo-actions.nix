@@ -45,7 +45,7 @@ in
       description = "The URL of the Forgejo host";
       type = str;
       default =
-        inputs.self.nixosConfigurations.bart-server.config.services.forgejo.settings.server.ROOT_URL;
+        inputs.self.nixosConfigurations.sentinel.config.services.forgejo.settings.server.ROOT_URL;
       example = "https://git.bartoostveen.nl";
     };
     labels = mkOption {

@@ -97,7 +97,7 @@ in
     users.groups.matrix-livekit = { };
 
     sops.secrets.livekit-keys = {
-      sopsFile = ../../../secrets/matrix/livekit-keys.bart-server.secret;
+      sopsFile = ../../../secrets/matrix/livekit-keys.sentinel.secret;
       owner = "livekit";
       group = "matrix-livekit";
       format = "binary";
@@ -109,7 +109,7 @@ in
     };
 
     sops.secrets.turn = {
-      sopsFile = ../../../secrets/matrix/turn.bart-server.secret;
+      sopsFile = ../../../secrets/matrix/turn.sentinel.secret;
       owner = "livekit";
       group = "matrix-livekit";
       format = "binary";

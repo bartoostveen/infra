@@ -12,7 +12,7 @@ rec {
   connectivity = import ./connectivity.meta.nix { inherit lib; };
 
   nodes = {
-    bart-server = {
+    sentinel = {
       ips = [
         "10.0.0.1/32"
         "fd42:42:42::1/128"
@@ -21,7 +21,7 @@ rec {
         "10.0.0.0/24"
         "fd42:42:42::/64"
       ];
-      endpoint = "${connectivity.ipsFor "bart-server" |> first}:${toString listenPort}";
+      endpoint = "${connectivity.ipsFor "sentinel" |> first}:${toString listenPort}";
     };
 
     bart-laptop-new = {

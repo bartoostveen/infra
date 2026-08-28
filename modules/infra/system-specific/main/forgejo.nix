@@ -48,7 +48,7 @@ in
       mailer = rec {
         ENABLED = true;
         PROTOCOL = "smtps";
-        SMTP_ADDR = inputs.self.nixosConfigurations.bart-server.config.mailserver.systemDomain;
+        SMTP_ADDR = inputs.self.nixosConfigurations.sentinel.config.mailserver.systemDomain;
         SMTP_PORT = 465;
         USER = "git@${SMTP_ADDR}";
         PASSWD_URI = "file:${config.sops.secrets.git-email-password.path}";
@@ -56,7 +56,7 @@ in
       };
       "email.incoming" = rec {
         ENABLED = true;
-        HOST = inputs.self.nixosConfigurations.bart-server.config.mailserver.systemDomain;
+        HOST = inputs.self.nixosConfigurations.sentinel.config.mailserver.systemDomain;
         PORT = 993;
         USERNAME = "git@${HOST}";
         PASSWORD_URI = "file:${config.sops.secrets.git-email-password.path}";
@@ -166,7 +166,7 @@ in
   };
 
   sops.secrets.forgejo-admin-password = {
-    sopsFile = ../../../../secrets/forgejo/forgejo-admin-password.bart-server.secret;
+    sopsFile = ../../../../secrets/forgejo/forgejo-admin-password.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -175,7 +175,7 @@ in
   };
 
   sops.secrets.forgejo-signing-key = {
-    sopsFile = ../../../../secrets/forgejo/forgejo-signing-key.bart-server.secret;
+    sopsFile = ../../../../secrets/forgejo/forgejo-signing-key.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -184,7 +184,7 @@ in
   };
 
   sops.secrets.git-email-password = {
-    sopsFile = ../../../../secrets/mail/passwords/git.bart-server.secret;
+    sopsFile = ../../../../secrets/mail/passwords/git.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0600";

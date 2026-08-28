@@ -11,19 +11,15 @@
         "atlas"
         "vector"
         "prism"
-        "bart-server"
+        "sentinel"
       ];
       x86_64-linux = desktop ++ [
         "vector"
-        "bart-server"
+        "sentinel"
       ];
     };
 
     nixos = {
-      bart-server = {
-        sshUser = "root";
-        ip = "bart-server.bartoostveen.nl";
-      };
       bart-laptop-new = {
         sshUser = "bart";
         ip = wireguard.primaryIpOf "bart-laptop-new";
@@ -37,13 +33,17 @@
         system = "aarch64-linux";
         ip = wireguard.primaryIpOf "atlas";
       };
+      sentinel = {
+        sshUser = "root";
+        ip = "sentinel.bartoostveen.nl";
+      };
       vector = {
         sshUser = "root";
         ip = "vector.bartoostveen.nl";
       };
       prism = {
         sshUser = "root";
-        ip = "delta.bartoostveen.nl";
+        ip = "prism.bartoostveen.nl";
         system = "aarch64-linux";
       };
     };

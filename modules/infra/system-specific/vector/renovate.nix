@@ -10,7 +10,7 @@ let
   inherit (lib) mkForce getExe';
 
   forgeUrl =
-    inputs.self.nixosConfigurations.bart-server.config.services.forgejo.settings.server.DOMAIN;
+    inputs.self.nixosConfigurations.sentinel.config.services.forgejo.settings.server.DOMAIN;
 in
 {
   services.renovate = {

@@ -91,7 +91,7 @@ in
   infra.backup.jobs.state.paths = [ config.services.git-pages.settings.storage.fs.root ];
 
   sops.secrets.acme-env = {
-    sopsFile = ../../../../secrets/lego.env.bart-server.secret;
+    sopsFile = ../../../../secrets/lego.env.sentinel.secret;
     format = "binary";
     owner = "acme";
     group = "acme";
