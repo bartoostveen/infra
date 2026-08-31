@@ -67,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788124930,
-        "narHash": "sha256-K4GjSQc2KYAx2JVKctRw2aV/FV76qYH0rIIrQEvOXZ4=",
+        "lastModified": 1788125102,
+        "narHash": "sha256-j5JJjV4jr0gl7Sf4Dxc46aVCjr6jRTxLmdJd9BFNUVk=",
         "ref": "refs/heads/master",
-        "rev": "59d330745b1052a84e98b568b98722d374a6bb1c",
-        "revCount": 157,
+        "rev": "b6e51308ae1cd26d7d544532d73f94034187a671",
+        "revCount": 158,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -364,11 +364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787797243,
-        "narHash": "sha256-8+Q7NOB7RPajRjA4pbCDLzqH+MTjnG9x6LUPLfL2joA=",
+        "lastModified": 1788146656,
+        "narHash": "sha256-XmJmvk9rytTb7dCotO/aqR+YysB8HOqnprlOdv+LAF4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "99c9ec63390f1d8c14d95d9e8b17cc29cfbd4e11",
+        "rev": "82c265faf4e3161d6015db07c9b0f1ee36a9029b",
         "type": "github"
       },
       "original": {
@@ -706,11 +706,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1788094277,
-        "narHash": "sha256-tr+gEhs714WOTCGNJNMMPp20ssxxqnFczPY8SzZlhxE=",
+        "lastModified": 1788160686,
+        "narHash": "sha256-KtMzegh9qItdefS12YbDRCizLjYSkCPXIDZMail05as=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6298c3605a195a51da72c27e7bd186dadd3b2572",
+        "rev": "597647d3b728353852b73cd8d75bbd8a7cb4ff67",
         "type": "github"
       },
       "original": {
@@ -780,11 +780,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787909390,
-        "narHash": "sha256-5U0O98rLKtYrD8e5z9PiLyvAxTL8z9fv7LJiEPG3IDY=",
+        "lastModified": 1788134560,
+        "narHash": "sha256-DQRN5i4Il4dqiPm/r6eri2PKpIcq84MCMWtAIZKsbYE=",
         "ref": "refs/heads/master",
-        "rev": "ef5c7ebc2646b0d82f84b9b880fa306632e3cc51",
-        "revCount": 177,
+        "rev": "2886e3de90b1de7ad90fbab714b5957f4acccbbc",
+        "revCount": 179,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -958,11 +958,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787798056,
-        "narHash": "sha256-xxXzusyYPwoWDY8yC7a3FrLaqWahS1bOhrC/p5Yq2X0=",
+        "lastModified": 1788143273,
+        "narHash": "sha256-YXleehtVHiLcH2+V0lSrl5Nmo2c+J11tI3+l4l9q3AQ=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "a00436b148ec1c2f54f60e3973af197d7c7d8009",
+        "rev": "e4d3f8fe5f1d4246d32177315edf8d9104f1c32b",
         "type": "github"
       },
       "original": {
