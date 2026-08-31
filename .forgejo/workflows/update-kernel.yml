@@ -27,7 +27,7 @@ jobs:
           nix flake update --commit-lock-file nixos-small --accept-flake-config
           new="$(kver)"
           if [ "$old" != "$new" ]; then
-            git commit --amend -m "chore: linux $old -> $new"
+            git commit --amend -m "linux: $old -> $new"
             echo continue=1 >> "$FORGEJO_OUTPUT"
           else
             echo continue=0 >> "$FORGEJO_OUTPUT"
