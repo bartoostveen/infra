@@ -35,7 +35,9 @@
     };
 
     authentik = {
-      url = "github:nix-community/authentik-nix";
+      # TODO: remove
+      # url = "github:nix-community/authentik-nix";
+      url = "github:xanderio/authentik-nix/push-yymkqorxrxww";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
