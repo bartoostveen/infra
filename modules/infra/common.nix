@@ -55,7 +55,7 @@ in
       efiInstallAsRemovable = true;
     };
 
-    boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_1;
+    boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_2;
 
     networking.useNetworkd = lib.mkForce true;
     networking.firewall.enable = lib.mkForce true;
