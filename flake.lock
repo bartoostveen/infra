@@ -170,11 +170,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788187015,
-        "narHash": "sha256-hzDa09x911RIYPj0e3kBvFzxN4u4yTGZL785kxVczr4=",
+        "lastModified": 1788281219,
+        "narHash": "sha256-UpYGQw2PZhZPCDKeFGKYA9vbBbwdXwhfyifUqwRw4lM=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "936e8a3bf374503adf6c018840ffd2db9878aaf3",
+        "rev": "704af697c78efd189cc56359f5a9aa17d2d74944",
         "type": "github"
       },
       "original": {
@@ -192,11 +192,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1786361680,
-        "narHash": "sha256-IxaZkb9rCGEZ+yGndxKXONeIEcKMzoFUsvLTB5G/caw=",
+        "lastModified": 1788271056,
+        "narHash": "sha256-LISF6pdADVdxdBOQU459xkzKIHdeDzLR27b7zLYGxYw=",
         "owner": "serokell",
         "repo": "deploy-rs",
-        "rev": "16901271e5b30b591e56f7a84f25f186fb20f3e1",
+        "rev": "c7890645c660f3789cc8f616c5db407766f91507",
         "type": "github"
       },
       "original": {
@@ -365,11 +365,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788199093,
-        "narHash": "sha256-gh09zTgEsbnoWwrNPzIDajc/HoE446Sc3yKDCPFa7Xs=",
+        "lastModified": 1788229478,
+        "narHash": "sha256-G0F2rFORVcFkEvVdE/qWQTnYekIc77YP5/vRF9nZlxU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f772b7f968365e7b2b70a860c509d214639556fe",
+        "rev": "1dc2d1f720ab17fc7981e087346bf54b26d284b1",
         "type": "github"
       },
       "original": {
@@ -434,11 +434,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1788210572,
-        "narHash": "sha256-iDArQutSbrjtMQLUIc32iSb6tFqjl6IJU3cA8p8isuM=",
+        "lastModified": 1788275959,
+        "narHash": "sha256-doeyg/EY8joBaZhELfVrSGjAm6pFtp2p0UgQv/Wwgh0=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "8961e2418a12a71e08943c9f3d8cf6dbbc3cd172",
+        "rev": "e9177dd0d600162a6410ea6019c796cff7a636c3",
         "type": "github"
       },
       "original": {
@@ -707,11 +707,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1788194298,
-        "narHash": "sha256-Zt7o5H5OUfdXS2wcGlzeoPPQmX7OmbGJ83jZX/9BCfc=",
+        "lastModified": 1788227581,
+        "narHash": "sha256-/ijjX74ZCe+RPnaFwCCc50B/oqLhY8JLzQ8DnbZ/8m8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c5688f72f465acd2dc53167e410f19fd599a9533",
+        "rev": "4951e020b824ae716cbb07d0a8f771d13a2e70e1",
         "type": "github"
       },
       "original": {
@@ -1145,11 +1145,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788089242,
-        "narHash": "sha256-weyqE6HKiVouRMqVwMFI3ZgegDU+4R0eBD60ZGHA4uM=",
+        "lastModified": 1788282000,
+        "narHash": "sha256-xXPTxK/T2RaEPZ0LCZg0dUHPVKqT/8ftlmdBKrOlOlg=",
         "ref": "release",
-        "rev": "46447e27331053d948d786486ffefbd09e681133",
-        "revCount": 59,
+        "rev": "9cfec8efc65846b33911ef41474c8e8312728dc8",
+        "revCount": 61,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/vert-nix.git"
       },
