@@ -170,11 +170,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788281219,
-        "narHash": "sha256-UpYGQw2PZhZPCDKeFGKYA9vbBbwdXwhfyifUqwRw4lM=",
+        "lastModified": 1788296568,
+        "narHash": "sha256-k0oAChIZU2ycgJQX6fup9ncSvvOU1K93ZcDZYGiBhuA=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "704af697c78efd189cc56359f5a9aa17d2d74944",
+        "rev": "4e318d516531e6a9c683b21e58b9cb48131eb175",
         "type": "github"
       },
       "original": {
@@ -1145,11 +1145,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788282000,
-        "narHash": "sha256-xXPTxK/T2RaEPZ0LCZg0dUHPVKqT/8ftlmdBKrOlOlg=",
+        "lastModified": 1788299336,
+        "narHash": "sha256-fKi1SGWdZHf51anD2iB+VLTV3WWaJVB5V35XFNcIk7A=",
         "ref": "release",
-        "rev": "9cfec8efc65846b33911ef41474c8e8312728dc8",
-        "revCount": 61,
+        "rev": "0f6ce9ca67665d0ec89128515f18ef1b730af47c",
+        "revCount": 63,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/vert-nix.git"
       },
