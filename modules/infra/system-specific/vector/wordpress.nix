@@ -62,7 +62,7 @@ in
             }).override
             {
               # TODO: remove
-              hash = "sha256-iVqEkf2y1MxCALCfMfu9E8wpG4aij6s4Xg92HD9D1TA=";
+              hash = "sha256-ZV1dbKwRp5KgaTN3lxlxnhUUf8iTwzwh27r8ef3PBKo=";
             }
           )
         ];
