@@ -37,7 +37,7 @@
     authentik = {
       # TODO: remove
       # url = "github:nix-community/authentik-nix";
-      url = "github:xanderio/authentik-nix/push-yymkqorxrxww";
+      url = "github:xanderio/authentik-nix/c140d75ae653eec3b3706f65c0aca297703b1870"; # push-yymkqorxrxww - 2026.8.0
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
