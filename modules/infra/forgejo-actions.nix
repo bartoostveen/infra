@@ -24,6 +24,7 @@ let
     nameValuePair
     optionals
     range
+    trim
     types
     # keep-sorted end
     ;
@@ -122,7 +123,8 @@ in
           settings = {
             server.connections.default = {
               inherit (cfg) url;
-              uuid = readFile ../../secrets/forgejo/forgejo-runner-uuid-runner${n}.${config.networking.hostName};
+              uuid =
+                readFile ../../secrets/forgejo/forgejo-runner-uuid-runner${n}.${config.networking.hostName} |> trim;
             };
             runner = {
               envs = cfg.environment;
