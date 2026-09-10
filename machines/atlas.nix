@@ -36,10 +36,11 @@
     "flakes"
   ];
 
-  infra.forgejo-actions = {
-    enable = true;
-    amount = 1;
-  };
+  # TODO: not used anymore
+  # infra.forgejo-actions = {
+  #   enable = true;
+  #   amount = 1;
+  # };
 
   # normally we wouldn't do this on servers, but oh well
   networking.networkmanager.enable = true;

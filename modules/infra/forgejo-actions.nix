@@ -6,24 +6,35 @@
   ...
 }:
 
+# TODO: this module is not really neccesary anymore
 let
+  inherit (builtins)
+    readFile
+    ;
+
   inherit (lib)
-    mkEnableOption
-    mkPackageOption
-    mkOption
-    mkDefault
-    types
+    # keep-sorted start
     genAttrs
     genAttrs'
-    nameValuePair
+    mkDefault
+    mkEnableOption
     mkIf
+    mkOption
+    mkPackageOption
+    nameValuePair
+    optionals
     range
+    types
+    # keep-sorted end
     ;
+
   inherit (types)
-    listOf
-    ints
-    str
+    # keep-sorted start
     attrs
+    ints
+    listOf
+    str
+    # keep-sorted end
     ;
 
   cfg = config.infra.forgejo-actions;
@@ -33,7 +44,7 @@ let
 in
 {
   options.infra.forgejo-actions = {
-    enable = mkEnableOption "fj actions";
+    enable = mkEnableOption "Forgejo Actions runner";
     package = mkPackageOption pkgs "forgejo-runner" { };
     amount = mkOption {
       description = "The amount of forgejo actions workers";
@@ -66,28 +77,27 @@ in
       example = [ "forgejo.service" ];
     };
   };
-  # TODO: add prestart provision script?
+
   config = mkIf cfg.enable {
     infra.forgejo-actions.labels = [
+      "native-${system}:host"
+      "${config.networking.hostName}:host"
+    ]
+    ++ optionals config.virtualisation.podman.enable [
       "ubuntu-latest:docker://ghcr.io/catthehacker/ubuntu:act-24.04"
       "nix:docker://docker.io/nixos/nix:2.32.8"
       "lix:docker://git.toostveen.nl/tom/lix-with-node:latest"
-      "native-${system}:host"
-      "${config.networking.hostName}:host"
     ]
     ++ (map (feat: "${feat}:host") config.nix.settings.system-features)
     ++ (map (sys: "emulated-${sys}:host") config.boot.binfmt.emulatedSystems);
 
-    services.gitea-actions-runner = {
+    services.forgejo-runner = {
       inherit (cfg) package;
       instances = genAttrs' (map toString runners) (
         n:
+
         nameValuePair "runner${n}" {
           enable = true;
-          name = "${config.networking.fqdn}-runner${n}";
-          inherit (cfg) url labels;
-          tokenFile =
-            config.sops.secrets."forgejo-runner-token-${config.networking.hostName}-runner${n}".path;
           hostPackages = with pkgs; [
             # keep-sorted start
             bash
@@ -107,7 +117,18 @@ in
             zip
             # keep-sorted end
           ];
-          settings.runner.envs = cfg.environment;
+          secrets.server.connections.default.token_url =
+            config.sops.secrets."forgejo-runner-token-runner${n}.${config.networking.hostName}".path;
+          settings = {
+            server.connections.default = {
+              inherit (cfg) url;
+              uuid = readFile ../../secrets/forgejo/forgejo-runner-uuid-runner${n}.${config.networking.hostName};
+            };
+            runner = {
+              envs = cfg.environment;
+              inherit (cfg) labels;
+            };
+          };
         }
       );
     };
@@ -129,20 +150,19 @@ in
     };
     users.groups.gitea-runner = { };
 
-    # TODO: these secrets are currently identical, move to connections instead
     sops.secrets = genAttrs' (map toString runners) (
       n:
+
       let
-        name = "forgejo-runner-token-${config.networking.hostName}-runner${n}";
+        name = "forgejo-runner-token-runner${n}.${config.networking.hostName}";
       in
       nameValuePair name {
-        # sopsFile = ../../secrets/${name}.secret;
-        sopsFile = ../../secrets/forgejo/forgejo-runner-token.secret;
+        sopsFile = ../../secrets/forgejo/${name}.secret;
         owner = "gitea-runner";
         group = "gitea-runner";
         mode = "0400";
         format = "binary";
-        restartUnits = [ "gitea-runner-runner${n}.service" ];
+        restartUnits = [ "forgejo-runner-runner${n}.service" ];
       }
     );
   };
