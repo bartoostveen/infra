@@ -135,7 +135,7 @@ in
       );
     };
 
-    systemd.services = genAttrs (map (n: "forgejo-runner-runner${toString n}.service") runners) (_: {
+    systemd.services = genAttrs (map (n: "forgejo-runner-runner${toString n}") runners) (_: {
       inherit (cfg) environment;
       serviceConfig = {
         Requires = cfg.systemdDependencies;
