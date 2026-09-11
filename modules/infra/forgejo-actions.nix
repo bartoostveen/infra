@@ -141,18 +141,10 @@ in
         Requires = cfg.systemdDependencies;
         Wants = cfg.systemdDependencies;
         After = cfg.systemdDependencies;
-        User = "forgejo-runner";
-        Group = "forgejo-runner";
       };
     });
 
     virtualisation.podman.enable = mkDefault true;
-
-    users.users.forgejo-runner = {
-      isSystemUser = true;
-      group = "forgejo-runner";
-    };
-    users.groups.forgejo-runner = { };
 
     sops.secrets = genAttrs' (map toString runners) (
       n:
@@ -162,8 +154,6 @@ in
       in
       nameValuePair name {
         sopsFile = ../../secrets/forgejo/${name}.secret;
-        owner = "forgejo-runner";
-        group = "forgejo-runner";
         mode = "0400";
         format = "binary";
         restartUnits = [ "forgejo-runner-runner${n}.service" ];
