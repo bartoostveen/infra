@@ -135,22 +135,24 @@ in
       );
     };
 
-    systemd.services = genAttrs (map (n: "gitea-runner-runner${toString n}.service") runners) (_: {
+    systemd.services = genAttrs (map (n: "forgejo-runner-runner${toString n}.service") runners) (_: {
       inherit (cfg) environment;
       serviceConfig = {
-        requires = cfg.systemdDependencies;
-        wants = cfg.systemdDependencies;
-        after = cfg.systemdDependencies;
+        Requires = cfg.systemdDependencies;
+        Wants = cfg.systemdDependencies;
+        After = cfg.systemdDependencies;
+        User = "forgejo-runner";
+        Group = "forgejo-runner";
       };
     });
 
     virtualisation.podman.enable = mkDefault true;
 
-    users.users.gitea-runner = {
+    users.users.forgejo-runner = {
       isSystemUser = true;
-      group = "gitea-runner";
+      group = "forgejo-runner";
     };
-    users.groups.gitea-runner = { };
+    users.groups.forgejo-runner = { };
 
     sops.secrets = genAttrs' (map toString runners) (
       n:
@@ -160,8 +162,8 @@ in
       in
       nameValuePair name {
         sopsFile = ../../secrets/forgejo/${name}.secret;
-        owner = "gitea-runner";
-        group = "gitea-runner";
+        owner = "forgejo-runner";
+        group = "forgejo-runner";
         mode = "0400";
         format = "binary";
         restartUnits = [ "forgejo-runner-runner${n}.service" ];
