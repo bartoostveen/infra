@@ -60,10 +60,10 @@ in
               version = "7.1";
               __intentionallyOverridingVersion = true;
             }).override
-            {
-              # TODO: remove
-              hash = "sha256-ZV1dbKwRp5KgaTN3lxlxnhUUf8iTwzwh27r8ef3PBKo=";
-            }
+              {
+                # TODO: remove
+                hash = "sha256-ZV1dbKwRp5KgaTN3lxlxnhUUf8iTwzwh27r8ef3PBKo=";
+              }
           )
         ];
     });
