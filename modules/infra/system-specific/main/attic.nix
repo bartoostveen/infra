@@ -32,7 +32,7 @@ in
         level = 8;
         type = "zstd";
       };
-      database.url = "postgresql:///${user}?host=/run/postgresql";
+      database.url = "postgresql:///${user}?host=/run/postgresql&user=atticd";
       garbage-collection = {
         default-retention-period = "2 months";
         interval = "1 day";
