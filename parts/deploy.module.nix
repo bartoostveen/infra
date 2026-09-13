@@ -19,7 +19,7 @@ let
     attrNames
     ;
 
-  deployLibForSystem = system: withSystem system ({ deployLib, ... }: deployLib);
+  deployForSystem = system: withSystem system ({ deploy, ... }: deploy);
 
   inheritedGroups = foldl' (
     acc: group:
@@ -34,7 +34,7 @@ let
 in
 {
   flake = {
-    inherit deployLibForSystem;
+    inherit deployForSystem;
 
     deploy.nodes =
       recursiveUpdate
@@ -59,7 +59,7 @@ in
               interactiveSudo = sshUser != username;
 
               path =
-                (deployLibForSystem system).activate.home-manager
+                (deployForSystem system).lib.activate.home-manager
                   self.homeConfigurations."${username}@${hostname}";
             };
           }
@@ -96,7 +96,7 @@ in
 
                 interactiveSudo = sshUser != username;
 
-                path = (deployLibForSystem system).activate.nixos self.nixosConfigurations.${name};
+                path = (deployForSystem system).lib.activate.nixos self.nixosConfigurations.${name};
               };
             }
           ) config.deployments.nixos
@@ -104,11 +104,11 @@ in
   };
 
   perSystem =
-    { pkgs, deployLib, ... }:
+    { pkgs, deploy, ... }:
 
     {
       # Why did they only expose this through an overlay, this is so cursed :sob:
-      _module.args.deployLib = (inputs.deploy-rs.overlays.default pkgs pkgs).deploy-rs.lib;
-      checks = deployLib.deployChecks self.deploy;
+      _module.args.deploy = (inputs.deploy-rs.overlays.default pkgs pkgs).deploy-rs;
+      checks = deploy.lib.deployChecks self.deploy;
     };
 }
