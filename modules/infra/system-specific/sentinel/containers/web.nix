@@ -2,10 +2,15 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
 let
+  inherit (lib)
+    genAttrs
+    ;
+
   name = "web";
   imageName = "omeduostuurcentenneef-web";
   port = 6969;
@@ -60,6 +65,14 @@ in
     imageStream = readmeStatsDockerImage;
     environmentFiles = [ config.sops.secrets.readme-stats-env.path ];
   };
+
+  systemd.services = genAttrs [ name readmeStatsName ] (_: {
+    serviceConfig = {
+      Requires = [ "sops-install-secrets.service" ];
+      Wants = [ "sops-install-secrets.service" ];
+      After = [ "sops-install-secrets.service" ];
+    };
+  });
 
   services.nginx.virtualHosts."bartoostveen.nl" = {
     forceSSL = true;
