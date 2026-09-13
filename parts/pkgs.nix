@@ -82,9 +82,7 @@
             };
 
             # The design of deploy-rs' flake is truly wonderful, see also deploy.module.nix
-            deploy-rs = prev.deploy-rs // {
-              inherit (deploy) deploy-rs;
-            };
+            deploy-rs = deploy.deploy-rs // deploy;
           })
           inputs.bart-packages.overlays.default
 
