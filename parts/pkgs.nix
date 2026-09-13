@@ -57,7 +57,7 @@
         ];
 
         overlays = [
-          (final: prev: {
+          (_final: prev: {
             inherit (smallPkgs)
               roundcube
               php82
