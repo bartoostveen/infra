@@ -8,7 +8,8 @@
 
 let
   inherit (lib)
-    genAttrs
+    genAttrs'
+    nameValuePair
     ;
 
   name = "web";
@@ -66,13 +67,16 @@ in
     environmentFiles = [ config.sops.secrets.readme-stats-env.path ];
   };
 
-  systemd.services = genAttrs [ name readmeStatsName ] (_: {
-    serviceConfig = {
-      Requires = [ "sops-install-secrets.service" ];
-      Wants = [ "sops-install-secrets.service" ];
-      After = [ "sops-install-secrets.service" ];
-    };
-  });
+  systemd.services = genAttrs' [ name readmeStatsName ] (
+    container:
+    nameValuePair "podman-${container}.service" {
+      serviceConfig = {
+        Requires = [ "sops-install-secrets.service" ];
+        Wants = [ "sops-install-secrets.service" ];
+        After = [ "sops-install-secrets.service" ];
+      };
+    }
+  );
 
   services.nginx.virtualHosts."bartoostveen.nl" = {
     forceSSL = true;
