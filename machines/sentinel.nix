@@ -24,22 +24,22 @@ in
 
     # keep-sorted start
     ../modules/infra/alloy.nix
-    ../modules/infra/system-specific/main/attic.nix
-    ../modules/infra/system-specific/main/containers/tcs-bot.nix
-    ../modules/infra/system-specific/main/containers/web.nix
-    ../modules/infra/system-specific/main/forgejo.nix
-    ../modules/infra/system-specific/main/git-pages.nix
-    ../modules/infra/system-specific/main/gopkgs.nix
-    ../modules/infra/system-specific/main/ical-proxy.nix
-    ../modules/infra/system-specific/main/ircbounce.nix
-    ../modules/infra/system-specific/main/mailserver
-    ../modules/infra/system-specific/main/matrix.nix
-    ../modules/infra/system-specific/main/maubot.nix
-    ../modules/infra/system-specific/main/meowbot.nix
-    ../modules/infra/system-specific/main/monitoring.nix
-    ../modules/infra/system-specific/main/tascheduling-db.nix
-    ../modules/infra/system-specific/main/venator.nix
-    ../modules/infra/system-specific/main/wireguard.monitoring.nix
+    ../modules/infra/system-specific/sentinel/attic.nix
+    ../modules/infra/system-specific/sentinel/containers/tcs-bot.nix
+    ../modules/infra/system-specific/sentinel/containers/web.nix
+    ../modules/infra/system-specific/sentinel/forgejo.nix
+    ../modules/infra/system-specific/sentinel/git-pages.nix
+    ../modules/infra/system-specific/sentinel/gopkgs.nix
+    ../modules/infra/system-specific/sentinel/ical-proxy.nix
+    ../modules/infra/system-specific/sentinel/ircbounce.nix
+    ../modules/infra/system-specific/sentinel/mailserver
+    ../modules/infra/system-specific/sentinel/matrix.nix
+    ../modules/infra/system-specific/sentinel/maubot.nix
+    ../modules/infra/system-specific/sentinel/meowbot.nix
+    ../modules/infra/system-specific/sentinel/monitoring.nix
+    ../modules/infra/system-specific/sentinel/tascheduling-db.nix
+    ../modules/infra/system-specific/sentinel/venator.nix
+    ../modules/infra/system-specific/sentinel/wireguard.monitoring.nix
     # keep-sorted end
 
     # keep-sorted start
