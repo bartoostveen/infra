@@ -69,7 +69,7 @@ in
 
   systemd.services = genAttrs' [ name readmeStatsName ] (
     container:
-    nameValuePair "podman-${container}.service" {
+    nameValuePair "podman-${container}" {
       serviceConfig = {
         Requires = [ "sops-install-secrets.service" ];
         Wants = [ "sops-install-secrets.service" ];
