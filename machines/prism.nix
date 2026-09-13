@@ -31,6 +31,7 @@
     # keep-sorted end
 
     # keep-sorted start
+    ../modules/infra/system-specific/prism/monitoring.nix
     # keep-sorted end
   ];
 
