@@ -55,16 +55,10 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          (
-            (nl.overrideAttrs {
-              version = "7.1";
-              __intentionallyOverridingVersion = true;
-            }).override
-              {
-                # TODO: remove
-                hash = "sha256-ZV1dbKwRp5KgaTN3lxlxnhUUf8iTwzwh27r8ef3PBKo=";
-              }
-          )
+          (nl.override {
+            # TODO: remove
+            hash = "sha256-hjk5WVNkNvnAXGh/5npVF5gYkVJ+e0ZEpdBoeGjtiY8=";
+          })
         ];
     });
   };

@@ -40,9 +40,6 @@
       };
 
       nixpkgsPatches = with patchFetchers; [
-        ./0001-wordpress_6_8-drop.patch
-        ./0002-wordpress-7.0.4-7.1.patch
-        ./0003-wordpressPackages-update-plugins-and-themes.patch
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
@@ -68,9 +65,8 @@
               php84Packages
               php85
               php85Packages
-              # wordpress_7_0
-              # wordpress
-              # TODO: remove
+              wordpress_7_1
+              wordpress
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
