@@ -68,11 +68,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789462204,
-        "narHash": "sha256-im0pPC7HuNKWTsQ1RNoBoci8XK82C8m3RqAe4m7TJBs=",
+        "lastModified": 1789557537,
+        "narHash": "sha256-F8qCFTBvdq4l5+FWjzClQPgn8fjohAFW2KbABXc9Brk=",
         "ref": "refs/heads/master",
-        "rev": "b0642825bbbf8e96844b41ffa372c894eceaff8f",
-        "revCount": 198,
+        "rev": "8749999b4536fa14ecf81a2d0995b37fb0ce4a2a",
+        "revCount": 201,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -328,11 +328,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789430117,
-        "narHash": "sha256-t+U1mijItLJ64xZOifpfQ17kpAL73nU7pDI48ScacVc=",
+        "lastModified": 1789482455,
+        "narHash": "sha256-pD3qVlQ4mUCFoTWrYtxecpSitQMsgJvJIN0FUIDZoEU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cda90fd8838825c689fde9d3f3b4e937937790df",
+        "rev": "efa3ccb4c3cc90d832eab232976379058fa75aa3",
         "type": "github"
       },
       "original": {
@@ -465,11 +465,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789257677,
-        "narHash": "sha256-ger10Y4TXu82dXygK+k809vtT5GcQJyNksb1h4Tbk8Q=",
+        "lastModified": 1789557820,
+        "narHash": "sha256-9EseFNmM6NvghzbjLUXfcCPkCaNuhpwHAfNdhQl9JGg=",
         "ref": "refs/heads/master",
-        "rev": "8b0164ec46d92a3d5a8bd5c2f8c8cd34fd5a2c2f",
-        "revCount": 113,
+        "rev": "32fb8330953a03a98f43694b9356ae143ba1f970",
+        "revCount": 114,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -616,11 +616,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789257736,
-        "narHash": "sha256-QTwUkaxUZHeAvZuDTiMM7C0/2ViuS5Dw6cBwD9czSNQ=",
+        "lastModified": 1789557550,
+        "narHash": "sha256-6mKesKvxQJ3K4ascOQxk3rzu1krHFse5IZnlmeV/MhE=",
         "ref": "refs/heads/master",
-        "rev": "7df797ebf3786d33df113e2c9c42e6dc48070eea",
-        "revCount": 74,
+        "rev": "325c76f87e21533653a23794610be28d4601d49d",
+        "revCount": 75,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
@@ -686,11 +686,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1789286504,
-        "narHash": "sha256-eiEK7cKZORNEvX0GeF3RtNEF/JXhgf2RqSp3230q13E=",
+        "lastModified": 1789426278,
+        "narHash": "sha256-GnotcvKtbTMnoVx6G4E7ZdUX6487Dky74dqq3pU7iRk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ef34387ddd751e1ab8857adf4676492d32eb24ec",
+        "rev": "efe6f071ede9d21c37462d2d6682d5e670099684",
         "type": "github"
       },
       "original": {
@@ -729,11 +729,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789257789,
-        "narHash": "sha256-jid69xKBuvlhVpLwjl3xAI8Hrtx5CEqXZVJGZgvDxyc=",
+        "lastModified": 1789557781,
+        "narHash": "sha256-yRkuIB3OJE/4FphTqy/MFkUT+jYMLH5AQ71fXW7spC8=",
         "ref": "refs/heads/master",
-        "rev": "30c88dc4809b9becd045fe543ef465ca8cde666f",
-        "revCount": 183,
+        "rev": "404c8cd6bfd8151dd195b751bce585b64e82cdf5",
+        "revCount": 186,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
