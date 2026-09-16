@@ -208,7 +208,9 @@
     };
 
     sops-nix = {
-      url = "github:Mic92/sops-nix";
+      # url = "github:Mic92/sops-nix";
+      # TODO: remove
+      url = "github:c2fc2f/sops-nix/buildGo126Module";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
