@@ -139,7 +139,10 @@ in
     channel.enable = lib.mkForce false;
   };
 
-  documentation.nixos.enable = false;
+  documentation = {
+    nixos.enable = false;
+    dev.enable = true;
+  };
 
   systemd.services.nix-daemon.serviceConfig.Slice = "-.slice";
   environment.variables = {
