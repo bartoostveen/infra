@@ -55,7 +55,11 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          nl
+          (nl.overrideAttrs {
+            # No 7.1.1 language files available yet
+            version = "7.1";
+            __intentionallyOverridingVersion = true;
+          })
         ];
     });
   };
