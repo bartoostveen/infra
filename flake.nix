@@ -35,24 +35,13 @@
     };
 
     authentik = {
-      # url = "github:nix-community/authentik-nix";
-      # TODO: remove
-      url = "github:bartoostveen/authentik-nix/authentik-2026.8.2";
+      url = "github:nix-community/authentik-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
         flake-parts.follows = "flake-parts";
         flake-utils.follows = "flake-utils";
         systems.follows = "systems";
-        uv2nix.follows = "uv2nix";
-      };
-    };
-
-    uv2nix = {
-      url = "github:pyproject-nix/uv2nix"; # TODO: remove
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        pyproject-nix.follows = "authentik/pyproject-nix";
       };
     };
 

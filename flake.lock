@@ -19,21 +19,18 @@
         "systems": [
           "systems"
         ],
-        "uv2nix": [
-          "uv2nix"
-        ]
+        "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1788983507,
+        "lastModified": 1789662015,
         "narHash": "sha256-CveW/4U/zNIRfLpH6vMv8qisfotft8XJC47KqAhViZ0=",
-        "owner": "bartoostveen",
+        "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "f40610679976de5284c444bee8d6a9b137c49424",
+        "rev": "9a176c0a1889921f3ed19d29a047bafaf20b9a24",
         "type": "github"
       },
       "original": {
-        "owner": "bartoostveen",
-        "ref": "authentik-2026.8.2",
+        "owner": "nix-community",
         "repo": "authentik-nix",
         "type": "github"
       }
@@ -873,7 +870,6 @@
         "srvos": "srvos",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix",
-        "uv2nix": "uv2nix",
         "vert-nix": "vert-nix",
         "winapps": "winapps",
         "wireless-profiles": "wireless-profiles"
@@ -978,6 +974,7 @@
     "uv2nix": {
       "inputs": {
         "nixpkgs": [
+          "authentik",
           "nixpkgs"
         ],
         "pyproject-nix": [
@@ -986,11 +983,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789383061,
-        "narHash": "sha256-+DkygIVr/+RtXnsjd07BzFFB0ihwmjjLuYh1fyc/bCg=",
+        "lastModified": 1788001239,
+        "narHash": "sha256-AELmsXPI546MhbC/ZXC7WRUkCz7d4rqKTHUmliIgPpI=",
         "owner": "pyproject-nix",
         "repo": "uv2nix",
-        "rev": "079be4e68c529c4cbc44dbf1afc692e4b30695b3",
+        "rev": "7f9c6b613d2e749e54854b1d60ab6a2192db889e",
         "type": "github"
       },
       "original": {
