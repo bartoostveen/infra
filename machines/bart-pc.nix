@@ -3,6 +3,7 @@
     ./bart-pc.hardware.nix
 
     # keep-sorted start
+    ../modules/infra/backshots.nix
     ../modules/infra/backup
     ../modules/infra/forgejo-actions.nix
     # ../modules/infra/hydra/builder.nix

@@ -9,7 +9,6 @@
     inputs.srvos.nixosModules.server
 
     # keep-sorted start
-    ../modules/infra/system-specific/atlas/backshots.nix
     ../modules/infra/system-specific/atlas/mc2mqtt.nix
     ../modules/infra/system-specific/atlas/monitoring.nix
     # keep-sorted end
@@ -17,6 +16,7 @@
     # keep-sorted start
     ../modules/infra/alertmanager.nix
     ../modules/infra/alloy.nix
+    ../modules/infra/backshots.nix
     ../modules/infra/backup
     ../modules/infra/common.nix
     ../modules/infra/dns.nix

@@ -21,7 +21,7 @@ in
       enable = mkDefault true;
       postgres.jobName = mkDefault "state";
       mysql.jobName = mkDefault "state";
-      jobs.state.host = wireguard.primaryIpOf "atlas";
+      jobs.state.host = wireguard.primaryIpOf "bart-pc";
       defaults = {
         sshKeyFile = mkDefault config.sops.secrets.borg-ssh-key.path;
         secretKeyFile = mkDefault config.sops.secrets.borg-secret.path;
