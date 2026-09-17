@@ -41,6 +41,7 @@ in
     deploy-rs
     file
     git
+    man-pages
     nil
     nix-auth
     nix-inspect
