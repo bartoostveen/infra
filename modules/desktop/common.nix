@@ -46,6 +46,7 @@ in
     nix-auth
     nix-inspect
     nix-output-monitor
+    nix-update
     nixd
     nixfmt
     sops
