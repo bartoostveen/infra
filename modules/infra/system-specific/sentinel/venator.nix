@@ -31,6 +31,10 @@ in
         }
       ];
       well_known.client = "https://${federationDomain}";
+      experiments.federation = {
+        enabled = true;
+        acl.allow = [ "*" ];
+      };
     };
   };
 
