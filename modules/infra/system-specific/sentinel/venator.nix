@@ -15,7 +15,7 @@ in
 
   services.venator = {
     enable = true;
-    package = pkgs.local.venator;
+    package = pkgs.local.venator.withExperimentalOauth;
     configurePostgres = true;
     enableWrapper = true;
     settings = {
