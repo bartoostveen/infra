@@ -52,7 +52,6 @@ in
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 563545 "sha256-VHhp4aVpZ1aEOW6VRqqyLhWeKw07yrpA9UPm+yDfLpA=")
         (nixpkgsPr 554229 "sha256-8w+GC9jLQprATYVnVRaMyxXXKJ0AZUFJeIfCD+cdRYg=")
-        (nixpkgsPr 564275 "sha256-OGVJ2wqaR231llXNqRaEhfqxqH7XhzrcF8xKuf1+928=")
         (nixpkgsPr 564339 "sha256-VNIo/a41SC7NyAc8OML11nPjRCceAWL7jhaUx8PMIDc=")
       ];
 
