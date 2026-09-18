@@ -698,22 +698,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1789590570,
-        "narHash": "sha256-c6Bb3ZTTwK+szvK29ri18an0GDD6y6Fp9iCagMOrC6s=",
-        "owner": "bartoostveen",
-        "repo": "nixpkgs",
-        "rev": "36877054b5e9f66f3240b8b965effb13e8870753",
-        "type": "github"
-      },
-      "original": {
-        "owner": "bartoostveen",
-        "ref": "matrix-continuwuity-26.9.0",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "omeduostuurcentenneef-web": {
       "inputs": {
         "flake-parts": [
@@ -863,7 +847,9 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixos-small"
+        ],
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
