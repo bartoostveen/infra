@@ -1,6 +1,16 @@
-{ inputs, ... }:
-
 {
+  inputs,
+  lib,
+  withSystem,
+  ...
+}:
+
+let
+  inherit (lib) flip;
+in
+{
+  flake.pkgsForSystem = flip withSystem ({ pkgs, ... }: pkgs);
+
   perSystem =
     {
       inputs',
