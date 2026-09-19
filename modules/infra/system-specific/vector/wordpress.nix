@@ -55,10 +55,9 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          (nl.overrideAttrs {
-            # No 7.1.1 language files available yet
-            version = "7.1";
-            __intentionallyOverridingVersion = true;
+          (nl.override {
+            # TODO: remove
+            hash = "sha256-TliAHBbYfNvM55lftkjXT7k/GsTD2EF9mxX94/m138w=";
           })
         ];
     });
