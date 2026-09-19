@@ -36,12 +36,12 @@ in
           gutenberg-carousel
           indexnow
           modify-profile-fields
+          opengraph
           view-transitions
           # keep-sorted end
           ;
         inherit (pkgs.wordpressPackages.plugins)
           # keep-sorted start
-          opengraph
           wp-user-avatars
           # keep-sorted end
           ;
