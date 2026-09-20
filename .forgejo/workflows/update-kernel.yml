@@ -15,6 +15,7 @@ jobs:
         with:
           gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
+          nix-github-token: ${{ secrets.NIX_GITHUB_TOKEN }}
 
       - name: perform update
         id: update

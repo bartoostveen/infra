@@ -14,6 +14,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
+          nix-github-token: ${{ secrets.NIX_GITHUB_TOKEN }}
 
       - run: nix fmt -L --accept-flake-config -- --ci
       - run: nix flake check -L --accept-flake-config --abort-on-warn

@@ -14,6 +14,7 @@ jobs:
           ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
           gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
+          nix-github-token: ${{ secrets.NIX_GITHUB_TOKEN }}
 
       - name: nix flake update
         run: nix flake update --commit-lock-file --option access-tokens "github.com=${{ secrets.GH_TOKEN }}"
