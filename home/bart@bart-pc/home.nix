@@ -28,6 +28,7 @@
           zulu
         ];
       })
+      local.gloriousctl
     ];
 
     file = {
