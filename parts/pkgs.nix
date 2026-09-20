@@ -52,7 +52,6 @@ in
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 563545 "sha256-VHhp4aVpZ1aEOW6VRqqyLhWeKw07yrpA9UPm+yDfLpA=")
         (nixpkgsPr 554229 "sha256-8w+GC9jLQprATYVnVRaMyxXXKJ0AZUFJeIfCD+cdRYg=")
-        (nixpkgsPr 564339 "sha256-VNIo/a41SC7NyAc8OML11nPjRCceAWL7jhaUx8PMIDc=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
@@ -78,9 +77,8 @@ in
               php84Packages
               php85
               php85Packages
-              # wordpress_7_1
-              # wordpress
-              # TODO: remove
+              wordpress_7_1
+              wordpress
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
