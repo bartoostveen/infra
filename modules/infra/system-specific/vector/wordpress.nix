@@ -55,9 +55,12 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          (nl.override {
+          ((nl.override {
             # TODO: remove
             hash = "sha256-TliAHBbYfNvM55lftkjXT7k/GsTD2EF9mxX94/m138w=";
+          }).overrideAttrs {
+            __intentionallyOverridingVersion = true;
+            version = "7.1.1";
           })
         ];
     });

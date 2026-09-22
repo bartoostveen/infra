@@ -50,6 +50,7 @@ in
       };
 
       nixpkgsPatches = with patchFetchers; [
+        (nixpkgsPr 565880 "sha256-0+UbRnsMa7juiRf6arkbfEDT+VGGywpNxvGcaZUDvXc=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
@@ -75,8 +76,8 @@ in
               php84Packages
               php85
               php85Packages
-              wordpress_7_1
-              wordpress
+              # wordpress_7_1
+              # wordpress
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
