@@ -44,7 +44,14 @@ in
       "opcache.enable_cli" = "1";
     };
     extraApps = {
-      inherit (pkgs.nextcloud35Packages.apps) user_oidc groupfolders richdocuments;
+      inherit (pkgs.nextcloud35Packages.apps)
+        # keep-sorted start
+        groupfolders
+        impersonate
+        richdocuments
+        user_oidc
+        # keep-sorted end
+        ;
     };
     extraAppsEnable = true;
   };
