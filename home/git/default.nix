@@ -51,12 +51,12 @@
         name = "Bart Oostveen";
         signingKey = "2D4FB795E873C2C3";
       };
-      "git@gitlab.ia.utwente.nl" = {
-        email = "oostveenb@inter-actief.net";
-        name = "Bart Oostveen";
-        signingKey = "3A251B9812E9186C";
-      };
-    };
+    }
+    // genAttrs [ "git@gitlab.ia.utwente.nl" "git@git.ia.utwente.nl" ] (_: {
+      email = "oostveenb@inter-actief.net";
+      name = "Bart Oostveen";
+      signingKey = "3A251B9812E9186C";
+    });
   };
 
   programs.gh = {
