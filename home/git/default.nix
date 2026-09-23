@@ -1,15 +1,18 @@
 { pkgs, lib, ... }:
 
+let
+  inherit (lib) mkDefault genAttrs;
+in
 {
   imports = [ ./remotes.nix ];
 
   programs.delta = {
-    enable = lib.mkDefault true;
+    enable = mkDefault true;
     enableGitIntegration = true;
   };
 
   programs.git = {
-    enable = lib.mkDefault true;
+    enable = mkDefault true;
     package = pkgs.gitFull;
 
     signing = {
@@ -60,7 +63,7 @@
   };
 
   programs.gh = {
-    enable = lib.mkDefault true;
+    enable = mkDefault true;
     gitCredentialHelper.enable = true;
   };
 }
