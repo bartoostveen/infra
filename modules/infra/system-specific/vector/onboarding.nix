@@ -92,10 +92,14 @@ in
     metrics_path = "/metrics";
   };
 
-  # Proxy provider handles this
-  services.nginx.virtualHosts.${config.infra.authentik.domain}.serverAliases = [
-    "onboarding.${config.infra.authentik.domain}"
-  ];
+  services.nginx.virtualHosts."onboarding.${config.infra.authentik.domain}" = {
+    enableACME = true;
+    forceSSL = true;
+    locations."/" = {
+      inherit (config.services.nginx.virtualHosts.${config.infra.authentik.domain}.locations."/") proxyPass;
+      proxyWebsockets = true;
+    };
+  };
 
   sops.secrets.onboarding-env = {
     sopsFile = ../../../../secrets/onboarding.env.vector.secret;
