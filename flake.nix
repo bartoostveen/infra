@@ -182,6 +182,7 @@
       url = "git+ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        bart-packages.follows = "bart-packages";
         flake-parts.follows = "flake-parts";
         treefmt-nix.follows = "treefmt-nix";
       };

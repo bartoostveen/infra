@@ -723,6 +723,9 @@
     },
     "onboarding": {
       "inputs": {
+        "bart-packages": [
+          "bart-packages"
+        ],
         "flake-parts": [
           "flake-parts"
         ],
@@ -734,11 +737,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790463875,
-        "narHash": "sha256-iyTgVzsH8AMvqC8dN3e6wuodmmAW0uERNCfI6Jjdelg=",
+        "lastModified": 1790465854,
+        "narHash": "sha256-Uq7Oo/2jS5RO3ftZ0/b/RRc5zBSywsymvuFRBxWzkTc=",
         "ref": "refs/heads/master",
-        "rev": "92e4f0760fd554f95e5124160b897def4b7e4946",
-        "revCount": 115,
+        "rev": "4c3998cba7f870cfbe0f7a536fdfba53cc4c8e20",
+        "revCount": 120,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
