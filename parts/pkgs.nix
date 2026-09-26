@@ -50,7 +50,6 @@ in
       };
 
       nixpkgsPatches = with patchFetchers; [
-        (nixpkgsPr 566203 "sha256-abRZ3MgJUuubojmgX1wMSwLaGulIbdhfJbE2wUkgVgo=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
