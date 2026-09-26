@@ -734,11 +734,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790204741,
-        "narHash": "sha256-tP1MW4Fbs5/DOeptBeIMHqVzgUcNgQZ+P/GvrkP9YPQ=",
+        "lastModified": 1790463075,
+        "narHash": "sha256-7MGU8+nasTbdEdPoWRCHhVMfPUWTLzxORH+seA/JE7o=",
         "ref": "refs/heads/master",
-        "rev": "aab223b16b6c8cfe72aa91359df2fe50ab71f242",
-        "revCount": 108,
+        "rev": "4702d2c69f11ff6b7c995bb38a2559e2517e343c",
+        "revCount": 114,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
