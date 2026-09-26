@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790373420,
-        "narHash": "sha256-tkgTyMt1Pu2LkDZ7w3+AS0Txc8qqq3OLJt5HHVZeliQ=",
+        "lastModified": 1790464909,
+        "narHash": "sha256-YCTtE6nzp5AtIvSQR2HO5j0hSUBmTwez5eg+Lkub0TY=",
         "ref": "refs/heads/master",
-        "rev": "d305c9096dc9925b51d3546ab1b586612d09b108",
-        "revCount": 240,
+        "rev": "b105e8126ba12128656c013aaabb4300ce8fb326",
+        "revCount": 242,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -737,11 +737,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790465854,
-        "narHash": "sha256-Uq7Oo/2jS5RO3ftZ0/b/RRc5zBSywsymvuFRBxWzkTc=",
+        "lastModified": 1790466408,
+        "narHash": "sha256-IO8XPEArRDvYkSlyJik0uqbfq2jYoWF9jJnz5aBZnE4=",
         "ref": "refs/heads/master",
-        "rev": "4c3998cba7f870cfbe0f7a536fdfba53cc4c8e20",
-        "revCount": 120,
+        "rev": "7ca928d456f4a79ed69abce458faec5acb2df452",
+        "revCount": 121,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
