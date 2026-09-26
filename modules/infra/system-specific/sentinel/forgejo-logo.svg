@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:export-filename="forgejo-logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="forgejo-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.93982205"
+     inkscape:cx="272.92401"
+     inkscape:cy="227.70268"
+     inkscape:window-width="1707"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" /><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"><rect
+       style="fill:#f0f0f0;fill-opacity:1;stroke-width:2.11667"
+       id="rect3"
+       width="135.46666"
+       height="135.46666"
+       x="0"
+       y="0" /><path
+       style="fill:#8ac555;fill-opacity:1;stroke-width:1.22433"
+       d="M 10.882536,113.0844 V 101.58466 H 22.220301 33.558067 V 90.408865 79.233067 H 22.220301 10.882536 V 67.733334 56.2336 H 22.220301 33.558067 V 44.895834 33.558068 h 11.33777 11.337757 V 22.220303 10.882537 H 67.73333 79.233066 v 11.337766 11.337765 h 11.33777 11.337754 V 44.895834 56.2336 h 11.33777 11.33777 v 11.499734 11.499733 h -11.33777 -11.33777 v 11.175798 11.175795 h 11.33777 11.33777 v 11.49974 11.49973 H 113.0844 101.58466 V 113.24637 101.9086 H 90.408858 79.233066 v 11.33777 11.33776 H 67.73333 56.233594 V 113.24637 101.9086 H 45.057803 33.881999 v 11.33777 11.33776 H 22.382269 10.882536 Z M 78.909134,79.0711 V 56.557536 H 67.73333 56.557539 V 79.0711 101.58466 H 67.73333 78.909134 Z"
+       id="path2" /><path
+       style="fill:#000000"
+       id="path1" /></g></svg>

@@ -18,11 +18,37 @@ let
   redisSocket = "/run/redis-forgejo/redis.sock";
   redisHost = "network=unix addr=${redisSocket}";
   anubisMetricsPort = 11023;
+
+  withLogo =
+    {
+      pkg,
+      png,
+      svg,
+    }:
+
+    pkg.overrideAttrs (prev: {
+      postInstall = prev.postInstall + ''
+        cp ${png} $data/public/assets/img/logo.png
+        cp ${svg} $data/public/assets/img/logo.svg
+
+        cp ${png} $data/public/assets/img/favicon.png
+        cp ${svg} $data/public/assets/img/favicon.svg
+      '';
+    });
+
+  withPersonalLogo =
+    pkg:
+
+    withLogo {
+      inherit pkg;
+      png = ./forgejo-logo.png;
+      svg = ./forgejo-logo.svg;
+    };
 in
 {
   services.forgejo = {
     enable = true;
-    package = pkgs.forgejo;
+    package = withPersonalLogo pkgs.forgejo;
     lfs.enable = true;
     database = {
       createDatabase = true;
