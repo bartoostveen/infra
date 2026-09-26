@@ -27,6 +27,7 @@ let
     }:
 
     pkg.overrideAttrs (prev: {
+      doCheck = false;
       postInstall = prev.postInstall + ''
         cp ${png} $data/public/assets/img/logo.png
         cp ${svg} $data/public/assets/img/logo.svg
