@@ -96,7 +96,9 @@ in
     enableACME = true;
     forceSSL = true;
     locations."/" = {
-      inherit (config.services.nginx.virtualHosts.${config.infra.authentik.domain}.locations."/") proxyPass;
+      inherit (config.services.nginx.virtualHosts.${config.infra.authentik.domain}.locations."/")
+        proxyPass
+        ;
       proxyWebsockets = true;
     };
   };
