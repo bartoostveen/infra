@@ -23,7 +23,13 @@ in
     enable = true;
     package = pkgs.local.timedout-registry;
     settings.listen = "127.0.0.1:${toString port}";
-    entries =
+    entries = {
+      "authentik/onboarding" = {
+        import_path = "go.bartoostveen.nl/authentik/onboarding";
+        repo_url = "https://${gitDomain}/bart/simple-authentik-user-onboarding";
+      };
+    }
+    //
       genAttrs'
         [
           # keep-sorted start
