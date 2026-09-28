@@ -1,4 +1,4 @@
-From b9f583641e9a4bc60c2766a569a50a58a7b21b39 Mon Sep 17 00:00:00 2001
+From 2cb9bb45a31fbabc4d799011d8a161453c13a708 Mon Sep 17 00:00:00 2001
 From: timedout <git@nexy7574.co.uk>
 Date: Wed, 29 Jul 2026 17:18:46 +0100
 Subject: [PATCH] feat: Implement sketchy backwards compatibility for illegal
@@ -20,10 +20,10 @@ fix: Don't panic when m.room.create event isn't a PDU
  7 files changed, 199 insertions(+), 82 deletions(-)
 
 diff --git a/conduwuit-example.toml b/conduwuit-example.toml
-index 88be80ad6..821dc41a7 100644
+index 24c5159ca..3f26a6430 100644
 --- a/conduwuit-example.toml
 +++ b/conduwuit-example.toml
-@@ -1624,6 +1624,15 @@
+@@ -1663,6 +1663,15 @@
  #
  #send_messages_from_ignored_users_to_client = false
  
@@ -40,7 +40,7 @@ index 88be80ad6..821dc41a7 100644
  # option.
  #
 diff --git a/src/api/server/invite.rs b/src/api/server/invite.rs
-index 630277e2d..2e59468c1 100644
+index f9ad2dbb6..6b4eb57bc 100644
 --- a/src/api/server/invite.rs
 +++ b/src/api/server/invite.rs
 @@ -3,7 +3,7 @@
@@ -179,7 +179,7 @@ index 630277e2d..2e59468c1 100644
 -
 -		services
 -			.server_keys
--			.verify_event(&state_event_json, room_version_rules)
+-			.verify_event_json(&state_event_json, room_version_rules)
 -			.await
 -			.map_err(|e| {
 -				err!(Request(InvalidParam("Signature verification failed on invite event: {e}")))
@@ -294,7 +294,7 @@ index 630277e2d..2e59468c1 100644
 +
 +	services
 +		.server_keys
-+		.verify_event(&state_event_json, rules)
++		.verify_event_json(&state_event_json, rules)
 +		.await
 +		.map_err(|e| {
 +			err!(Request(InvalidParam("Signature verification failed on invite event: {e}")))
@@ -390,7 +390,7 @@ index cbbb4d475..e41cdaf12 100644
  		body.event_id.clone(),
  	)
 diff --git a/src/api/server/utils.rs b/src/api/server/utils.rs
-index d9a67c2d3..b3ace4bbe 100644
+index a6803eb61..efe6db547 100644
 --- a/src/api/server/utils.rs
 +++ b/src/api/server/utils.rs
 @@ -80,6 +80,12 @@ pub(super) async fn assert(&self) -> Result {
@@ -457,10 +457,10 @@ index d9a67c2d3..b3ace4bbe 100644
  	Ok((pdu, membership.into(), sender_user, recipient_user))
  }
 diff --git a/src/core/config/mod.rs b/src/core/config/mod.rs
-index e50c2ec74..e96aa1aec 100644
+index 3fc9566ca..b180751c2 100644
 --- a/src/core/config/mod.rs
 +++ b/src/core/config/mod.rs
-@@ -1903,6 +1903,15 @@ pub struct Config {
+@@ -1946,6 +1946,15 @@ pub struct Config {
  	#[serde(default)]
  	pub send_messages_from_ignored_users_to_client: bool,
  
