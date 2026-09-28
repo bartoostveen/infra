@@ -16,7 +16,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
     # nixpkgs-continuwuity.follows = "nixos-small"; # .url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.9.-";
-    nixpkgs-continuwuity.url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.9.0-unstable-2026-09-18";
+    nixpkgs-continuwuity.url = "github:Henry-Hiles/nixpkgs/bump-c10y";
 
     ip-bans = {
       url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git";
