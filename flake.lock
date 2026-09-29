@@ -679,22 +679,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-continuwuity": {
-      "locked": {
-        "lastModified": 1790560104,
-        "narHash": "sha256-pMeG8Uai+Vkvxnap+lfCIs3Iw9jof4tSbJd4aA4+Jmg=",
-        "owner": "Henry-Hiles",
-        "repo": "nixpkgs",
-        "rev": "32f8806c23d3f414216f3ac21eb9b971a331b7e4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Henry-Hiles",
-        "ref": "bump-c10y",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "omeduostuurcentenneef-web": {
       "inputs": {
         "flake-parts": [
@@ -847,7 +831,9 @@
         "nixos-mailserver": "nixos-mailserver",
         "nixos-small": "nixos-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-continuwuity": "nixpkgs-continuwuity",
+        "nixpkgs-continuwuity": [
+          "nixos-small"
+        ],
         "omeduostuurcentenneef-web": "omeduostuurcentenneef-web",
         "onboarding": "onboarding",
         "plasma-manager": "plasma-manager",
