@@ -44,7 +44,7 @@ in
     nix.channel.enable = lib.mkForce false;
     nix.gc.automatic = lib.mkForce false;
 
-    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nix.settings.nix-path = [ "nixpkgs=${inputs.nixpkgs}" ];
 
     nixpkgs.hostPlatform.system = "x86_64-linux";
 
