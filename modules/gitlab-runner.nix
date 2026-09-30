@@ -25,7 +25,10 @@ in
         "/nix/var/nix/profiles/system/etc/ssl/:/etc/ssl/:ro"
         "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket:ro"
       ];
-      environmentVariables.NIX_REMOTE = "daemon";
+      environmentVariables = {
+        USER = "root";
+        NIX_REMOTE = "daemon";
+      };
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
     };
