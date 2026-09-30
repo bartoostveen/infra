@@ -20,8 +20,10 @@ in
       dockerImage = "docker:stable";
       dockerVolumes = [
         "/var/lib/gitlab-runner/cache:/cache"
-        "/nix:/nix:ro"
-        "/nix/var/nix/daemon-socket/socket:/nix/var/nix/daemon-socket/socket"
+        "/nix/store:/nix/store:ro"
+        "/nix/var/nix/db:/nix/var/nix/db:ro"
+        "/nix/var/nix/profiles/system/etc/ssl/:/etc/ssl/:ro"
+        "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket:ro"
       ];
       environmentVariables.NIX_REMOTE = "daemon";
       dockerPrivileged = true;
