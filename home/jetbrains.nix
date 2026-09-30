@@ -10,5 +10,6 @@
     jetbrains.gateway
     jetbrains.pycharm
     jetbrains.clion
+    jetbrains.rust-rover
   ];
 }
