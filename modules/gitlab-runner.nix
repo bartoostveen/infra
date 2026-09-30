@@ -26,7 +26,6 @@ in
         "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket:ro"
       ];
       environmentVariables.NIX_REMOTE = "daemon";
-      dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
     };
