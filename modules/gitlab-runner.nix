@@ -8,8 +8,9 @@
 let
   inherit (lib)
     mkForce
-    makeSearchPathOutput
+    getExe'
     ;
+
   paralellism = 6;
 in
 {
@@ -31,20 +32,9 @@ in
         "/nix/store:/nix/store:ro"
         "/nix/var/nix/db:/nix/var/nix/db:ro"
         "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
+        "${getExe' pkgs.bash "sh"}:/bin/sh"
       ];
-      environmentVariables = {
-        NIX_REMOTE = "daemon";
-        PATH =
-          (makeSearchPathOutput "bin" "bin" [
-            pkgs.gnugrep
-            pkgs.coreutils
-            pkgs.nix
-            pkgs.openssh
-            pkgs.bash
-            pkgs.git
-          ])
-          + ":/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/local/sbin:/nix/var/nix/profiles/default/sbin:/bin:/sbin:/usr/bin:/usr/sbin";
-      };
+      environmentVariables.NIX_REMOTE = "daemon";
       dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
