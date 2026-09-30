@@ -30,7 +30,6 @@ in
         "/var/lib/gitlab-runner/cache:/cache"
         "/nix/store:/nix/store:ro"
         "/nix/var/nix/db:/nix/var/nix/db:ro"
-        "/nix/var/nix/profiles/system/etc/ssl/:/etc/ssl/:ro"
         "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
       ];
       environmentVariables = {
