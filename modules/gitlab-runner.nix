@@ -17,18 +17,16 @@ in
         "--limit=${toString paralellism}"
       ];
       authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-env.path;
-      dockerImage = "docker:stable";
+      dockerImage = "nixos/nix";
       dockerVolumes = [
         "/var/lib/gitlab-runner/cache:/cache"
         "/nix/store:/nix/store:ro"
         "/nix/var/nix/db:/nix/var/nix/db:ro"
         "/nix/var/nix/profiles/system/etc/ssl/:/etc/ssl/:ro"
-        "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket:ro"
+        "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
       ];
-      environmentVariables = {
-        USER = "root";
-        NIX_REMOTE = "daemon";
-      };
+      environmentVariables.NIX_REMOTE = "daemon";
+      dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
     };
