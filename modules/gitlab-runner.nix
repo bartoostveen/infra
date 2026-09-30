@@ -1,7 +1,15 @@
-{ config, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
-  inherit (lib) mkForce;
+  inherit (lib)
+    mkForce
+    makeSearchPathOutput
+    ;
   paralellism = 6;
 in
 {
@@ -25,7 +33,19 @@ in
         "/nix/var/nix/profiles/system/etc/ssl/:/etc/ssl/:ro"
         "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
       ];
-      environmentVariables.NIX_REMOTE = "daemon";
+      environmentVariables = {
+        NIX_REMOTE = "daemon";
+        PATH =
+          (makeSearchPathOutput "bin" "bin" [
+            pkgs.gnugrep
+            pkgs.coreutils
+            pkgs.nix
+            pkgs.openssh
+            pkgs.bash
+            pkgs.git
+          ])
+          + ":/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/local/sbin:/nix/var/nix/profiles/default/sbin:/bin:/sbin:/usr/bin:/usr/sbin";
+      };
       dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
@@ -34,8 +54,14 @@ in
   services.gitlab-runner.clear-docker-cache.enable = true;
 
   systemd.services.gitlab-runner = {
-    requires = [ "sops-install-secrets.service" ];
-    after = [ "sops-install-secrets.service" ];
+    requires = [
+      "sops-install-secrets.service"
+      "podman.socket"
+    ];
+    after = [
+      "sops-install-secrets.service"
+      "podman.socket"
+    ];
   };
 
   sops.secrets.gitlab-runner-env = {
