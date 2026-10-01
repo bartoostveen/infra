@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }:
@@ -8,7 +7,6 @@
 let
   inherit (lib)
     mkForce
-    getExe'
     ;
 
   paralellism = 6;
@@ -26,15 +24,10 @@ in
         "--limit=${toString paralellism}"
       ];
       authenticationTokenConfigFile = config.sops.secrets.gitlab-runner-env.path;
-      dockerImage = "nixos/nix";
+      dockerImage = "docker/stable";
       dockerVolumes = [
         "/var/lib/gitlab-runner/cache:/cache"
-        "/nix/store:/nix/store:ro"
-        "/nix/var/nix/db:/nix/var/nix/db:ro"
-        "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
-        "${getExe' pkgs.bash "sh"}:/bin/sh"
       ];
-      environmentVariables.NIX_REMOTE = "daemon";
       dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
