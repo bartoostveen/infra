@@ -27,7 +27,9 @@ in
       dockerImage = "docker/stable";
       dockerVolumes = [
         "/var/lib/gitlab-runner/cache:/cache"
+        "/nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket"
       ];
+      environmentVariables.NIX_REMOTE = "daemon";
       dockerPrivileged = true;
       dockerPullPolicy = "if-not-present";
       requestConcurrency = paralellism;
