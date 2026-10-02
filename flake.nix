@@ -15,7 +15,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-small.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Generally more up-to-date kernel
-    nixpkgs-continuwuity.follows = "nixos-small"; # .url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.9.-";
+    # nixpkgs-continuwuity.follows = "nixos-small"; # .url = "github:bartoostveen/nixpkgs/matrix-continuwuity-26.9.-";
+    # TODO: remove
+    nixpkgs-continuwuity.url = "github:bartoostveen/nixpkgs/continuwuity-26.9.1-unstable-2026-10-02";
 
     ip-bans = {
       url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ip-bans.git";
