@@ -88,10 +88,7 @@
 
     hydra = {
       url = "github:NixOS/hydra";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-      };
+      inputs.treefmt-nix.follows = "treefmt-nix";
     };
 
     ical-proxy = {
