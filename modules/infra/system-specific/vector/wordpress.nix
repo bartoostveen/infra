@@ -37,8 +37,8 @@ in
           indexnow
           modify-profile-fields
           opengraph
-          user-avatars
           view-transitions
+          wp-user-avatars
           # keep-sorted end
           ;
         inherit (pkgs.local) wp-oidc-roles;
