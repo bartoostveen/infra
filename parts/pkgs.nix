@@ -78,8 +78,6 @@ in
               php84Packages
               php85
               php85Packages
-              wordpress_7_1
-              wordpress
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
