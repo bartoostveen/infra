@@ -53,7 +53,6 @@ in
         (nixpkgsPr 569341 "sha256-bMw5NLSoJhnG+grosKqopxO6yzIuxPBHtcxXuqmB0/4=")
         (nixpkgsPr 566901 "sha256-Im0795ZWakjpLfjSk5lTpdsmUSdAThhorBB6Fp4B3GM=")
         (nixpkgsPr 571035 "sha256-nbugWFitXYw+VK37Xeecdxt2UyXfxYZKduXPAGIOous=")
-        (nixpkgsPr 571091 "sha256-TrhM1DXqlC215IF68gOy4LkaXkry6vfxpkj6UAQM8r8=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
