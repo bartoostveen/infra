@@ -159,7 +159,7 @@
 
     nixos-mailserver = {
       # url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
-      url = "gitlab:bartoostveen/nixos-mailserver/ldap/email";
+      url = "git+https://git.bartoostveen.nl/mirror/nixos-mailserver.git?ref=ldap/email";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";

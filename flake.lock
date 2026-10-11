@@ -631,18 +631,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1791215533,
-        "narHash": "sha256-U+pZk867phAkKCvFFUbJvaLcxCVSKagQ/tWqXzl21Qc=",
-        "owner": "bartoostveen",
-        "repo": "nixos-mailserver",
-        "rev": "bea6817f8257b3c014f8ea1952aa39adf69e81de",
-        "type": "gitlab"
+        "lastModified": 1791680048,
+        "narHash": "sha256-w0YdRc5IJOzAti5+eSykkc1L/epXQeaP64zGv4wuCNI=",
+        "ref": "ldap/email",
+        "rev": "5ebf64c6178cc97da6f37437e3313ca287b70981",
+        "revCount": 1081,
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/mirror/nixos-mailserver.git"
       },
       "original": {
-        "owner": "bartoostveen",
         "ref": "ldap/email",
-        "repo": "nixos-mailserver",
-        "type": "gitlab"
+        "type": "git",
+        "url": "https://git.bartoostveen.nl/mirror/nixos-mailserver.git"
       }
     },
     "nixos-small": {
