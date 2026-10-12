@@ -3,7 +3,7 @@
 {
   imports = [ inputs.bart-packages.nixosModules.meshcoretomqtt ];
 
-  services.mctomqtt = {
+  services.meshcoretomqtt = {
     enable = true;
     package = pkgs.local.meshcoretomqtt;
     settings = {
