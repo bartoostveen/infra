@@ -130,6 +130,8 @@ in
       "sable-next.bartoostveen.nl" = {
         enableACME = true;
         forceSSL = true;
+        rateLimit.burst = 1000;
+        connectionLimit.connections = 200;
         locations."/".root = pkgs.local.sable-next.override {
           conf = {
             homeserverList = [
