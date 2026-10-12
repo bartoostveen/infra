@@ -144,6 +144,11 @@ in
             defaultHomeserver = 0;
             allowCustomHomeservers = true;
           };
+          gifs = {
+            provider = "klipy";
+            proxyUrl = "gifs.sable.moe";
+            klipyApiKey = "IfeIBlDMvq0av2BcKPDuxwRqbnYRbS90yNqFHEkK2Ja207tkR5nssh3NIlJRCr76";
+          };
         };
         locations = {
           "/".extraConfig = ''
