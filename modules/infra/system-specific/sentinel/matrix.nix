@@ -119,10 +119,30 @@ in
     };
   };
 
-  services.nginx.virtualHosts = genAttrs' cinnies (
-    n:
-    nameValuePair "cinny${toString n}.${fqdn}" {
-      serverAliases = [ "sable${toString n}.${fqdn}" ];
-    }
-  );
+  services.nginx.virtualHosts =
+    (genAttrs' cinnies (
+      n:
+      nameValuePair "cinny${toString n}.${fqdn}" {
+        serverAliases = [ "sable${toString n}.${fqdn}" ];
+      }
+    ))
+    // {
+      "sable-next.bartoostveen.nl" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/".root = pkgs.local.sable-next.override {
+          conf = {
+            homeserverList = [
+              fqdn
+              "elisaado.com"
+              "utwente.io"
+              "matrix.org"
+              "inter-actief.net"
+            ];
+            defaultHomeserver = 0;
+            allowCustomHomeservers = true;
+          };
+        };
+      };
+    };
 }
