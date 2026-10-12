@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791679402,
-        "narHash": "sha256-S7QfFOMW6JJU5dCdXy4J83/a3UMPZ1zaDVr17zR84go=",
+        "lastModified": 1791775051,
+        "narHash": "sha256-9SHkIC6WRG5hva/9JTr1l+Ef3V3G3zKInTrW32JN49I=",
         "ref": "refs/heads/master",
-        "rev": "fd75d7f220667c4a3c557ded611f609e3a394a49",
-        "revCount": 267,
+        "rev": "8627023eb8ba1247539fa4e6993124109f8ed33a",
+        "revCount": 269,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
