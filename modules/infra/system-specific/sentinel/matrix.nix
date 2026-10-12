@@ -132,7 +132,7 @@ in
         forceSSL = true;
         rateLimit.burst = 1000;
         connectionLimit.connections = 200;
-        locations."/".root = pkgs.local.sable-next.override {
+        root = pkgs.local.sable-next.override {
           conf = {
             homeserverList = [
               fqdn
@@ -145,6 +145,26 @@ in
             allowCustomHomeservers = true;
           };
         };
+        locations = {
+          "/".extraConfig = ''
+            try_files $uri $uri.html $uri/index.html /index.html;
+          '';
+          "/_app/immutable/".extraConfig = ''
+            add_header Cache-Control "public, max-age=31536000, immutable" always;
+            try_files $uri =404;
+          '';
+          "= /manifest.webmanifest".extraConfig = ''
+            default_type application/manifest+json;
+          '';
+        }
+        // genAttrs' [ "index.html" "config.json" ] (
+          name:
+          nameValuePair "= /${name}" {
+            extraConfig = ''
+              add_header Cache-Control "no-cache" always;
+            '';
+          }
+        );
       };
     };
 }
