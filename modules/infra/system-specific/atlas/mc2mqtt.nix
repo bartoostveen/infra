@@ -1,19 +1,15 @@
 { inputs, pkgs, ... }:
 
-let
-  inherit (pkgs.stdenv.hostPlatform) system;
-in
 {
-  imports = [ inputs.meshcoretomqtt.nixosModules.default ];
+  imports = [ inputs.bart-packages.nixosModules.meshcoretomqtt ];
 
   services.mctomqtt = {
     enable = true;
-    package = inputs.meshcoretomqtt.packages.${system}.default;
-    iata = "ENS";
-    serialPorts = [ "/dev/ttyACM0" ];
-    defaults = {
-      letsmesh-us.enable = false;
-      letsmesh-eu.enable = true;
+    package = pkgs.local.meshcoretomqtt;
+    settings = {
+      general.iata = "ENS";
+      serial.ports = [ "/dev/ttyACM0" ];
     };
+    defaults.letsmesh-eu = true;
   };
 }

@@ -455,36 +455,6 @@
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       }
     },
-    "meshcoretomqtt": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
-      },
-      "locked": {
-        "lastModified": 1776611414,
-        "narHash": "sha256-EwXPlYIBcKPlPgioVFtlie4lcIMiH834b6WJYtY2bnI=",
-        "owner": "Cisien",
-        "repo": "meshcoretomqtt",
-        "rev": "2691923f90ed6d4d94407ec4a08c29b176b3a31c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Cisien",
-        "repo": "meshcoretomqtt",
-        "rev": "2691923f90ed6d4d94407ec4a08c29b176b3a31c",
-        "type": "github"
-      }
-    },
     "nix": {
       "flake": false,
       "locked": {
@@ -850,7 +820,6 @@
         "invoice": "invoice",
         "ip-bans": "ip-bans",
         "meowbot": "meowbot",
-        "meshcoretomqtt": "meshcoretomqtt",
         "nix-auth": "nix-auth",
         "nix-index-database": "nix-index-database",
         "nix-oci-lock": "nix-oci-lock",

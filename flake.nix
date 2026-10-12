@@ -122,16 +122,6 @@
       };
     };
 
-    meshcoretomqtt = {
-      url = "github:Cisien/meshcoretomqtt/2691923f90ed6d4d94407ec4a08c29b176b3a31c";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        flake-utils.follows = "flake-utils";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
     nix-auth = {
       url = "github:numtide/nix-auth";
       inputs = {
