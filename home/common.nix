@@ -75,7 +75,6 @@ in
           kdePackages.krdc
           kdePackages.krfb
           libreoffice
-          local.sable-desktop
           local.sable-next-desktop
           localsend
           mpv
