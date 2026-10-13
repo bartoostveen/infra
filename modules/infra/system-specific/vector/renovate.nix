@@ -71,6 +71,8 @@ in
       phpPackages.composer
       gradle
       openjdk25_headless
+      python314
+      uv
     ];
   };
 
