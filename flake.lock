@@ -22,16 +22,15 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1792162846,
-        "narHash": "sha256-HDLBjnA0a/A1rh/Ipg71xJY6UsXYB/lTNpONWQ18oMg=",
-        "owner": "bartoostveen",
+        "lastModified": 1792180529,
+        "narHash": "sha256-ubTd1I2AnUpHJay5I6ydXeYaJZ1H+G+Z4+Vo5CcQLiQ=",
+        "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "fa3be122ee0a67e6f72a8fcf3f5143a0c70a8389",
+        "rev": "eccbceea672ac11b1e906d94b8a1ab73ff170653",
         "type": "github"
       },
       "original": {
-        "owner": "bartoostveen",
-        "ref": "authentik-2026.8.4",
+        "owner": "nix-community",
         "repo": "authentik-nix",
         "type": "github"
       }
