@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  wireguard,
   ...
 }:
 
@@ -15,6 +16,8 @@ let
     ;
 
   inherit (pkgs.callPackage ./lib.nix { }) mkAutokumaMonitor;
+
+  metricsPort = 48921;
 in
 {
   config = mkIf cfg.enable {
@@ -34,6 +37,7 @@ in
         allow_encryption = true;
         allow_federation = true;
         allow_legacy_media = false;
+        allow_prometheus_metrics = true;
         trusted_servers = [
           "utwente.io"
           "starstruck.systems"
@@ -85,7 +89,10 @@ in
           enableACME = true;
           forceSSL = true;
 
-          locations =
+          locations = {
+            "/_continuwuity/metrics".extraConfig = "return 404;";
+          }
+          //
             genAttrs
               (
                 if (cfg.cinny.enable && cfg.cinny.replaceContinuwuity) then
@@ -106,6 +113,35 @@ in
     systemd.services.nginx.serviceConfig.SupplementaryGroups = [
       config.services.matrix-continuwuity.group
     ];
+
+    systemd.sockets.continuwuity-proxy = {
+      description = "TCP listener for Continuwuity over WireGuard for scraping purposes";
+      wantedBy = [ "sockets.target" ];
+      listenStreams = [
+        "${wireguard.primaryIpOf config.networking.hostName}:${toString metricsPort}"
+      ];
+      socketConfig = {
+        BindToDevice = config.infra.wireguard.interface;
+        FreeBind = true;
+      };
+    };
+
+    systemd.services.continuwuity-proxy = {
+      description = "TCP proxy for Continuwuity over WireGuard for scraping purposes";
+      requires = [ "continuwuity-proxy.socket" ];
+      after = [ "continuwuity-proxy.socket" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.systemd}/lib/systemd/systemd-socket-proxyd /run/myapp/myapp.sock";
+        DynamicUser = true;
+        PrivateTmp = true;
+        SupplementaryGroups = [ config.services.matrix-continuwuity.group ];
+      };
+    };
+
+    infra.extraScrapeConfigs.continuwuity = {
+      port = metricsPort;
+      metrics_path = "/_continuwuity/metrics";
+    };
 
     infra.autokuma.instances.local = mkAutokumaMonitor cfg.fqdn;
 
