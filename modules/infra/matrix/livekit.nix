@@ -14,6 +14,9 @@ in
       livekitUrl = "wss://${cfg.livekit.domain}/livekit/sfu";
     };
 
+    # TODO: https://github.com/NixOS/nixpkgs/pull/548367
+    systemd.services.lk-jwt-service.environment.LIVEKIT_FULL_ACCESS_HOMESERVERS = cfg.fqdn;
+
     services.livekit =
       let
         certDir = config.security.acme.certs.${cfg.livekit.domain}.directory;
