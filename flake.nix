@@ -208,7 +208,7 @@
     };
 
     vert-nix = {
-      url = "git+https://git.bartoostveen.nl/bart/vert-nix.git?ref=release"; # optionally use `release` branch here
+      url = "git+https://git.bartoostveen.nl/bart/vert-nix.git?ref=release";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
