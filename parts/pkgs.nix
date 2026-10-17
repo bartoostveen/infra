@@ -37,6 +37,10 @@ in
           pkgs.applyPatches {
             name = "source";
             inherit src patches;
+            patchFlags = [
+              "-p1"
+              "-N"
+            ];
           };
 
       patchFetchers = rec {
@@ -52,7 +56,6 @@ in
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 574021 "sha256-dWOmTv+tWBin8EM8YAteDEJlQ3+thVEDn7UwgTvcQ7A=")
         (nixpkgsPr 566901 "sha256-1PoaWNwx1aBwglnuv8AnjTKt3D6ITOfq2yiZ82je+rM=")
-        (nixpkgsPr 573225 "sha256-GF9rLSq97nkVZrl2GOKyI6OfYKWNwsO/zUM4giFNN8c=")
         (nixpkgsPr 573792 "sha256-WZ0NxAy9zFn94xMKP14JVej5hM2i5pbx/sDqs/grcVM=")
       ];
 
