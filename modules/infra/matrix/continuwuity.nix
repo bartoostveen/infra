@@ -131,7 +131,7 @@ in
       requires = [ "continuwuity-proxy.socket" ];
       after = [ "continuwuity-proxy.socket" ];
       serviceConfig = {
-        ExecStart = "${pkgs.systemd}/lib/systemd/systemd-socket-proxyd /run/myapp/myapp.sock";
+        ExecStart = "${pkgs.systemd}/lib/systemd/systemd-socket-proxyd ${config.services.matrix-continuwuity.settings.global.unix_socket_path}";
         DynamicUser = true;
         PrivateTmp = true;
         SupplementaryGroups = [ config.services.matrix-continuwuity.group ];
