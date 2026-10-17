@@ -22,11 +22,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1792032192,
-        "narHash": "sha256-1i3m5Qaz0/Kb8eO1moiaqfYtWBap1qtwing+2V/Se90=",
+        "lastModified": 1792162846,
+        "narHash": "sha256-HDLBjnA0a/A1rh/Ipg71xJY6UsXYB/lTNpONWQ18oMg=",
         "owner": "bartoostveen",
         "repo": "authentik-nix",
-        "rev": "20bf63e37f3f9b028affa121468be65d02efaec7",
+        "rev": "fa3be122ee0a67e6f72a8fcf3f5143a0c70a8389",
         "type": "github"
       },
       "original": {
@@ -178,11 +178,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791505570,
-        "narHash": "sha256-2yRQ87dNTVr1kauBR6PTlfw7hnm90MAL0ObpA05xOTU=",
+        "lastModified": 1792020613,
+        "narHash": "sha256-31skutSMYGBAvGK5vs6wPGXAV4s0ietf1doMynL9FfI=",
         "owner": "9001",
         "repo": "copyparty",
-        "rev": "0dc1cb329120743ca85599ba3fba24849f137677",
+        "rev": "8b4593c9a286791eb5dc40862fa24198cea4def7",
         "type": "github"
       },
       "original": {
@@ -309,11 +309,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791642191,
-        "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
+        "lastModified": 1792098797,
+        "narHash": "sha256-u4DIIZgznEGzByxXrxWCXK19VcMtTBmi/M9gZ7Jk9bM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
+        "rev": "640725978b99076e18e069f6e7d2959124584f8f",
         "type": "github"
       },
       "original": {
@@ -333,11 +333,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791909985,
-        "narHash": "sha256-1fYl012MF1Pi6KA4RwmqRb50GYWW4LWsDcp9qGOCrcA=",
+        "lastModified": 1792137390,
+        "narHash": "sha256-RanoOf5FvJycNbxlpkBthzrHDUCHhM3QKnHlEl31SqI=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "c7aab33f1086e5999524dd8e2cc523bfad0742cc",
+        "rev": "d103aa13c2cc966ecb66ffb3f8be095e93ae826d",
         "type": "github"
       },
       "original": {
@@ -360,11 +360,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791676957,
-        "narHash": "sha256-IMRDmlmNkrbblqdgpzB67q4Mjj+uR69s/yB6bsw3td0=",
+        "lastModified": 1792003735,
+        "narHash": "sha256-jebbTdJ5tNG8dVLGvi8ArxszhOmBEsPl+EOTkiaRiGA=",
         "ref": "refs/heads/master",
-        "rev": "8ab6c697e16225cce784a87668e2128d7d2e696e",
-        "revCount": 103,
+        "rev": "6568fd01fa7e1a4165d01df288b04c91fee0a5bc",
+        "revCount": 104,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -443,11 +443,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791072294,
-        "narHash": "sha256-qYZrErRuqTMhpdQdONSLpm67aEdEmZ3kGuvZkcAWkEM=",
+        "lastModified": 1792252195,
+        "narHash": "sha256-ybZ7yWqOx5rVQP1+o4IjZUE1x9jWYfczyXuBSlpky7s=",
         "ref": "refs/heads/master",
-        "rev": "72abbe0ad6a4d8d879065be1cfb639e25b2579e9",
-        "revCount": 121,
+        "rev": "707723a07619188ed80370d566551a9dcf115f68",
+        "revCount": 124,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -459,11 +459,11 @@
     "nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1791037421,
-        "narHash": "sha256-xsLF4du2XzHgO7yZv+uTzLllVjHvpcsP4QVqOfJxnMY=",
+        "lastModified": 1791540451,
+        "narHash": "sha256-U359hAKMk883+52l9wbeVqWU6K/ZDBSOov0e3INdP0c=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "56f147d2e201c2f105e4570ca8303ed4a8a474c3",
+        "rev": "623bbfd94ef5da3be8cafb63c62b915253ee0627",
         "type": "github"
       },
       "original": {
@@ -486,11 +486,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791915034,
-        "narHash": "sha256-iuY00ZCgaZ0nK6gKrT8yf+zHwY64Uy0OfYRzwmHI4lQ=",
+        "lastModified": 1792134155,
+        "narHash": "sha256-rnMHTKqyrf8vyrmdF/8a+nlSeQMtsiwcplMoCfY2JWM=",
         "owner": "numtide",
         "repo": "nix-auth",
-        "rev": "cc336796b93d83ea1ee01f1c0eefba4496181616",
+        "rev": "6a61fa788ceefeb7034cd80e4257b6ca43b21665",
         "type": "github"
       },
       "original": {
@@ -663,11 +663,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1791734076,
-        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "lastModified": 1791956154,
+        "narHash": "sha256-jBYGPi4udQ9uo4KQp9m2J0546nJVQitG15gvZSaVVAs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "rev": "55bfb4d7437bd4e09ab7cba58a43bd68eb310044",
         "type": "github"
       },
       "original": {
@@ -719,11 +719,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791677014,
-        "narHash": "sha256-wMdPHUSrle6F2UIS9hUBACglJBTPubGGHrMq8DFlNUQ=",
+        "lastModified": 1792254253,
+        "narHash": "sha256-uixU4ottSxmQJVhME5uxrYSbY21cC8i436LG2Ee1mps=",
         "ref": "refs/heads/master",
-        "rev": "b948fc64d8fa8a51f40c3c7fda707e19946ab40b",
-        "revCount": 126,
+        "rev": "33f7d4b56ec1493b91ff37704de1aa9a0f2f0375",
+        "revCount": 130,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
@@ -771,11 +771,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790565003,
-        "narHash": "sha256-q4W45pwcae0gK41vxzqfmXOnODGKfduLJJdraPHYXcY=",
+        "lastModified": 1791170410,
+        "narHash": "sha256-pyru9MpuXRiyq0Bd4q0nHpL4T6HCuZT4B+alcgAYE4A=",
         "owner": "pyproject-nix",
         "repo": "build-system-pkgs",
-        "rev": "c84c47bba26ea303eaefc137ab48307fe57a1be1",
+        "rev": "953d35d03a51dbecaf3feb3fb679eb63e90ebeb4",
         "type": "github"
       },
       "original": {
@@ -869,11 +869,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791772131,
-        "narHash": "sha256-tZXVWKw6apA2cTnQGaxAlCSjHaqI2gBAm7HeAxS9Gn4=",
+        "lastModified": 1792031322,
+        "narHash": "sha256-xgJCTlLNN+OOw3qP0SpsXvSAxLkLYYCW907Qdbpy6qE=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "2b29c54422fcb3ea1d653dfaafc4d8ad6a34dbdc",
+        "rev": "62d6e2b25c94a26f5fd7ef5a632e6a92d4b632cb",
         "type": "github"
       },
       "original": {
@@ -1002,11 +1002,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789407052,
-        "narHash": "sha256-eSUFY+u9Xq9/i/0/OH5JhVzTvG+eiOEvUErAmfBzaBE=",
+        "lastModified": 1792151336,
+        "narHash": "sha256-8d3MAVKCwIU14I67TVWxEff/WqoH7jNuy75huO3QRws=",
         "owner": "winapps-org",
         "repo": "winapps",
-        "rev": "42c7e8318280c6fc3426c7afebfc7f43b895f4c8",
+        "rev": "f5c9ee3951046c28f2aaf3a0b3b16c9a1c0a09e9",
         "type": "github"
       },
       "original": {
