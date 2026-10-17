@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 
 {
   virtualisation = {
@@ -15,6 +19,11 @@
   };
 
   infra.backup.jobs.state.paths = [ "/var/lib/containers/storage" ];
+
+  networking.firewall.interfaces."podman${if config.networking.nftables.enable then "*" else "+"}" = {
+    allowedUDPPorts = [ 53 ];
+    allowedTCPPorts = [ 53 ];
+  };
 
   environment.systemPackages = with pkgs; [
     dive
