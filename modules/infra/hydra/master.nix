@@ -26,6 +26,7 @@ in
   imports = [
     ./common.nix
     inputs.hydra.nixosModules.web-app
+    inputs.hydra.nixosModules.evaluator
     inputs.hydra.nixosModules.queue-runner
   ];
 
