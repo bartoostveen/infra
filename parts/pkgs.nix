@@ -67,6 +67,9 @@ in
         config.android_sdk.accept_license = true;
         config.permittedInsecurePackages = [
           "olm-3.2.16"
+          "sable-1.22.11"
+          "sable-unwrapped-1.22.11"
+          "sable-desktop-1.22.11"
         ];
 
         overlays = [
