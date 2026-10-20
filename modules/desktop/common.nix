@@ -27,7 +27,7 @@ in
     ];
   };
 
-  boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_2;
+  boot.kernelPackages = smallPkgs.linuxKernel.packages.linux_7_3;
 
   services.resolved.enable = lib.mkDefault true;
   services.kresd.enable = lib.mkForce false;
