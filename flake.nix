@@ -55,7 +55,8 @@
     };
 
     copyparty = {
-      url = "github:9001/copyparty";
+      # TODO: use upstream after https://github.com/9001/copyparty/pull/1676 is merged
+      url = "github:bartoostveen/copyparty/fix/makeWrapperArgs";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
