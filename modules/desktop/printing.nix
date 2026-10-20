@@ -9,7 +9,6 @@
     browsed.enable = true;
     defaultShared = true;
     openFirewall = true;
-    drivers = [ pkgs.hplip ];
     cups-pdf.enable = true;
   };
 
@@ -29,7 +28,6 @@
   hardware.sane = {
     enable = true;
     extraBackends = with pkgs; [
-      hplip
       sane-airscan
       ipp-usb
     ];
