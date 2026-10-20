@@ -15,10 +15,7 @@ in
     package = pkgs.nextcloud35;
     hostName = fqdn;
     secretFile = config.sops.secrets.nextcloud-secrets.path;
-    config = {
-      adminpassFile = config.sops.secrets.nextcloud-admin-pass.path;
-      dbtype = "pgsql";
-    };
+    config.dbtype = "pgsql";
     database.createLocally = true;
     configureRedis = true;
     https = true;
@@ -97,15 +94,6 @@ in
   };
 
   infra.backup.jobs.state.paths = [ config.services.nextcloud.home ];
-
-  sops.secrets.nextcloud-admin-pass = {
-    format = "binary";
-    sopsFile = ../../../../secrets/nextcloud-admin-pass.vector.secret;
-
-    owner = "nextcloud";
-    group = "nextcloud";
-    mode = "0660";
-  };
 
   sops.secrets.nextcloud-secrets = {
     format = "binary";
