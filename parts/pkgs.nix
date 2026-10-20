@@ -59,6 +59,7 @@ in
         (nixpkgsPr 576572 "sha256-9MHEQlHaE2BtnMiHZBXmOmaqok3m+sAvoOs6pIwC64o=")
         (nixpkgsPr 576579 "sha256-TTw/V6RG0nk7wugLoBMvAF+CG2dIczZf8ywNf8H7u9k=")
         (nixpkgsPr 576589 "sha256-QQhY0YEqbix/6mSyNPrOuJI/vvm3T6W9NykrDbO64p4=")
+        ./nextcloud-ca.patch
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
