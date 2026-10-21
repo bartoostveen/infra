@@ -62,6 +62,7 @@ in
         ./nextcloud-ca.patch
         ./revert-direnv-bump.patch
         (nixpkgsPr 576802 "sha256-Lq5QUyZwqFdtGhSG1oieUDTAqo3kuwzhwFxiToYpq04=")
+        (nixpkgsPr 576853 "sha256-zRGO7s4r8Aw/NvHvIJREPXuhgeMvyg6mCmBDu3ORBlw=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
@@ -82,14 +83,14 @@ in
           (_: _: {
             inherit (smallPkgs)
               roundcube
-              php82
-              php82Packages
-              php83
-              php83Packages
-              php84
-              php84Packages
-              php85
-              php85Packages
+              # php82
+              # php82Packages
+              # php83
+              # php83Packages
+              # php84
+              # php84Packages
+              # php85
+              # php85Packages
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
