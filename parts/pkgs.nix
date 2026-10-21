@@ -61,6 +61,7 @@ in
         (nixpkgsPr 576589 "sha256-QQhY0YEqbix/6mSyNPrOuJI/vvm3T6W9NykrDbO64p4=")
         ./nextcloud-ca.patch
         ./revert-direnv-bump.patch
+        (nixpkgsPr 576802 "sha256-Lq5QUyZwqFdtGhSG1oieUDTAqo3kuwzhwFxiToYpq04=")
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
