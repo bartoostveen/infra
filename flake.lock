@@ -22,11 +22,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1792415997,
-        "narHash": "sha256-ShMVBHmTnReG1GD+VQaw6xwyuYbabLZPS28xSfajiaA=",
+        "lastModified": 1792589250,
+        "narHash": "sha256-AXAG+QvToMcIy3DpPX75dhk6fna24pc3XvMzAUmGb5g=",
         "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "c13dc99193a2adf072892c2e36e70316f4fcca61",
+        "rev": "b34f78837a7992146e6bdd43c85d03601b3b7ad5",
         "type": "github"
       },
       "original": {
@@ -38,16 +38,16 @@
     "authentik-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1792011774,
-        "narHash": "sha256-vPeg7IGdJqJycfi5V31/pt7tZesCWoP+Hz/vo3uKo+k=",
+        "lastModified": 1792581414,
+        "narHash": "sha256-gdhGKCfsMUrWyFnf5TaaHM2ZQ1WYgTLOgGg4DlCaUHU=",
         "owner": "goauthentik",
         "repo": "authentik",
-        "rev": "410f46e5cf18f97a1f0056b30984a145242df55d",
+        "rev": "4ec0d19b98da3c329781894cd550da95d3033954",
         "type": "github"
       },
       "original": {
         "owner": "goauthentik",
-        "ref": "version/2026.8.4",
+        "ref": "version/2026.8.5",
         "repo": "authentik",
         "type": "github"
       }
@@ -350,11 +350,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792515134,
-        "narHash": "sha256-jue8bAK9X7L1wCAyV6P8pwN0qD+3c9vT+rwfwnr/arQ=",
+        "lastModified": 1792573568,
+        "narHash": "sha256-dUOZoysZ39y43qBmQ9KC/qx3K6y8tBWMxTQvbBrMboA=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "a94ffefbb0d1ec50616d12dc5ebb06cea7c5ed63",
+        "rev": "c22e26f19ea6e953c1a1bcca709051a02f8fcb84",
         "type": "github"
       },
       "original": {
@@ -503,11 +503,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792482898,
-        "narHash": "sha256-OpF0wCemSh/7s4OYfnCjFn1AgNiEHLygh3j9jltuFkg=",
+        "lastModified": 1792567637,
+        "narHash": "sha256-utorCkojMDnnpru7w98b5pZ2r5kMxIGInVU5DSyFnBc=",
         "owner": "numtide",
         "repo": "nix-auth",
-        "rev": "2f897895c5044130ef1ec35b7b648897142a785d",
+        "rev": "701fb8999d612207439858ec57e34ebbad38e5ca",
         "type": "github"
       },
       "original": {
@@ -581,11 +581,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792281801,
-        "narHash": "sha256-5T1bU6/BrtoNxEatcmA8UzFCYFbFMDCl2bB8LDunGw4=",
+        "lastModified": 1792548489,
+        "narHash": "sha256-+kL3Qtn94WBt4wEEiGB+h40ZqPAQUwmP8BiLV5Sk7mM=",
         "ref": "refs/heads/master",
-        "rev": "e9792e724ad680ebf5eb68c328f96e3baaa84652",
-        "revCount": 88,
+        "rev": "63d9ca37c3f2590c492502073c9ae24ef914ad74",
+        "revCount": 90,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
