@@ -82,20 +82,15 @@ in
           (_: _: {
             inherit (smallPkgs)
               roundcube
-              # php82
-              # php82Packages
-              # php83
-              # php83Packages
-              # php84
-              # php84Packages
-              # php85
-              # php85Packages
+              php82
+              php82Packages
+              php83
+              php83Packages
+              php84
+              php84Packages
+              php85
+              php85Packages
               ;
-
-            php85 = smallPkgs.php85.override {
-              version = "8.5.12";
-              hash = "sha256-/7YO3EN87WO1E35JhNs3moERxQBJxxFRDYuVgnfvwag=";
-            };
 
             inherit (inputs'.nix-auth.packages) nix-auth;
             inherit (inputs'.invoice.packages) invoice;
