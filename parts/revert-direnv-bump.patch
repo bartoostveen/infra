@@ -1,0 +1,37 @@
+From d2dbe3b7a7fc93cc36bbdfe1750ea81a8dd7e0d1 Mon Sep 17 00:00:00 2001
+From: Bart Oostveen <bart@bartoostveen.nl>
+Date: Wed, 21 Oct 2026 03:27:49 +0200
+Subject: [PATCH] Revert "direnv: 2.37.1 -> 2.38.2"
+
+This reverts commit 894d632d850e1fefbc7ddd1c97ba7647dd703940.
+---
+ pkgs/by-name/di/direnv/package.nix | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/pkgs/by-name/di/direnv/package.nix b/pkgs/by-name/di/direnv/package.nix
+index 972fdf23b41d..772aaa3376a1 100644
+--- a/pkgs/by-name/di/direnv/package.nix
++++ b/pkgs/by-name/di/direnv/package.nix
+@@ -12,16 +12,16 @@
+ 
+ buildGoModule (finalAttrs: {
+   pname = "direnv";
+-  version = "2.38.2";
++  version = "2.37.1";
+ 
+   src = fetchFromGitHub {
+     owner = "direnv";
+     repo = "direnv";
+     rev = "v${finalAttrs.version}";
+-    hash = "sha256-0TVuQ0TEqkkCo36zrdFbfZ+FJSVrvNA7egAcsS9YFtA=";
++    hash = "sha256-92xjoCjH5O7wx8U7OFG8Lw9eDOAdeVKNvxBHW+TiniM=";
+   };
+ 
+-  vendorHash = "sha256-3ojb8iLIzhjUZa7Gt+gJjOFy9qm4LOrFBLZ6fk5x1HM=";
++  vendorHash = "sha256-SAIGFQGACTB3Q0KnIdiKKNYY6fVjf/09wGqNr0Hkg+M=";
+ 
+   # we have no bash at the moment for windows
+   env.BASH_PATH = lib.optionalString (!stdenv.hostPlatform.isWindows) "${bash}/bin/bash";
+-- 
+2.56.0
+
