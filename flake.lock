@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792598761,
-        "narHash": "sha256-d+TW6WQApDXFmfpuAN+dMXxZ1F7Z2s6/qp77XaDgHW4=",
+        "lastModified": 1792599098,
+        "narHash": "sha256-7A1ko+D9MUK2tGHyzZ/y3D4F9hPB9SpRrovOv19fazY=",
         "ref": "refs/heads/master",
-        "rev": "7926636bf2aecdc6b2311b875a397fc7976e556a",
-        "revCount": 319,
+        "rev": "5fd96d28fc18b97846f121b7e103a9c417005ab7",
+        "revCount": 320,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -177,16 +177,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1792510829,
+        "lastModified": 1792559340,
         "narHash": "sha256-IRpSJIA0ijCUDndWSZk7MdbtzAjj30t9mkCQ2VspHdo=",
-        "owner": "bartoostveen",
+        "owner": "9001",
         "repo": "copyparty",
-        "rev": "2ef9c6bab257ac026ea154c56707758ea2331ec1",
+        "rev": "1af7efeca858dcfa29f797d7ae93f22eb2fdecf0",
         "type": "github"
       },
       "original": {
-        "owner": "bartoostveen",
-        "ref": "fix/makeWrapperArgs",
+        "owner": "9001",
         "repo": "copyparty",
         "type": "github"
       }
