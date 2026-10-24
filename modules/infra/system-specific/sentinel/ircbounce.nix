@@ -73,9 +73,19 @@ in
         };
         Network.ircnet = {
           Server = "openirc.snt.utwente.nl 6667";
-          Chan = genAttrs [ "#snt" ] (_name: {
-            Buffer = 1000;
-          });
+          Chan =
+            genAttrs
+              [
+                "#snt"
+                "#hornet"
+                "#nlnog"
+                "#nlnog-offtopic"
+                "#snt-cpanel"
+                "#matrix-irc"
+              ]
+              (_name: {
+                Buffer = 1000;
+              });
           Nick = "bart_irc";
           LoadModule = [
             "savebuff"
