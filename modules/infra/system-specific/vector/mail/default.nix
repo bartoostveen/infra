@@ -192,13 +192,13 @@ in
     };
 
   services.phpfpm.pools.roundcube = {
-    phpOptions = ''
-      opcache.enable=1
-      opcache.enable_cli=1
-      opcache.memory_consumption=128
-      opcache.max_accelerated_files=10000
-      opcache.validate_timestamps=0
-    '';
+    phpOptions = {
+      "opcache.enable" = 1;
+      "opcache.enable_cli" = 1;
+      "opcache.memory_consumption" = 128;
+      "opcache.max_accelerated_files" = 10000;
+      "opcache.validate_timestamps" = 0;
+    };
     settings = {
       "php_admin_value[open_basedir]" = "/run/secrets:/nix/store:/tmp";
       "pm" = "dynamic";
