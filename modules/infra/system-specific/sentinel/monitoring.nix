@@ -194,16 +194,7 @@ in
         (pkgs.writers.writeJSON "infra.json" { inherit groups; })
       ];
 
-    scrapeConfigs = [
-      {
-        job_name = "elisaado_ooye";
-        scheme = "https";
-        static_configs = [
-          { targets = [ "ooye.elisaado.com" ]; }
-        ];
-      }
-    ]
-    ++ concatMap (
+    scrapeConfigs = concatMap (
       name:
       staticConfigsFor {
         inherit name;

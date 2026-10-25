@@ -51,7 +51,6 @@ in
         url_preview_domain_explicit_allowlist = [
           "i.imgur.com"
           "cdn.discordapp.com"
-          "ooye.elisaado.com"
           "media.tenor.com"
           "giphy.com"
           "cdn.nest.rip"
