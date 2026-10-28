@@ -247,27 +247,6 @@
         "type": "github"
       }
     },
-    "disko_2": {
-      "inputs": {
-        "nixpkgs": [
-          "ta-schedule",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1792526520,
-        "narHash": "sha256-3hSJlv8mUVnZPMWK2+CM7a9O+nR6Z4mCh27NfLCmTPc=",
-        "owner": "nix-community",
-        "repo": "disko",
-        "rev": "cedd626e11b635470fa6f9fdb8ad79b0075dd7f9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "disko",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -936,7 +915,6 @@
     },
     "ta-schedule": {
       "inputs": {
-        "disko": "disko_2",
         "flake-parts": [
           "flake-parts"
         ],
@@ -948,11 +926,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793154612,
-        "narHash": "sha256-yTKpogUQJvNtdOfaS8/zX8FD2UYH6/JDLHJLy1ML8bo=",
+        "lastModified": 1793156828,
+        "narHash": "sha256-574MqO0cGazmd/wbVBzyQ+gmxdkSaopU1q2JJA5RmnU=",
         "ref": "refs/heads/master",
-        "rev": "f1bba00943ea64d5cb16ec50401fd4844d52444e",
-        "revCount": 14,
+        "rev": "1586de5f523b5437769ad67d4be16d600b989425",
+        "revCount": 19,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
