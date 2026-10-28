@@ -196,6 +196,15 @@
 
     systems.url = "github:nix-systems/default";
 
+    ta-schedule = {
+      url = "git+ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";

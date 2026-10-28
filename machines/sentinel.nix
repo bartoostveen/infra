@@ -37,6 +37,7 @@ in
     ../modules/infra/system-specific/sentinel/maubot.nix
     ../modules/infra/system-specific/sentinel/meowbot.nix
     ../modules/infra/system-specific/sentinel/monitoring.nix
+    ../modules/infra/system-specific/sentinel/ta-schedule.nix
     ../modules/infra/system-specific/sentinel/tascheduling-db.nix
     ../modules/infra/system-specific/sentinel/venator.nix
     ../modules/infra/system-specific/sentinel/wireguard.monitoring.nix
