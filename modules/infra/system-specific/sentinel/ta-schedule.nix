@@ -14,7 +14,7 @@ in
   services.ta-schedule = {
     enable = true;
     package = inputs.ta-schedule.${pkgs.stdenv.hostPlatform.system}.ta-schedule;
-    sheetFile = config.sops.secrets.ta-schedule.path;
+    inputFile = config.sops.secrets.ta-schedule.path;
     settings = {
       hostname = "ta.bartoostveen.nl";
       port = 6146;
