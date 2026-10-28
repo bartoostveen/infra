@@ -54,7 +54,6 @@ in
       };
 
       nixpkgsPatches = with patchFetchers; [
-        (nixpkgsPr 566901 "sha256-1PoaWNwx1aBwglnuv8AnjTKt3D6ITOfq2yiZ82je+rM=")
         (nixpkgsPr 576589 "sha256-QQhY0YEqbix/6mSyNPrOuJI/vvm3T6W9NykrDbO64p4=")
         ./revert-direnv-bump.patch
       ];
