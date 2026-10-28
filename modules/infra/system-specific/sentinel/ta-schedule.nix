@@ -13,7 +13,7 @@ in
 
   services.ta-schedule = {
     enable = true;
-    package = inputs.ta-schedule.${pkgs.stdenv.hostPlatform.system}.ta-schedule;
+    package = inputs.ta-schedule.packages.${pkgs.stdenv.hostPlatform.system}.ta-schedule;
     inputFile = config.sops.secrets.ta-schedule.path;
     settings = {
       hostname = "ta.bartoostveen.nl";
