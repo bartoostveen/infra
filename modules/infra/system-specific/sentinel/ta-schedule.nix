@@ -7,6 +7,7 @@
 
 let
   settings = config.services.ta-schedule.settings;
+  hostname = "ta.bartoostveen.nl";
 in
 {
   imports = [ inputs.ta-schedule.nixosModules.default ];
@@ -16,7 +17,7 @@ in
     package = inputs.ta-schedule.packages.${pkgs.stdenv.hostPlatform.system}.ta-schedule;
     inputFile = config.sops.secrets.ta-schedule.path;
     settings = {
-      hostname = "ta.bartoostveen.nl";
+      base_url = "https://${hostname}";
       port = 6146;
       listen = "127.0.0.1";
       timezone = "Europe/Amsterdam";
@@ -25,7 +26,7 @@ in
     environmentFile = config.sops.secrets.ta-schedule-env.path;
   };
 
-  services.nginx.virtualHosts.${settings.hostname} = {
+  services.nginx.virtualHosts.${hostname} = {
     enableACME = true;
     forceSSL = true;
     locations."/".proxyPass = "http://${settings.listen}:${toString settings.port}";
