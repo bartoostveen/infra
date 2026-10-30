@@ -113,11 +113,13 @@ in
 
               specialArgs = {
                 inherit
+                  # keep-sorted start
+                  continuwuityPkgs
+                  flakeRoot
                   inputs
                   smallPkgs
-                  continuwuityPkgs
                   wireguard
-                  flakeRoot
+                  # keep-sorted end
                   ;
               };
 
