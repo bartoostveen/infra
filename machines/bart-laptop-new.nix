@@ -2,6 +2,7 @@
   pkgs,
   config,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -91,7 +92,7 @@
 
   sops.secrets.wg-secret = {
     format = "binary";
-    sopsFile = ../secrets/non-infra/wg-snt.secret;
+    sopsFile = /${flakeRoot}/secrets/non-infra/wg-snt.secret;
     reloadUnits = [ "systemd-networkd.service" ];
   };
 

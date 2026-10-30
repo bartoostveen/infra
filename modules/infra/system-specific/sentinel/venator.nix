@@ -2,6 +2,7 @@
   config,
   inputs,
   pkgs,
+  flakeRoot,
   ...
 }:
 
@@ -52,7 +53,7 @@ in
   };
 
   sops.secrets.venator-admin-psk = {
-    sopsFile = ../../../../secrets/venator-admin-psk.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/venator-admin-psk.sentinel.secret;
     format = "binary";
     owner = "venator";
     group = "venator";
@@ -61,7 +62,7 @@ in
   };
 
   sops.secrets.venator-pepper = {
-    sopsFile = ../../../../secrets/venator-pepper.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/venator-pepper.sentinel.secret;
     format = "binary";
     owner = "venator";
     group = "venator";

@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -177,7 +178,7 @@ in
       format = "binary";
       owner = "mautrix-telegram";
       group = "mautrix-telegram";
-      sopsFile = ../../../secrets/mautrix/mautrix-telegram.env.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/mautrix/mautrix-telegram.env.sentinel.secret;
       mode = "0600";
       restartUnits = [ "mautrix-telegram.service" ];
     };

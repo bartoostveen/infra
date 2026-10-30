@@ -2,6 +2,7 @@
   config,
   lib,
   wireguard,
+  flakeRoot,
   ...
 }:
 
@@ -33,12 +34,12 @@ in
 
     sops.secrets.borg-ssh-key = mkDefault {
       format = "binary";
-      sopsFile = ../../../secrets/borg/borg-id_ed25519.secret;
+      sopsFile = /${flakeRoot}/secrets/borg/borg-id_ed25519.secret;
     };
 
     sops.secrets.borg-secret = mkDefault {
       format = "binary";
-      sopsFile = ../../../secrets/borg/borg-key.secret;
+      sopsFile = /${flakeRoot}/secrets/borg/borg-key.secret;
     };
   };
 }

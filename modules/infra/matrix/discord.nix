@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  flakeRoot,
+  ...
+}:
 
 let
   port = 29334;
@@ -129,7 +134,7 @@ in
       format = "binary";
       owner = "mautrix-discord";
       group = "mautrix-discord";
-      sopsFile = ../../../secrets/mautrix/mautrix-discord.env.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/mautrix/mautrix-discord.env.sentinel.secret;
       mode = "0600";
       restartUnits = [ "mautrix-discord.service" ];
     };

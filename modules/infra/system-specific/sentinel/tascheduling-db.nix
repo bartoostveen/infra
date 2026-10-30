@@ -1,4 +1,8 @@
-{ config, ... }:
+{
+  config,
+  flakeRoot,
+  ...
+}:
 
 {
   virtualisation.oci-containers.containers.tascheduling-db = {
@@ -13,7 +17,7 @@
   };
 
   sops.secrets.tascheduling-db-env = {
-    sopsFile = ../../../../secrets/tascheduling-db.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/tascheduling-db.env.sentinel.secret;
     format = "binary";
     restartUnits = [ "podman-tascheduling-db.service" ];
   };

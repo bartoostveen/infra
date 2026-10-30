@@ -1,4 +1,8 @@
-{ config, ... }:
+{
+  config,
+  flakeRoot,
+  ...
+}:
 
 {
   imports = [
@@ -18,7 +22,7 @@
 
   sops.secrets.authentik-env = {
     format = "binary";
-    sopsFile = ../../../../secrets/authentik.env.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/authentik.env.vector.secret;
 
     owner = "authentik";
     group = "authentik";
@@ -32,7 +36,7 @@
 
   sops.secrets.ldap-bind-password = {
     format = "binary";
-    sopsFile = ../../../../secrets/ldap-bind-password.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/ldap-bind-password.vector.secret;
     restartUnits = [
       "authentik.service"
       "authentik-worker.service"

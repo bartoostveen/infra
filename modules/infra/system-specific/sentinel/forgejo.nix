@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  flakeRoot,
   ...
 }:
 
@@ -165,7 +166,7 @@ in
   };
 
   sops.secrets.forgejo-admin-password = {
-    sopsFile = ../../../../secrets/forgejo/forgejo-admin-password.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/forgejo/forgejo-admin-password.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -174,7 +175,7 @@ in
   };
 
   sops.secrets.forgejo-signing-key = {
-    sopsFile = ../../../../secrets/forgejo/forgejo-signing-key.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/forgejo/forgejo-signing-key.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0400";
@@ -183,7 +184,7 @@ in
   };
 
   sops.secrets.git-email-password = {
-    sopsFile = ../../../../secrets/mail/passwords/git.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/git.sentinel.secret;
     owner = "forgejo";
     group = "forgejo";
     mode = "0600";

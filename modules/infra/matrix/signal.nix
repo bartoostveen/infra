@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  flakeRoot,
+  ...
+}:
 
 let
   port = 29328;
@@ -138,7 +143,7 @@ in
       format = "binary";
       owner = "mautrix-signal";
       group = "mautrix-signal";
-      sopsFile = ../../../secrets/mautrix/mautrix-signal.env.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/mautrix/mautrix-signal.env.sentinel.secret;
       mode = "0600";
       restartUnits = [ "mautrix-signal.service" ];
     };

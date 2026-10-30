@@ -3,6 +3,7 @@
   inputs,
   pkgs,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -60,7 +61,7 @@ in
 
   sops.secrets.meowbot-env = {
     format = "binary";
-    sopsFile = ../../../../secrets/meowbot.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/meowbot.env.sentinel.secret;
     restartUnits = [ "meowbot.service" ];
   };
 }

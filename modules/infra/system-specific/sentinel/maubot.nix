@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -101,7 +102,7 @@ in
   };
 
   sops.secrets.maubot-exporter-env = {
-    sopsFile = ../../../../secrets/maubot-exporter.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/maubot-exporter.env.sentinel.secret;
     owner = "maubot-exporter";
     group = "maubot-exporter";
     format = "binary";

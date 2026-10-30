@@ -3,6 +3,7 @@
   config,
   lib,
   pkgs,
+  flakeRoot,
   ...
 }:
 
@@ -161,7 +162,7 @@ in
     map (
       machine:
       nameValuePair "${machine}-queue-runner-token" {
-        sopsFile = ../../../secrets/hydra/${machine}-queue-runner-token.secret;
+        sopsFile = /${flakeRoot}/secrets/hydra/${machine}-queue-runner-token.secret;
         owner = "hydra-queue-runner";
         group = "hydra";
         format = "binary";

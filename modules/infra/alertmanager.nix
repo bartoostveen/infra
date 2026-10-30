@@ -1,4 +1,9 @@
-{ config, wireguard, ... }:
+{
+  config,
+  wireguard,
+  flakeRoot,
+  ...
+}:
 
 let
   emailHost = "bartoostveen.nl";
@@ -56,7 +61,7 @@ in
     format = "binary";
     mode = "0600";
 
-    sopsFile = ../../secrets/mail/passwords/alertmanager.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/alertmanager.secret;
     restartUnits = [ "alertmanager.service" ];
     owner = "alertmanager";
     group = "alertmanager";

@@ -2,6 +2,7 @@
   config,
   lib,
   wireguard,
+  flakeRoot,
   ...
 }:
 
@@ -76,7 +77,7 @@ in
       useSystemdActivation = mkForce true;
       secrets.${sopsSecret} = {
         format = "binary";
-        sopsFile = ../secrets/wireguard/private.${cfg.host}.secret;
+        sopsFile = /${flakeRoot}/secrets/wireguard/private.${cfg.host}.secret;
         restartUnits = mkIf config.networking.wireguard.useNetworkd [ "systemd-networkd.service" ];
       };
     };

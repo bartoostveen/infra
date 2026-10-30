@@ -3,6 +3,7 @@
   inputs,
   lib,
   pkgs,
+  flakeRoot,
   ...
 }:
 
@@ -213,7 +214,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/dovecot-master-password.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/dovecot-master-password.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -227,7 +228,7 @@ in
     owner = "dovecot2";
     group = "dovecot2";
 
-    sopsFile = ../../../../../secrets/mail/dovecot-master-passwd.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/dovecot-master-passwd.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -240,7 +241,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/roundcube-client.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/roundcube-client.vector.secret;
 
     restartUnits = [
       "phpfpm-roundcube.service"
@@ -253,7 +254,7 @@ in
     format = "binary";
     owner = "roundcube";
     group = "roundcube";
-    sopsFile = ../../../../../secrets/mail/roundcube-des.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/roundcube-des.vector.secret;
 
     restartUnits = [ "phpfpm-roundcube.service" ];
   };

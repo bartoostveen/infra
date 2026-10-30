@@ -3,6 +3,7 @@
   pkgs,
   config,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -36,7 +37,7 @@ in
     };
 
     sops.secrets.alertmanager-matrix-env = {
-      sopsFile = ../../../secrets/matrix/alertmanager-matrix.env.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/matrix/alertmanager-matrix.env.sentinel.secret;
       owner = "alertmanager-matrix";
       group = "alertmanager-matrix";
       format = "binary";

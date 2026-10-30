@@ -4,6 +4,7 @@
   inputs,
   lib,
   wireguard,
+  flakeRoot,
   ...
 }:
 
@@ -224,7 +225,7 @@ in
     format = "binary";
     mode = "0600";
 
-    sopsFile = ../../../../secrets/grafana.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/grafana.sentinel.secret;
     restartUnits = [ "grafana.service" ];
     owner = "grafana";
     group = "grafana";
@@ -317,7 +318,7 @@ in
     group = "autokuma";
     mode = "0600";
 
-    sopsFile = ../../../../secrets/autokuma/autokuma-toostveen.toml.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/autokuma/autokuma-toostveen.toml.sentinel.secret;
     format = "binary";
     restartUnits = [ "autokuma-local.service" ];
   };

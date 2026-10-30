@@ -3,6 +3,7 @@
   config,
   lib,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -189,7 +190,7 @@ in
 
     sops.secrets.copyparty-adm-password = {
       format = "binary";
-      sopsFile = ../../secrets/copyparty/copyparty-password.secret;
+      sopsFile = /${flakeRoot}/secrets/copyparty/copyparty-password.secret;
 
       owner = "prometheus";
       group = "prometheus";
@@ -199,7 +200,7 @@ in
 
     sops.secrets.copyparty-adm-password-enc = {
       format = "binary";
-      sopsFile = ../../secrets/copyparty/copyparty-password.enc.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/copyparty/copyparty-password.enc.sentinel.secret;
 
       owner = group;
       inherit group;

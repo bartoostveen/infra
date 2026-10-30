@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  flakeRoot,
+  ...
+}:
 
 let
   keyFile = config.sops.secrets.livekit-keys.path;
@@ -100,7 +105,7 @@ in
     users.groups.matrix-livekit = { };
 
     sops.secrets.livekit-keys = {
-      sopsFile = ../../../secrets/matrix/livekit-keys.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/matrix/livekit-keys.sentinel.secret;
       owner = "livekit";
       group = "matrix-livekit";
       format = "binary";
@@ -112,7 +117,7 @@ in
     };
 
     sops.secrets.turn = {
-      sopsFile = ../../../secrets/matrix/turn.sentinel.secret;
+      sopsFile = /${flakeRoot}/secrets/matrix/turn.sentinel.secret;
       owner = "livekit";
       group = "matrix-livekit";
       format = "binary";

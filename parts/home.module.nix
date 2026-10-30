@@ -3,6 +3,7 @@
   withSystem,
   lib,
   config,
+  flakeRoot,
   ...
 }:
 
@@ -71,7 +72,12 @@ in
 
       nameValuePair "${username}@${hostname}" (
         inputs.home-manager.lib.homeManagerConfiguration {
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit
+              inputs
+              flakeRoot
+              ;
+          };
 
           inherit pkgs;
 

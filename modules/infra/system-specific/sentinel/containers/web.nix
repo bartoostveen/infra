@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -88,13 +89,13 @@ in
 
   sops.secrets.web-env = {
     format = "binary";
-    sopsFile = ../../../../../secrets/web.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/web.env.sentinel.secret;
     restartUnits = [ "podman-${name}.service" ];
   };
 
   sops.secrets.readme-stats-env = {
     format = "binary";
-    sopsFile = ../../../../../secrets/readme-stats.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/readme-stats.env.sentinel.secret;
     restartUnits = [ "podman-${readmeStatsName}.service" ];
   };
 }

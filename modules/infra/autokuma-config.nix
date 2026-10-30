@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   wireguard,
+  flakeRoot,
   ...
 }:
 
@@ -135,7 +136,7 @@ in
     group = "root";
     mode = "0600";
 
-    sopsFile = ../../secrets/autokuma/autokuma.env.secret;
+    sopsFile = /${flakeRoot}/secrets/autokuma/autokuma.env.secret;
     format = "binary";
     restartUnits = [ "autokuma-local.service" ];
   };
@@ -145,7 +146,7 @@ in
     group = "autokuma";
     mode = "0600";
 
-    sopsFile = ../../secrets/autokuma/autokuma-matrix.toml.secret;
+    sopsFile = /${flakeRoot}/secrets/autokuma/autokuma-matrix.toml.secret;
     format = "binary";
     restartUnits = [ "autokuma-local.service" ];
   };

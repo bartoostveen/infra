@@ -4,6 +4,7 @@
   withSystem,
   config,
   wireguard,
+  flakeRoot,
   ...
 }:
 
@@ -83,7 +84,10 @@ in
   };
 
   config = {
-    _module.args.wireguard = import ../modules/wireguard.meta.nix { inherit lib; };
+    _module.args = {
+      wireguard = import ../modules/wireguard.meta.nix { inherit lib; };
+      flakeRoot = ../.;
+    };
 
     flake = {
       inherit wireguard;
@@ -113,6 +117,7 @@ in
                   smallPkgs
                   continuwuityPkgs
                   wireguard
+                  flakeRoot
                   ;
               };
 

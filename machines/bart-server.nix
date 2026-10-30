@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -100,7 +101,7 @@ in
 
   sops.secrets.authentik-env = {
     format = "binary";
-    sopsFile = ../secrets/authentik.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/authentik.env.sentinel.secret;
 
     owner = "authentik";
     group = "authentik";

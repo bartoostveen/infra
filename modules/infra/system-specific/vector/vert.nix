@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -110,7 +111,7 @@ in
   };
 
   sops.secrets.vert-env = {
-    sopsFile = ../../../../secrets/vert.env.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/vert.env.vector.secret;
     owner = "vertd";
     group = "vertd";
     mode = "0440";

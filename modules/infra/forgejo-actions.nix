@@ -3,6 +3,7 @@
   lib,
   pkgs,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -153,7 +154,7 @@ in
         name = "forgejo-runner-token-runner${n}.${config.networking.hostName}";
       in
       nameValuePair name {
-        sopsFile = ../../secrets/forgejo/${name}.secret;
+        sopsFile = /${flakeRoot}/secrets/forgejo/${name}.secret;
         mode = "0400";
         format = "binary";
         restartUnits = [ "forgejo-runner-runner${n}.service" ];

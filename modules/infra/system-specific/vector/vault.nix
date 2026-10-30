@@ -1,4 +1,8 @@
-{ config, ... }:
+{
+  config,
+  flakeRoot,
+  ...
+}:
 
 let
   domain = "vault.bartoostveen.nl";
@@ -33,7 +37,7 @@ in
     owner = "vaultwarden";
     group = "vaultwarden";
     mode = "0440";
-    sopsFile = ../../../../secrets/vaultwarden.env.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/vaultwarden.env.vector.secret;
     format = "binary";
     restartUnits = [ "vaultwarden.service" ];
   };

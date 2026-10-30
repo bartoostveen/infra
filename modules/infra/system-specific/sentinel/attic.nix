@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  flakeRoot,
+  ...
+}:
 
 let
   vHost = "attic.bartoostveen.nl";
@@ -86,7 +91,7 @@ in
     owner = user;
     mode = "0600";
 
-    sopsFile = ../../../../secrets/attic.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/attic.env.sentinel.secret;
     restartUnits = [ "atticd.service" ];
     format = "binary";
   };

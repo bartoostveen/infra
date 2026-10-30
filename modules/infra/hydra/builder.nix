@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -27,7 +28,7 @@ in
   };
 
   sops.secrets.queue-runner-token = {
-    sopsFile = ../../../secrets/hydra/${config.networking.hostName}-queue-runner-token.secret;
+    sopsFile = /${flakeRoot}/secrets/hydra/${config.networking.hostName}-queue-runner-token.secret;
     format = "binary";
     owner = "hydra-queue-builder";
     group = "hydra";

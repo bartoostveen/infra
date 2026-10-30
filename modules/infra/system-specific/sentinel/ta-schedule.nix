@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  flakeRoot,
   ...
 }:
 
@@ -33,7 +34,7 @@ in
   };
 
   sops.secrets.ta-schedule = {
-    sopsFile = ../../../../secrets/ta-schedule.xlsx.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/ta-schedule.xlsx.sentinel.secret;
     mode = "0440";
     owner = "ta-schedule";
     group = "ta-schedule";
@@ -43,7 +44,7 @@ in
   };
 
   sops.secrets.ta-schedule-env = {
-    sopsFile = ../../../../secrets/ta-schedule.env.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/ta-schedule.env.sentinel.secret;
     mode = "0440";
     format = "binary";
     restartUnits = [ "ta-schedule.service" ];

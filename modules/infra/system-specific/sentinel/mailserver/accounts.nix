@@ -1,4 +1,8 @@
-{ config, ... }:
+{
+  config,
+  flakeRoot,
+  ...
+}:
 
 {
   mailserver.accounts = {
@@ -49,7 +53,7 @@
 
   sops.secrets.alertmanager-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/alertmanager.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/alertmanager.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -59,7 +63,7 @@
 
   sops.secrets.authentik-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/auth.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/auth.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -69,7 +73,7 @@
 
   sops.secrets.bart-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/bart.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/bart.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -79,7 +83,7 @@
 
   sops.secrets.git-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/git.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/git.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -89,7 +93,7 @@
 
   sops.secrets.hydra-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/hydra.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/hydra.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"
@@ -99,7 +103,7 @@
 
   sops.secrets.vaultwarden-email-password-encrypted = {
     format = "binary";
-    sopsFile = ../../../../../secrets/mail/passwords/vaultwarden.enc.sentinel.secret;
+    sopsFile = /${flakeRoot}/secrets/mail/passwords/vaultwarden.enc.sentinel.secret;
 
     restartUnits = [
       "postfix-setup.service"

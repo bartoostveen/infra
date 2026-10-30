@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  flakeRoot,
+  ...
+}:
 
 let
   inherit (lib)
@@ -25,7 +30,7 @@ in
         owner = "rspamd";
         group = "rspamd";
         mode = "0600";
-        sopsFile = ../../../secrets/mail/dkim/${name}.mail.private.${config.networking.hostName}.secret;
+        sopsFile = /${flakeRoot}/secrets/mail/dkim/${name}.mail.private.${config.networking.hostName}.secret;
         restartUnits = [ "rspamd.service" ];
       }
     )

@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  flakeRoot,
   ...
 }:
 
@@ -97,7 +98,7 @@ in
 
   sops.secrets.nextcloud-secrets = {
     format = "binary";
-    sopsFile = ../../../../secrets/nextcloud-secrets.json.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/nextcloud-secrets.json.vector.secret;
 
     owner = "nextcloud";
     group = "nextcloud";

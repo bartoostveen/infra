@@ -1,4 +1,8 @@
-{ config, ... }:
+{
+  config,
+  flakeRoot,
+  ...
+}:
 
 {
   nix.settings.trusted-users = [ "bart" ];
@@ -36,7 +40,7 @@
   infra.backup.jobs.state.paths = [ "/home/bart/.ssh" ];
 
   sops.secrets.bart-password = {
-    sopsFile = ../../../secrets/non-infra/bart.pass.secret;
+    sopsFile = /${flakeRoot}/secrets/non-infra/bart.pass.secret;
     neededForUsers = true;
 
     format = "binary";

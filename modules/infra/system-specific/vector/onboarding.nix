@@ -3,6 +3,7 @@
   config,
   pkgs,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -104,7 +105,7 @@ in
   };
 
   sops.secrets.onboarding-env = {
-    sopsFile = ../../../../secrets/onboarding.env.vector.secret;
+    sopsFile = /${flakeRoot}/secrets/onboarding.env.vector.secret;
     format = "binary";
     restartUnits = [ "authentik-onboarding.service" ];
   };

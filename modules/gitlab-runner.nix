@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  flakeRoot,
   ...
 }:
 
@@ -49,7 +50,7 @@ in
   };
 
   sops.secrets.gitlab-runner-env = {
-    sopsFile = ../secrets/gitlab-runner.env.bart-pc.secret;
+    sopsFile = /${flakeRoot}/secrets/gitlab-runner.env.bart-pc.secret;
     mode = "0440";
     owner = "gitlab-runner";
     group = "gitlab-runner";
