@@ -277,16 +277,16 @@ in
       genAttrs
         [
           "cal.toostveen.nl"
-          "cs.toostveen.nl"
           "fs.toostveen.nl"
           "git.toostveen.nl"
           "im.toostveen.nl"
           "md.toostveen.nl"
           "pass.toostveen.nl"
           "prometheus.toostveen.nl"
-          "rd.toostveen.nl"
           "rss.toostveen.nl"
+          "sb.toostveen.nl"
           "toostveen.nl"
+          "u.toostveen.nl"
         ]
         (vhost: {
           type = "http";
