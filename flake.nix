@@ -131,6 +131,12 @@
       };
     };
 
+    nexus = {
+      url = "git+https://git.federated.nexus/Nexus/nexus";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     nix-auth = {
       url = "github:numtide/nix-auth";
       inputs = {
