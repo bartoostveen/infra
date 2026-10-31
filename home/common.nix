@@ -75,6 +75,7 @@ in
           kdePackages.krdc
           kdePackages.krfb
           libreoffice
+          local.sable-next-desktop
           localsend
           mpv
           nerd-fonts.jetbrains-mono
