@@ -926,11 +926,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793233103,
-        "narHash": "sha256-V47Kg44VBAltgQBo433MqaCUW6N2faZHXVI9S8FNlVk=",
+        "lastModified": 1793430173,
+        "narHash": "sha256-ibKZ7SwtXZvAEFxEiHNmnROWt9A5DEksDhtYaNTZb4E=",
         "ref": "refs/heads/master",
-        "rev": "24ad648f8a3489628709a5c867111a969cb4aceb",
-        "revCount": 30,
+        "rev": "fd487eb8490e0b163b60a0d0cd3dd1136fd3297b",
+        "revCount": 33,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
