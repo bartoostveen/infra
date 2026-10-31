@@ -247,6 +247,32 @@
         "type": "github"
       }
     },
+    "dtomvan-packages": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793276881,
+        "narHash": "sha256-oeCnj2ETtrc0Cot1PzA03PIM7+2iDKURJW4eVhK7O9o=",
+        "ref": "refs/heads/master",
+        "rev": "4d43982961a043442834798b21c4ad9758764e59",
+        "revCount": 409,
+        "type": "git",
+        "url": "https://git.toostveen.nl/tom/nur-packages.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.toostveen.nl/tom/nur-packages.git"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -828,6 +854,7 @@
         "copyparty": "copyparty",
         "deploy-rs": "deploy-rs",
         "disko": "disko",
+        "dtomvan-packages": "dtomvan-packages",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",

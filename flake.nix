@@ -76,6 +76,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    dtomvan-packages = {
+      url = "git+https://git.toostveen.nl/tom/nur-packages.git";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+      };
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

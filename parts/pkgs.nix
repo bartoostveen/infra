@@ -108,6 +108,22 @@ in
       _module.args.continuwuityPkgs = mkSimplePkgs inputs.nixpkgs-continuwuity;
 
       packages = {
+        sshp = pkgs.writeShellApplication {
+          name = "sshp";
+          text = ''
+            # shellcheck disable=SC2016
+            nix eval --json \
+              --apply 'builtins.mapAttrs (_: n: "''${n.profiles.system.sshUser}@''${n.hostname}")' \
+              .#deploy.nodes 2>/dev/null \
+              | jq -r 'to_entries | map(.value) | join("\n")' \
+              | sshp "$@"
+          '';
+          runtimeInputs = [
+            inputs.dtomvan-packages.packages.${pkgs.stdenv.hostPlatform.system}.sshp
+            pkgs.jq
+            pkgs.nix
+          ];
+        };
         sops-rotate =
           with pkgs;
           writeShellApplication {
