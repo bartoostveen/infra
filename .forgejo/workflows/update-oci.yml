@@ -13,6 +13,8 @@ jobs:
           gpg-privkey: ${{ secrets.GPG_PRIVKEY }}
           gpg-key-id: ${{ vars.GPG_KEY_ID }}
           nix-github-token: ${{ secrets.NIX_GITHUB_TOKEN }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-known-hosts: ${{ vars.SSH_KNOWN_HOSTS }}
 
       - name: nix-oci-lock update
         run: nix run --inputs-from . nix-oci-lock -- update --commit
