@@ -33,6 +33,7 @@ in
       mail_domain = domain;
       defaultapp = "files";
       "overwrite.cli.url" = "https://${fqdn}";
+      maintenance_window_start = 1;
     };
     phpOptions = {
       "opcache.memory_consumption" = "128";
