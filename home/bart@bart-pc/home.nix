@@ -20,14 +20,6 @@
   home = {
     packages = with pkgs; [
       wrk
-      (prismlauncher.override {
-        additionalPrograms = [ ffmpeg ];
-        jdks = [
-          zulu8
-          zulu17
-          zulu
-        ];
-      })
       local.gloriousctl
     ];
 
