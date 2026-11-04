@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793714799,
-        "narHash": "sha256-t3fqTURz84ZEe63/CcusDPy1NAwXQiGi6Kf+7KLUNlg=",
+        "lastModified": 1793797877,
+        "narHash": "sha256-FTW5jymDq4vEiOwHVQ3B378ZMlXRaeKhvCEGWcCOLR8=",
         "ref": "refs/heads/master",
-        "rev": "7b2d94509a65fab18a7b5d52693174dc8a6380d5",
-        "revCount": 359,
+        "rev": "f9a2c1c20b80740f6f2305a702510a4c191c32a1",
+        "revCount": 369,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -368,11 +368,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793193205,
-        "narHash": "sha256-X6xa6sGA7RnJQuZGbFMC+K+KToWAlBDCCjJXfTwEPsw=",
+        "lastModified": 1793757180,
+        "narHash": "sha256-gyV7AtCwLnOImcrfSETP4J3Ie96bz19DY47B7m7Y3HM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "095fef2f265c3c0da4fe315efba8f8a04495ab34",
+        "rev": "b787c48e2ec57a9d098f5c2721882a3bc1e16f97",
         "type": "github"
       },
       "original": {
@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793726549,
-        "narHash": "sha256-I/pOhiFHpFbIfIGowYrRSIG+UWd/9txuevrLr/QRxA0=",
+        "lastModified": 1793789051,
+        "narHash": "sha256-/AvQuVKZH7sg4R4b7UApb6oUAKZzydla4c3rcv+MemM=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "f50c996bf09ca5a133e89b5eeac51366a00309b8",
+        "rev": "33f28640629d21469b5a5e5cf5c81a2410674bc6",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793660133,
-        "narHash": "sha256-8iQ4dwUt4HgL5NSuObjP8gB7QhDQTJLEBaH+RHO2cx8=",
+        "lastModified": 1793768175,
+        "narHash": "sha256-eIcFD7fB81Bw9vMQtFKtjB1VM/K240+UmKuiIioMM2U=",
         "ref": "refs/heads/main",
-        "rev": "f35f715b815b0722158944cd89fb16277156903f",
-        "revCount": 1140,
+        "rev": "033c7f9c053607aefcbe862f8c9daaef5075db2b",
+        "revCount": 1160,
         "submodules": true,
         "type": "git",
         "url": "https://git.federated.nexus/Nexus/nexus"
@@ -722,11 +722,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1793695785,
-        "narHash": "sha256-xzzd283ZBjsjr1qeM/LcmvpzG+MtdcHJv2LpBAV1juE=",
+        "lastModified": 1793781119,
+        "narHash": "sha256-+DqB7ygcXTxpktQ/WfIwcBlcnN5U6PG4A0mrTe/zKdQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8a800ddb3729088f11277ef0d20fbc59085bce3d",
+        "rev": "c9e1c5f1b197a28c6935b297a3b2772a9ff69c0b",
         "type": "github"
       },
       "original": {
@@ -783,11 +783,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1793540411,
-        "narHash": "sha256-fiPJ88izTVucjeo2EQ3jk4aWmLg03I1D4vxnX2QjEgE=",
+        "lastModified": 1793726008,
+        "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bb2eedc20e4739f29e8045034f2828ad7054f8f",
+        "rev": "1d060086d60cb76a40cf37109f979d88a5bd6396",
         "type": "github"
       },
       "original": {
