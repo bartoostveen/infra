@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793812087,
-        "narHash": "sha256-2HTUvdP4SmN1nxQSoHuoggzmPpJNdz2qQTbUj/SV0ek=",
+        "lastModified": 1793827691,
+        "narHash": "sha256-BBZjzvdEHWsv2WXrkEfxjD1lzMc/rDoL2CKGfPcVwn0=",
         "ref": "refs/heads/master",
-        "rev": "7409a333c34a1111a2d888c522b60aaeb24ac94d",
-        "revCount": 370,
+        "rev": "3455cb374dbc647dcf612b381587209b2b5b7d51",
+        "revCount": 371,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -1047,11 +1047,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793800874,
-        "narHash": "sha256-wbHkVq3h2YexEpZnWVspnjSNs6Mp6jCBgbYk8IDOik4=",
+        "lastModified": 1793843184,
+        "narHash": "sha256-6sG1jVTgcotZ8wGR8ePaA4LwEmIB7vVaKww0rxa5axQ=",
         "ref": "refs/heads/master",
-        "rev": "7bb73dde0f661b84036ac9d29e9603f7ea6175a5",
-        "revCount": 42,
+        "rev": "2f284f16c06e365483d002712c3e4bbdd5b15f6d",
+        "revCount": 45,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
