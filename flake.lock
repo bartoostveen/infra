@@ -22,15 +22,16 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1793704918,
-        "narHash": "sha256-eGM+VE7rQ9k0leDmIFxFsuUFeGlffykSsIXvcNh4U1M=",
-        "owner": "nix-community",
+        "lastModified": 1794180232,
+        "narHash": "sha256-LSDRO5ILwtZbKzl4JJRcmLAl5NF70jzYxZ9reTju4vI=",
+        "owner": "bartoostveen",
         "repo": "authentik-nix",
-        "rev": "5d339402a75b5ee823e3aeb62ea32a11ece756c5",
+        "rev": "1621429df8e134aedfb6f628043423fed75bb451",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "bartoostveen",
+        "ref": "fix/aws-lc",
         "repo": "authentik-nix",
         "type": "github"
       }
@@ -154,11 +155,11 @@
     "client-ts-generator-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1792072131,
-        "narHash": "sha256-wvGKKlRBRcGA3lHFugqQa6dA6HFHLxEMiehDa5cIiLQ=",
+        "lastModified": 1792605533,
+        "narHash": "sha256-f82MB+n7cgKj62g2aTSW34KosYhE7d/dj1KUhJ5KrTY=",
         "owner": "goauthentik",
         "repo": "client-ts",
-        "rev": "f11dc7387568edf8189bdfddc39fb85620f9fbbb",
+        "rev": "cbdadfa3cb808b6b587e64c5430bf2d70b2d3461",
         "type": "github"
       },
       "original": {
