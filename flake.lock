@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794126841,
-        "narHash": "sha256-RvOOXOSpw2MRjp9gJARAaZx9ehFsSccxYzHYF+fIkiE=",
+        "lastModified": 1794166746,
+        "narHash": "sha256-JGkxdYa/zvZlMUip1m60EFEAK3kPDzn9FVv6ELfliuw=",
         "ref": "refs/heads/master",
-        "rev": "09e2ad96f478ecc9535b89d94504968bf84564af",
-        "revCount": 380,
+        "rev": "1a96251db0678fdef1904d1803dc76b244f686b2",
+        "revCount": 381,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -207,11 +207,11 @@
     },
     "crane_2": {
       "locked": {
-        "lastModified": 1793669695,
-        "narHash": "sha256-9EtV4I6Ohw0tjidL31TMOKHhW/QGVG8NuGiemzIaNCs=",
+        "lastModified": 1793836618,
+        "narHash": "sha256-TREenflwEjxOSq292FYwbc3kEm7TDRtXCZRNWEdjBmg=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "788369ed71ed9d84ef72cb056e4d920050d5b32c",
+        "rev": "79fd63528501446749c09f08cad486a58c7d173e",
         "type": "github"
       },
       "original": {
@@ -275,11 +275,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793276881,
-        "narHash": "sha256-oeCnj2ETtrc0Cot1PzA03PIM7+2iDKURJW4eVhK7O9o=",
+        "lastModified": 1794151939,
+        "narHash": "sha256-5O0zujXglc9ml89JkDJBKU9B/JC0CaSgQ+qa74fkJak=",
         "ref": "refs/heads/master",
-        "rev": "4d43982961a043442834798b21c4ad9758764e59",
-        "revCount": 409,
+        "rev": "8f99f2feade4b138009a1a044b3a5d6bfc3a3f34",
+        "revCount": 414,
         "type": "git",
         "url": "https://git.toostveen.nl/tom/nur-packages.git"
       },
@@ -542,11 +542,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794109256,
-        "narHash": "sha256-4ydVZ+Rhcf4voue1G8EmhqhtYQTQKqVf7q0qnTg20HU=",
+        "lastModified": 1794165061,
+        "narHash": "sha256-hQz7BBdp4/fQR8JQi7wqTEYE9TdH8GSqr8yn8b38kOg=",
         "ref": "refs/heads/main",
-        "rev": "995afe1412606f4524571229a1917fa7b44c6331",
-        "revCount": 1184,
+        "rev": "c658034d3b258f6c76cd3bee8be26df35179300e",
+        "revCount": 1185,
         "submodules": true,
         "type": "git",
         "url": "https://git.federated.nexus/Nexus/nexus"
@@ -638,11 +638,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793543282,
-        "narHash": "sha256-PHtGxKYM99f8WhGR5YD7iiCiwemKa2wUD4yVI2oALFg=",
+        "lastModified": 1794132860,
+        "narHash": "sha256-iGNtQnUZsi+v6/4NbtYr+dsmASa6GkzXtUcTpE8F3mE=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "cee0f879d338cf08f814210fa6c2b280594ade0a",
+        "rev": "af9249ca33bc2efaae5d071e4c67ddef19dcb681",
         "type": "github"
       },
       "original": {
@@ -737,11 +737,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1794070417,
-        "narHash": "sha256-leOOarLQ85CtX6NUcHuqNoOCwHbNKLRj6mNK59enKAA=",
+        "lastModified": 1794157196,
+        "narHash": "sha256-Ad+p0TzAFYZBdYL6W6335tl3Qq3iLRdMdu3Fx95N8N8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d63e5b96ca17ae27b5d248d29564e31ff7a83f02",
+        "rev": "4d6a01a11146f4691c0991682885ad9e4686e3ee",
         "type": "github"
       },
       "original": {
@@ -798,11 +798,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1793876309,
-        "narHash": "sha256-Wojg9lIH/hDH91iDVH2/EPw8oDSpxjxhXONbU1yf4Zg=",
+        "lastModified": 1794042290,
+        "narHash": "sha256-ziZn2PvCJE5JEEpqTdxXwJpPB+L3YqoCpTAMCzyaP3U=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f9a75f41be3a74eab55d3a7679d34ad6cc0da977",
+        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
         "type": "github"
       },
       "original": {
@@ -987,11 +987,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793782363,
-        "narHash": "sha256-5Vod7vKm10hOilQvEhTwXbhBE+V0ZqXH0jBQJhkX3KQ=",
+        "lastModified": 1794127728,
+        "narHash": "sha256-QhZ104DwHvvMxWxmI13zdppISE27UmdqhRI2VwBg/yU=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "7fcafdf6f0761462d68012aba6a627be3f008d68",
+        "rev": "51c6dc40d18552701f7c5c62e3f7a5fc899f7132",
         "type": "github"
       },
       "original": {
@@ -1085,11 +1085,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794134931,
-        "narHash": "sha256-z5Nh+t7zKT+3QAKmCS2rh5W7467/Vd55FCC6ar3lMtQ=",
+        "lastModified": 1794136177,
+        "narHash": "sha256-IMF0NdWLv7cd/v0GalruROghDzV8f4vGQJYVtKNeayY=",
         "ref": "refs/heads/master",
-        "rev": "60183a30316add7edc84e6e04033a4598d16e941",
-        "revCount": 54,
+        "rev": "f25e477a668ce4a1772308569f0d44327f3ee2ac",
+        "revCount": 55,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
