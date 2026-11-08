@@ -205,6 +205,21 @@
         "type": "github"
       }
     },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1793669695,
+        "narHash": "sha256-9EtV4I6Ohw0tjidL31TMOKHhW/QGVG8NuGiemzIaNCs=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "788369ed71ed9d84ef72cb056e4d920050d5b32c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "deploy-rs": {
       "inputs": {
         "flake-compat": [],
@@ -964,6 +979,27 @@
         "wireless-profiles": "wireless-profiles"
       }
     },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "ta-schedule",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793782363,
+        "narHash": "sha256-5Vod7vKm10hOilQvEhTwXbhBE+V0ZqXH0jBQJhkX3KQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "7fcafdf6f0761462d68012aba6a627be3f008d68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
     "sops-nix": {
       "inputs": {
         "nixpkgs": [
@@ -1036,22 +1072,24 @@
     },
     "ta-schedule": {
       "inputs": {
+        "crane": "crane_2",
         "flake-parts": [
           "flake-parts"
         ],
         "nixpkgs": [
           "nixpkgs"
         ],
+        "rust-overlay": "rust-overlay",
         "treefmt-nix": [
           "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1794071166,
-        "narHash": "sha256-jRVuLbwbUgPufn1TnXZGy3LDbKwXpsd8DSpoexcOJQs=",
+        "lastModified": 1794125084,
+        "narHash": "sha256-VzQOofRsGpHUNARpa9lfKfSKsx4ot9fPFX8YuocTWbI=",
         "ref": "refs/heads/master",
-        "rev": "8b677460597a8e7359c43492498682334d9b2bcb",
-        "revCount": 49,
+        "rev": "eac39310b3842660f295b1f17321b01ebb44ba22",
+        "revCount": 51,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
