@@ -35,8 +35,7 @@
     };
 
     authentik = {
-      # url = "github:nix-community/authentik-nix";
-      url = "github:bartoostveen/authentik-nix/fix/aws-lc";
+      url = "github:nix-community/authentik-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
