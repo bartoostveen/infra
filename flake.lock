@@ -664,11 +664,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794096298,
-        "narHash": "sha256-J/oKSRIL3ykKl6ZYdKd1n0IxLKe04A69E7UN0Sn3N54=",
+        "lastModified": 1794345622,
+        "narHash": "sha256-WzCZjn/bUTbYnsrcYdFPTdcrj80GRvdhN0n2oo9XtoE=",
         "ref": "refs/heads/master",
-        "rev": "b2354a84affa6304de0c4e14e1fbf7ae8da8608a",
-        "revCount": 93,
+        "rev": "23ec7d20791a6fc7f6992c541c71bd7ab0e85f18",
+        "revCount": 96,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/nix-oci-lock.git"
       },
