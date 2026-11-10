@@ -766,16 +766,16 @@
     },
     "nixpkgs-continuwuity": {
       "locked": {
-        "lastModified": 1791821421,
-        "narHash": "sha256-OM/xMW8zMG0a8nJUXb+z6+bvPJahoXorWfgB7UV9omA=",
+        "lastModified": 1794342912,
+        "narHash": "sha256-XikKmIUz/QBrH3Qcbk55wKZSTODTmX1u3xE7HoQPSeY=",
         "owner": "bartoostveen",
         "repo": "nixpkgs",
-        "rev": "a4568995586cfb69e001cef8a71fe7cc3f40dcc6",
+        "rev": "413e17b9024b3a8ab385042fbe291357697cb154",
         "type": "github"
       },
       "original": {
         "owner": "bartoostveen",
-        "ref": "continuwuity-26.9.1-unstable-2026-10-02",
+        "ref": "matrix-continuwuity-26.9.2",
         "repo": "nixpkgs",
         "type": "github"
       }
