@@ -192,11 +192,11 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1792350552,
-        "narHash": "sha256-292lvpvxTGKryKxh3/3tcIVi85CwYGdl4oOi113Sob8=",
+        "lastModified": 1793836618,
+        "narHash": "sha256-TREenflwEjxOSq292FYwbc3kEm7TDRtXCZRNWEdjBmg=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "e675a36b7377bebe41d548388a2501cbb16d380d",
+        "rev": "79fd63528501446749c09f08cad486a58c7d173e",
         "type": "github"
       },
       "original": {
@@ -249,11 +249,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792526520,
-        "narHash": "sha256-3hSJlv8mUVnZPMWK2+CM7a9O+nR6Z4mCh27NfLCmTPc=",
+        "lastModified": 1794328522,
+        "narHash": "sha256-h2BYMW4nTFpIqnMd8gwAPFmJAp/1wWLQ6vT0NfL5qt4=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "cedd626e11b635470fa6f9fdb8ad79b0075dd7f9",
+        "rev": "1dd30c29c88d99ce295f15e27f93c49bc5fbae07",
         "type": "github"
       },
       "original": {
@@ -383,11 +383,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793979366,
-        "narHash": "sha256-7OoWDsYO9teiPxl0QdlS5lYE20Pue8/5mpscSL32FUA=",
+        "lastModified": 1794278858,
+        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2c0c1f01521469cf0271180c453c79782d53c2f6",
+        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
         "type": "github"
       },
       "original": {
@@ -408,11 +408,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793789051,
-        "narHash": "sha256-/AvQuVKZH7sg4R4b7UApb6oUAKZzydla4c3rcv+MemM=",
+        "lastModified": 1794327489,
+        "narHash": "sha256-/Jng409ZM9yfn4NR9QcTbNQ65/TOM/IDEBvKYNuPk6c=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "33f28640629d21469b5a5e5cf5c81a2410674bc6",
+        "rev": "16c866f809ae9d7e100e5ed75a33ee0885274cf6",
         "type": "github"
       },
       "original": {
@@ -542,11 +542,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794165061,
-        "narHash": "sha256-hQz7BBdp4/fQR8JQi7wqTEYE9TdH8GSqr8yn8b38kOg=",
+        "lastModified": 1794285846,
+        "narHash": "sha256-Ey3K8n9K21hrEWAjmdk0W/Vt+CH3muHn7w4TCgAWwhw=",
         "ref": "refs/heads/main",
-        "rev": "c658034d3b258f6c76cd3bee8be26df35179300e",
-        "revCount": 1185,
+        "rev": "f1f0fea11411c2a152859d373d98a318ce8a25a6",
+        "revCount": 1198,
         "submodules": true,
         "type": "git",
         "url": "https://git.federated.nexus/Nexus/nexus"
@@ -559,11 +559,11 @@
     "nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1793394660,
-        "narHash": "sha256-sv/ebE/P/ucLAi/+yXVrS6OsYyxWw9OS66lhtpvZSoE=",
+        "lastModified": 1794058301,
+        "narHash": "sha256-ZNQEHcXMMXZfIHTRN5DIF/ucKhkYCTOSOcxLx30J0SA=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "cbd40d8b1982eef58549b2f306d13d6df97a0165",
+        "rev": "ed8739e523a4170370122fab4b2351084442668e",
         "type": "github"
       },
       "original": {
@@ -586,11 +586,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793870483,
-        "narHash": "sha256-XJ9n4vZlv6cvji8eewe3UyEWt3misU8mvnifF8/NSDU=",
+        "lastModified": 1794220651,
+        "narHash": "sha256-nKC2ipDzLHV+1wy/I0f0Cx8xjll8KTiUk3mSVGjY4hU=",
         "owner": "numtide",
         "repo": "nix-auth",
-        "rev": "7f0abe20dff1f8b11b77ffb679567a96d82ce7be",
+        "rev": "9612521ff7373f97077df87278b0ea193f2abd89",
         "type": "github"
       },
       "original": {
@@ -737,11 +737,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1794157196,
-        "narHash": "sha256-Ad+p0TzAFYZBdYL6W6335tl3Qq3iLRdMdu3Fx95N8N8=",
+        "lastModified": 1794309823,
+        "narHash": "sha256-BpgtuBhhjZ29znzj/v/oCVUzBOslI/WPK4/7URxkMTM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4d6a01a11146f4691c0991682885ad9e4686e3ee",
+        "rev": "f37ff5c2009e3923aa79378f923f01d5759b6d84",
         "type": "github"
       },
       "original": {
@@ -825,11 +825,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794096186,
-        "narHash": "sha256-R9hfTD2BN+gx92kZaXTb9czAza+HGg9LiJT/EStrfzY=",
+        "lastModified": 1794253704,
+        "narHash": "sha256-yAsWdokutgnSx+zpzbSRewSb27oQbDQLQBLkCXdxexQ=",
         "ref": "refs/heads/master",
-        "rev": "1947f2a0e3d88e2ba7bbffc30a8c8dd61cc38f98",
-        "revCount": 206,
+        "rev": "1e4c45fc38fad0042f7e2a80239dd05c0b51d561",
+        "revCount": 208,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -1007,11 +1007,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793995029,
-        "narHash": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
+        "lastModified": 1794261845,
+        "narHash": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
+        "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
         "type": "github"
       },
       "original": {
@@ -1027,11 +1027,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793923894,
-        "narHash": "sha256-Sh6giZ9sJtMpcrsqJz4xbkREfwtduSVQ8ZkHUSj7yyk=",
+        "lastModified": 1794192167,
+        "narHash": "sha256-JKGtBDlM5DkOPnturQ14To+qeQhcjS3rA2hcakmWI0k=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "774a7250e3c25d6876bb8af388f9b7f510de2180",
+        "rev": "11e24334759f21e15f16895fc4c9645d97ec5acc",
         "type": "github"
       },
       "original": {
@@ -1085,11 +1085,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794176140,
-        "narHash": "sha256-kNp3pZPqmF2zJOWEU2xzBpbzpV6pEYS1Bx803vHsniA=",
+        "lastModified": 1794270239,
+        "narHash": "sha256-izn9eTkL7pNAzg8V3OvW2StuYG/ZwtR4s13mgIkOA7U=",
         "ref": "refs/heads/master",
-        "rev": "65dd34925c02779c656f944caaada0d3ef7f3881",
-        "revCount": 56,
+        "rev": "2bf1334936f5a1f497428950e456447c0b8e3cd7",
+        "revCount": 57,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
