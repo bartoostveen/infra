@@ -9,13 +9,11 @@
 let
   inherit (lib)
     makeLibraryPath
-    mkDefault
     ;
 in
 {
   imports = [
     inputs.nix-index-database.nixosModules.default
-    inputs.nexus.nixosModules.default
   ];
 
   boot.loader.grub = {
@@ -117,11 +115,6 @@ in
 
       extendsyntax nix formatter ${pkgs.nixfmt}
     '';
-  };
-
-  programs.nexus = {
-    enable = mkDefault true;
-    enableNotifications = mkDefault true;
   };
 
   services.openssh = {
