@@ -56,11 +56,11 @@ in
           incus
           invoice
           jq
-          local.resolvematrix
           meteor-git
           nano
           nix-init
           nurl
+          resolvematrix
           ripgrep
           tomlq
           unzip
