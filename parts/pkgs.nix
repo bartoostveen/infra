@@ -56,7 +56,6 @@ in
       nixpkgsPatches = with patchFetchers; [
         (nixpkgsPr 576589 "sha256-QQhY0YEqbix/6mSyNPrOuJI/vvm3T6W9NykrDbO64p4=")
         (nixpkgsPr 582217 "sha256-wbCZPErGXeqx+i2SWnGvAaIoSFg3F9gdSG/28VQDT+o=")
-        (nixpkgsPr 584539 "sha256-v0ltWm6sW9TSQV02zBZAfrFkqGyCdDdJYzA1eSmXSKM=")
         ./revert-direnv-bump.patch
       ];
 
