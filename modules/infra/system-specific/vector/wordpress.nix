@@ -10,11 +10,37 @@ let
   domains = [
     "popkoorklankkleur.nl"
   ];
+
+  ignoreTranslationUpdatesPlugin = pkgs.writeText "ignore-translation-updates.php" ''
+    <?php
+    /**
+     * Plugin Name: Ignore WordPress Translation Updates
+     * Description: Ignore language pack updates managed externally.
+     */
+
+    function ignore_translation_updates( $transient ) {
+      if ( is_object( $transient ) && isset( $transient->translations ) ) {
+        $transient->translations = array();
+      }
+
+      return $transient;
+    }
+
+    add_filter( 'site_transient_update_core', 'ignore_translation_updates' );
+    add_filter( 'site_transient_update_plugins', 'ignore_translation_updates' );
+    add_filter( 'site_transient_update_themes', 'ignore_translation_updates' );
+  '';
 in
 {
   services.wordpress = {
     webserver = "nginx";
     sites = genAttrs domains (domain: {
+      package = pkgs.wordpress.overrideAttrs (old: {
+        postInstall = (old.postInstall or "") + ''
+          mkdir -p $out/share/wordpress/wp-content/mu-plugins
+          cp ${ignoreTranslationUpdatesPlugin} $out/share/wordpress/wp-content/mu-plugins/ignore-translation-updates.php
+        '';
+      });
       settings = {
         WP_DEFAULT_THEME = "twentytwentyfive";
         WP_SITEURL = "https://${domain}";
