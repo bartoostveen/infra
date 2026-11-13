@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794525045,
-        "narHash": "sha256-cz/8QcSlvpv4nWbr8iTayam1pi596fDmuddaBBjUc/A=",
+        "lastModified": 1794594293,
+        "narHash": "sha256-SQD3v4tnllgJsuzuWUtaSlRcwTD77MpM42wqVYf2KTs=",
         "ref": "refs/heads/master",
-        "rev": "1169af958584e8e5a4b62ae01e0c1ca5743b0070",
-        "revCount": 394,
+        "rev": "13f29aa6f25dd4f859120c427967ce9091bcf1c6",
+        "revCount": 395,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -486,11 +486,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793491503,
-        "narHash": "sha256-nS20Hbwsz2zjPYIf3WjUD6sGrpoAitxEc8f3ZZxOU44=",
+        "lastModified": 1794575417,
+        "narHash": "sha256-i6r+UyaEs794/CDM1LYmDI6A/82AfYtzvC65U6MEsWM=",
         "ref": "refs/heads/master",
-        "rev": "d1d5a40d613d66ad2ca7f5ea3da206b6ed7a725b",
-        "revCount": 126,
+        "rev": "6d33e4c42fa7b0dc2718a6ef258c454b0e9238a8",
+        "revCount": 128,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -529,11 +529,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794476599,
-        "narHash": "sha256-m25aTwMppy4+YedtvEGs9OSBKO61qobB6e9KnuTCe1c=",
+        "lastModified": 1794561956,
+        "narHash": "sha256-NnKo8WPufOKj4MUIPVea6fKnvNCUqOju4HjoWwz//5Q=",
         "owner": "numtide",
         "repo": "nix-auth",
-        "rev": "2962512138347f28417ac85f9385798b39ef6dd3",
+        "rev": "20e32eae0a7b85c0f26e85f5d70b08dd2142a386",
         "type": "github"
       },
       "original": {
@@ -646,11 +646,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1794493573,
-        "narHash": "sha256-IzdumBb69us47OjGzNjwqMM9mKw2042rqwOA0g9bJBA=",
+        "lastModified": 1794580336,
+        "narHash": "sha256-nH8frotF2VIsA+4tWfbo4skbobTpxc2XHsrl6z0TtpI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3fe6b2e95f7304e16d6637199c6ae3b4382cbf89",
+        "rev": "ac9af266ee64ddb2eafeb4b250cac6a88147b43a",
         "type": "github"
       },
       "original": {
