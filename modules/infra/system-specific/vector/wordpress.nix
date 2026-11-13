@@ -51,13 +51,7 @@ in
           inherit (pkgs.local.wordpressPackages.languages) nl;
         in
         [
-          (
-            (nl.overrideAttrs {
-              version = "7.1.3";
-              __intentionallyOverridingVersion = true;
-            }).override
-              { hash = "sha256-SaspsDdW5ALTbjcJob5+FA7tQhdjxLC95dJM3Wwa1K0="; }
-          )
+          nl
         ];
     });
   };
