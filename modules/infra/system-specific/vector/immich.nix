@@ -23,4 +23,6 @@
       '';
     };
   };
+
+  infra.backup.jobs.state.paths = [ config.services.immich.mediaLocation ];
 }
