@@ -9,6 +9,7 @@
   services.nginx.virtualHosts."images.bartoostveen.nl" = {
     enableACME = true;
     forceSSL = true;
+    rateLimit.burst = 1000;
     locations."/" = {
       proxyPass = "http://${config.services.immich.host}:${toString config.services.immich.port}";
       proxyWebsockets = true;
