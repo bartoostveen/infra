@@ -675,11 +675,11 @@
     },
     "nixpkgs-continuwuity": {
       "locked": {
-        "lastModified": 1794640778,
-        "narHash": "sha256-uOuV+96D7fIK0QV4eY9rQqaz7ajJ1PVH5xAe2pILf2o=",
+        "lastModified": 1794689173,
+        "narHash": "sha256-PMqPQyNf0VIWH/jaurGejpqF0QB+434sYB+i8R7ObZ8=",
         "owner": "bartoostveen",
         "repo": "nixpkgs",
-        "rev": "e710090dd364125aa4323e9039e4d9cc2d7dce76",
+        "rev": "11a9e9faa4eb7dc54b3e3ee852c8d34e2a107975",
         "type": "github"
       },
       "original": {
