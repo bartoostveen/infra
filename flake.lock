@@ -403,11 +403,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793491350,
-        "narHash": "sha256-MFLXAt9zpdqrZ7G9os0yXs8r9m4+/Fojzla2NUVyYso=",
+        "lastModified": 1794587437,
+        "narHash": "sha256-KWtT+IgRQxSOZLLGo0hrCIxvSBjHpRAnwxyapQNF46g=",
         "ref": "refs/heads/master",
-        "rev": "945b34a87776ee1aec2f330672cbf0e505efbc14",
-        "revCount": 108,
+        "rev": "6efaae32eae94957f237a5cb55b32bea2f444a8f",
+        "revCount": 109,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -646,11 +646,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1794580336,
-        "narHash": "sha256-nH8frotF2VIsA+4tWfbo4skbobTpxc2XHsrl6z0TtpI=",
+        "lastModified": 1794666816,
+        "narHash": "sha256-+0k232f2hL/ENytM0z48OY9BLdnJx1GVdW8lsyQ8lXU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ac9af266ee64ddb2eafeb4b250cac6a88147b43a",
+        "rev": "82566dfe91ca5e12bc10b36272280628142f651d",
         "type": "github"
       },
       "original": {
@@ -898,11 +898,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794261845,
-        "narHash": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
+        "lastModified": 1794624949,
+        "narHash": "sha256-3q/hxp/flW1PnV3Dx+H3p8kHGEHJ7251BqVMNsAAB9E=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
+        "rev": "11e5885d241743ff0193465d533b20e754bc3ce0",
         "type": "github"
       },
       "original": {
