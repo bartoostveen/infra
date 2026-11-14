@@ -39,10 +39,10 @@ in
           modify-profile-fields
           opengraph
           view-transitions
+          wp-oidc-roles
           wp-user-avatars
           # keep-sorted end
           ;
-        inherit (pkgs.local) wp-oidc-roles;
       };
       themes = {
         inherit (pkgs.wordpressPackages.themes) twentytwentyfive;
