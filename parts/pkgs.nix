@@ -86,6 +86,7 @@ in
               php84Packages
               php85
               php85Packages
+              nginxStable
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
