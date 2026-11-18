@@ -16,7 +16,7 @@ in
     package = inputs'.ical-proxy.packages.default;
     settings = {
       port = 6968;
-      redis_url = "redis://unix:${redisSocket}";
+      redis_url = "redis+unix://${redisSocket}";
     };
   };
 
