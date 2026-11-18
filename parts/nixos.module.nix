@@ -105,6 +105,7 @@ in
               pkgs,
               smallPkgs,
               continuwuityPkgs,
+              inputs',
               ...
             }:
 
@@ -117,6 +118,7 @@ in
                   continuwuityPkgs
                   flakeRoot
                   inputs
+                  inputs'
                   smallPkgs
                   wireguard
                   # keep-sorted end
@@ -137,11 +139,18 @@ in
           withSystem arch (
             {
               pkgs,
+              inputs',
               ...
             }:
+
             inputs.nixpkgs.lib.nixosSystem {
               inherit pkgs;
-              specialArgs = { inherit inputs; };
+              specialArgs = {
+                inherit
+                  inputs
+                  inputs'
+                  ;
+              };
               modules = [ ../images/${name}.nix ];
             }
           )

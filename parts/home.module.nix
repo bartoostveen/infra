@@ -68,13 +68,18 @@ in
     }:
 
     withSystem system (
-      { pkgs, ... }:
+      {
+        pkgs,
+        inputs',
+        ...
+      }:
 
       nameValuePair "${username}@${hostname}" (
         inputs.home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
             inherit
               inputs
+              inputs'
               flakeRoot
               ;
           };
