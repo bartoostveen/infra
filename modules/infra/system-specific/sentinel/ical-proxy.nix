@@ -1,46 +1,48 @@
 {
-  pkgs,
   inputs,
+  inputs',
+  config,
   ...
 }:
 
 let
-  domain = "calendarthing.omeduostuurcentenneef.nl";
-  name = "ical-proxy";
-  port = 6968;
-  env = {
-    REDIS_ENDPOINT = "${name}-redis:6379";
-    DEBUG = "1";
-    PORT = toString port;
-  };
-  pkg = inputs.ical-proxy.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  dockerImage = pkgs.dockerTools.streamLayeredImage {
-    inherit name;
-    tag = pkg.version;
-    contents = [
-      pkg
-      pkgs.busybox
-    ];
-    config.Cmd = [ "/bin/${pkg.pname}" ];
-  };
+  redisSocket = "/run/redis-ical-proxy/redis.sock";
 in
 {
-  virtualisation.oci-containers.containers = {
-    ${name} = {
-      image = "localhost/${name}:${pkg.version}";
-      imageStream = dockerImage;
-      environment = env;
-      dependsOn = [ "${name}-redis" ];
-      ports = [ "127.0.0.1:${toString port}:${toString port}" ];
-    };
-    "${name}-redis" = {
-      image = "valkey/valkey:latest";
+  imports = [ inputs.ical-proxy.nixosModules.default ];
+
+  services.ical-proxy = {
+    enable = true;
+    package = inputs'.ical-proxy.packages.default;
+    settings = {
+      port = 6968;
+      redis_url = "redis://unix:${redisSocket}";
     };
   };
 
-  services.nginx.virtualHosts.${domain} = {
+  systemd.services.ical-proxy = {
+    requires = [ "redis-ical-proxy.service" ];
+    wants = [ "redis-ical-proxy.service" ];
+    after = [ "redis-ical-proxy.service" ];
+  };
+
+  users.users.ical-proxy = {
+    isSystemUser = true;
+    group = "ical-proxy";
+    description = "ical-proxy service user";
+  };
+  users.groups.ical-proxy = { };
+
+  services.redis.servers.ical-proxy = {
+    enable = true;
+    user = "ical-proxy";
+    unixSocket = redisSocket;
+    unixSocketPerm = 770;
+  };
+
+  services.nginx.virtualHosts."calendarthing.omeduostuurcentenneef.nl" = {
     forceSSL = true;
     enableACME = true;
-    locations."/".proxyPass = "http://localhost:${toString port}";
+    locations."/".proxyPass = "http://localhost:${toString config.services.ical-proxy.settings.port}";
   };
 }
