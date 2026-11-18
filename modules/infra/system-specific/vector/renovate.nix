@@ -62,6 +62,7 @@ in
     };
     runtimePackages = with pkgs; [
       bash
+      cargo
       nix
       git
       gnupg
