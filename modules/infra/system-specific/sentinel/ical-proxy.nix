@@ -40,7 +40,8 @@ in
     unixSocketPerm = 770;
   };
 
-  services.nginx.virtualHosts."calendarthing.omeduostuurcentenneef.nl" = {
+  services.nginx.virtualHosts."ical-proxy.bartoostveen.nl" = {
+    serverAliases = [ "calendarthing.omeduostuurcentenneef.nl" ];
     forceSSL = true;
     enableACME = true;
     locations."/".proxyPass = "http://localhost:${toString config.services.ical-proxy.settings.port}";
