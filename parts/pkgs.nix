@@ -58,6 +58,7 @@ in
         (nixpkgsPr 582217 "sha256-wbCZPErGXeqx+i2SWnGvAaIoSFg3F9gdSG/28VQDT+o=")
         (nixpkgsPr 589890 "sha256-lfusFpFQTw1DEYRJ4MOLJu0HTPaRJtQDWP3OUsUTO4o=")
         (nixpkgsPr 590015 "sha256-7NOd4AdJ9WUtE80H2n8kmaqqzI42GbwqIyMyGGXuvQI=")
+        (nixpkgsPr 590023 "sha256-ZCYth6qONkmThvApYz7GVECRY8jQ+/NJC72/v/ucQvI=")
         ./revert-direnv-bump.patch
       ];
 
