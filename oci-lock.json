@@ -21,10 +21,6 @@
         },
         "sentinel": {
             "containers": {
-                "ical-proxy-redis": {
-                    "original": "valkey/valkey:latest",
-                    "locked": "docker.io/valkey/valkey:latest@sha256:3add1a336a920ea54770a001ab6feb3da5fceea96a40373a3a2cd469b815f0b7"
-                },
                 "tascheduling-db": {
                     "original": "postgres:18",
                     "locked": "docker.io/library/postgres:18@sha256:2ea8630df176ad090ec92136dee850397c5af8781e4bcf2e4162593691c61bbc"
