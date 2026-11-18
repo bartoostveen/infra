@@ -486,11 +486,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794575417,
-        "narHash": "sha256-i6r+UyaEs794/CDM1LYmDI6A/82AfYtzvC65U6MEsWM=",
+        "lastModified": 1795001589,
+        "narHash": "sha256-p8eEq+MmIf2oMlH7X1u188aZEKuU5VhO8sw2wg7+qR4=",
         "ref": "refs/heads/master",
-        "rev": "6d33e4c42fa7b0dc2718a6ef258c454b0e9238a8",
-        "revCount": 128,
+        "rev": "43d59cf849d70c5a1add9b05b00779b256cdca89",
+        "revCount": 131,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/meowbot.git"
       },
@@ -747,11 +747,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794701045,
-        "narHash": "sha256-ksu+4vbG+94dplIlk7ED3DfKl229ks/S45UTR7aVBe4=",
+        "lastModified": 1795000823,
+        "narHash": "sha256-HmuLP9L0LZd/ygdpQiJxU1TrekR+3totizOobZkgRd8=",
         "ref": "refs/heads/master",
-        "rev": "d3928244c62db493be65760a384a938ad8301c65",
-        "revCount": 136,
+        "rev": "ca2f13b3c70e7d973d7a1f90c91eb0e02a5e251b",
+        "revCount": 140,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/simple-authentik-user-onboarding"
       },
