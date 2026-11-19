@@ -7,7 +7,7 @@ let
       "36.0.0"
       "35.0.0"
     ];
-    platformVersions = [ "37.0" ];
+    platformVersions = [ "37.2" ];
     includeSystemImages = true;
     systemImageTypes = [
       "google_apis_playstore"
@@ -18,9 +18,9 @@ let
   };
 in
 {
-  environment.systemPackages = with pkgs; [
-    (android-studio.withSdk android.androidsdk)
+  environment.systemPackages = [
+    (pkgs.androidStudioPackages.canary.withSdk android.androidsdk)
+    pkgs.android-tools
     android.androidsdk
-    android-tools
   ];
 }
