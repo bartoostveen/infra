@@ -60,6 +60,7 @@ in
     ../modules/infra/nginx.extra.nix
     ../modules/infra/nginx.nix
     ../modules/infra/nix.nix
+    ../modules/infra/php.nix
     ../modules/infra/podman.nix
     # keep-sorted end
   ];
