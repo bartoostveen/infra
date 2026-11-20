@@ -58,7 +58,6 @@ in
         (nixpkgsPr 582217 "sha256-wbCZPErGXeqx+i2SWnGvAaIoSFg3F9gdSG/28VQDT+o=")
         (nixpkgsPr 589890 "sha256-lfusFpFQTw1DEYRJ4MOLJu0HTPaRJtQDWP3OUsUTO4o=")
         (nixpkgsPr 590015 "sha256-7NOd4AdJ9WUtE80H2n8kmaqqzI42GbwqIyMyGGXuvQI=")
-        (nixpkgsPr 590480 "sha256-tQp0nFQ4uNkj4AxrzEtWPXE5of9me/h5OkvBFymvzvI=")
         ./revert-direnv-bump.patch
       ];
 
@@ -88,7 +87,8 @@ in
               php84Packages
               php85
               php85Packages
-              # TODO: add php 8.6 once it lands
+              php86
+              php86Packages
               nginxStable
               ;
 
