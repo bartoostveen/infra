@@ -393,11 +393,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795022186,
-        "narHash": "sha256-LbOCCnExuUBcph/9LBWgoHMz1q0Tk/65BOli5xOkYOw=",
+        "lastModified": 1795207461,
+        "narHash": "sha256-gAAwPXy2IXqPC2GhQXkjsJXFfrw+YO2WtF6IGtETOvI=",
         "ref": "refs/heads/master",
-        "rev": "469ac31211a33f4f5c47bd6746f01b4506eabaad",
-        "revCount": 119,
+        "rev": "1353f4ee5994775b89373d54127ba685553319dd",
+        "revCount": 120,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
