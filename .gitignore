@@ -3,3 +3,4 @@ result
 .direnv
 .deploy-gc
 generate-*-invoice.sh
+/.worktree/
