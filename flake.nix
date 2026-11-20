@@ -33,8 +33,7 @@
     };
 
     authentik = {
-      # TODO: go back to main
-      url = "github:nix-community/authentik-nix/bump-authentik";
+      url = "github:nix-community/authentik-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "";
