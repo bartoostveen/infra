@@ -28,8 +28,4 @@ in
       tlsa.record = "_25._tcp.${cfg.fqdn}";
     };
   };
-
-  infra.extraScrapeConfigs.tlsa = mkIf metaCfg.tlsa {
-    port = config.services.prometheus.exporters.mail-tlsa-check.port;
-  };
 }
