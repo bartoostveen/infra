@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795175596,
-        "narHash": "sha256-pP8TRPdDi+Ri2TCpBY6izUlxpCSh6qZFSVBNJd3ujH4=",
+        "lastModified": 1795293474,
+        "narHash": "sha256-1dpgee0RpVA8eOR68v7Nvr4vVsrCjHRpG0P3844ypGE=",
         "ref": "refs/heads/master",
-        "rev": "6b445ec0e1f583c825c5a40c59209f44497f1067",
-        "revCount": 420,
+        "rev": "aaff8149190c633162a517ad17b86e404a4bc556",
+        "revCount": 425,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -339,11 +339,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794963576,
-        "narHash": "sha256-+CPrP74GDJ63f7bgEFC9Av4hbxc7K9WUNv1ZVRifRe8=",
+        "lastModified": 1795268568,
+        "narHash": "sha256-1RJm4DEu7YHJv94sjSY7sjqT+kHx/AUwmtUN4dtFBUo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2b13c9cb3aa20653e6f8ee0b7f8331a53ea9b0a9",
+        "rev": "6857c7f7c338ad181729c52071386b0d3afa24bc",
         "type": "github"
       },
       "original": {
@@ -364,11 +364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795012085,
-        "narHash": "sha256-pTjmc0rILsZGXipa1kWiZ1GgLHc2E//logM0HMnUh9Q=",
+        "lastModified": 1795202667,
+        "narHash": "sha256-XwL7ayidlhV6x4ziYY2aPfhf3fQUFzOEzGDEw+95TKs=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "02f5417147614fb3a20fcb6d8549e771b9dcd3e6",
+        "rev": "2f9432db1fabf29227aeba5704972028bb0538c4",
         "type": "github"
       },
       "original": {
@@ -392,11 +392,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795207461,
-        "narHash": "sha256-gAAwPXy2IXqPC2GhQXkjsJXFfrw+YO2WtF6IGtETOvI=",
+        "lastModified": 1795219226,
+        "narHash": "sha256-fb2WYS2XmmvKi87inqwDPePAry5SENQujpPx3t5P5X0=",
         "ref": "refs/heads/master",
-        "rev": "1353f4ee5994775b89373d54127ba685553319dd",
-        "revCount": 120,
+        "rev": "2eb5c1eea2c82c91f8cdecd4d59d6b6019964213",
+        "revCount": 122,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -518,11 +518,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795168618,
-        "narHash": "sha256-dFzlakLL11QL+tfy1WMhsKA0A7STLhOfIzpIho15Eos=",
+        "lastModified": 1795253717,
+        "narHash": "sha256-QdBRxW4tOUZbe609MSMFSdd4avdG5MdsndAuAfBA0Zs=",
         "owner": "numtide",
         "repo": "nix-auth",
-        "rev": "f5dc2dc7d930a4325f2076855f471623de04145a",
+        "rev": "cb90b0018a395270dbc81b4617a520862de5cc95",
         "type": "github"
       },
       "original": {
@@ -635,11 +635,11 @@
     },
     "nixos-small": {
       "locked": {
-        "lastModified": 1795159099,
-        "narHash": "sha256-/0/GcwieD0Pt1ukw+/wgFWMwFEGKEJOnG5LG54b4Hkc=",
+        "lastModified": 1795282342,
+        "narHash": "sha256-OfaSL6VGcyf35UmRPfv4ErH7RFybQiuyLThnDzYOcbs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "366a331bb0e947921775e79dc27a6d55b1b1be3a",
+        "rev": "4a5ea0bab25dfaa435429825c9add4c5f730b235",
         "type": "github"
       },
       "original": {
@@ -680,11 +680,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1795085501,
-        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
+        "lastModified": 1795234589,
+        "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
+        "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
         "type": "github"
       },
       "original": {
