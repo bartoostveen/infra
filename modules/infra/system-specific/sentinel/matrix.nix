@@ -3,6 +3,9 @@
   smallPkgs,
   lib,
   continuwuityPkgs,
+  config,
+  inputs,
+  flakeRoot,
   ...
 }:
 
@@ -11,10 +14,13 @@ let
 
   fqdn = "bartoostveen.nl";
   cinnies = range 0 9;
+
+  sableDomain = "sable.${fqdn}";
 in
 {
   imports = [
     ../../matrix
+    inputs.bart-packages.nixosModules.sable
   ];
 
   infra.matrix = {
@@ -119,6 +125,24 @@ in
     };
   };
 
+  services.sable = {
+    enable = true;
+    package = pkgs.local.sable-next-server;
+    frontendPackage = pkgs.local.sable-next-server-frontend;
+    environmentFile = config.sops.secrets.sable-server-env.path;
+    settings = {
+      public_url = "https://${sableDomain}";
+      client_ip_source = "RightmostXForwardedFor";
+      username = "bart";
+    };
+  };
+
+  sops.secrets.sable-server-env = {
+    sopsFile = /${flakeRoot}/secrets/sable-server.env.sentinel.secret;
+    format = "binary";
+    restartUnits = [ "sable.service" ];
+  };
+
   services.nginx.virtualHosts =
     (genAttrs' cinnies (
       n:
@@ -127,6 +151,16 @@ in
       }
     ))
     // {
+      "sable.bartoostveen.nl" = {
+        enableACME = true;
+        forceSSL = true;
+        rateLimit.burst = 1000;
+        connectionLimit.connections = 200;
+        locations."/" = {
+          proxyPass = "http://${config.services.sable.settings.listen_addr}";
+          proxyWebsockets = true;
+        };
+      };
       "sable-next.bartoostveen.nl" = {
         enableACME = true;
         forceSSL = true;
