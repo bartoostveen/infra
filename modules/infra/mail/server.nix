@@ -26,8 +26,12 @@ in
     tlsrpt.enable = true;
     systemContact = mkDefault "postmaster@${cfg.systemDomain}";
 
-    enableManageSieve = true;
-    enableSubmission = true; # Enable StartTLS
+    listeners = {
+      manageSieve.enable = mkDefault true;
+      imap.enable = mkDefault true;
+      imaps.enable = mkDefault true;
+      submissions.enable = mkDefault true;
+    };
 
     hierarchySeparator = "/"; # See: https://doc.dovecot.org/main/core/config/namespaces.html#namespaces
 

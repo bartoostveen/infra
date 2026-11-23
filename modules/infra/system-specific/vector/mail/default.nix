@@ -66,7 +66,6 @@ in
 
   mailserver = {
     systemDomain = domain;
-    enableImap = true;
 
     ldap = {
       enable = true;
