@@ -22,11 +22,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1795213050,
-        "narHash": "sha256-mEYZj00m0IYSLFUPp/eHoP/Bl6p5kOl/abKb4QK/IFw=",
+        "lastModified": 1795439478,
+        "narHash": "sha256-hu8+29CQtHdy3tZg1WY4aDsOZ4XX8x2D/xnYrpehmbY=",
         "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "236d1a0a9e775e78b77f5bbe7e883b43554115df",
+        "rev": "92b0574c9290b84fcc1d6c9d6664c9c1023e3d0e",
         "type": "github"
       },
       "original": {
@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795336796,
-        "narHash": "sha256-Mz2nNLd3aa9RTVaudoH8X5grbkBKR+GZXpZIrl9OzaI=",
+        "lastModified": 1795456278,
+        "narHash": "sha256-qN8ob9S0S0dY4XzyzWbAT9+TjmQn7hrZdm2StpOT1Y8=",
         "ref": "refs/heads/master",
-        "rev": "f91cb1ce4d38facfb4e03d13a733e9497a34c675",
-        "revCount": 431,
+        "rev": "f5264fb5b5be774f5ec52c7ecd060a6a0fcb302f",
+        "revCount": 432,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/nix-packages.git"
       },
@@ -364,11 +364,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795202667,
-        "narHash": "sha256-XwL7ayidlhV6x4ziYY2aPfhf3fQUFzOEzGDEw+95TKs=",
+        "lastModified": 1795374411,
+        "narHash": "sha256-weYIOuvZ5WdozhcOFrRe8a4Ronykb03lYGCTbZg2LWc=",
         "owner": "NixOS",
         "repo": "hydra",
-        "rev": "2f9432db1fabf29227aeba5704972028bb0538c4",
+        "rev": "873f74a61e17de162601be803d2ac0e019b7bded",
         "type": "github"
       },
       "original": {
@@ -392,11 +392,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795305704,
-        "narHash": "sha256-qGBjk1HR/Kr3Whyj69mYnlpCX6t221ABiqBcv6Fvkx0=",
+        "lastModified": 1795438332,
+        "narHash": "sha256-ohv6jx9YOsLmKB0eX7e/OlziM9vhaA/cTWqoUtXOfik=",
         "ref": "refs/heads/master",
-        "rev": "aca2ce66736599487ccd9f86d3fdd196474f7be1",
-        "revCount": 123,
+        "rev": "db6d9186a0221ad239e68ce0ab6daf7a8a518f0d",
+        "revCount": 126,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/ical-proxy.git"
       },
@@ -433,11 +433,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795305877,
-        "narHash": "sha256-rOxZmKEZ4cch4iOJtoPr3cdelzmCeOmazzx8qPcEDHY=",
+        "lastModified": 1795454648,
+        "narHash": "sha256-z0NwRbkq14HkeHO8IdzavozXTTappZ2VsTsMX7X6m4g=",
         "ref": "refs/heads/master",
-        "rev": "a2834fb11ae3f225e63bdf6a5e9738d4ef97aae2",
-        "revCount": 158,
+        "rev": "0690acd374acec1e330007a7a88538bc370abf66",
+        "revCount": 160,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/invoice.git"
       },
@@ -707,11 +707,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795305805,
-        "narHash": "sha256-g8p9SHx18ixnXzywTf+/Wl8eZlkuEjAV+I7NJTfTrQw=",
+        "lastModified": 1795437313,
+        "narHash": "sha256-+PwqAgJVqwf+ZtjVaD2ZQ/gMxqTFm/9+m5QxJjGunYQ=",
         "ref": "refs/heads/master",
-        "rev": "129a679865ac2d77cd791a06e6447b2c43416b2c",
-        "revCount": 215,
+        "rev": "b2ec8e067464fa379686099c6684dec0565bf826",
+        "revCount": 216,
         "type": "git",
         "url": "https://git.bartoostveen.nl/bart/omeduoweb"
       },
@@ -928,11 +928,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795055354,
-        "narHash": "sha256-LduOFL9JWJL3zHuJ/J7kjr0d2m1wPUpd3aAybxaTdu0=",
+        "lastModified": 1795400873,
+        "narHash": "sha256-4lMxkUsFMdIxVObAgs76WINgLZXlaqmEXzHMaArkJ5w=",
         "owner": "nix-community",
         "repo": "srvos",
-        "rev": "92bb5f6764b4fc24e03a63b82d77b8bb30689f78",
+        "rev": "e151e24ac800372a3eb1146c8f42a6e1fa286b66",
         "type": "github"
       },
       "original": {
@@ -971,11 +971,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795305740,
-        "narHash": "sha256-dBGGwDD39UvYdnT/uHJY84aYcKXPzqxKCwIFEr1IyHo=",
+        "lastModified": 1795392098,
+        "narHash": "sha256-h6uu3/tbf/AYV8uTN+7/eQtHIJbhU3aj8p567saQHiY=",
         "ref": "refs/heads/master",
-        "rev": "a73473c5e33d8dd4a0f7040f07c2acf933012380",
-        "revCount": 65,
+        "rev": "0d5173af0cbfaa063b22c1ecd880a0ba74d0d529",
+        "revCount": 66,
         "type": "git",
         "url": "ssh://forgejo@git.bartoostveen.nl/bart/ta-schedule.git"
       },
