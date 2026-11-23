@@ -118,7 +118,8 @@ in
           let
             cfg = config.services.postgresql;
             # nixos/modules/services/databases/postgresql.nix
-            withJit = if cfg.enableJIT then pkgs.postgresql_19.withJIT else pkgs.postgresql_19.withoutJIT;
+            newPostgresUnwrapped = pkgs.postgresql_19;
+            withJit = if cfg.enableJIT then newPostgresUnwrapped.withJIT else newPostgresUnwrapped.withoutJIT;
             newPostgres = if cfg.extensions == [ ] then withJit else withJit.withPackages cfg.extensions;
           in
           lib.optional (newPostgres.version != cfg.finalPackage.version && config.services.postgresql.enable)
