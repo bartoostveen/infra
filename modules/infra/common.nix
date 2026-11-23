@@ -92,7 +92,7 @@ in
     services.mysql.package = pkgs.mariadb_114;
 
     services.postgresql = {
-      package = pkgs.postgresql_18;
+      package = pkgs.postgresql_19;
       identMap = mkAfter ''
         # arbitraryMapName	systemUser	DBUser
         superuser_map		root		postgres
