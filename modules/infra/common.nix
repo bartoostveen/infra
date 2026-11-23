@@ -114,43 +114,46 @@ in
           wget
           # https://nixos.org/manual/nixos/unstable/#module-services-postgres-upgrading
         ]
-        ++ lib.optional config.services.postgresql.enable (
+        ++ (
           let
             cfg = config.services.postgresql;
             # nixos/modules/services/databases/postgresql.nix
             withJit = if cfg.enableJIT then pkgs.postgresql_19.withJIT else pkgs.postgresql_19.withoutJIT;
             newPostgres = if cfg.extensions == [ ] then withJit else withJit.withPackages cfg.extensions;
           in
-          pkgs.writeScriptBin "upgrade-pg-cluster" ''
-            set -eux
+          lib.optional (newPostgres.version != cfg.finalPackage.version && config.services.postgresql.enable)
+            (
+              pkgs.writeScriptBin "upgrade-pg-cluster" ''
+                set -eux
 
-            pushd /var/lib/postgresql
-            systemctl stop postgresql
+                pushd /var/lib/postgresql
+                systemctl stop postgresql
 
-            export NEWDATA="/var/lib/postgresql/${newPostgres.psqlSchema}"
-            export NEWBIN="${newPostgres}/bin"
+                export NEWDATA="/var/lib/postgresql/${newPostgres.psqlSchema}"
+                export NEWBIN="${newPostgres}/bin"
 
-            export OLDDATA="${cfg.dataDir}"
-            export OLDBIN="${cfg.finalPackage}/bin"
+                export OLDDATA="${cfg.dataDir}"
+                export OLDBIN="${cfg.finalPackage}/bin"
 
-            install -d -m 0700 -o postgres -g postgres "$NEWDATA"
-            cd "$NEWDATA"
-            sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${lib.escapeShellArgs cfg.initdbArgs}
+                install -d -m 0700 -o postgres -g postgres "$NEWDATA"
+                cd "$NEWDATA"
+                sudo -u postgres "$NEWBIN/initdb" -D "$NEWDATA" ${lib.escapeShellArgs cfg.initdbArgs}
 
-            # TODO: remove
-            sudo -u postgres "$NEWBIN/pg_checksums" --disable --pgdata "$NEWDATA"
+                # TODO: remove
+                sudo -u postgres "$NEWBIN/pg_checksums" --disable --pgdata "$NEWDATA"
 
-            sudo -u postgres "$NEWBIN/pg_upgrade" \
-              --old-datadir "$OLDDATA" --new-datadir "$NEWDATA" \
-              --old-bindir "$OLDBIN" --new-bindir "$NEWBIN" \
-              "$@"
+                sudo -u postgres "$NEWBIN/pg_upgrade" \
+                  --old-datadir "$OLDDATA" --new-datadir "$NEWDATA" \
+                  --old-bindir "$OLDBIN" --new-bindir "$NEWBIN" \
+                  "$@"
 
-            # TODO: remove
-            sudo -u postgres "$NEWBIN/pg_checksums" --enable --pgdata "$NEWDATA"
+                # TODO: remove
+                sudo -u postgres "$NEWBIN/pg_checksums" --enable --pgdata "$NEWDATA"
 
-            rm delete_old_cluster.sh || true
-            popd
-          ''
+                rm delete_old_cluster.sh || true
+                popd
+              ''
+            )
         );
       variables.NH_SHOW_ACTIVATION_LOGS = 1;
     };
