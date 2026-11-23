@@ -30,6 +30,7 @@ in
       manageSieve.enable = mkDefault true;
       imap.enable = mkDefault true;
       imaps.enable = mkDefault true;
+      submission.enable = mkDefault true;
       submissions.enable = mkDefault true;
     };
 
