@@ -1,0 +1,64 @@
+From e97147c04e5af31e1f3008bb55c16f724dfa1848 Mon Sep 17 00:00:00 2001
+From: Bart Oostveen <bart@bartoostveen.nl>
+Date: Mon, 23 Nov 2026 17:30:41 +0100
+Subject: [PATCH] Revert "mail-tlsa-check-exporter: shutdown SMTP session
+ gracefully"
+
+This reverts commit 0a1c4fc1b2108cd4667c3e677d9733935d511832.
+---
+ .../ma/mail-tlsa-check-exporter/package.nix   |  5 ----
+ .../smtp-shutdown.patch                       | 26 -------------------
+ 2 files changed, 31 deletions(-)
+ delete mode 100644 pkgs/by-name/ma/mail-tlsa-check-exporter/smtp-shutdown.patch
+
+diff --git a/pkgs/by-name/ma/mail-tlsa-check-exporter/package.nix b/pkgs/by-name/ma/mail-tlsa-check-exporter/package.nix
+index 9e52030b83b6..c93ba4f7be50 100644
+--- a/pkgs/by-name/ma/mail-tlsa-check-exporter/package.nix
++++ b/pkgs/by-name/ma/mail-tlsa-check-exporter/package.nix
+@@ -21,11 +21,6 @@ stdenv.mkDerivation (finalAttrs: {
+     hash = "sha256-5c3epExz3tv6gRiIfpDyV1pkfcRVWjtNpl93LWsYKdk=";
+   };
+ 
+-  patches = [
+-    # https://github.com/ietf-tools/mail-tlsa-check-exporter/pull/7
+-    ./smtp-shutdown.patch
+-  ];
+-
+   nativeBuildInputs = [
+     makeWrapper
+   ];
+diff --git a/pkgs/by-name/ma/mail-tlsa-check-exporter/smtp-shutdown.patch b/pkgs/by-name/ma/mail-tlsa-check-exporter/smtp-shutdown.patch
+deleted file mode 100644
+index 009d7635d380..000000000000
+--- a/pkgs/by-name/ma/mail-tlsa-check-exporter/smtp-shutdown.patch
++++ /dev/null
+@@ -1,26 +0,0 @@
+-From 9a227d17e23017d9019a2a129f26c855d9b697bf Mon Sep 17 00:00:00 2001
+-From: Martin Weinelt <hexa@darmstadt.ccc.de>
+-Date: Mon, 16 Nov 2026 20:23:25 +0100
+-Subject: [PATCH] fix: terminate SMTP session gracefully in happy path
+-
+-Ensures SMTP sessions are properly terminated over TLS, preventing
+-Postfix from logging unexpected connection losses and TLS shutdown
+-errors.
+----
+- index.mjs | 3 ++-
+- 1 file changed, 2 insertions(+), 1 deletion(-)
+-
+-diff --git a/index.mjs b/index.mjs
+-index 115229c..0898e08 100644
+---- a/index.mjs
+-+++ b/index.mjs
+-@@ -115,7 +115,8 @@ async function validateSMTP (ipFamily = 4, expectedHashes) {
+-             console.info('-> TLS connected.')
+-             const cert = clientTls.getPeerCertificate(true)
+-             clearTimeout(clientTimer)
+--            client.end()
+-+            clientTls.write('QUIT\n')
+-+            clientTls.end()
+-             performance.mark('smtp_end')
+- 
+-             // -> Validate expiration
+-- 
+2.56.0
+

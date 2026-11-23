@@ -58,6 +58,7 @@ in
         (nixpkgsPr 582217 "sha256-4uKbdw9vC0qeAJh4PS33JUdf6WxDkOkCmA6AqsEF47A=")
         (nixpkgsPr 589890 "sha256-lfusFpFQTw1DEYRJ4MOLJu0HTPaRJtQDWP3OUsUTO4o=")
         ./revert-direnv-bump.patch
+        ./revert-mtce-smtp-patch.patch
       ];
 
       patchedNixpkgs = patchInput smallPkgs nixpkgsPatches inputs.nixpkgs;
