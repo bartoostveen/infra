@@ -90,7 +90,8 @@ in
               php85Packages
               php86
               php86Packages
-              nginxStable
+              # TOOD: add back
+              # nginxStable
               ;
 
             inherit (inputs'.nix-auth.packages) nix-auth;
