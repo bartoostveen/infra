@@ -116,8 +116,10 @@ in
         ]
         ++ lib.optional config.services.postgresql.enable (
           let
-            newPostgres = pkgs.postgresql_19;
             cfg = config.services.postgresql;
+            # nixos/modules/services/databases/postgresql.nix
+            withJit = if cfg.enableJIT then pkgs.postgresql_19.withJIT else pkgs.postgresql_19.withoutJIT;
+            newPostgres = if cfg.extensions == [ ] then withJit else withJit.withPackages cfg.extensions;
           in
           pkgs.writeScriptBin "upgrade-pg-cluster" ''
             set -eux
