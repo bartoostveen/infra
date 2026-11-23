@@ -619,11 +619,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791680048,
-        "narHash": "sha256-w0YdRc5IJOzAti5+eSykkc1L/epXQeaP64zGv4wuCNI=",
+        "lastModified": 1795449756,
+        "narHash": "sha256-MkNs+vYB5gpIUl7Dyrb3zUvJYS4yqUFbNuWAOoWFyHk=",
         "ref": "ldap/email",
-        "rev": "5ebf64c6178cc97da6f37437e3313ca287b70981",
-        "revCount": 1081,
+        "rev": "df7cb80b2c6dbac3519b66c5821a9f539b0940ff",
+        "revCount": 1100,
         "type": "git",
         "url": "https://git.bartoostveen.nl/mirror/nixos-mailserver.git"
       },
