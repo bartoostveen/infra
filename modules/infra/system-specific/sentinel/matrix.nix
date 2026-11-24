@@ -137,6 +137,8 @@ in
     };
   };
 
+  infra.backup.jobs.state.paths = [ config.services.sable.settings.data_dir ];
+
   sops.secrets.sable-server-env = {
     sopsFile = /${flakeRoot}/secrets/sable-server.env.sentinel.secret;
     format = "binary";
