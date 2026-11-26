@@ -59,6 +59,7 @@ in
         (nixpkgsPr 589890 "sha256-lfusFpFQTw1DEYRJ4MOLJu0HTPaRJtQDWP3OUsUTO4o=")
         (nixpkgsPr 592164 "sha256-LiQdNql6NuovSVaE7s+IOeGhT14K5pdRDsFpIclMlpo=")
         (nixpkgsPr 591118 "sha256-XVL1fxmirZ8NhGYqnajTNIb4y1Nn9srokEkopcmE+6k=")
+        (nixpkgsPr 593788 "sha256-iTeDhVc2HVHpaRxciH/q3RJINtYZ3Acz85NqR5BKt5Y=")
         ./revert-direnv-bump.patch
         ./revert-mtce-smtp-patch.patch
       ];
